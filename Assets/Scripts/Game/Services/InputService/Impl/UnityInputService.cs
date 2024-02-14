@@ -1,5 +1,4 @@
 ﻿using System;
-using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -7,6 +6,7 @@ namespace Game.Services.InputService.Impl
 {
     public class UnityInputService : IInputService, ITickable
     {
+        public Vector3 InputDirection { get; private set; }
         public event Action<int> MouseButtonDown;
 
         public Vector3 MousePosition => Input.mousePosition;
@@ -18,6 +18,11 @@ namespace Game.Services.InputService.Impl
             
             if (Input.GetMouseButtonDown(1))
                 MouseButtonDown?.Invoke(1);
+
+            var x = Input.GetAxisRaw("Horizontal");
+            var z = Input.GetAxisRaw("Vertical");
+
+            InputDirection = new Vector3(x, 0, z);
         }
     }
 }

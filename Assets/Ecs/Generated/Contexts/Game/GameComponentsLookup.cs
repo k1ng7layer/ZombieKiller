@@ -20,27 +20,30 @@ public static class GameComponentsLookup
 	public const int CameraMode = 4;
 	public const int CameraMove = 5;
 	public const int VirtualCamera = 6;
-	public const int Dead = 7;
-	public const int HoveredObject = 8;
-	public const int Income = 9;
-	public const int IncomeTimer = 10;
-	public const int Instantiate = 11;
-	public const int PlayerCoins = 12;
-	public const int Player = 13;
-	public const int Position = 14;
-	public const int Prefab = 15;
-	public const int Rotation = 16;
-	public const int Time = 17;
-	public const int Transform = 18;
-	public const int Visible = 19;
-	public const int GameDestroyedListener = 20;
-	public const int PlayerCoinsListener = 21;
-	public const int PositionListener = 22;
-	public const int RotationListener = 23;
-	public const int VisibleListener = 24;
-	public const int VisibleRemovedListener = 25;
+	public const int CanMove = 7;
+	public const int Dead = 8;
+	public const int HoveredObject = 9;
+	public const int Income = 10;
+	public const int IncomeTimer = 11;
+	public const int Instantiate = 12;
+	public const int MoveDirection = 13;
+	public const int PlayerCoins = 14;
+	public const int Player = 15;
+	public const int Position = 16;
+	public const int Prefab = 17;
+	public const int Rotation = 18;
+	public const int Time = 19;
+	public const int Transform = 20;
+	public const int Visible = 21;
+	public const int GameDestroyedListener = 22;
+	public const int MoveDirectionListener = 23;
+	public const int PlayerCoinsListener = 24;
+	public const int PositionListener = 25;
+	public const int RotationListener = 26;
+	public const int VisibleListener = 27;
+	public const int VisibleRemovedListener = 28;
 
-	public const int TotalComponents = 26;
+	public const int TotalComponents = 29;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -51,11 +54,13 @@ public static class GameComponentsLookup
 		"CameraMode",
 		"CameraMove",
 		"VirtualCamera",
+		"CanMove",
 		"Dead",
 		"HoveredObject",
 		"Income",
 		"IncomeTimer",
 		"Instantiate",
+		"MoveDirection",
 		"PlayerCoins",
 		"Player",
 		"Position",
@@ -65,6 +70,7 @@ public static class GameComponentsLookup
 		"Transform",
 		"Visible",
 		"GameDestroyedListener",
+		"MoveDirectionListener",
 		"PlayerCoinsListener",
 		"PositionListener",
 		"RotationListener",
@@ -81,11 +87,13 @@ public static class GameComponentsLookup
 		typeof(Ecs.Game.Components.Camera.CameraModeComponent),
 		typeof(Ecs.Game.Components.Camera.CameraMoveComponent),
 		typeof(Ecs.Game.Components.Camera.VirtualCameraComponent),
+		typeof(Ecs.Game.Components.CanMoveComponent),
 		typeof(Ecs.Game.Components.DeadComponent),
 		typeof(Ecs.Game.Components.HoveredObjectComponent),
 		typeof(Ecs.Game.Components.IncomeComponent),
 		typeof(Ecs.Game.Components.IncomeTimer),
 		typeof(Ecs.Game.Components.InstantiateComponent),
+		typeof(Ecs.Game.Components.MoveDirectionComponent),
 		typeof(Ecs.Game.Components.PlayerCoinsComponent),
 		typeof(Ecs.Game.Components.PlayerComponent),
 		typeof(Ecs.Game.Components.PositionComponent),
@@ -95,6 +103,7 @@ public static class GameComponentsLookup
 		typeof(Ecs.Game.Components.TransformComponent),
 		typeof(Ecs.Game.Components.VisibleComponent),
 		typeof(GameDestroyedListenerComponent),
+		typeof(MoveDirectionListenerComponent),
 		typeof(PlayerCoinsListenerComponent),
 		typeof(PositionListenerComponent),
 		typeof(RotationListenerComponent),
@@ -111,25 +120,28 @@ public static class GameComponentsLookup
 		{ typeof(Ecs.Game.Components.Camera.CameraModeComponent), 4 },
 		{ typeof(Ecs.Game.Components.Camera.CameraMoveComponent), 5 },
 		{ typeof(Ecs.Game.Components.Camera.VirtualCameraComponent), 6 },
-		{ typeof(Ecs.Game.Components.DeadComponent), 7 },
-		{ typeof(Ecs.Game.Components.HoveredObjectComponent), 8 },
-		{ typeof(Ecs.Game.Components.IncomeComponent), 9 },
-		{ typeof(Ecs.Game.Components.IncomeTimer), 10 },
-		{ typeof(Ecs.Game.Components.InstantiateComponent), 11 },
-		{ typeof(Ecs.Game.Components.PlayerCoinsComponent), 12 },
-		{ typeof(Ecs.Game.Components.PlayerComponent), 13 },
-		{ typeof(Ecs.Game.Components.PositionComponent), 14 },
-		{ typeof(Ecs.Game.Components.PrefabComponent), 15 },
-		{ typeof(Ecs.Game.Components.RotationComponent), 16 },
-		{ typeof(Ecs.Game.Components.TimeComponent), 17 },
-		{ typeof(Ecs.Game.Components.TransformComponent), 18 },
-		{ typeof(Ecs.Game.Components.VisibleComponent), 19 },
-		{ typeof(GameDestroyedListenerComponent), 20 },
-		{ typeof(PlayerCoinsListenerComponent), 21 },
-		{ typeof(PositionListenerComponent), 22 },
-		{ typeof(RotationListenerComponent), 23 },
-		{ typeof(VisibleListenerComponent), 24 },
-		{ typeof(VisibleRemovedListenerComponent), 25 }
+		{ typeof(Ecs.Game.Components.CanMoveComponent), 7 },
+		{ typeof(Ecs.Game.Components.DeadComponent), 8 },
+		{ typeof(Ecs.Game.Components.HoveredObjectComponent), 9 },
+		{ typeof(Ecs.Game.Components.IncomeComponent), 10 },
+		{ typeof(Ecs.Game.Components.IncomeTimer), 11 },
+		{ typeof(Ecs.Game.Components.InstantiateComponent), 12 },
+		{ typeof(Ecs.Game.Components.MoveDirectionComponent), 13 },
+		{ typeof(Ecs.Game.Components.PlayerCoinsComponent), 14 },
+		{ typeof(Ecs.Game.Components.PlayerComponent), 15 },
+		{ typeof(Ecs.Game.Components.PositionComponent), 16 },
+		{ typeof(Ecs.Game.Components.PrefabComponent), 17 },
+		{ typeof(Ecs.Game.Components.RotationComponent), 18 },
+		{ typeof(Ecs.Game.Components.TimeComponent), 19 },
+		{ typeof(Ecs.Game.Components.TransformComponent), 20 },
+		{ typeof(Ecs.Game.Components.VisibleComponent), 21 },
+		{ typeof(GameDestroyedListenerComponent), 22 },
+		{ typeof(MoveDirectionListenerComponent), 23 },
+		{ typeof(PlayerCoinsListenerComponent), 24 },
+		{ typeof(PositionListenerComponent), 25 },
+		{ typeof(RotationListenerComponent), 26 },
+		{ typeof(VisibleListenerComponent), 27 },
+		{ typeof(VisibleRemovedListenerComponent), 28 }
 	};
 
 	/// <summary>

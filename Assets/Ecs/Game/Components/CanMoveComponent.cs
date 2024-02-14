@@ -3,8 +3,7 @@
 namespace Ecs.Game.Components
 {
     [Game]
-    [Unique]
-    public class PlayerComponent : IComponent
+    public class CanMoveComponent : IComponent
     {
         
     }

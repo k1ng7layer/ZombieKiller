@@ -26,6 +26,14 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Game.Components.MoveDirectionComponent MoveDirection)
+		{
+			CopyMoveDirectionTo(MoveDirection);
+		}
+		else if (component is Ecs.Game.Components.CanMoveComponent CanMove)
+		{
+			IsCanMove = true;
+		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;

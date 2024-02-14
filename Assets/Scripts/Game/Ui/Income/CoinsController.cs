@@ -1,6 +1,5 @@
 ﻿using Ecs.Utils.Interfaces;
 using SimpleUi.Abstracts;
-using UniRx;
 
 namespace Game.Ui.Income
 {
@@ -15,7 +14,7 @@ namespace Game.Ui.Income
 
         public void Initialize()
         {
-            _game.PlayerCoinsEntity.SubscribePlayerCoins(OnCoinsChanged).AddTo(View.gameObject);
+            //_game.PlayerCoinsEntity.SubscribePlayerCoins(OnCoinsChanged).AddTo(View.gameObject);
         }
 
         private void OnCoinsChanged(GameEntity _, int playerCoins)
