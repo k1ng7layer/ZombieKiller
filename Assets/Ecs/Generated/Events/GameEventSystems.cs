@@ -13,15 +13,11 @@ public sealed class GameEventSystems : Feature
 {
 	public GameEventSystems(IContext<GameEntity> context)
 	{
-		Add(new AnyBusyEventSystem(context)); // priority: 0
-		Add(new AnyBusyRemovedEventSystem(context)); // priority: 0
-		Add(new DestinationPointEventSystem(context)); // priority: 0
+		Add(new CameraModeEventSystem(context)); // priority: 0
 		Add(new GameDestroyedEventSystem(context)); // priority: 0
 		Add(new PlayerCoinsEventSystem(context)); // priority: 0
 		Add(new PositionEventSystem(context)); // priority: 0
 		Add(new RotationEventSystem(context)); // priority: 0
-		Add(new TargetEventSystem(context)); // priority: 0
-		Add(new UnitStateEventSystem(context)); // priority: 0
 		Add(new VisibleEventSystem(context)); // priority: 0
 		Add(new VisibleRemovedEventSystem(context)); // priority: 0
 	}
