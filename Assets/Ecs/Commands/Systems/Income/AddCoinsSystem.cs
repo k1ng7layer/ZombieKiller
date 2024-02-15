@@ -31,10 +31,10 @@ namespace Ecs.Commands.Systems.Income
             }
             else
             {
-                var enemyCoins = _game.EnemyCoins.Value;
-                enemyCoins += command.Value;
+                //var enemyCoins = _game.EnemyCoins.Value;
+                //enemyCoins += command.Value;
                 
-                _game.ReplaceEnemyCoins(enemyCoins);
+               // _game.ReplaceEnemyCoins(enemyCoins);
             }
         }
     }

@@ -4,6 +4,8 @@ using Db.Camera;
 using Db.Camera.Impl;
 using Db.Coins;
 using Db.Coins.Impl;
+using Db.Player;
+using Db.Player.Impl;
 using Db.Prefabs;
 using Db.Prefabs.Impl;
 using UnityEngine;
@@ -18,6 +20,7 @@ namespace Installers.Game
         [SerializeField] private BuildingSettingsBase buildingSettingsBase;
         [SerializeField] private CameraBase cameraBase;
         [SerializeField] private DropCoinsFromUnitBase dropCoinsFromUnitBase;
+        [SerializeField] private PlayerSettings playerSettings;
 
         public override void InstallBindings()
         {
@@ -25,6 +28,7 @@ namespace Installers.Game
             Container.Bind<IBuildingSettingsBase>().FromInstance(buildingSettingsBase);
             Container.Bind<ICameraBase>().FromInstance(cameraBase);
             Container.Bind<IDropCoinsFromUnitsBase>().FromInstance(dropCoinsFromUnitBase);
+            Container.Bind<IPlayerSettings>().FromInstance(playerSettings);
         }
     }
 }

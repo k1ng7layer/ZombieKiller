@@ -16,10 +16,7 @@ namespace Ecs.Utils.Groups.Impl
 
         public GameGroupUtils(GameContext game)
         {
-            _unitsGroup = game.GetGroup(GameMatcher.AllOf(GameMatcher.UnitData, GameMatcher.UnitType));
-            _buildingSlotsGroup = game.GetGroup(GameMatcher.AllOf(GameMatcher.BuildingSlot));
-            _buildingsGroup = game.GetGroup(GameMatcher.AllOf(GameMatcher.BuildingType));
-            _enemyBuildingSlot = game.GetGroup(GameMatcher.AllOf(GameMatcher.BuildingSlot).NoneOf(GameMatcher.Player));
+     
         }
 
         public IDisposable GetUnits(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null, bool nonDestroyed = true)
@@ -48,43 +45,7 @@ namespace Ecs.Utils.Groups.Impl
             
             return GetEntities(out buffer, _unitsGroup, baseFilter, filter);
         }
-
-        public IDisposable GetOwnerUnitsWithType(out List<GameEntity> buffer, bool isPlayerUnits, EUnitType unitType, Func<GameEntity, bool> filter = null)
-        {
-            Func<GameEntity, bool> baseFilter = isPlayerUnits
-                ? e => e.IsPlayer && e.UnitType.Value == unitType && !e.IsDead &&  !e.IsDestroyed
-                : e => !e.IsPlayer && e.UnitType.Value == unitType && !e.IsDead && !e.IsDestroyed;
-            
-            return GetEntities(out buffer, _unitsGroup, baseFilter, filter);
-        }
-
-        public IDisposable GetBuildingSlots(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
-        {
-            return GetEntities(out buffer, _buildingSlotsGroup, e => e.IsBuildingSlot && !e.IsDestroyed, filter);
-        }
         
-        public IDisposable GetSpawnableBuilding(out List<GameEntity> buffer, bool withCooldown, Func<GameEntity, bool> filter = null)
-        {
-            Func<GameEntity, bool> baseFilter = withCooldown
-                ? e => e.HasSpawnParameters && e.HasTime && !e.IsDestroyed
-                : e => e.HasSpawnParameters && !e.HasTime && !e.IsDestroyed;
-            
-            return GetEntities(out buffer, _buildingsGroup, baseFilter, filter);
-        }
-
-        public IDisposable GetBuildingsIncome(out List<GameEntity> buffer, bool isPlayerBuilding, Func<GameEntity, bool> filter = null)
-        {
-            Func<GameEntity, bool> baseFilter = isPlayerBuilding
-                ? e => e.IsBuilding && e.HasIncome && e.IsPlayer
-                : e => e.IsBuilding && e.HasIncome && !e.IsPlayer;
-            
-            return GetEntities(out buffer, _buildingsGroup, baseFilter, filter);
-        }
-        
-        public IDisposable GetEmptyEnemyBuildingSlots(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
-        {
-            return GetEntities(out buffer, _enemyBuildingSlot, e => !e.IsBusy, filter);
-        }
 
         private IDisposable GetEntities(
             out List<GameEntity> buffer,  
