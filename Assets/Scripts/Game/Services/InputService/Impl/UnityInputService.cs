@@ -23,6 +23,8 @@ namespace Game.Services.InputService.Impl
             var z = Input.GetAxisRaw("Vertical");
 
             InputDirection = new Vector3(x, 0, z);
+            
+            Debug.Log($"Swipe: {Input.touches.Length}");
         }
     }
 }

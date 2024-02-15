@@ -49,8 +49,8 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<AddCoinsSystem>(container);	// 0130 Coins
 
 			// Input 0150
-			SystemInstallHelper.Install<PointerDownSystem>(container);	// 0150 Input
-			SystemInstallHelper.Install<PointerDragSystem>(container);	// 0150 Input
+			//SystemInstallHelper.Install<PointerDownSystem>(container);	// 0150 Input
+			//SystemInstallHelper.Install<PointerDragSystem>(container);	// 0150 Input
 
 			// Input 0170
 			SystemInstallHelper.Install<PointerUpSystem>(container);	// 0170 Input
