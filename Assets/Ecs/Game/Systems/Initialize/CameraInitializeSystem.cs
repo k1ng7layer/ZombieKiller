@@ -1,6 +1,5 @@
 ﻿using Ecs.Game.Extensions;
 using Ecs.Views.Linkable.Impl;
-using Game.Providers.CameraProvider;
 using Game.Providers.GameFieldProvider;
 using JCMG.EntitasRedux;
 using Plugins.Extensions.InstallerGenerator.Attributes;
@@ -13,35 +12,34 @@ namespace Ecs.Game.Systems.Initialize
     public class CameraInitializeSystem : IInitializeSystem
     {
         private readonly DiContainer _diContainer;
-        private readonly ICameraProvider _cameraProvider;
         private readonly GameContext _game;
         private readonly IGameFieldProvider _gameFieldProvider;
 
         public CameraInitializeSystem(
             DiContainer diContainer,
-            ICameraProvider cameraProvider,
             GameContext game,
             IGameFieldProvider gameFieldProvider
         )
         {
             _diContainer = diContainer;
-            _cameraProvider = cameraProvider;
             _game = game;
             _gameFieldProvider = gameFieldProvider;
         }
         
         public void Initialize()
         {
-            var camera = _cameraProvider.GetCamera();
-            var cameraView = camera.GetComponent<CameraView>();
-            var cameraTransform = cameraView.transform;
-            var levelCameraPosition = _gameFieldProvider.GameField.StartCameraPosition;
+            var physicalCameraView = _gameFieldProvider.GameField.PhysicalCameraView;
+            var physicalCamera = _game.CreateEntity();
+            physicalCamera.IsCamera = true;
             
-            _diContainer.Inject(cameraView);
-            cameraTransform.SetPositionAndRotation(levelCameraPosition.position, levelCameraPosition.rotation);
+            _diContainer.Inject(physicalCameraView);
+            physicalCameraView.Link(physicalCamera);
 
-            var cameraEntity = _game.CreateCamera(cameraTransform);
-            cameraView.Link(cameraEntity);
+            var virtualCameraEntity = _game.CreateEntity();
+            var virtualCameraView = _gameFieldProvider.GameField.VirtualCameraView;
+            virtualCameraEntity.IsVirtualCamera = true;
+            _diContainer.Inject(virtualCameraView);
+            virtualCameraView.Link(physicalCamera);
         }
     }
 }

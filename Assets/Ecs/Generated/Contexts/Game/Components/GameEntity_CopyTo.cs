@@ -26,13 +26,17 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Game.Components.MoveDirectionComponent MoveDirection)
+		{
+			CopyMoveDirectionTo(MoveDirection);
+		}
+		else if (component is Ecs.Game.Components.CanMoveComponent CanMove)
+		{
+			IsCanMove = true;
+		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
-		}
-		else if (component is Ecs.Game.Components.BuildingSlotComponent BuildingSlot)
-		{
-			IsBuildingSlot = true;
 		}
 		else if (component is Ecs.Game.Components.PositionComponent Position)
 		{
@@ -46,10 +50,6 @@ public partial class GameEntity
 		{
 			IsDead = true;
 		}
-		else if (component is Ecs.Game.Components.BusyComponent Busy)
-		{
-			IsBusy = true;
-		}
 		else if (component is Ecs.Game.Components.TimeComponent Time)
 		{
 			CopyTimeTo(Time);
@@ -62,10 +62,6 @@ public partial class GameEntity
 		{
 			CopyPrefabTo(Prefab);
 		}
-		else if (component is Ecs.Game.Components.EnemyCoinsComponent EnemyCoins)
-		{
-			CopyEnemyCoinsTo(EnemyCoins);
-		}
 		else if (component is Ecs.Game.Components.RotationComponent Rotation)
 		{
 			CopyRotationTo(Rotation);
@@ -73,14 +69,6 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.TransformComponent Transform)
 		{
 			CopyTransformTo(Transform);
-		}
-		else if (component is Ecs.Game.Components.BuildingComponent Building)
-		{
-			IsBuilding = true;
-		}
-		else if (component is Ecs.Game.Components.SelectedBuildingComponent SelectedBuilding)
-		{
-			CopySelectedBuildingTo(SelectedBuilding);
 		}
 		else if (component is Ecs.Game.Components.VisibleComponent Visible)
 		{
@@ -98,6 +86,14 @@ public partial class GameEntity
 		{
 			CopyIncomeTo(Income);
 		}
+		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
+		{
+			CopyCameraModeTo(CameraMode);
+		}
+		else if (component is Ecs.Game.Components.Camera.VirtualCameraComponent VirtualCamera)
+		{
+			IsVirtualCamera = true;
+		}
 		else if (component is Ecs.Game.Components.Camera.CameraMoveComponent CameraMove)
 		{
 			IsCameraMove = true;
@@ -105,66 +101,6 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.Camera.CameraComponent Camera)
 		{
 			IsCamera = true;
-		}
-		else if (component is Ecs.Game.Components.Buildings.MinimalPriceComponent MinimalPrice)
-		{
-			CopyMinimalPriceTo(MinimalPrice);
-		}
-		else if (component is Ecs.Game.Components.Buildings.EnemyCastleComponent EnemyCastle)
-		{
-			IsEnemyCastle = true;
-		}
-		else if (component is Ecs.Game.Components.Buildings.BuildingTypeComponent BuildingType)
-		{
-			CopyBuildingTypeTo(BuildingType);
-		}
-		else if (component is Ecs.Game.Components.Buildings.PlayerCastleComponent PlayerCastle)
-		{
-			IsPlayerCastle = true;
-		}
-		else if (component is Ecs.Game.Components.Buildings.SpawnParametersComponent SpawnParameters)
-		{
-			CopySpawnParametersTo(SpawnParameters);
-		}
-		else if (component is Ecs.Game.Components.Units.AggroRadiusComponent AggroRadius)
-		{
-			CopyAggroRadiusTo(AggroRadius);
-		}
-		else if (component is Ecs.Game.Components.Units.DestinationPointComponent DestinationPoint)
-		{
-			CopyDestinationPointTo(DestinationPoint);
-		}
-		else if (component is Ecs.Game.Components.Units.MainTargetComponent MainTarget)
-		{
-			CopyMainTargetTo(MainTarget);
-		}
-		else if (component is Ecs.Game.Components.Units.UnitTypeComponent UnitType)
-		{
-			CopyUnitTypeTo(UnitType);
-		}
-		else if (component is Ecs.Game.Components.Units.InAttackRangeComponent InAttackRange)
-		{
-			IsInAttackRange = true;
-		}
-		else if (component is Ecs.Game.Components.Units.TargetComponent Target)
-		{
-			CopyTargetTo(Target);
-		}
-		else if (component is Ecs.Game.Components.Units.UnitDataComponent UnitData)
-		{
-			CopyUnitDataTo(UnitData);
-		}
-		else if (component is Ecs.Game.Components.Units.HealthComponent Health)
-		{
-			CopyHealthTo(Health);
-		}
-		else if (component is Ecs.Game.Components.Units.UnitStateComponent UnitState)
-		{
-			CopyUnitStateTo(UnitState);
-		}
-		else if (component is Ecs.Game.Components.Units.InTargetComponent InTarget)
-		{
-			IsInTarget = true;
 		}
 
 		#endif

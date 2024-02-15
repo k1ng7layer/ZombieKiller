@@ -13,211 +13,135 @@ using JCMG.EntitasRedux;
 
 public static class GameComponentsLookup
 {
-	public const int AnyBusyListener = 0;
-	public const int AnyBusyRemovedListener = 1;
-	public const int DestinationPointListener = 2;
-	public const int Destroyed = 3;
-	public const int Uid = 4;
-	public const int Building = 5;
-	public const int BuildingType = 6;
-	public const int EnemyCastle = 7;
-	public const int MinimalPrice = 8;
-	public const int PlayerCastle = 9;
-	public const int SpawnParameters = 10;
-	public const int BuildingSlot = 11;
-	public const int Busy = 12;
-	public const int Camera = 13;
-	public const int CameraMove = 14;
-	public const int Dead = 15;
-	public const int EnemyCoins = 16;
-	public const int HoveredObject = 17;
-	public const int Income = 18;
-	public const int IncomeTimer = 19;
-	public const int Instantiate = 20;
-	public const int PlayerCoins = 21;
-	public const int Player = 22;
-	public const int Position = 23;
-	public const int Prefab = 24;
-	public const int Rotation = 25;
-	public const int SelectedBuilding = 26;
-	public const int Time = 27;
-	public const int Transform = 28;
-	public const int AggroRadius = 29;
-	public const int DestinationPoint = 30;
-	public const int Health = 31;
-	public const int InAttackRange = 32;
-	public const int InTarget = 33;
-	public const int MainTarget = 34;
-	public const int Target = 35;
-	public const int UnitData = 36;
-	public const int UnitState = 37;
-	public const int UnitType = 38;
-	public const int Visible = 39;
-	public const int GameDestroyedListener = 40;
-	public const int PlayerCoinsListener = 41;
-	public const int PositionListener = 42;
-	public const int RotationListener = 43;
-	public const int TargetListener = 44;
-	public const int UnitStateListener = 45;
-	public const int VisibleListener = 46;
-	public const int VisibleRemovedListener = 47;
+	public const int CameraModeListener = 0;
+	public const int Destroyed = 1;
+	public const int Uid = 2;
+	public const int Camera = 3;
+	public const int CameraMode = 4;
+	public const int CameraMove = 5;
+	public const int VirtualCamera = 6;
+	public const int CanMove = 7;
+	public const int Dead = 8;
+	public const int HoveredObject = 9;
+	public const int Income = 10;
+	public const int IncomeTimer = 11;
+	public const int Instantiate = 12;
+	public const int MoveDirection = 13;
+	public const int PlayerCoins = 14;
+	public const int Player = 15;
+	public const int Position = 16;
+	public const int Prefab = 17;
+	public const int Rotation = 18;
+	public const int Time = 19;
+	public const int Transform = 20;
+	public const int Visible = 21;
+	public const int GameDestroyedListener = 22;
+	public const int MoveDirectionListener = 23;
+	public const int PlayerCoinsListener = 24;
+	public const int PositionListener = 25;
+	public const int RotationListener = 26;
+	public const int VisibleListener = 27;
+	public const int VisibleRemovedListener = 28;
 
-	public const int TotalComponents = 48;
+	public const int TotalComponents = 29;
 
 	public static readonly string[] ComponentNames =
 	{
-		"AnyBusyListener",
-		"AnyBusyRemovedListener",
-		"DestinationPointListener",
+		"CameraModeListener",
 		"Destroyed",
 		"Uid",
-		"Building",
-		"BuildingType",
-		"EnemyCastle",
-		"MinimalPrice",
-		"PlayerCastle",
-		"SpawnParameters",
-		"BuildingSlot",
-		"Busy",
 		"Camera",
+		"CameraMode",
 		"CameraMove",
+		"VirtualCamera",
+		"CanMove",
 		"Dead",
-		"EnemyCoins",
 		"HoveredObject",
 		"Income",
 		"IncomeTimer",
 		"Instantiate",
+		"MoveDirection",
 		"PlayerCoins",
 		"Player",
 		"Position",
 		"Prefab",
 		"Rotation",
-		"SelectedBuilding",
 		"Time",
 		"Transform",
-		"AggroRadius",
-		"DestinationPoint",
-		"Health",
-		"InAttackRange",
-		"InTarget",
-		"MainTarget",
-		"Target",
-		"UnitData",
-		"UnitState",
-		"UnitType",
 		"Visible",
 		"GameDestroyedListener",
+		"MoveDirectionListener",
 		"PlayerCoinsListener",
 		"PositionListener",
 		"RotationListener",
-		"TargetListener",
-		"UnitStateListener",
 		"VisibleListener",
 		"VisibleRemovedListener"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
 	{
-		typeof(AnyBusyListenerComponent),
-		typeof(AnyBusyRemovedListenerComponent),
-		typeof(DestinationPointListenerComponent),
+		typeof(CameraModeListenerComponent),
 		typeof(Ecs.Common.Components.DestroyedComponent),
 		typeof(Ecs.Common.Components.UidComponent),
-		typeof(Ecs.Game.Components.BuildingComponent),
-		typeof(Ecs.Game.Components.Buildings.BuildingTypeComponent),
-		typeof(Ecs.Game.Components.Buildings.EnemyCastleComponent),
-		typeof(Ecs.Game.Components.Buildings.MinimalPriceComponent),
-		typeof(Ecs.Game.Components.Buildings.PlayerCastleComponent),
-		typeof(Ecs.Game.Components.Buildings.SpawnParametersComponent),
-		typeof(Ecs.Game.Components.BuildingSlotComponent),
-		typeof(Ecs.Game.Components.BusyComponent),
 		typeof(Ecs.Game.Components.Camera.CameraComponent),
+		typeof(Ecs.Game.Components.Camera.CameraModeComponent),
 		typeof(Ecs.Game.Components.Camera.CameraMoveComponent),
+		typeof(Ecs.Game.Components.Camera.VirtualCameraComponent),
+		typeof(Ecs.Game.Components.CanMoveComponent),
 		typeof(Ecs.Game.Components.DeadComponent),
-		typeof(Ecs.Game.Components.EnemyCoinsComponent),
 		typeof(Ecs.Game.Components.HoveredObjectComponent),
 		typeof(Ecs.Game.Components.IncomeComponent),
 		typeof(Ecs.Game.Components.IncomeTimer),
 		typeof(Ecs.Game.Components.InstantiateComponent),
+		typeof(Ecs.Game.Components.MoveDirectionComponent),
 		typeof(Ecs.Game.Components.PlayerCoinsComponent),
 		typeof(Ecs.Game.Components.PlayerComponent),
 		typeof(Ecs.Game.Components.PositionComponent),
 		typeof(Ecs.Game.Components.PrefabComponent),
 		typeof(Ecs.Game.Components.RotationComponent),
-		typeof(Ecs.Game.Components.SelectedBuildingComponent),
 		typeof(Ecs.Game.Components.TimeComponent),
 		typeof(Ecs.Game.Components.TransformComponent),
-		typeof(Ecs.Game.Components.Units.AggroRadiusComponent),
-		typeof(Ecs.Game.Components.Units.DestinationPointComponent),
-		typeof(Ecs.Game.Components.Units.HealthComponent),
-		typeof(Ecs.Game.Components.Units.InAttackRangeComponent),
-		typeof(Ecs.Game.Components.Units.InTargetComponent),
-		typeof(Ecs.Game.Components.Units.MainTargetComponent),
-		typeof(Ecs.Game.Components.Units.TargetComponent),
-		typeof(Ecs.Game.Components.Units.UnitDataComponent),
-		typeof(Ecs.Game.Components.Units.UnitStateComponent),
-		typeof(Ecs.Game.Components.Units.UnitTypeComponent),
 		typeof(Ecs.Game.Components.VisibleComponent),
 		typeof(GameDestroyedListenerComponent),
+		typeof(MoveDirectionListenerComponent),
 		typeof(PlayerCoinsListenerComponent),
 		typeof(PositionListenerComponent),
 		typeof(RotationListenerComponent),
-		typeof(TargetListenerComponent),
-		typeof(UnitStateListenerComponent),
 		typeof(VisibleListenerComponent),
 		typeof(VisibleRemovedListenerComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
-		{ typeof(AnyBusyListenerComponent), 0 },
-		{ typeof(AnyBusyRemovedListenerComponent), 1 },
-		{ typeof(DestinationPointListenerComponent), 2 },
-		{ typeof(Ecs.Common.Components.DestroyedComponent), 3 },
-		{ typeof(Ecs.Common.Components.UidComponent), 4 },
-		{ typeof(Ecs.Game.Components.BuildingComponent), 5 },
-		{ typeof(Ecs.Game.Components.Buildings.BuildingTypeComponent), 6 },
-		{ typeof(Ecs.Game.Components.Buildings.EnemyCastleComponent), 7 },
-		{ typeof(Ecs.Game.Components.Buildings.MinimalPriceComponent), 8 },
-		{ typeof(Ecs.Game.Components.Buildings.PlayerCastleComponent), 9 },
-		{ typeof(Ecs.Game.Components.Buildings.SpawnParametersComponent), 10 },
-		{ typeof(Ecs.Game.Components.BuildingSlotComponent), 11 },
-		{ typeof(Ecs.Game.Components.BusyComponent), 12 },
-		{ typeof(Ecs.Game.Components.Camera.CameraComponent), 13 },
-		{ typeof(Ecs.Game.Components.Camera.CameraMoveComponent), 14 },
-		{ typeof(Ecs.Game.Components.DeadComponent), 15 },
-		{ typeof(Ecs.Game.Components.EnemyCoinsComponent), 16 },
-		{ typeof(Ecs.Game.Components.HoveredObjectComponent), 17 },
-		{ typeof(Ecs.Game.Components.IncomeComponent), 18 },
-		{ typeof(Ecs.Game.Components.IncomeTimer), 19 },
-		{ typeof(Ecs.Game.Components.InstantiateComponent), 20 },
-		{ typeof(Ecs.Game.Components.PlayerCoinsComponent), 21 },
-		{ typeof(Ecs.Game.Components.PlayerComponent), 22 },
-		{ typeof(Ecs.Game.Components.PositionComponent), 23 },
-		{ typeof(Ecs.Game.Components.PrefabComponent), 24 },
-		{ typeof(Ecs.Game.Components.RotationComponent), 25 },
-		{ typeof(Ecs.Game.Components.SelectedBuildingComponent), 26 },
-		{ typeof(Ecs.Game.Components.TimeComponent), 27 },
-		{ typeof(Ecs.Game.Components.TransformComponent), 28 },
-		{ typeof(Ecs.Game.Components.Units.AggroRadiusComponent), 29 },
-		{ typeof(Ecs.Game.Components.Units.DestinationPointComponent), 30 },
-		{ typeof(Ecs.Game.Components.Units.HealthComponent), 31 },
-		{ typeof(Ecs.Game.Components.Units.InAttackRangeComponent), 32 },
-		{ typeof(Ecs.Game.Components.Units.InTargetComponent), 33 },
-		{ typeof(Ecs.Game.Components.Units.MainTargetComponent), 34 },
-		{ typeof(Ecs.Game.Components.Units.TargetComponent), 35 },
-		{ typeof(Ecs.Game.Components.Units.UnitDataComponent), 36 },
-		{ typeof(Ecs.Game.Components.Units.UnitStateComponent), 37 },
-		{ typeof(Ecs.Game.Components.Units.UnitTypeComponent), 38 },
-		{ typeof(Ecs.Game.Components.VisibleComponent), 39 },
-		{ typeof(GameDestroyedListenerComponent), 40 },
-		{ typeof(PlayerCoinsListenerComponent), 41 },
-		{ typeof(PositionListenerComponent), 42 },
-		{ typeof(RotationListenerComponent), 43 },
-		{ typeof(TargetListenerComponent), 44 },
-		{ typeof(UnitStateListenerComponent), 45 },
-		{ typeof(VisibleListenerComponent), 46 },
-		{ typeof(VisibleRemovedListenerComponent), 47 }
+		{ typeof(CameraModeListenerComponent), 0 },
+		{ typeof(Ecs.Common.Components.DestroyedComponent), 1 },
+		{ typeof(Ecs.Common.Components.UidComponent), 2 },
+		{ typeof(Ecs.Game.Components.Camera.CameraComponent), 3 },
+		{ typeof(Ecs.Game.Components.Camera.CameraModeComponent), 4 },
+		{ typeof(Ecs.Game.Components.Camera.CameraMoveComponent), 5 },
+		{ typeof(Ecs.Game.Components.Camera.VirtualCameraComponent), 6 },
+		{ typeof(Ecs.Game.Components.CanMoveComponent), 7 },
+		{ typeof(Ecs.Game.Components.DeadComponent), 8 },
+		{ typeof(Ecs.Game.Components.HoveredObjectComponent), 9 },
+		{ typeof(Ecs.Game.Components.IncomeComponent), 10 },
+		{ typeof(Ecs.Game.Components.IncomeTimer), 11 },
+		{ typeof(Ecs.Game.Components.InstantiateComponent), 12 },
+		{ typeof(Ecs.Game.Components.MoveDirectionComponent), 13 },
+		{ typeof(Ecs.Game.Components.PlayerCoinsComponent), 14 },
+		{ typeof(Ecs.Game.Components.PlayerComponent), 15 },
+		{ typeof(Ecs.Game.Components.PositionComponent), 16 },
+		{ typeof(Ecs.Game.Components.PrefabComponent), 17 },
+		{ typeof(Ecs.Game.Components.RotationComponent), 18 },
+		{ typeof(Ecs.Game.Components.TimeComponent), 19 },
+		{ typeof(Ecs.Game.Components.TransformComponent), 20 },
+		{ typeof(Ecs.Game.Components.VisibleComponent), 21 },
+		{ typeof(GameDestroyedListenerComponent), 22 },
+		{ typeof(MoveDirectionListenerComponent), 23 },
+		{ typeof(PlayerCoinsListenerComponent), 24 },
+		{ typeof(PositionListenerComponent), 25 },
+		{ typeof(RotationListenerComponent), 26 },
+		{ typeof(VisibleListenerComponent), 27 },
+		{ typeof(VisibleRemovedListenerComponent), 28 }
 	};
 
 	/// <summary>
