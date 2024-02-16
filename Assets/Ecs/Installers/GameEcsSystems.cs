@@ -1,6 +1,6 @@
 using Ecs.Commands.Systems;
+using Ecs.Commands.Systems.Combat;
 using Ecs.Commands.Systems.Income;
-using Ecs.Commands.Systems.Input;
 using Ecs.Game.Systems;
 using Ecs.Game.Systems.Initialize;
 using Ecs.Game.Systems.Player;
@@ -29,6 +29,9 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<InitializePlayerSystem>(container);	// 0050 Initialization
 			SystemInstallHelper.Install<CameraInitializeSystem>(container);	// 0060 Initialization
 
+			// Combat 0700
+			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0700 Combat
+
 			// Input 1000
 			SystemInstallHelper.Install<PlayerMovementSystem>(container);	// 1000 Input
 			SystemInstallHelper.Install<PlayerRotationSystem>(container);	// 1000 Input
@@ -48,15 +51,18 @@ namespace Ecs.Installers {
 			// Coins 0130
 			SystemInstallHelper.Install<AddCoinsSystem>(container);	// 0130 Coins
 
-			// Input 0150
-			//SystemInstallHelper.Install<PointerDownSystem>(container);	// 0150 Input
-			//SystemInstallHelper.Install<PointerDragSystem>(container);	// 0150 Input
+			// Combat 0200
+			SystemInstallHelper.Install<PerformMeleeAttackSystem>(container);	// 0200 Combat
+			SystemInstallHelper.Install<PerformRangedAttackSystem>(container);	// 0200 Combat
 
-			// Input 0170
-			SystemInstallHelper.Install<PointerUpSystem>(container);	// 0170 Input
+			// Combat 0300
+			SystemInstallHelper.Install<CompletePerformingAttackSystem>(container);	// 0300 Combat
 
 			// Input 1000
 			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
+
+			// Combat 1500
+			SystemInstallHelper.Install<PerformAttackCleanupSystem>(container);	// 1500 Combat
 		 }
 
 	}

@@ -8,24 +8,22 @@
 //------------------------------------------------------------------------------
 using JCMG.EntitasRedux.Commands;
 using Ecs.Commands.Command;
-using Ecs.Extensions.UidGenerator;
 using System;
 using UnityEngine;
 using Game.Utils.Units;
 using Ecs.Commands.Command.Input;
 using Ecs.Commands.Command.Income;
-using Ecs.Commands.Command.Buildings;
-using Db.Buildings;
+using Ecs.Commands.Command.Combat;
+using Ecs.Extensions.UidGenerator;
 
 namespace Ecs.Commands
 {
     public static partial class CommandBufferExtensions
     {
-        public static void DealDamage(this ICommandBuffer commandBuffer, Uid damageFromUnitWithUid, Single damage)
+        public static void MouseDown(this ICommandBuffer commandBuffer, Int32 button)
         {
-            ref var command = ref commandBuffer.Create<DealDamageCommand>();
-            command.DamageFromUnitWithUid = damageFromUnitWithUid;
-            command.Damage = damage;
+            ref var command = ref commandBuffer.Create<MouseDownCommand>();
+            command.Button = button;
         }
 
         public static void SpawnUnit(this ICommandBuffer commandBuffer, Vector3 position, Quaternion rotation, EUnitType unitType, Boolean isPlayerUnit)
@@ -63,28 +61,28 @@ namespace Ecs.Commands
             command.IsPlayer = isPlayer;
         }
 
-        public static void BuildEnemyBuilding(this ICommandBuffer commandBuffer, Uid buildingSlotUid, EBuildingType buildingType)
+        public static void CompletePerformingAttack(this ICommandBuffer commandBuffer, Uid attackerUid)
         {
-            ref var command = ref commandBuffer.Create<BuildEnemyBuildingCommand>();
-            command.BuildingSlotUid = buildingSlotUid;
-            command.BuildingType = buildingType;
+            ref var command = ref commandBuffer.Create<CompletePerformingAttackCommand>();
+            command.AttackerUid = attackerUid;
         }
 
-        public static void EnterBuildingMode(this ICommandBuffer commandBuffer, EBuildingType buildingType)
+        public static void PerformAttack(this ICommandBuffer commandBuffer, Uid attacker)
         {
-            ref var command = ref commandBuffer.Create<EnterBuildingModeCommand>();
-            command.BuildingType = buildingType;
+            ref var command = ref commandBuffer.Create<PerformAttackCommand>();
+            command.Attacker = attacker;
         }
 
-        public static void ExitBuildingMode(this ICommandBuffer commandBuffer)
+        public static void PlayerBasicAttack(this ICommandBuffer commandBuffer)
         {
-            ref var command = ref commandBuffer.Create<ExitBuildingModeCommand>();
+            ref var command = ref commandBuffer.Create<PlayerBasicAttackCommand>();
         }
 
-        public static void MouseDown(this ICommandBuffer commandBuffer, Int32 button)
+        public static void TakeDamage(this ICommandBuffer commandBuffer, Int32 weaponHash, Int32 targetHash)
         {
-            ref var command = ref commandBuffer.Create<MouseDownCommand>();
-            command.Button = button;
+            ref var command = ref commandBuffer.Create<TakeDamageCommand>();
+            command.WeaponHash = weaponHash;
+            command.TargetHash = targetHash;
         }
     }
 }

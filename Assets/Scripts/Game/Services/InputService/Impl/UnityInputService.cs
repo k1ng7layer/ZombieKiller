@@ -8,13 +8,16 @@ namespace Game.Services.InputService.Impl
     {
         public Vector3 InputDirection { get; private set; }
         public event Action<int> MouseButtonDown;
+        public event Action BasicAttackPressed;
 
         public Vector3 MousePosition => Input.mousePosition;
 
         public void Tick()
         {
             if (Input.GetMouseButtonDown(0))
-                MouseButtonDown?.Invoke(0);
+            {
+                BasicAttackPressed?.Invoke();
+            }
             
             if (Input.GetMouseButtonDown(1))
                 MouseButtonDown?.Invoke(1);

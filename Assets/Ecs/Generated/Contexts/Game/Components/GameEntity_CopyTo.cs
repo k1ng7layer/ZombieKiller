@@ -26,14 +26,6 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
-		else if (component is Ecs.Game.Components.MoveDirectionComponent MoveDirection)
-		{
-			CopyMoveDirectionTo(MoveDirection);
-		}
-		else if (component is Ecs.Game.Components.CanMoveComponent CanMove)
-		{
-			IsCanMove = true;
-		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
@@ -62,6 +54,10 @@ public partial class GameEntity
 		{
 			CopyPrefabTo(Prefab);
 		}
+		else if (component is Ecs.Game.Components.CanMoveComponent CanMove)
+		{
+			IsCanMove = true;
+		}
 		else if (component is Ecs.Game.Components.RotationComponent Rotation)
 		{
 			CopyRotationTo(Rotation);
@@ -69,6 +65,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.TransformComponent Transform)
 		{
 			CopyTransformTo(Transform);
+		}
+		else if (component is Ecs.Game.Components.MoveDirectionComponent MoveDirection)
+		{
+			CopyMoveDirectionTo(MoveDirection);
 		}
 		else if (component is Ecs.Game.Components.VisibleComponent Visible)
 		{
@@ -82,21 +82,53 @@ public partial class GameEntity
 		{
 			CopyHoveredObjectTo(HoveredObject);
 		}
+		else if (component is Ecs.Game.Components.OwnerComponent Owner)
+		{
+			CopyOwnerTo(Owner);
+		}
 		else if (component is Ecs.Game.Components.IncomeComponent Income)
 		{
 			CopyIncomeTo(Income);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.HealthComponent Health)
+		{
+			CopyHealthTo(Health);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.MagicDamageComponent MagicDamage)
+		{
+			CopyMagicDamageTo(MagicDamage);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.PhysicalDamageComponent PhysicalDamage)
+		{
+			CopyPhysicalDamageTo(PhysicalDamage);
+		}
+		else if (component is Ecs.Game.Components.Combat.WeaponComponent Weapon)
+		{
+			CopyWeaponTo(Weapon);
+		}
+		else if (component is Ecs.Game.Components.Combat.AttackTargetsComponent AttackTargets)
+		{
+			CopyAttackTargetsTo(AttackTargets);
+		}
+		else if (component is Ecs.Game.Components.Combat.PerformingAttackComponent PerformingAttack)
+		{
+			IsPerformingAttack = true;
+		}
+		else if (component is Ecs.Game.Components.Combat.EquippedWeaponComponent EquippedWeapon)
+		{
+			CopyEquippedWeaponTo(EquippedWeapon);
 		}
 		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
 		{
 			CopyCameraModeTo(CameraMode);
 		}
-		else if (component is Ecs.Game.Components.Camera.VirtualCameraComponent VirtualCamera)
-		{
-			IsVirtualCamera = true;
-		}
 		else if (component is Ecs.Game.Components.Camera.CameraMoveComponent CameraMove)
 		{
 			IsCameraMove = true;
+		}
+		else if (component is Ecs.Game.Components.Camera.VirtualCameraComponent VirtualCamera)
+		{
+			IsVirtualCamera = true;
 		}
 		else if (component is Ecs.Game.Components.Camera.CameraComponent Camera)
 		{

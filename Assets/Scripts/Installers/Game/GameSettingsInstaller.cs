@@ -1,13 +1,11 @@
-using Db.Buildings;
-using Db.Buildings.Impl;
 using Db.Camera;
 using Db.Camera.Impl;
-using Db.Coins;
-using Db.Coins.Impl;
 using Db.Player;
 using Db.Player.Impl;
 using Db.Prefabs;
 using Db.Prefabs.Impl;
+using Db.Weapon;
+using Db.Weapon.Impl;
 using UnityEngine;
 using Zenject;
 
@@ -17,18 +15,16 @@ namespace Installers.Game
     public class GameSettingsInstaller : ScriptableObjectInstaller
     {
         [SerializeField] private PrefabsBase prefabsBase;
-        [SerializeField] private BuildingSettingsBase buildingSettingsBase;
         [SerializeField] private CameraBase cameraBase;
-        [SerializeField] private DropCoinsFromUnitBase dropCoinsFromUnitBase;
         [SerializeField] private PlayerSettings playerSettings;
+        [SerializeField] private WeaponBase weaponBase;
 
         public override void InstallBindings()
         {
             Container.Bind<IPrefabsBase>().FromInstance(prefabsBase);
-            Container.Bind<IBuildingSettingsBase>().FromInstance(buildingSettingsBase);
             Container.Bind<ICameraBase>().FromInstance(cameraBase);
-            Container.Bind<IDropCoinsFromUnitsBase>().FromInstance(dropCoinsFromUnitBase);
             Container.Bind<IPlayerSettings>().FromInstance(playerSettings);
+            Container.Bind<IWeaponBase>().FromInstance(weaponBase);
         }
     }
 }
