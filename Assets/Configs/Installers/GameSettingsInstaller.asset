@@ -16,3 +16,4 @@ MonoBehaviour:
   cameraBase: {fileID: 11400000, guid: f7a3e81b87488e54db5bc00f204aeba7, type: 2}
   playerSettings: {fileID: 11400000, guid: f55ac37274fbc2c41bdcda26294a240c, type: 2}
   weaponBase: {fileID: 11400000, guid: f2e77455162fffc44944b7adf754f231, type: 2}
+  enemyParamsBase: {fileID: 11400000, guid: dad79fbaa9eda7d4ba1079cd22cfaeee, type: 2}

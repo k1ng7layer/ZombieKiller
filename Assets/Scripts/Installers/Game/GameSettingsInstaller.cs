@@ -1,5 +1,7 @@
 using Db.Camera;
 using Db.Camera.Impl;
+using Db.Enemies;
+using Db.Enemies.Impl;
 using Db.Player;
 using Db.Player.Impl;
 using Db.Prefabs;
@@ -18,6 +20,7 @@ namespace Installers.Game
         [SerializeField] private CameraBase cameraBase;
         [SerializeField] private PlayerSettings playerSettings;
         [SerializeField] private WeaponBase weaponBase;
+        [SerializeField] private EnemyParamsBase enemyParamsBase;
 
         public override void InstallBindings()
         {
@@ -25,6 +28,7 @@ namespace Installers.Game
             Container.Bind<ICameraBase>().FromInstance(cameraBase);
             Container.Bind<IPlayerSettings>().FromInstance(playerSettings);
             Container.Bind<IWeaponBase>().FromInstance(weaponBase);
+            Container.Bind<IEnemyParamsBase>().FromInstance(enemyParamsBase);
         }
     }
 }

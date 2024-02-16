@@ -1,5 +1,4 @@
-﻿using Game.Ui.Building;
-using Game.Ui.Income;
+﻿using Game.Ui.Income;
 using Game.Ui.Input;
 using SimpleUi;
 

@@ -1,7 +1,10 @@
-﻿using JCMG.EntitasRedux;
+﻿using Ecs.Commands;
+using Game.Utils;
+using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Game.Systems.Initialize
 {
@@ -22,7 +25,7 @@ namespace Ecs.Game.Systems.Initialize
 
         public void Initialize()
         {
-            
+            _commandBuffer.SpawnEnemy(EEnemyType.Type1, Vector3.zero, Quaternion.identity);
         }
     }
 }

@@ -738,7 +738,7 @@ MonoBehaviour:
   virtualCameraView: {fileID: 606597323}
   physicalCameraView: {fileID: 910429883}
   startCameraPosition: {fileID: 2056382328}
-  playerView: {fileID: 166880768}
+  unitView: {fileID: 166880768}
 --- !u!4 &865660130
 Transform:
   m_ObjectHideFlags: 0

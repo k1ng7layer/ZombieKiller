@@ -7,9 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using JCMG.EntitasRedux.Commands;
+using Ecs.Commands.Systems.Spawn;
+using Game.Utils;
+using UnityEngine;
 using Ecs.Commands.Command;
 using System;
-using UnityEngine;
 using Game.Utils.Units;
 using Ecs.Commands.Command.Input;
 using Ecs.Commands.Command.Income;
@@ -20,6 +22,14 @@ namespace Ecs.Commands
 {
     public static partial class CommandBufferExtensions
     {
+        public static void SpawnEnemy(this ICommandBuffer commandBuffer, EEnemyType enemyType, Vector3 position, Quaternion rotation)
+        {
+            ref var command = ref commandBuffer.Create<SpawnEnemyCommand>();
+            command.EnemyType = enemyType;
+            command.Position = position;
+            command.Rotation = rotation;
+        }
+
         public static void MouseDown(this ICommandBuffer commandBuffer, Int32 button)
         {
             ref var command = ref commandBuffer.Create<MouseDownCommand>();
