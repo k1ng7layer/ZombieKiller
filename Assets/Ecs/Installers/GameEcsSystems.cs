@@ -29,6 +29,9 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<InitializePlayerSystem>(container);	// 0050 Initialization
 			SystemInstallHelper.Install<CameraInitializeSystem>(container);	// 0060 Initialization
 
+			// Spawn 0500
+			SystemInstallHelper.Install<SpawnEnemySystem>(container);	// 0500 Spawn
+
 			// Combat 0700
 			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0700 Combat
 

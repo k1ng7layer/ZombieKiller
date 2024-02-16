@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: b181abd3545fe7545bfd8726fbb52024
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: 4222210093195738862
@@ -112,16 +112,128 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'AttackLeft_Catcher_S' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'AttackRight_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'BackWalk_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_L'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_R'
+      has translation animation that will be discarded.\n\nClip 'Death_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_L'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'Def_Catcher_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\nClip 'GunLeft_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_L'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'GunRight_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'Hit_Catcher_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'Idle_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'Jump_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'LeftWalk_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_L'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_R'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Ankle_L'
+      has translation animation that will be discarded.\n\nClip 'Rage_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\nClip 'RightWalk_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_L'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_R'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Ankle_R'
+      has translation animation that will be discarded.\n\nClip 'Run_Catcher_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Ankle_R'
+      has translation animation that will be discarded.\n\nClip 'Walk_Catcher_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Catcher_S:prefix_Root_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Root_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Chest_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_L'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Catcher_S:prefix_Head_M'
+      has translation animation that will be discarded.\n\t'Catcher_S:prefix_Wrist_R'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -132,7 +244,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -141,6 +253,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -152,6 +265,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -174,8 +288,307 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Catcher_S:prefix_Root
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Spine1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Chest_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Shoulder_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Shoulder_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Catcher_S:prefix_Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Catcher_S(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "Catcher_S:\u0421atcher_S"
+      parentName: Catcher_S(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Catcher_S:prefix_Root
+      parentName: Catcher_S(Clone)
+      position: {x: 0, y: 0, z: 0.0014289294}
+      rotation: {x: -0.015486364, y: -0, z: -0, w: 0.9998801}
+      scale: {x: 1, y: 0.99999976, z: 0.99999976}
+    - name: Catcher_S:prefix_Root_M
+      parentName: Catcher_S:prefix_Root
+      position: {x: -0, y: 0.0042564194, z: -0.001402091}
+      rotation: {x: 0.039367855, y: -0.70601004, z: -0.03936785, w: 0.70601004}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+    - name: Catcher_S:prefix_Spine1_M
+      parentName: Catcher_S:prefix_Root_M
+      position: {x: -0.00024367118, y: 0.00097491284, z: 6.703999e-10}
+      rotation: {x: -0.0000000018626454, y: -0, z: 0.10518979, w: 0.9944522}
+      scale: {x: 1.0000011, y: 1.0000001, z: 1.0000006}
+    - name: Catcher_S:prefix_Chest_M
+      parentName: Catcher_S:prefix_Spine1_M
+      position: {x: 0.000094743475, y: 0.0008260914, z: 0.000002734067}
+      rotation: {x: -0.0000000049910565, y: -0.000000029474512, z: 0.01808025, w: 0.9998366}
+      scale: {x: 0.9999991, y: 1.0000001, z: 0.99999946}
+    - name: Catcher_S:prefix_Scapula_L
+      parentName: Catcher_S:prefix_Chest_M
+      position: {x: 0.000043963268, y: 0.0011304745, z: 0.0006790333}
+      rotation: {x: 0.7052546, y: -0.052541506, z: -0.06503191, w: 0.70400727}
+      scale: {x: 1.0000004, y: 1.0000004, z: 0.99999964}
+    - name: Catcher_S:prefix_Shoulder_L
+      parentName: Catcher_S:prefix_Scapula_L
+      position: {x: 2.2257991e-10, y: 0.00086257915, z: -4.763464e-10}
+      rotation: {x: 0.027161444, y: -0.04131722, z: 0.01471629, w: 0.9986684}
+      scale: {x: 0.99999934, y: 0.99999994, z: 1.0000001}
+    - name: Catcher_S:prefix_Elbow_L
+      parentName: Catcher_S:prefix_Shoulder_L
+      position: {x: -6.512007e-11, y: 0.0025529931, z: 0.0000000016935094}
+      rotation: {x: -0.017751439, y: 0.045862406, z: -0.037059728, w: 0.99810225}
+      scale: {x: 1.0000014, y: 1.0000002, z: 0.99999964}
+    - name: Catcher_S:prefix_Wrist_L
+      parentName: Catcher_S:prefix_Elbow_L
+      position: {x: -0.0000000016019879, y: 0.0026243525, z: 0.0000000010559178}
+      rotation: {x: 0.08611605, y: 0.084028795, z: -0.040659007, w: 0.9919023}
+      scale: {x: 0.9999992, y: 1.0000012, z: 0.99999964}
+    - name: Catcher_S:prefix_MiddleFinger1_L
+      parentName: Catcher_S:prefix_Wrist_L
+      position: {x: 0.0000000010192813, y: 0.0010682858, z: 0.0000000025965132}
+      rotation: {x: 0.0027974762, y: -0.03906458, z: 0.11292351, w: 0.9928316}
+      scale: {x: 1.0000014, y: 0.99999994, z: 1.0000004}
+    - name: Catcher_S:prefix_MiddleFinger4_L
+      parentName: Catcher_S:prefix_MiddleFinger1_L
+      position: {x: 0.0000000058684497, y: 0.0007340221, z: 5.5138994e-11}
+      rotation: {x: 0.000000029811734, y: 4.1633363e-17, z: -1.387779e-17, w: 1}
+      scale: {x: 1, y: 1.000001, z: 1}
+    - name: Catcher_S:prefix_Neck_M
+      parentName: Catcher_S:prefix_Chest_M
+      position: {x: -0.00008792483, y: 0.001152206, z: -0.0000000018058193}
+      rotation: {x: -0.0015839696, y: -0.0007324651, z: -0.26144803, w: 0.965216}
+      scale: {x: 0.9999997, y: 0.99999934, z: 1.0000006}
+    - name: Catcher_S:prefix_Head_M
+      parentName: Catcher_S:prefix_Neck_M
+      position: {x: 0.00006801443, y: 0.0012758843, z: -0.000008813662}
+      rotation: {x: 0.0014861963, y: 0.00091473444, z: 0.14542773, w: 0.9893673}
+      scale: {x: 1.0000002, y: 1.0000002, z: 0.99999917}
+    - name: Catcher_S:prefix_HeadEnd_M
+      parentName: Catcher_S:prefix_Head_M
+      position: {x: -0.0000000025471898, y: 0.0033698685, z: -0.0000000044063886}
+      rotation: {x: 3.469447e-18, y: 4.3368087e-19, z: -1.5046328e-36, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Catcher_S:prefix_Scapula_R
+      parentName: Catcher_S:prefix_Chest_M
+      position: {x: 0.00004396453, y: 0.0011304754, z: -0.0006790299}
+      rotation: {x: -0.70479095, y: 0.057280593, z: -0.06978052, w: 0.70364714}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000004}
+    - name: Catcher_S:prefix_Shoulder_R
+      parentName: Catcher_S:prefix_Scapula_R
+      position: {x: 2.7207467e-10, y: 0.00086258154, z: -0.0000000038345114}
+      rotation: {x: 0.022937158, y: -0.95118976, z: 0.020709688, w: -0.3070554}
+      scale: {x: 0.99999934, y: 0.9999998, z: 0.9999997}
+    - name: Catcher_S:prefix_Elbow_R
+      parentName: Catcher_S:prefix_Shoulder_R
+      position: {x: 0.000000004474288, y: 0.0025530122, z: -0.0000000043687063}
+      rotation: {x: 0.031868126, y: -0.88524455, z: -0.025940252, w: -0.46330732}
+      scale: {x: 1.0000005, y: 1.0000007, z: 0.9999996}
+    - name: Catcher_S:prefix_Wrist_R
+      parentName: Catcher_S:prefix_Elbow_R
+      position: {x: -0.000000004637305, y: 0.0026224907, z: -0.0000000019337876}
+      rotation: {x: -0.022150481, y: -0.2898428, z: 0.092623085, w: 0.9523243}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1.0000013}
+    - name: Catcher_S:prefix_MiddleFinger1_R
+      parentName: Catcher_S:prefix_Wrist_R
+      position: {x: 7.3560574e-10, y: 0.0010682853, z: -0.0000000048686646}
+      rotation: {x: 0.084472045, y: -0.28812453, z: -0.07499389, w: 0.95090735}
+      scale: {x: 0.9999996, y: 1.0000002, z: 1.0000007}
+    - name: Catcher_S:prefix_MiddleFinger4_R
+      parentName: Catcher_S:prefix_MiddleFinger1_R
+      position: {x: -0.0000000051409863, y: 0.0007340201, z: -0.0000000013846468}
+      rotation: {x: 1.15249156e-17, y: -0.0000001390388, z: 0.00000047998054, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Catcher_S:prefix_Hip_R
+      parentName: Catcher_S:prefix_Root_M
+      position: {x: 0.00012183766, y: -0.00021329877, z: -0.0013106731}
+      rotation: {x: 0.8420607, y: 0.032817207, z: -0.53833246, w: -0.0074121207}
+      scale: {x: 1.0000005, y: 1.0000039, z: 1.0000025}
+    - name: Catcher_S:prefix_Knee_R
+      parentName: Catcher_S:prefix_Hip_R
+      position: {x: -9.0898455e-10, y: 0.0019632464, z: -0.000000010734168}
+      rotation: {x: 0.07830149, y: 0.47165194, z: 0.11020919, w: 0.87135947}
+      scale: {x: 1.0000018, y: 0.99999815, z: 0.9999991}
+    - name: Catcher_S:prefix_Ankle_R
+      parentName: Catcher_S:prefix_Knee_R
+      position: {x: 0.0000000055566187, y: 0.0017043474, z: 0.0000000047651763}
+      rotation: {x: -0.67995733, y: -0.7135366, z: -0.056595303, w: 0.15912408}
+      scale: {x: 0.99999994, y: 1.0000006, z: 1.0000005}
+    - name: Catcher_S:prefix_Toes_R
+      parentName: Catcher_S:prefix_Ankle_R
+      position: {x: -1.6778949e-10, y: 0.00078778045, z: -0.0000000010722133}
+      rotation: {x: -0.102539666, y: 0.9920189, z: -0.029898869, w: 0.06700879}
+      scale: {x: 1.0000008, y: 0.9999996, z: 1.0000008}
+    - name: Catcher_S:prefix_ToesEnd_R
+      parentName: Catcher_S:prefix_Toes_R
+      position: {x: 0.0000000010819794, y: 0.00074499875, z: -0.000000002852616}
+      rotation: {x: -0.0540834, y: 0.0000017547605, z: 0.4774384, w: 0.8769992}
+      scale: {x: 0.9999993, y: 1.0000002, z: 0.99999964}
+    - name: Catcher_S:prefix_Hip_L
+      parentName: Catcher_S:prefix_Root_M
+      position: {x: 0.000121837125, y: -0.0002132989, z: 0.0013106717}
+      rotation: {x: 0.99943274, y: 0.02369391, z: 0.0015272211, w: 0.023885626}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000057}
+    - name: Catcher_S:prefix_Knee_L
+      parentName: Catcher_S:prefix_Hip_L
+      position: {x: -0.0000000013944287, y: 0.0019632482, z: 0.0000000049172475}
+      rotation: {x: 0.0026648955, y: 0.0010082711, z: 0.13516751, w: 0.9908187}
+      scale: {x: 0.9999992, y: 1.0000015, z: 0.9999991}
+    - name: Catcher_S:prefix_Ankle_L
+      parentName: Catcher_S:prefix_Knee_L
+      position: {x: -0.0000000018453319, y: 0.0017043371, z: -3.5624478e-10}
+      rotation: {x: -0.01633261, y: -0.014638058, z: -0.68211377, w: 0.7309171}
+      scale: {x: 0.99999946, y: 1.000001, z: 0.9999996}
+    - name: Catcher_S:prefix_Toes_L
+      parentName: Catcher_S:prefix_Ankle_L
+      position: {x: 4.3106907e-10, y: 0.0007877861, z: 0.000000008787743}
+      rotation: {x: -0.015553445, y: -0.053099588, z: -0.10567358, w: 0.9928604}
+      scale: {x: 0.99999994, y: 0.99999934, z: 1.000001}
+    - name: Catcher_S:prefix_ToesEnd_L
+      parentName: Catcher_S:prefix_Toes_L
+      position: {x: -0.000000003882295, y: 0.0007450025, z: 0.000000006077872}
+      rotation: {x: 4.1633363e-17, y: 1.1555581e-33, z: 2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -183,17 +596,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

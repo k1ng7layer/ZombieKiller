@@ -8,6 +8,7 @@
         Building,
         Coins,
         Input,
-        Combat
+        Combat,
+        Spawn
     }
 }

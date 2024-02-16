@@ -1,6 +1,5 @@
-﻿using Db.Buildings;
+﻿
 using Ecs.Extensions.UidGenerator;
-using Game.Utils.Units;
 using UnityEngine;
 
 namespace Ecs.Game.Extensions

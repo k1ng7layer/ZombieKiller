@@ -13,11 +13,5 @@ MonoBehaviour:
   m_Name: PrefabsBase
   m_EditorClassIdentifier: 
   prefabs:
-  - name: MeleeUnit
-    gameObject: {fileID: 7315357447069603492, guid: 3afc84665cb822e4aa46d8f5bd497f15, type: 3}
-  - name: RangeUnit
-    gameObject: {fileID: 7069842999300141378, guid: ef6b8a1b63ff9d34b9234cefd4e00b3f, type: 3}
-  - name: Farm
-    gameObject: {fileID: 9181108842223827112, guid: 85771f59145fc7b43aeba66a4f203d23, type: 3}
-  - name: House
-    gameObject: {fileID: 9181108842223827112, guid: c17ebab12fce7c3428abdc8d83cd36c0, type: 3}
+  - name: Type1
+    gameObject: {fileID: 8321489797176409459, guid: f25a0a053cc6888449476f8a00ab7db7, type: 3}

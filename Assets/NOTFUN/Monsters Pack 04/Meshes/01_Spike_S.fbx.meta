@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 0b5ad11d3524d894082bef2c42c21118
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -5158140335520115830
@@ -64,16 +64,105 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'AttackLeft_Spike_S' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Small_Spike:Chest_M' has translation animation
+      that will be discarded.\n\t'Small_Spike:Chest_M' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Small_Spike:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\nClip 'AttackRight_Spike_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Death_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\nClip 'GunLeft_Spike_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\nClip 'GunRight_Spike_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Ankle_R'
+      has translation animation that will be discarded.\n\nClip 'Hit_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Idle_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Wrist_R1'
+      has translation animation that will be discarded.\n\t'Small_Spike:Head_M' has
+      translation animation that will be discarded.\n\nClip 'Jump_Spike_S' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M' has
+      translation animation that will be discarded.\n\t'Small_Spike:Chest_M' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Rage_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Run_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Head_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Ankle_R'
+      has translation animation that will be discarded.\n\nClip 'Walk_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Wrist_R1'
+      has translation animation that will be discarded.\n\t'Small_Spike:Head_M' has
+      translation animation that will be discarded.\n\t'Small_Spike:Wrist_R' has
+      translation animation that will be discarded.\n\nClip 'WalkBack_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Wrist_R1'
+      has translation animation that will be discarded.\n\t'Small_Spike:Head_M' has
+      translation animation that will be discarded.\n\t'Small_Spike:Wrist_R' has
+      translation animation that will be discarded.\n\nClip 'WalkLeft_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Wrist_R1'
+      has translation animation that will be discarded.\n\t'Small_Spike:Head_M' has
+      translation animation that will be discarded.\n\t'Small_Spike:Wrist_R' has
+      translation animation that will be discarded.\n\t'Small_Spike:Ankle_R1' has
+      translation animation that will be discarded.\n\nClip 'WalkRight_Spike_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Spike:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Spike:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Spike:Wrist_R1'
+      has translation animation that will be discarded.\n\t'Small_Spike:Head_M' has
+      translation animation that will be discarded.\n\t'Small_Spike:Wrist_R' has
+      translation animation that will be discarded.\n\t'Small_Spike:Ankle_R' has
+      translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -84,7 +173,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -93,6 +182,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -104,6 +194,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -126,8 +217,299 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Small_Spike:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Hip_R1
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Knee_R1
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Ankle_R1
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Spine1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Shoulder_R1
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Shoulder_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Elbow_R1
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Wrist_R1
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Toes_R1
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Spike:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: 01_Spike_S(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Spike:Spike_S
+      parentName: 01_Spike_S(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Spike:Root
+      parentName: 01_Spike_S(Clone)
+      position: {x: -0.000115585, y: -0.00033772, z: 0.00018505}
+      rotation: {x: -0.006421224, y: -0.011435799, z: -0.011435662, w: 0.9998486}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Small_Spike:Root_M
+      parentName: Small_Spike:Root
+      position: {x: -0.0000019689646, y: 0.004858686, z: -0.00025225722}
+      rotation: {x: 0.17100404, y: -0.6777883, z: -0.15892652, w: 0.69721097}
+      scale: {x: 0.9999993, y: 0.99999976, z: 0.99999976}
+    - name: Small_Spike:Spine1_M
+      parentName: Small_Spike:Root_M
+      position: {x: -0.00047205627, y: 0.0006562054, z: -0.000000002553169}
+      rotation: {x: 0.0000000372529, y: -0.000000059604638, z: 0.29001653, w: 0.95702165}
+      scale: {x: 1.000001, y: 1.0000005, z: 0.9999998}
+    - name: Small_Spike:Chest_M
+      parentName: Small_Spike:Spine1_M
+      position: {x: 0.000097644755, y: 0.0005124386, z: -0.0000087736635}
+      rotation: {x: -0.00000001477124, y: -0.000000026097275, z: 0.014743416, w: 0.99989134}
+      scale: {x: 0.999999, y: 1.0000002, z: 0.9999999}
+    - name: Small_Spike:Scapula_R1
+      parentName: Small_Spike:Chest_M
+      position: {x: 0.00008231982, y: 0.0009387219, z: 0.0004725014}
+      rotation: {x: 0.70607615, y: -0.04406469, z: -0.06831984, w: 0.70345384}
+      scale: {x: 1.000001, y: 1.0000005, z: 0.9999999}
+    - name: Small_Spike:Shoulder_R1
+      parentName: Small_Spike:Scapula_R1
+      position: {x: 0.0000000039697174, y: 0.0007181741, z: -0.000000002862402}
+      rotation: {x: -0.0023345342, y: 0.030648623, z: 0.05375501, w: 0.998081}
+      scale: {x: 1.000001, y: 0.99999934, z: 1.000001}
+    - name: Small_Spike:Elbow_R1
+      parentName: Small_Spike:Shoulder_R1
+      position: {x: -0.000000002076809, y: 0.0019792025, z: -0.0000000021308482}
+      rotation: {x: 0.0012742176, y: -0.049292244, z: -0.07056592, w: 0.99628764}
+      scale: {x: 1.0000007, y: 1.0000019, z: 0.999999}
+    - name: Small_Spike:Wrist_R1
+      parentName: Small_Spike:Elbow_R1
+      position: {x: 0.000000007645692, y: 0.0019402292, z: 0.000000005497325}
+      rotation: {x: 0.0029998505, y: 0.01900055, z: 0.092576355, w: 0.99551976}
+      scale: {x: 0.9999991, y: 0.99999934, z: 0.9999999}
+    - name: Small_Spike:MiddleFinger1_R1
+      parentName: Small_Spike:Wrist_R1
+      position: {x: -0.00000000373254, y: 0.0010105934, z: 3.6267804e-13}
+      rotation: {x: 0.09776073, y: -0.0019999682, z: 0.06594364, w: 0.99302083}
+      scale: {x: 0.9999996, y: 1.0000001, z: 1.0000007}
+    - name: Small_Spike:MiddleFinger4_R1
+      parentName: Small_Spike:MiddleFinger1_R1
+      position: {x: 0.0000000061049, y: 0.0009027563, z: -0.0000000012124687}
+      rotation: {x: -0.000000075565495, y: -0.0000000292272, z: -0.00000003837471, w: 1}
+      scale: {x: 1.000001, y: 1.0000004, z: 1}
+    - name: Small_Spike:Neck_M
+      parentName: Small_Spike:Chest_M
+      position: {x: -0.00016464389, y: 0.0019830326, z: -9.367955e-10}
+      rotation: {x: -0.000000012504458, y: 0.00000010551786, z: -0.0707299, w: 0.99749553}
+      scale: {x: 0.9999993, y: 0.99999994, z: 1}
+    - name: Small_Spike:Head_M
+      parentName: Small_Spike:Neck_M
+      position: {x: 0.00006300867, y: 0.0014203081, z: -0.000019417728}
+      rotation: {x: -8.6462115e-10, y: -0.0000001323175, z: -0.008374206, w: 0.999965}
+      scale: {x: 1.0000005, y: 0.99999976, z: 1.0000007}
+    - name: Small_Spike:HeadEnd_M
+      parentName: Small_Spike:Head_M
+      position: {x: -0.000000001788524, y: 0.004144533, z: -0.0000000014503854}
+      rotation: {x: 0, y: 2.4394549e-18, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Spike:Scapula_R
+      parentName: Small_Spike:Chest_M
+      position: {x: 0.000082317936, y: 0.00093869725, z: -0.00047249979}
+      rotation: {x: -0.705588, y: 0.048802786, z: -0.0730763, w: 0.7031527}
+      scale: {x: 1.0000004, y: 0.99999934, z: 1.000001}
+    - name: Small_Spike:Shoulder_R
+      parentName: Small_Spike:Scapula_R
+      position: {x: 0.0000000019913358, y: 0.00071817474, z: 0.0000000010783409}
+      rotation: {x: -0.045411535, y: 0.84335685, z: -0.028857814, w: -0.5346534}
+      scale: {x: 1.0000002, y: 1.0000011, z: 1.0000008}
+    - name: Small_Spike:Elbow_R
+      parentName: Small_Spike:Shoulder_R
+      position: {x: 8.654385e-10, y: 0.001979208, z: 7.558269e-10}
+      rotation: {x: -0.012911501, y: -0.81336457, z: 0.06938716, w: 0.5774572}
+      scale: {x: 1.0000001, y: 1.0000005, z: 0.9999992}
+    - name: Small_Spike:Wrist_R
+      parentName: Small_Spike:Elbow_R
+      position: {x: -0.000000001716867, y: 0.0019402249, z: 0.0000000049078204}
+      rotation: {x: 0.02474359, y: -0.36963764, z: 0.082073994, w: -0.92521334}
+      scale: {x: 1.0000006, y: 1.0000019, z: 1.0000004}
+    - name: Small_Spike:MiddleFinger1_R
+      parentName: Small_Spike:Wrist_R
+      position: {x: -0.0000000029119132, y: 0.0010105879, z: 0.0000000048594133}
+      rotation: {x: -0.117284045, y: -0.06628536, z: 0.0122591965, w: -0.99080795}
+      scale: {x: 0.9999996, y: 0.9999986, z: 1.0000012}
+    - name: Small_Spike:MiddleFinger4_R
+      parentName: Small_Spike:MiddleFinger1_R
+      position: {x: 0.0000000059309366, y: 0.00090275466, z: -0.0000000021270987}
+      rotation: {x: 1.3877788e-17, y: 4.510281e-17, z: -6.259273e-34, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Spike:Hip_R
+      parentName: Small_Spike:Root_M
+      position: {x: 0.00023603285, y: -0.00018858089, z: -0.0010716068}
+      rotation: {x: 0.9824512, y: 0.12829246, z: 0.13534774, w: 0.0034348369}
+      scale: {x: 1.0000008, y: 1.0000004, z: 1.0000013}
+    - name: Small_Spike:Knee_R
+      parentName: Small_Spike:Hip_R
+      position: {x: 0.0000000019915498, y: 0.0017666336, z: 0.000000002324363}
+      rotation: {x: 0.0000007506458, y: -0.0000015199763, z: 0.0000014007088, w: 1}
+      scale: {x: 1.0000014, y: 1.0000007, z: 0.9999991}
+    - name: Small_Spike:Ankle_R
+      parentName: Small_Spike:Knee_R
+      position: {x: 0.0000000029093525, y: 0.002123902, z: 0.0000000021316573}
+      rotation: {x: 0.63730794, y: 0.7586226, z: 0.102065615, w: 0.088954896}
+      scale: {x: 0.9999997, y: 1.0000008, z: 0.9999996}
+    - name: Small_Spike:Toes_R
+      parentName: Small_Spike:Ankle_R
+      position: {x: 2.4364497e-10, y: 0.00096888095, z: 0.0000000029954752}
+      rotation: {x: 0.106595315, y: -0.99404347, z: 0.006712044, w: 0.021681113}
+      scale: {x: 1.0000001, y: 0.9999992, z: 0.9999997}
+    - name: Small_Spike:ToesEnd_R
+      parentName: Small_Spike:Toes_R
+      position: {x: 0.0000000022320785, y: 0.0009162649, z: -0.000000005813594}
+      rotation: {x: 0.00000028203792, y: -0.00000049651624, z: -0.000000058066636, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000011}
+    - name: Small_Spike:Hip_R1
+      parentName: Small_Spike:Root_M
+      position: {x: 0.00023602946, y: -0.00018857802, z: 0.0010716093}
+      rotation: {x: 0.9910597, y: 0.13168038, z: -0.008085194, w: -0.019892776}
+      scale: {x: 1.0000013, y: 1, z: 0.9999999}
+    - name: Small_Spike:Knee_R1
+      parentName: Small_Spike:Hip_R1
+      position: {x: 0.0000000031334009, y: 0.0017666372, z: -0.0000000014917583}
+      rotation: {x: -0.0000005457549, y: -0.00000016437839, z: -0.000001132488, w: 1}
+      scale: {x: 0.99999994, y: 1.0000006, z: 1.0000004}
+    - name: Small_Spike:Ankle_R1
+      parentName: Small_Spike:Knee_R1
+      position: {x: -0.0000000040598267, y: 0.0021161567, z: -0.0000000013702652}
+      rotation: {x: -0.019404417, y: -0.009194641, z: -0.6413599, w: 0.76693964}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999934}
+    - name: Small_Spike:Toes_R1
+      parentName: Small_Spike:Ankle_R1
+      position: {x: 0.0000000015070959, y: 0.00096888095, z: -0.0000000016507433}
+      rotation: {x: -0.006860137, y: -0.023050755, z: -0.10658595, w: 0.9940126}
+      scale: {x: 1.0000005, y: 0.99999934, z: 1.0000004}
+    - name: Small_Spike:ToesEnd_R1
+      parentName: Small_Spike:Toes_R1
+      position: {x: 6.667092e-10, y: 0.0009162695, z: -4.681048e-10}
+      rotation: {x: -4.466913e-17, y: 6.938894e-18, z: 3.0995435e-34, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -135,17 +517,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

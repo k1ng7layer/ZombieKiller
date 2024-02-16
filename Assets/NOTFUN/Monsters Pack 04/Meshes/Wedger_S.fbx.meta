@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: bd0d9e09c5fce334485cd6d346f7a6a5
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: 2353925371016599273
@@ -64,16 +64,89 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'AttackLeft_Wedger_S' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Small_Wedger:Chest_M' has translation animation
+      that will be discarded.\n\t'Small_Wedger:Chest_M' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'AttackRight_Wedger_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Death_Wedger_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'GunLeft_Wedger_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'GunRight_Wedger_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Ankle_R'
+      has translation animation that will be discarded.\n\nClip 'Hit_Wedger_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Idle_Wedger_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Jump_Wedger_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Rage_Wedger_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Run_Wedger_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Ankle_R'
+      has translation animation that will be discarded.\n\nClip 'Walk_Wedger_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'WalkBack_Wedger_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\nClip 'WalkLeft_Wedger_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Ankle_R1'
+      has translation animation that will be discarded.\n\nClip 'WalkRight_Wedger_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Small_Wedger:Chest_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Chest_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Small_Wedger:Head_M'
+      has translation animation that will be discarded.\n\t'Small_Wedger:Ankle_R'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -84,7 +157,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -93,6 +166,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -104,6 +178,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -126,8 +201,307 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Small_Wedger:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Hip_R1
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Knee_R1
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Ankle_R1
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Spine1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Scapula_R1
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Scapula_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Shoulder_R1
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Shoulder_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Elbow_R1
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Wrist_R1
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Small_Wedger:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Wedger_S(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Wedger:Wedger_S
+      parentName: Wedger_S(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Wedger:Root
+      parentName: Wedger_S(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.00848979, y: 0, z: -0, w: 0.999964}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Small_Wedger:Root_M
+      parentName: Small_Wedger:Root
+      position: {x: 0, y: 0.42698142, z: 0.004010249}
+      rotation: {x: -0.10854843, y: -0.6987255, z: 0.10854843, w: 0.69872546}
+      scale: {x: 0.9999992, y: 0.9999999, z: 1.0000002}
+    - name: Small_Wedger:Spine1_M
+      parentName: Small_Wedger:Root_M
+      position: {x: 0.011338894, y: 0.07053298, z: -0.00000013815503}
+      rotation: {x: 0.0000000074505797, y: 0.000000029802319, z: -0.09728796, w: 0.9952563}
+      scale: {x: 1.0914625, y: 1.0914619, z: 1.0914623}
+    - name: Small_Wedger:Chest_M
+      parentName: Small_Wedger:Spine1_M
+      position: {x: 0.008357385, y: 0.049562182, z: 0.0018386866}
+      rotation: {x: -0.0000000011734057, y: 0.00000006059437, z: 0.09245005, w: 0.9957173}
+      scale: {x: 0.91620314, y: 0.91620284, z: 0.91620207}
+    - name: Small_Wedger:Scapula_R1
+      parentName: Small_Wedger:Chest_M
+      position: {x: -0.03234463, y: 0.109422214, z: 0.047250327}
+      rotation: {x: 0.7049421, y: -0.024066411, z: -0.19742127, w: 0.68081003}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1}
+    - name: Small_Wedger:Shoulder_R1
+      parentName: Small_Wedger:Scapula_R1
+      position: {x: 0.005739343, y: 0.08360064, z: 0.0007828703}
+      rotation: {x: 0.011675355, y: 0.060545206, z: 0.13091671, w: 0.98947406}
+      scale: {x: 0.99999934, y: 0.9999996, z: 1.0000008}
+    - name: Small_Wedger:Elbow_R1
+      parentName: Small_Wedger:Shoulder_R1
+      position: {x: 0.0000003423092, y: 0.24406493, z: 0.00000019199247}
+      rotation: {x: -0.0019158267, y: 0.011698909, z: -0.03591548, w: 0.99928457}
+      scale: {x: 0.9999996, y: 1.0000023, z: 0.9999992}
+    - name: Small_Wedger:Wrist_R1
+      parentName: Small_Wedger:Elbow_R1
+      position: {x: -0.00000063655835, y: 0.10610459, z: -0.00000015461683}
+      rotation: {x: 0.073278084, y: 0.012800322, z: 0.08258519, w: 0.9938039}
+      scale: {x: 1.000001, y: 1, z: 1.0000006}
+    - name: Small_Wedger:MiddleFinger1_R1
+      parentName: Small_Wedger:Wrist_R1
+      position: {x: -0.0000002816313, y: 0.090361476, z: 0.00000026179768}
+      rotation: {x: 0.0795442, y: 0.016352205, z: 0.06505387, w: 0.994572}
+      scale: {x: 0.9999997, y: 1.0000006, z: 1}
+    - name: Small_Wedger:MiddleFinger4_R1
+      parentName: Small_Wedger:MiddleFinger1_R1
+      position: {x: -0.00000015794735, y: 0.060597513, z: -0.000000048243397}
+      rotation: {x: -2.7755576e-17, y: 1.0408341e-17, z: 2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Wedger:Neck_M
+      parentName: Small_Wedger:Chest_M
+      position: {x: 0.0646891, y: 0.19195525, z: -0.00000008966025}
+      rotation: {x: 0.0000000059589023, y: -0.0000000011919495, z: -0.14807953, w: 0.98897547}
+      scale: {x: 0.99999833, y: 0.9999997, z: 1.0000004}
+    - name: Small_Wedger:Head_M
+      parentName: Small_Wedger:Neck_M
+      position: {x: 0.0054336856, y: 0.1431339, z: -0.0008323196}
+      rotation: {x: 0.0000000024989415, y: -0.00000005998705, z: -0.008375436, w: 0.99996495}
+      scale: {x: 1.0000008, y: 0.99999976, z: 1.0000006}
+    - name: Small_Wedger:HeadEnd_M
+      parentName: Small_Wedger:Head_M
+      position: {x: -0.00000007073916, y: 0.41445333, z: -0.0000006214879}
+      rotation: {x: 0, y: 1.9515637e-18, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Wedger:Scapula_R
+      parentName: Small_Wedger:Chest_M
+      position: {x: -0.03234473, y: 0.109420806, z: -0.047249928}
+      rotation: {x: 0.7036016, y: -0.028640693, z: 0.2021534, w: -0.6806309}
+      scale: {x: 1.0000007, y: 0.9999997, z: 1}
+    - name: Small_Wedger:Shoulder_R
+      parentName: Small_Wedger:Scapula_R
+      position: {x: 0.0057493113, y: 0.08360066, z: -0.00070466334}
+      rotation: {x: 0.05128985, y: -0.5302329, z: 0.12101552, w: 0.8376023}
+      scale: {x: 0.9999998, y: 0.9999996, z: 0.999999}
+    - name: Small_Wedger:Elbow_R
+      parentName: Small_Wedger:Shoulder_R
+      position: {x: 0.00000015524871, y: 0.24406189, z: -0.0000003728106}
+      rotation: {x: -0.0125273485, y: 0.541278, z: -0.03371306, w: 0.8400742}
+      scale: {x: 1, y: 1.0000002, z: 1.0000007}
+    - name: Small_Wedger:Wrist_R
+      parentName: Small_Wedger:Elbow_R
+      position: {x: -0.0000006775265, y: 0.10610627, z: 0.0000007328451}
+      rotation: {x: -0.10991058, y: 0.678629, z: -0.010421275, w: 0.7261362}
+      scale: {x: 1.0000014, y: 1, z: 0.9999997}
+    - name: Small_Wedger:MiddleFinger1_R
+      parentName: Small_Wedger:Wrist_R
+      position: {x: 0.0000002405247, y: 0.090361334, z: -0.00000008880641}
+      rotation: {x: -0.006551477, y: 0.4522874, z: -0.10254881, w: 0.8859328}
+      scale: {x: 0.9999992, y: 0.9999996, z: 0.99999994}
+    - name: Small_Wedger:MiddleFinger4_R
+      parentName: Small_Wedger:MiddleFinger1_R
+      position: {x: 0.00000040143317, y: 0.06059743, z: -0.0000003633293}
+      rotation: {x: 0, y: 0, z: 1.3877788e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Small_Wedger:Hip_R
+      parentName: Small_Wedger:Root_M
+      position: {x: -0.0056696474, y: -0.026954053, z: -0.10716094}
+      rotation: {x: 0.98858154, y: -0.15068686, z: -0.00000008934875, w: 0.0000000019790602}
+      scale: {x: 1.0000026, y: 1.0000026, z: 1.000001}
+    - name: Small_Wedger:Knee_R
+      parentName: Small_Wedger:Hip_R
+      position: {x: 0.0000009608169, y: 0.23523016, z: -0.0000002418693}
+      rotation: {x: 0.000000022182135, y: 0.000000024837139, z: 0.18176107, w: 0.98334277}
+      scale: {x: 1.0000011, y: 0.9999985, z: 1.0000005}
+    - name: Small_Wedger:Ankle_R
+      parentName: Small_Wedger:Knee_R
+      position: {x: -0.00000018526501, y: 0.13201745, z: 0.000000107780636}
+      rotation: {x: -0.65102965, y: -0.7455145, z: -0.116654016, w: 0.08222148}
+      scale: {x: 1.0000008, y: 1.0000006, z: 0.9999996}
+    - name: Small_Wedger:Toes_R
+      parentName: Small_Wedger:Ankle_R
+      position: {x: -0.00000026507132, y: 0.07104985, z: 0.00000034738264}
+      rotation: {x: -0.11969507, y: 0.9312358, z: -0.09717149, w: -0.33019817}
+      scale: {x: 0.99999905, y: 0.99999964, z: 1.0000006}
+    - name: Small_Wedger:ToesEnd_R
+      parentName: Small_Wedger:Toes_R
+      position: {x: -0.0000004939242, y: 0.091626614, z: -0.00000017210475}
+      rotation: {x: 0.000000086156824, y: 0.00000030290926, z: 0.000000021264364, w: 1}
+      scale: {x: 1.0000008, y: 1.000001, z: 0.9999994}
+    - name: Small_Wedger:Hip_R1
+      parentName: Small_Wedger:Root_M
+      position: {x: -0.005669133, y: -0.026953692, z: 0.10716103}
+      rotation: {x: 0.98858154, y: -0.15068683, z: -0.000000089363304, w: -0.000000003841705}
+      scale: {x: 1.000002, y: 1.0000015, z: 1.0000012}
+    - name: Small_Wedger:Knee_R1
+      parentName: Small_Wedger:Hip_R1
+      position: {x: 0.0000005344721, y: 0.23522785, z: -0.0000005101495}
+      rotation: {x: 0.000000016687883, y: 0.000000026759299, z: 0.1817611, w: 0.98334277}
+      scale: {x: 0.9999991, y: 0.9999984, z: 1.0000001}
+    - name: Small_Wedger:Ankle_R1
+      parentName: Small_Wedger:Knee_R1
+      position: {x: 0.00000052593646, y: 0.13201785, z: 0.0000007235127}
+      rotation: {x: -0.11665364, y: -0.08222191, z: -0.65103, w: 0.7455142}
+      scale: {x: 1.0000012, y: 1.0000011, z: 0.99999934}
+    - name: Small_Wedger:Toes_R1
+      parentName: Small_Wedger:Ankle_R1
+      position: {x: 0.00000018173381, y: 0.0710494, z: -0.00000012311544}
+      rotation: {x: -0.088000156, y: -0.26001367, z: -0.12659083, w: 0.9532175}
+      scale: {x: 0.9999995, y: 0.9999996, z: 1.0000002}
+    - name: Small_Wedger:ToesEnd_R1
+      parentName: Small_Wedger:Toes_R1
+      position: {x: -0.00000010267701, y: 0.09162678, z: 0.0000005194366}
+      rotation: {x: 0.00000023715802, y: -0.0000002591302, z: -0.00000037629587, w: 1}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000007}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -135,17 +509,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.5
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

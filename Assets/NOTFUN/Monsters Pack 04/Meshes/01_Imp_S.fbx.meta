@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: aac23fe206ff8df4d9d61b04b46a273f
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -8399493500284679905
@@ -64,16 +64,86 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'AttackLeft_Imp_S' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M' has translation animation
+      that will be discarded.\n\t'Imp_S:Imp_S2:Neck_M' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Ankle_R'
+      has translation animation that will be discarded.\n\nClip 'AttackRight_Imp_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Death_Imp_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\nClip 'GunLeft_Imp_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\nClip 'GunRight_Imp_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Ankle_R'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Ankle_L'
+      has translation animation that will be discarded.\n\nClip 'Hit_Imp_S' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M' has
+      translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Neck_M' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Idle_Imp_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Jump_Imp_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\nClip 'Rage_Imp_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Neck_M'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Wrist_R'
+      has translation animation that will be discarded.\n\nClip 'Run_Imp_S' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M' has
+      translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M' has
+      translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Ankle_R' has
+      translation animation that will be discarded.\n\nClip 'Walk_Imp_S' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M' has
+      translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M' has
+      translation animation that will be discarded.\n\nClip 'WalkBack_Imp_S' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\nClip 'WalkLeft_Imp_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Ankle_L'
+      has translation animation that will be discarded.\n\nClip 'WalkRight_Imp_S'
+      has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Imp_S:Imp_S2:Chest_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Head_M'
+      has translation animation that will be discarded.\n\t'Imp_S:Imp_S2:Ankle_R'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -84,7 +154,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -93,6 +163,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -104,6 +175,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -126,8 +198,307 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Imp_S:Imp_S2:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Spine1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Chest_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Shoulder_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Shoulder_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Imp_S:Imp_S2:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: 01_Imp_S(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Imp_S:Imp_S2:Imp_S
+      parentName: 01_Imp_S(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Imp_S:Imp_S2:Root
+      parentName: 01_Imp_S(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.0066676405, y: -0, z: -0, w: 0.99997777}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Imp_S:Imp_S2:Root_M
+      parentName: Imp_S:Imp_S2:Root
+      position: {x: 0, y: 0.0045998157, z: -0.00018963899}
+      rotation: {x: 0.15598097, y: -0.68968827, z: -0.15598097, w: 0.6896883}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.9999998}
+    - name: Imp_S:Imp_S2:Spine1_M
+      parentName: Imp_S:Imp_S2:Root_M
+      position: {x: -0.00047207478, y: 0.00065619795, z: -0.000000002048395}
+      rotation: {x: -0, y: -0, z: 0.2353813, w: 0.9719031}
+      scale: {x: 1.0000006, y: 1, z: 1.0000002}
+    - name: Imp_S:Imp_S2:Chest_M
+      parentName: Imp_S:Imp_S2:Spine1_M
+      position: {x: 0.00012350288, y: 0.00033754026, z: -0.000004531529}
+      rotation: {x: -0.000000014029819, y: -0.000000057929938, z: -0.015308559, w: 0.9998828}
+      scale: {x: 1.0000002, y: 1, z: 0.9999994}
+    - name: Imp_S:Imp_S2:Scapula_L
+      parentName: Imp_S:Imp_S2:Chest_M
+      position: {x: -0.00008472136, y: 0.0015604907, z: 0.00047250444}
+      rotation: {x: 0.7077388, y: 0.011354269, z: -0.0011238174, w: 0.70638204}
+      scale: {x: 1.0000005, y: 0.9999996, z: 0.999999}
+    - name: Imp_S:Imp_S2:Shoulder_L
+      parentName: Imp_S:Imp_S2:Scapula_L
+      position: {x: -8.586083e-10, y: 0.0010096855, z: 1.3742711e-10}
+      rotation: {x: -0.0053844457, y: 0.103282414, z: 0.041144054, w: 0.99378616}
+      scale: {x: 1.000001, y: 0.9999987, z: 1.0000004}
+    - name: Imp_S:Imp_S2:Elbow_L
+      parentName: Imp_S:Imp_S2:Shoulder_L
+      position: {x: -0.0000000040331587, y: 0.0019236252, z: 0.000000006605465}
+      rotation: {x: 0.0009304199, y: -0.19125198, z: -0.057374157, w: 0.9798622}
+      scale: {x: 1.0000001, y: 1.0000011, z: 1.0000011}
+    - name: Imp_S:Imp_S2:Wrist_L
+      parentName: Imp_S:Imp_S2:Elbow_L
+      position: {x: -0.0000000014700638, y: 0.0016672526, z: -0.000000003645298}
+      rotation: {x: -0.017296102, y: -0.08708528, z: -0.19239059, w: -0.97729367}
+      scale: {x: 0.999998, y: 1.0000014, z: 0.9999994}
+    - name: Imp_S:Imp_S2:MiddleFinger1_L
+      parentName: Imp_S:Imp_S2:Wrist_L
+      position: {x: 0.0000000019076558, y: 0.0012592882, z: -3.4517544e-10}
+      rotation: {x: -0.05327126, y: 0.00031783432, z: -0.0070050852, w: -0.99855554}
+      scale: {x: 1.0000007, y: 0.99999976, z: 1.000002}
+    - name: Imp_S:Imp_S2:MiddleFinger4_L
+      parentName: Imp_S:Imp_S2:MiddleFinger1_L
+      position: {x: 0.000000011318346, y: 0.00090275594, z: 2.3142266e-10}
+      rotation: {x: 2.7755576e-17, y: 3.469447e-18, z: -9.62965e-35, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Imp_S:Imp_S2:Neck_M
+      parentName: Imp_S:Imp_S2:Chest_M
+      position: {x: 0.00016944857, y: 0.0029066093, z: 0.0000000034915932}
+      rotation: {x: 0.00000009409748, y: -0.00000026742615, z: -0.044560473, w: 0.9990067}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1}
+    - name: Imp_S:Imp_S2:Head_M
+      parentName: Imp_S:Imp_S2:Neck_M
+      position: {x: 0.00016207276, y: 0.0007940893, z: -0.000035252393}
+      rotation: {x: -0.000000098406474, y: 0.00000023163612, z: 0.0023007544, w: 0.9999974}
+      scale: {x: 0.9999997, y: 0.99999964, z: 1.0000008}
+    - name: Imp_S:Imp_S2:HeadEnd_M
+      parentName: Imp_S:Imp_S2:Head_M
+      position: {x: 0.0000000081453475, y: 0.0041445354, z: -0.0000000026804932}
+      rotation: {x: -3.469447e-18, y: 2.1684043e-19, z: 7.523164e-37, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Imp_S:Imp_S2:Scapula_R
+      parentName: Imp_S:Imp_S2:Chest_M
+      position: {x: -0.00008472328, y: 0.0015604766, z: -0.0004725007}
+      rotation: {x: 0.12482168, y: 0.69749224, z: -0.6966445, w: -0.1122969}
+      scale: {x: 1.0000005, y: 1.0000004, z: 0.99999905}
+    - name: Imp_S:Imp_S2:Shoulder_R
+      parentName: Imp_S:Imp_S2:Scapula_R
+      position: {x: -7.613937e-10, y: 0.0010107314, z: -0.0000000010151728}
+      rotation: {x: 0.022128772, y: 0.3299216, z: -0.035142943, w: 0.94309443}
+      scale: {x: 1.000001, y: 0.9999989, z: 0.99999964}
+    - name: Imp_S:Imp_S2:Elbow_R
+      parentName: Imp_S:Imp_S2:Shoulder_R
+      position: {x: 8.609491e-10, y: 0.0019236074, z: -0.0000000017216524}
+      rotation: {x: 0.006978952, y: -0.84539014, z: 0.05691055, w: 0.53106314}
+      scale: {x: 0.9999995, y: 1.0000011, z: 0.9999988}
+    - name: Imp_S:Imp_S2:Wrist_R
+      parentName: Imp_S:Imp_S2:Elbow_R
+      position: {x: 8.2094764e-10, y: 0.0016672552, z: -7.168148e-10}
+      rotation: {x: -0.15314294, y: -0.8612368, z: 0.11876723, w: 0.46980074}
+      scale: {x: 0.9999995, y: 1.0000006, z: 1.0000008}
+    - name: Imp_S:Imp_S2:MiddleFinger1_R
+      parentName: Imp_S:Imp_S2:Wrist_R
+      position: {x: 0.0000000011869715, y: 0.0012592932, z: -0.0000000029467555}
+      rotation: {x: 0.030885097, y: 0.7350406, z: -0.0439636, w: -0.675891}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000004}
+    - name: Imp_S:Imp_S2:MiddleFinger4_R
+      parentName: Imp_S:Imp_S2:MiddleFinger1_R
+      position: {x: 0.0000000042612807, y: 0.00090275594, z: -0.0000000065115557}
+      rotation: {x: -0.00000003140687, y: -6.938894e-18, z: -2.1792894e-25, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999995}
+    - name: Imp_S:Imp_S2:Hip_R
+      parentName: Imp_S:Imp_S2:Root_M
+      position: {x: 0.00023603681, y: -0.0001885705, z: -0.0016086934}
+      rotation: {x: 0.8991368, y: 0.1574641, z: 0.40835965, w: 0.0007053464}
+      scale: {x: 1.0000018, y: 1.0000007, z: 1.0000012}
+    - name: Imp_S:Imp_S2:Knee_R
+      parentName: Imp_S:Imp_S2:Hip_R
+      position: {x: 0.000000006469086, y: 0.0017666294, z: -0.0000000025048938}
+      rotation: {x: 0.0000016037372, y: 0.00000042375171, z: -0.0000014305114, w: 1}
+      scale: {x: 1.0000007, y: 1.0000007, z: 0.9999997}
+    - name: Imp_S:Imp_S2:Ankle_R
+      parentName: Imp_S:Imp_S2:Knee_R
+      position: {x: -0.0000000063616303, y: 0.0021902202, z: -0.0000000012435775}
+      rotation: {x: -0.47729447, y: -0.7548912, z: -0.42037398, w: -0.16004711}
+      scale: {x: 1, y: 1.0000008, z: 0.9999998}
+    - name: Imp_S:Imp_S2:Toes_R
+      parentName: Imp_S:Imp_S2:Ankle_R
+      position: {x: -0.00000000128378, y: 0.0009688798, z: 3.9267067e-10}
+      rotation: {x: -0.07922277, y: 0.94976103, z: -0.07163325, w: -0.29418784}
+      scale: {x: 1.0000001, y: 0.9999992, z: 1.0000008}
+    - name: Imp_S:Imp_S2:ToesEnd_R
+      parentName: Imp_S:Imp_S2:Toes_R
+      position: {x: -0.0000000023128277, y: 0.0009162675, z: 0.0000000011760554}
+      rotation: {x: 0.000000037429427, y: 2.7755576e-17, z: 6.938893e-18, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999994}
+    - name: Imp_S:Imp_S2:Hip_L
+      parentName: Imp_S:Imp_S2:Root_M
+      position: {x: 0.00023603333, y: -0.00018857062, z: 0.0016086905}
+      rotation: {x: 0.98664546, y: 0.14708552, z: -0.028902043, w: -0.063728966}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: Imp_S:Imp_S2:Knee_L
+      parentName: Imp_S:Imp_S2:Hip_L
+      position: {x: 0.0000000033382224, y: 0.0017666359, z: -6.966741e-10}
+      rotation: {x: -0.0000005587935, y: -0.000000257045, z: 0.0000010579823, w: 1}
+      scale: {x: 0.99999976, y: 1.0000005, z: 1.0000006}
+    - name: Imp_S:Imp_S2:Ankle_L
+      parentName: Imp_S:Imp_S2:Knee_L
+      position: {x: 4.3930598e-10, y: 0.0021902279, z: 0.0000000073275106}
+      rotation: {x: -0.20429815, y: -0.14618997, z: -0.6007437, w: 0.75894517}
+      scale: {x: 1.0000008, y: 1.0000007, z: 1.0000002}
+    - name: Imp_S:Imp_S2:Toes_L
+      parentName: Imp_S:Imp_S2:Ankle_L
+      position: {x: -0.0000000040453747, y: 0.0009688784, z: -0.00000000534542}
+      rotation: {x: -0.06554061, y: -0.22271165, z: -0.08433251, w: 0.96901596}
+      scale: {x: 0.9999991, y: 0.9999988, z: 1.0000006}
+    - name: Imp_S:Imp_S2:ToesEnd_L
+      parentName: Imp_S:Imp_S2:Toes_L
+      position: {x: 5.3459975e-10, y: 0.00091626984, z: 0.0000000011481421}
+      rotation: {x: -2.0816682e-17, y: -5.7777903e-34, z: 2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -135,17 +506,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
