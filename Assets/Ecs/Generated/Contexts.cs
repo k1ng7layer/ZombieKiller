@@ -92,11 +92,17 @@ public partial class Contexts : JCMG.EntitasRedux.IContexts
 //------------------------------------------------------------------------------
 public partial class Contexts
 {
+	public const string Owner = "Owner";
 	public const string Uid = "Uid";
 
 	[JCMG.EntitasRedux.PostConstructor]
 	public void InitializeEntityIndices()
 	{
+		Game.AddEntityIndex(new JCMG.EntitasRedux.EntityIndex<GameEntity, Ecs.Extensions.UidGenerator.Uid>(
+			GameComponentsLookup.Owner,
+			Game.GetGroup(GameMatcher.Owner),
+			(e, c) => ((Ecs.Game.Components.OwnerComponent)c).Value));
+
 		Game.AddEntityIndex(new JCMG.EntitasRedux.PrimaryEntityIndex<GameEntity, Ecs.Extensions.UidGenerator.Uid>(
 			GameComponentsLookup.Uid,
 			Game.GetGroup(GameMatcher.Uid),
@@ -110,6 +116,11 @@ public partial class Contexts
 
 public static class ContextsExtensions
 {
+	public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithOwner(this GameContext context, Ecs.Extensions.UidGenerator.Uid Value)
+	{
+		return ((JCMG.EntitasRedux.EntityIndex<GameEntity, Ecs.Extensions.UidGenerator.Uid>)context.GetEntityIndex(GameComponentsLookup.Owner)).GetEntities(Value);
+	}
+
 	public static GameEntity GetEntityWithUid(this GameContext context, Ecs.Extensions.UidGenerator.Uid Value)
 	{
 		return ((JCMG.EntitasRedux.PrimaryEntityIndex<GameEntity, Ecs.Extensions.UidGenerator.Uid>)context.GetEntityIndex(GameComponentsLookup.Uid)).GetEntity(Value);

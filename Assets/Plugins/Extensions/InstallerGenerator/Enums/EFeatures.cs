@@ -7,6 +7,7 @@
         Units,
         Building,
         Coins,
-        Input
+        Input,
+        Combat
     }
 }

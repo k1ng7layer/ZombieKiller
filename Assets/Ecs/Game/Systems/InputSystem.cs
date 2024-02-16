@@ -14,27 +14,30 @@ namespace Ecs.Game.Systems
     {
         private readonly IInputService _inputService;
         private readonly ICommandBuffer _commandBuffer;
+        private readonly GameContext _game;
 
-        public InputSystem(IInputService inputService, ICommandBuffer commandBuffer)
+        public InputSystem(IInputService inputService, ICommandBuffer commandBuffer, GameContext game)
         {
             _inputService = inputService;
             _commandBuffer = commandBuffer;
+            _game = game;
         }
         
         public void Initialize()
         {
-            _inputService.MouseButtonDown += OnMouseDown;
+            _inputService.BasicAttackPressed += OnBasicAttackPressed;
         }
         
         public void Dispose()
         {
-            _inputService.MouseButtonDown -= OnMouseDown;
+            _inputService.BasicAttackPressed -= OnBasicAttackPressed;
         }
 
-        private void OnMouseDown(int mouseButton)
+        private void OnBasicAttackPressed()
         {
-            _commandBuffer.MouseDown(mouseButton);
+            var player = _game.PlayerEntity;
+            
+            _commandBuffer.PerformAttack(player.Uid.Value);
         }
-        
     }
 }

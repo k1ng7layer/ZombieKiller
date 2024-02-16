@@ -1,11 +1,9 @@
 ﻿using Ecs.Commands.Command.Input;
 using JCMG.EntitasRedux.Commands;
-using Plugins.Extensions.InstallerGenerator.Attributes;
-using Plugins.Extensions.InstallerGenerator.Enums;
 
 namespace Ecs.Commands.Systems.Input
 {
-    [Install(ExecutionType.Game, ExecutionPriority.Normal, 170, nameof(EFeatures.Input))]
+    //[Install(ExecutionType.Game, ExecutionPriority.Normal, 170, nameof(EFeatures.Input))]
     public class PointerUpSystem : ForEachCommandUpdateSystem<PointerUpCommand>
     {
         private readonly GameContext _game;

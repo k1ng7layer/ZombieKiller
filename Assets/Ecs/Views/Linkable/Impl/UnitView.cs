@@ -1,0 +1,64 @@
+﻿using AnimationTriggers;
+using Ecs.Commands;
+using Ecs.Utils;
+using Game.Utils;
+using JCMG.EntitasRedux;
+using JCMG.EntitasRedux.Commands;
+using JCMG.EntitasRedux.Core.Utils;
+using UniRx;
+using UniRx.Triggers;
+using UnityEngine;
+using Zenject;
+
+namespace Ecs.Views.Linkable.Impl
+{
+    public class UnitView : ObjectView
+    {
+        [SerializeField] private Rigidbody _rb;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Collider _damageTrigger;
+        
+        [Inject] private ICommandBuffer _commandBuffer;
+
+        protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
+        {
+            base.Subscribe(entity, unsubscribe);
+
+            var playerEntity = (GameEntity)entity;
+            
+            playerEntity.SubscribeMoveDirection(OnDirectionChanged).AddTo(unsubscribe);
+            playerEntity.SubscribePerformingAttack(OnPerformingAttack).AddTo(unsubscribe);
+
+            _damageTrigger.OnTriggerEnterAsObservable().Subscribe(OnUnitTriggerEnter).AddTo(unsubscribe);
+            
+            var attackEndTrigger = _animator.GetBehaviour<CompleteAttackTrigger>();
+            attackEndTrigger.AttackEnd.Subscribe(_ =>
+            {
+                _commandBuffer.CompletePerformingAttack(playerEntity.Uid.Value);
+            }).AddTo(gameObject);
+        }
+
+        private void OnDirectionChanged(GameEntity entity, Vector3 dir)
+        {
+            _rb.velocity = dir;
+            Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}");
+            _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
+        }
+
+        private void OnPerformingAttack(GameEntity entity)
+        {
+            _animator.SetTrigger(AnimationKeys.Attack);
+        }
+
+        private void OnUnitTriggerEnter(Collider other)
+        {
+            if (LayerMask.GetMask(LayerNames.Weapon) == (LayerMask.GetMask(LayerNames.Weapon) 
+                                               | 1 << other.gameObject.layer))
+            {
+                var weaponHash = other.transform.GetHashCode();
+                
+                _commandBuffer.TakeDamage(weaponHash, transform.GetHashCode());
+            }
+        }
+    }
+}
