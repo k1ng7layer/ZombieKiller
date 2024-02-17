@@ -17,9 +17,11 @@ namespace Ecs.Views.Linkable.Impl
 
         private void OnWeaponTransformChanged(GameEntity _, Transform value)
         {
-            transform.SetParent(value);
-            transform.localPosition = Vector3.zero;
-            transform.localRotation = Quaternion.identity;
+            var selfTransform = transform;
+            
+            selfTransform.SetParent(value);
+            selfTransform.localPosition = Vector3.zero;
+            selfTransform.localRotation = Quaternion.identity;
         }
     }
 }

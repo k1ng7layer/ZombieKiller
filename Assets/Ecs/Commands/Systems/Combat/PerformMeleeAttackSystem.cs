@@ -28,6 +28,9 @@ namespace Ecs.Commands.Systems.Combat
         {
             var attacker = _game.GetEntityWithUid(command.Attacker);
             
+            if (attacker.IsPerformingAttack)
+                return;
+            
             var weaponId = attacker.EquippedWeapon.Value.Id;
             
             var weapon = _weaponBase.GetWeapon(weaponId);

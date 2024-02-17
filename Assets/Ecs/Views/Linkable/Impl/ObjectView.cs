@@ -15,6 +15,7 @@ namespace Ecs.Views.Linkable.Impl
         {
             SelfEntity = (GameEntity) entity;
             
+            SelfEntity.AddTransform(transform);
             SelfEntity.SubscribePosition(OnPosition).AddTo(unsubscribe);
             SelfEntity.SubscribeRotation(OnRotation).AddTo(unsubscribe);
         }

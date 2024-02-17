@@ -33,6 +33,7 @@ namespace Ecs.Views.Linkable.Impl
             _damageTrigger.OnTriggerEnterAsObservable().Subscribe(OnUnitTriggerEnter).AddTo(unsubscribe);
             
             var attackEndTrigger = _animator.GetBehaviour<CompleteAttackTrigger>();
+            
             attackEndTrigger?.AttackEnd.Subscribe(_ =>
             {
                 _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
@@ -64,6 +65,7 @@ namespace Ecs.Views.Linkable.Impl
 
         protected virtual void OnDead(GameEntity _)
         {
+            _damageTrigger.enabled = false;
             _animator.SetTrigger(AnimationKeys.Death);
         }
     }

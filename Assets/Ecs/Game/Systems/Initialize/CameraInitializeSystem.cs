@@ -1,6 +1,4 @@
-﻿using Ecs.Game.Extensions;
-using Ecs.Views.Linkable.Impl;
-using Game.Providers.GameFieldProvider;
+﻿using Game.Providers.GameFieldProvider;
 using JCMG.EntitasRedux;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
@@ -39,7 +37,7 @@ namespace Ecs.Game.Systems.Initialize
             var virtualCameraView = _gameFieldProvider.GameField.VirtualCameraView;
             virtualCameraEntity.IsVirtualCamera = true;
             _diContainer.Inject(virtualCameraView);
-            virtualCameraView.Link(physicalCamera);
+            virtualCameraView.Link(virtualCameraEntity);
         }
     }
 }

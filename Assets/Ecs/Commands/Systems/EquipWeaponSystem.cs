@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using Db.Weapon;
 using Ecs.Commands.Command;
-using Ecs.Extensions.UidGenerator;
+using Ecs.Game.Extensions;
 using Ecs.Utils;
 using Game.Utils;
 using JCMG.EntitasRedux.Commands;
@@ -30,27 +29,18 @@ namespace Ecs.Commands.Systems
 
         protected override void Execute(ref EquipWeaponCommand command)
         {
-            var weaponEntity = _game.CreateEntity();
-            var weaponUid = UidGenerator.Next();
+            var weaponSettings = _weaponBase.GetWeapon(command.WeaponId);
             var owner = _game.GetEntityWithUid(command.Owner);
-            var weaponParams = _weaponBase.GetWeapon(command.WeaponId);
+            var weaponEntity = _game.CreateWeapon(command.WeaponId, weaponSettings, owner.Uid.Value);
             
             if (owner.HasEquippedWeapon && owner.EquippedWeapon.Value.Id != EWeaponId.None)
             {
                 var currentWeapon = _game.GetEntityWithUid(owner.EquippedWeapon.Value.WeaponEntityUid);
                 currentWeapon.IsDestroyed = true;
             }
-            
-            weaponEntity.AddUid(weaponUid);
-            weaponEntity.AddWeapon(command.WeaponId);
-            weaponEntity.AddOwner(command.Owner);
-            weaponEntity.AddPrefab(command.WeaponId.ToString());
-            weaponEntity.AddAttackTargets(new HashSet<Uid>());
+
+            var weaponUid = weaponEntity.Uid.Value;
             owner.ReplaceEquippedWeapon(new EquippedWeaponInfo(command.WeaponId, weaponUid));
-            weaponEntity.AddPhysicalDamage(weaponParams.PhysicalDamage);
-            weaponEntity.AddMagicDamage(weaponParams.MagicDamage);
-            
-            weaponEntity.IsInstantiate = true;
             
             _commandBuffer.AttachWeapon(weaponUid, owner.WeaponRoot.Value);
         }

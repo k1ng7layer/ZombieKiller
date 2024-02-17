@@ -1,5 +1,4 @@
-﻿using Game.Ui.Income;
-using Game.Ui.Input;
+﻿using Game.Ui.Input;
 using SimpleUi;
 
 namespace Game.Ui.Windows
@@ -11,7 +10,7 @@ namespace Game.Ui.Windows
         protected override void AddControllers()
         {
             AddController<InputController>();
-            AddController<CoinsController>();
+            //AddController<CoinsController>();
         }
     }
 }
