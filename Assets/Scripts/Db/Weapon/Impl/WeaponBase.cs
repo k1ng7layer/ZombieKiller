@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Db.Weapon.Impl
 {
-    [CreateAssetMenu(menuName = "Settings/" + nameof(WeaponBase), fileName = "WeaponBase")]
+    [CreateAssetMenu(menuName = "Settings/Weapons" + nameof(WeaponBase), fileName = "WeaponBase")]
     public class WeaponBase : ScriptableObject, IWeaponBase
     {
         [SerializeField] private WeaponSettings[] weapons;

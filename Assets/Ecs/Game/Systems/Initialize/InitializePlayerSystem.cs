@@ -1,6 +1,7 @@
 ﻿using Db.Player;
 using Ecs.Commands;
 using Ecs.Extensions.UidGenerator;
+using Ecs.Utils.LinkedEntityRepository;
 using Game.Providers.GameFieldProvider;
 using Game.Utils;
 using JCMG.EntitasRedux;
@@ -16,18 +17,21 @@ namespace Ecs.Game.Systems.Initialize
         private readonly IGameFieldProvider _gameFieldProvider;
         private readonly IPlayerSettings _playerSettings;
         private readonly ICommandBuffer _commandBuffer;
+        private readonly ILinkedEntityRepository _linkedEntityRepository;
         private readonly GameContext _game;
 
         public InitializePlayerSystem(
             IGameFieldProvider gameFieldProvider,
             IPlayerSettings playerSettings,
             ICommandBuffer commandBuffer,
+            ILinkedEntityRepository linkedEntityRepository,
             GameContext game
         )
         {
             _gameFieldProvider = gameFieldProvider;
             _playerSettings = playerSettings;
             _commandBuffer = commandBuffer;
+            _linkedEntityRepository = linkedEntityRepository;
             _game = game;
         }
         
@@ -52,6 +56,8 @@ namespace Ecs.Game.Systems.Initialize
             {
                 CreateWeapon(starterWeapon, playerUid);
             }
+            
+            _linkedEntityRepository.Add(playerView.transform.GetHashCode(), player);
         }
 
         private void CreateWeapon(EWeaponId weaponId, Uid playerUid)

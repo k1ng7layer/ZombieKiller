@@ -6,6 +6,8 @@ using Db.Player;
 using Db.Player.Impl;
 using Db.Prefabs;
 using Db.Prefabs.Impl;
+using Db.ProjectileBase;
+using Db.ProjectileBase.Impl;
 using Db.Weapon;
 using Db.Weapon.Impl;
 using UnityEngine;
@@ -21,6 +23,7 @@ namespace Installers.Game
         [SerializeField] private PlayerSettings playerSettings;
         [SerializeField] private WeaponBase weaponBase;
         [SerializeField] private EnemyParamsBase enemyParamsBase;
+        [SerializeField] private ProjectileBase projectileBase;
 
         public override void InstallBindings()
         {
@@ -29,6 +32,7 @@ namespace Installers.Game
             Container.Bind<IPlayerSettings>().FromInstance(playerSettings);
             Container.Bind<IWeaponBase>().FromInstance(weaponBase);
             Container.Bind<IEnemyParamsBase>().FromInstance(enemyParamsBase);
+            Container.Bind<IProjectileBase>().FromInstance(projectileBase);
         }
     }
 }

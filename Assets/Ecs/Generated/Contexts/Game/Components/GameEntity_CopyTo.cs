@@ -26,6 +26,22 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Game.Components.ActiveComponent Active)
+		{
+			IsActive = true;
+		}
+		else if (component is Ecs.Game.Components.LinkComponent Link)
+		{
+			CopyLinkTo(Link);
+		}
+		else if (component is Ecs.Game.Components.SpeedComponent Speed)
+		{
+			CopySpeedTo(Speed);
+		}
+		else if (component is Ecs.Game.Components.ProjectileComponent Projectile)
+		{
+			CopyProjectileTo(Projectile);
+		}
 		else if (component is Ecs.Game.Components.WeaponRootComponent WeaponRoot)
 		{
 			CopyWeaponRootTo(WeaponRoot);

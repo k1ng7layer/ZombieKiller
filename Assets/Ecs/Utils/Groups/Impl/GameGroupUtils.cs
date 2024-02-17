@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Game.Utils;
-using Game.Utils.Units;
 using JCMG.EntitasRedux;
 using UnityEngine.Pool;
 
@@ -13,10 +12,11 @@ namespace Ecs.Utils.Groups.Impl
         private readonly IGroup<GameEntity> _buildingSlotsGroup;
         private readonly IGroup<GameEntity> _buildingsGroup;
         private readonly IGroup<GameEntity> _enemyBuildingSlot;
+        private readonly IGroup<GameEntity> _projectiles;
 
         public GameGroupUtils(GameContext game)
         {
-     
+            _projectiles = game.GetGroup(GameMatcher.Projectile);
         }
 
         public IDisposable GetUnits(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null, bool nonDestroyed = true)
@@ -66,6 +66,13 @@ namespace Ecs.Utils.Groups.Impl
             }
             
             return pooledObject;
+        }
+
+        public IDisposable GetProjectiles(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
+        {
+            Func<GameEntity, bool> baseFilter = e => e.HasProjectile && !e.IsDestroyed;
+
+            return GetEntities(out buffer, _projectiles, baseFilter, filter);
         }
     }
 }

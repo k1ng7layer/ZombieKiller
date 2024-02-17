@@ -3,6 +3,7 @@ namespace Game.Utils
     public enum EWeaponId
     {
         None,
-        BasicSword
+        BasicSword,
+        BasicStaff
     }
 }

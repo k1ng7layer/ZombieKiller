@@ -4,6 +4,7 @@ using Ecs.Commands.Systems.Income;
 using Ecs.Game.Systems;
 using Ecs.Game.Systems.Initialize;
 using Ecs.Game.Systems.Player;
+using Ecs.Game.Systems.Projectile;
 using Plugins.Extensions.InstallerGenerator.Utils;
 using Zenject;
 
@@ -68,8 +69,12 @@ namespace Ecs.Installers {
 			// Combat 0300
 			SystemInstallHelper.Install<CompletePerformingAttackSystem>(container);	// 0300 Combat
 
+			// Combat 0700
+			SystemInstallHelper.Install<ProjectileMovementSystem>(container);	// 0700 Combat
+
 			// Input 1000
 			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
+			SystemInstallHelper.Install<DestroyProjectileSystem>(container);	// 1000 Combat
 
 			// Combat 1500
 			SystemInstallHelper.Install<PerformAttackCleanupSystem>(container);	// 1500 Combat
