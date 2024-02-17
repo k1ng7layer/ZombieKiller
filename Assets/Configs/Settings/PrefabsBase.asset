@@ -15,3 +15,5 @@ MonoBehaviour:
   prefabs:
   - name: Type1
     gameObject: {fileID: 8321489797176409459, guid: f25a0a053cc6888449476f8a00ab7db7, type: 3}
+  - name: BasicSword
+    gameObject: {fileID: 5737562238685456744, guid: d1bffc8d5c9f8fe43bdce738c7b4149c, type: 3}

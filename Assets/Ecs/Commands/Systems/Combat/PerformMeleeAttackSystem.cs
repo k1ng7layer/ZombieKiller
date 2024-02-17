@@ -28,14 +28,17 @@ namespace Ecs.Commands.Systems.Combat
         {
             var attacker = _game.GetEntityWithUid(command.Attacker);
             
-            var weaponUid = attacker.EquippedWeapon.Value;
-            var weaponEntity = _game.GetEntityWithUid(weaponUid);
-            var weapon = _weaponBase.GetWeapon(weaponEntity.Weapon.WeaponId);
+            var weaponId = attacker.EquippedWeapon.Value.Id;
+            
+            var weapon = _weaponBase.GetWeapon(weaponId);
             
             if (weapon.WeaponType != EWeaponType.Melee)
                 return;
             
             attacker.IsPerformingAttack = true;
+            var weaponUid = attacker.EquippedWeapon.Value.WeaponEntityUid;
+            var weaponEntity = _game.GetEntityWithUid(weaponUid);
+            weaponEntity.IsPerformingAttack = true;
         }
     }
 }

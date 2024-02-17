@@ -7,7 +7,7 @@ namespace Db.Weapon
     [CreateAssetMenu(menuName = "Settings/" + nameof(WeaponSettings), fileName = "Weapon")]
     public class WeaponSettings : ScriptableObject
     {
-        public string Name;
+        public EWeaponId WeaponId;
         public EWeaponType WeaponType;
         public Image Icon;
         

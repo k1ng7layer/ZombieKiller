@@ -29,11 +29,18 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<InitializePlayerSystem>(container);	// 0050 Initialization
 			SystemInstallHelper.Install<CameraInitializeSystem>(container);	// 0060 Initialization
 
-			// Spawn 0500
+			// Combat 0450
+			SystemInstallHelper.Install<AttachWeaponSystem>(container);	// 0450 Combat
+
+			// Combat 0500
+			SystemInstallHelper.Install<EquipWeaponSystem>(container);	// 0500 Combat
 			SystemInstallHelper.Install<SpawnEnemySystem>(container);	// 0500 Spawn
 
 			// Combat 0700
 			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0700 Combat
+
+			// Combat 0900
+			SystemInstallHelper.Install<EnemyDeathSystem>(container);	// 0900 Combat
 
 			// Input 1000
 			SystemInstallHelper.Install<PlayerMovementSystem>(container);	// 1000 Input

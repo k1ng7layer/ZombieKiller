@@ -1,6 +1,10 @@
-﻿using Ecs.Extensions.UidGenerator;
+﻿using Db.Player;
+using Ecs.Commands;
+using Ecs.Extensions.UidGenerator;
 using Game.Providers.GameFieldProvider;
+using Game.Utils;
 using JCMG.EntitasRedux;
+using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
 
@@ -10,45 +14,49 @@ namespace Ecs.Game.Systems.Initialize
     public class InitializePlayerSystem : IInitializeSystem
     {
         private readonly IGameFieldProvider _gameFieldProvider;
+        private readonly IPlayerSettings _playerSettings;
+        private readonly ICommandBuffer _commandBuffer;
         private readonly GameContext _game;
 
         public InitializePlayerSystem(
-            IGameFieldProvider gameFieldProvider, 
+            IGameFieldProvider gameFieldProvider,
+            IPlayerSettings playerSettings,
+            ICommandBuffer commandBuffer,
             GameContext game
         )
         {
             _gameFieldProvider = gameFieldProvider;
+            _playerSettings = playerSettings;
+            _commandBuffer = commandBuffer;
             _game = game;
         }
         
         public void Initialize()
         {
-            var playerView = _gameFieldProvider.GameField.UnitView;
+            var playerView = _gameFieldProvider.GameField.PlayerView;
             var player = _game.CreateEntity();
+            
+            playerView.Link(player);
+            
             var playerUid = UidGenerator.Next();
             
             player.IsPlayer = true;
             player.IsCanMove = true;
             player.AddUid(playerUid);
             player.AddRotation(playerView.transform.rotation);
+            player.AddHealth(100);
+
+            var starterWeapon = _playerSettings.StarterWeapon;
             
-            var weaponUid = CreateWeapon(playerUid);
-            
-            player.ReplaceEquippedWeapon(weaponUid);
-            
-            playerView.Link(player);
+            if (starterWeapon != EWeaponId.None)
+            {
+                CreateWeapon(starterWeapon, playerUid);
+            }
         }
 
-        private Uid CreateWeapon(Uid playerUid)
+        private void CreateWeapon(EWeaponId weaponId, Uid playerUid)
         {
-            var weaponEntity = _game.CreateEntity();
-            var weaponUid = UidGenerator.Next();
-            
-            weaponEntity.AddUid(weaponUid);
-            weaponEntity.AddWeapon("BasicSword");
-            weaponEntity.AddOwner(playerUid);
-
-            return weaponUid;
+            _commandBuffer.EquipWeapon(weaponId, playerUid);
         }
     }
 }

@@ -11,12 +11,12 @@ using Ecs.Commands.Systems.Spawn;
 using Game.Utils;
 using UnityEngine;
 using Ecs.Commands.Command;
+using Ecs.Extensions.UidGenerator;
 using System;
 using Game.Utils.Units;
 using Ecs.Commands.Command.Input;
 using Ecs.Commands.Command.Income;
 using Ecs.Commands.Command.Combat;
-using Ecs.Extensions.UidGenerator;
 
 namespace Ecs.Commands
 {
@@ -28,6 +28,20 @@ namespace Ecs.Commands
             command.EnemyType = enemyType;
             command.Position = position;
             command.Rotation = rotation;
+        }
+
+        public static void AttachWeapon(this ICommandBuffer commandBuffer, Uid weapon, Transform transform)
+        {
+            ref var command = ref commandBuffer.Create<AttachWeaponCommand>();
+            command.Weapon = weapon;
+            command.Transform = transform;
+        }
+
+        public static void EquipWeapon(this ICommandBuffer commandBuffer, EWeaponId weaponId, Uid owner)
+        {
+            ref var command = ref commandBuffer.Create<EquipWeaponCommand>();
+            command.WeaponId = weaponId;
+            command.Owner = owner;
         }
 
         public static void MouseDown(this ICommandBuffer commandBuffer, Int32 button)

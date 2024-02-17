@@ -20,6 +20,11 @@ namespace Ecs.Commands.Systems.Combat
             var attacker = _game.GetEntityWithUid(command.AttackerUid);
 
             attacker.IsPerformingAttack = false;
+            
+            var weaponUid = attacker.EquippedWeapon.Value.WeaponEntityUid;
+            var weaponEntity = _game.GetEntityWithUid(weaponUid);
+            weaponEntity.IsPerformingAttack = false;
+            weaponEntity.AttackTargets.Value.Clear();
         }
     }
 }

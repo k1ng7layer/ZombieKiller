@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Utils;
+using UnityEngine;
 
 namespace Db.Player.Impl
 {
@@ -6,7 +7,10 @@ namespace Db.Player.Impl
     public class PlayerSettings : ScriptableObject, IPlayerSettings
     {
         [SerializeField] private float _baseMoveSpeed;
+        [SerializeField] private EWeaponId _starterWeapon;
 
         public float BaseMoveSpeed => _baseMoveSpeed;
+
+        public EWeaponId StarterWeapon => _starterWeapon;
     }
 }

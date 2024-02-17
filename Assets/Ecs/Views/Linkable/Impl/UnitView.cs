@@ -15,7 +15,7 @@ namespace Ecs.Views.Linkable.Impl
     public class UnitView : ObjectView
     {
         [SerializeField] private Rigidbody _rb;
-        [SerializeField] private Animator _animator;
+        [SerializeField] protected Animator _animator;
         [SerializeField] private Collider _damageTrigger;
         
         [Inject] private ICommandBuffer _commandBuffer;
@@ -24,17 +24,18 @@ namespace Ecs.Views.Linkable.Impl
         {
             base.Subscribe(entity, unsubscribe);
 
-            var playerEntity = (GameEntity)entity;
+            var unitEntity = (GameEntity)entity;
             
-            playerEntity.SubscribeMoveDirection(OnDirectionChanged).AddTo(unsubscribe);
-            playerEntity.SubscribePerformingAttack(OnPerformingAttack).AddTo(unsubscribe);
+            unitEntity.SubscribeMoveDirection(OnDirectionChanged).AddTo(unsubscribe);
+            unitEntity.SubscribePerformingAttack(OnPerformingAttack).AddTo(unsubscribe);
+            unitEntity.SubscribeDead(OnDead).AddTo(unsubscribe);
 
             _damageTrigger.OnTriggerEnterAsObservable().Subscribe(OnUnitTriggerEnter).AddTo(unsubscribe);
             
             var attackEndTrigger = _animator.GetBehaviour<CompleteAttackTrigger>();
-            attackEndTrigger.AttackEnd.Subscribe(_ =>
+            attackEndTrigger?.AttackEnd.Subscribe(_ =>
             {
-                _commandBuffer.CompletePerformingAttack(playerEntity.Uid.Value);
+                _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
             }).AddTo(gameObject);
         }
 
@@ -59,6 +60,11 @@ namespace Ecs.Views.Linkable.Impl
                 
                 _commandBuffer.TakeDamage(weaponHash, transform.GetHashCode());
             }
+        }
+
+        protected virtual void OnDead(GameEntity _)
+        {
+            _animator.SetTrigger(AnimationKeys.Death);
         }
     }
 }

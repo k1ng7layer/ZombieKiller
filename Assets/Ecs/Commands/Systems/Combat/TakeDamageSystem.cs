@@ -3,6 +3,7 @@ using Ecs.Utils.LinkedEntityRepository;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Commands.Systems.Combat
 {
@@ -36,6 +37,11 @@ namespace Ecs.Commands.Systems.Combat
                 return;
             
             var targetUid = targetEntity.Uid.Value;
+
+            var weaponOwner = weaponEntity.Owner.Value;
+            
+            if (weaponOwner == targetUid)
+                return;
             
             if (weaponTargets.Contains(targetUid))
                 return;
@@ -43,8 +49,12 @@ namespace Ecs.Commands.Systems.Combat
             weaponTargets.Add(targetUid);
 
             var damage = weaponEntity.PhysicalDamage.Value + weaponEntity.MagicDamage.Value;
+            var health = targetEntity.Health.Value;
+            health -= damage;
             
-            targetEntity.ReplaceHealth(damage);
+            targetEntity.ReplaceHealth(health);
+            
+            Debug.Log($"TakeDamageSystem. targetEntity: {targetUid}, damage: {damage}");
         }
     }
 }

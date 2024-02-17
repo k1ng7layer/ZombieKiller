@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Utils;
 using UnityEngine;
 
 namespace Db.Weapon.Impl
@@ -8,15 +9,15 @@ namespace Db.Weapon.Impl
     {
         [SerializeField] private WeaponSettings[] weapons;
         
-        public WeaponSettings GetWeapon(string weaponName)
+        public WeaponSettings GetWeapon(EWeaponId weaponId)
         {
             foreach (var weapon in weapons)
             {
-                if (weapon.Name == weaponName)
+                if (weapon.WeaponId == weaponId)
                     return weapon;
             }
             
-            throw new Exception($"[{typeof(WeaponBase)}]: Can't find weapon with name: {weaponName}");
+            throw new Exception($"[{typeof(WeaponBase)}]: Can't find weapon with name: {weaponId}");
         }
     }
 }

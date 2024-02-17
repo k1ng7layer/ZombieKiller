@@ -1,10 +1,10 @@
 ﻿using Ecs.Commands;
+using Game.Providers.GameFieldProvider;
 using Game.Utils;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
-using UnityEngine;
 
 namespace Ecs.Game.Systems.Initialize
 {
@@ -12,20 +12,23 @@ namespace Ecs.Game.Systems.Initialize
     public class GameInitializeSystem : IInitializeSystem
     {
         private readonly ICommandBuffer _commandBuffer;
-        private readonly GameContext _game;
+        private readonly IGameFieldProvider _gameFieldProvider;
 
         public GameInitializeSystem(
             ICommandBuffer commandBuffer,
-            GameContext game
+            IGameFieldProvider gameFieldProvider
         )
         {
             _commandBuffer = commandBuffer;
-            _game = game;
+            _gameFieldProvider = gameFieldProvider;
         }
 
         public void Initialize()
         {
-            _commandBuffer.SpawnEnemy(EEnemyType.Type1, Vector3.zero, Quaternion.identity);
+            foreach (var enemySpawnPoint in _gameFieldProvider.GameField.EnemySpawnPoints)
+            {
+                _commandBuffer.SpawnEnemy(EEnemyType.Type1, enemySpawnPoint.position, enemySpawnPoint.rotation);
+            }
         }
     }
 }

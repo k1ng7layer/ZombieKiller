@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baca5dbee5eb4f3989388558ca3ee493, type: 3}
   m_Name: SimpleSword
   m_EditorClassIdentifier: 
-  Name: BasicSword
+  WeaponId: 1
   WeaponType: 0
   Icon: {fileID: 0}
-  PhysicalDamage: 5
+  PhysicalDamage: 50
   MagicDamage: 0

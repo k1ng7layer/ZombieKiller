@@ -12,7 +12,7 @@ public partial interface IEquippedWeaponEntity
 	Ecs.Game.Components.Combat.EquippedWeaponComponent EquippedWeapon { get; }
 	bool HasEquippedWeapon { get; }
 
-	void AddEquippedWeapon(Ecs.Extensions.UidGenerator.Uid newValue);
-	void ReplaceEquippedWeapon(Ecs.Extensions.UidGenerator.Uid newValue);
+	void AddEquippedWeapon(Ecs.Utils.EquippedWeaponInfo newValue);
+	void ReplaceEquippedWeapon(Ecs.Utils.EquippedWeaponInfo newValue);
 	void RemoveEquippedWeapon();
 }

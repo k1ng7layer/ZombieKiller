@@ -14,51 +14,57 @@ using JCMG.EntitasRedux;
 public static class GameComponentsLookup
 {
 	public const int CameraModeListener = 0;
-	public const int Destroyed = 1;
-	public const int Uid = 2;
-	public const int Camera = 3;
-	public const int CameraMode = 4;
-	public const int CameraMove = 5;
-	public const int VirtualCamera = 6;
-	public const int CanMove = 7;
-	public const int AttackTargets = 8;
-	public const int EquippedWeapon = 9;
-	public const int PerformingAttack = 10;
-	public const int Weapon = 11;
-	public const int Dead = 12;
-	public const int Enemy = 13;
-	public const int HoveredObject = 14;
-	public const int Income = 15;
-	public const int IncomeTimer = 16;
-	public const int Instantiate = 17;
-	public const int MoveDirection = 18;
-	public const int Owner = 19;
-	public const int PlayerCoins = 20;
-	public const int Player = 21;
-	public const int Position = 22;
-	public const int Prefab = 23;
-	public const int Rotation = 24;
-	public const int Time = 25;
-	public const int Transform = 26;
-	public const int Health = 27;
-	public const int MagicDamage = 28;
-	public const int PhysicalDamage = 29;
-	public const int Visible = 30;
-	public const int GameDestroyedListener = 31;
-	public const int HealthListener = 32;
-	public const int MoveDirectionListener = 33;
-	public const int PerformingAttackListener = 34;
-	public const int PlayerCoinsListener = 35;
-	public const int PositionListener = 36;
-	public const int RotationListener = 37;
-	public const int VisibleListener = 38;
-	public const int VisibleRemovedListener = 39;
+	public const int DeadListener = 1;
+	public const int Destroyed = 2;
+	public const int Uid = 3;
+	public const int Camera = 4;
+	public const int CameraMode = 5;
+	public const int CameraMove = 6;
+	public const int VirtualCamera = 7;
+	public const int CanMove = 8;
+	public const int AttackTargets = 9;
+	public const int EquippedWeapon = 10;
+	public const int PerformingAttack = 11;
+	public const int Weapon = 12;
+	public const int Dead = 13;
+	public const int Enemy = 14;
+	public const int HoveredObject = 15;
+	public const int Income = 16;
+	public const int IncomeTimer = 17;
+	public const int Instantiate = 18;
+	public const int MoveDirection = 19;
+	public const int Owner = 20;
+	public const int ParentTransform = 21;
+	public const int PlayerCoins = 22;
+	public const int Player = 23;
+	public const int Position = 24;
+	public const int Prefab = 25;
+	public const int Rotation = 26;
+	public const int Time = 27;
+	public const int Transform = 28;
+	public const int Health = 29;
+	public const int MagicDamage = 30;
+	public const int PhysicalDamage = 31;
+	public const int Visible = 32;
+	public const int WeaponRoot = 33;
+	public const int EquippedWeaponListener = 34;
+	public const int GameDestroyedListener = 35;
+	public const int HealthListener = 36;
+	public const int MoveDirectionListener = 37;
+	public const int ParentTransformListener = 38;
+	public const int PerformingAttackListener = 39;
+	public const int PlayerCoinsListener = 40;
+	public const int PositionListener = 41;
+	public const int RotationListener = 42;
+	public const int VisibleListener = 43;
+	public const int VisibleRemovedListener = 44;
 
-	public const int TotalComponents = 40;
+	public const int TotalComponents = 45;
 
 	public static readonly string[] ComponentNames =
 	{
 		"CameraModeListener",
+		"DeadListener",
 		"Destroyed",
 		"Uid",
 		"Camera",
@@ -78,6 +84,7 @@ public static class GameComponentsLookup
 		"Instantiate",
 		"MoveDirection",
 		"Owner",
+		"ParentTransform",
 		"PlayerCoins",
 		"Player",
 		"Position",
@@ -89,9 +96,12 @@ public static class GameComponentsLookup
 		"MagicDamage",
 		"PhysicalDamage",
 		"Visible",
+		"WeaponRoot",
+		"EquippedWeaponListener",
 		"GameDestroyedListener",
 		"HealthListener",
 		"MoveDirectionListener",
+		"ParentTransformListener",
 		"PerformingAttackListener",
 		"PlayerCoinsListener",
 		"PositionListener",
@@ -103,6 +113,7 @@ public static class GameComponentsLookup
 	public static readonly System.Type[] ComponentTypes =
 	{
 		typeof(CameraModeListenerComponent),
+		typeof(DeadListenerComponent),
 		typeof(Ecs.Common.Components.DestroyedComponent),
 		typeof(Ecs.Common.Components.UidComponent),
 		typeof(Ecs.Game.Components.Camera.CameraComponent),
@@ -122,6 +133,7 @@ public static class GameComponentsLookup
 		typeof(Ecs.Game.Components.InstantiateComponent),
 		typeof(Ecs.Game.Components.MoveDirectionComponent),
 		typeof(Ecs.Game.Components.OwnerComponent),
+		typeof(Ecs.Game.Components.ParentTransformComponent),
 		typeof(Ecs.Game.Components.PlayerCoinsComponent),
 		typeof(Ecs.Game.Components.PlayerComponent),
 		typeof(Ecs.Game.Components.PositionComponent),
@@ -133,9 +145,12 @@ public static class GameComponentsLookup
 		typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent),
 		typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent),
 		typeof(Ecs.Game.Components.VisibleComponent),
+		typeof(Ecs.Game.Components.WeaponRootComponent),
+		typeof(EquippedWeaponListenerComponent),
 		typeof(GameDestroyedListenerComponent),
 		typeof(HealthListenerComponent),
 		typeof(MoveDirectionListenerComponent),
+		typeof(ParentTransformListenerComponent),
 		typeof(PerformingAttackListenerComponent),
 		typeof(PlayerCoinsListenerComponent),
 		typeof(PositionListenerComponent),
@@ -147,45 +162,50 @@ public static class GameComponentsLookup
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
 		{ typeof(CameraModeListenerComponent), 0 },
-		{ typeof(Ecs.Common.Components.DestroyedComponent), 1 },
-		{ typeof(Ecs.Common.Components.UidComponent), 2 },
-		{ typeof(Ecs.Game.Components.Camera.CameraComponent), 3 },
-		{ typeof(Ecs.Game.Components.Camera.CameraModeComponent), 4 },
-		{ typeof(Ecs.Game.Components.Camera.CameraMoveComponent), 5 },
-		{ typeof(Ecs.Game.Components.Camera.VirtualCameraComponent), 6 },
-		{ typeof(Ecs.Game.Components.CanMoveComponent), 7 },
-		{ typeof(Ecs.Game.Components.Combat.AttackTargetsComponent), 8 },
-		{ typeof(Ecs.Game.Components.Combat.EquippedWeaponComponent), 9 },
-		{ typeof(Ecs.Game.Components.Combat.PerformingAttackComponent), 10 },
-		{ typeof(Ecs.Game.Components.Combat.WeaponComponent), 11 },
-		{ typeof(Ecs.Game.Components.DeadComponent), 12 },
-		{ typeof(Ecs.Game.Components.EnemyComponent), 13 },
-		{ typeof(Ecs.Game.Components.HoveredObjectComponent), 14 },
-		{ typeof(Ecs.Game.Components.IncomeComponent), 15 },
-		{ typeof(Ecs.Game.Components.IncomeTimer), 16 },
-		{ typeof(Ecs.Game.Components.InstantiateComponent), 17 },
-		{ typeof(Ecs.Game.Components.MoveDirectionComponent), 18 },
-		{ typeof(Ecs.Game.Components.OwnerComponent), 19 },
-		{ typeof(Ecs.Game.Components.PlayerCoinsComponent), 20 },
-		{ typeof(Ecs.Game.Components.PlayerComponent), 21 },
-		{ typeof(Ecs.Game.Components.PositionComponent), 22 },
-		{ typeof(Ecs.Game.Components.PrefabComponent), 23 },
-		{ typeof(Ecs.Game.Components.RotationComponent), 24 },
-		{ typeof(Ecs.Game.Components.TimeComponent), 25 },
-		{ typeof(Ecs.Game.Components.TransformComponent), 26 },
-		{ typeof(Ecs.Game.Components.UnitParameters.HealthComponent), 27 },
-		{ typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent), 28 },
-		{ typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent), 29 },
-		{ typeof(Ecs.Game.Components.VisibleComponent), 30 },
-		{ typeof(GameDestroyedListenerComponent), 31 },
-		{ typeof(HealthListenerComponent), 32 },
-		{ typeof(MoveDirectionListenerComponent), 33 },
-		{ typeof(PerformingAttackListenerComponent), 34 },
-		{ typeof(PlayerCoinsListenerComponent), 35 },
-		{ typeof(PositionListenerComponent), 36 },
-		{ typeof(RotationListenerComponent), 37 },
-		{ typeof(VisibleListenerComponent), 38 },
-		{ typeof(VisibleRemovedListenerComponent), 39 }
+		{ typeof(DeadListenerComponent), 1 },
+		{ typeof(Ecs.Common.Components.DestroyedComponent), 2 },
+		{ typeof(Ecs.Common.Components.UidComponent), 3 },
+		{ typeof(Ecs.Game.Components.Camera.CameraComponent), 4 },
+		{ typeof(Ecs.Game.Components.Camera.CameraModeComponent), 5 },
+		{ typeof(Ecs.Game.Components.Camera.CameraMoveComponent), 6 },
+		{ typeof(Ecs.Game.Components.Camera.VirtualCameraComponent), 7 },
+		{ typeof(Ecs.Game.Components.CanMoveComponent), 8 },
+		{ typeof(Ecs.Game.Components.Combat.AttackTargetsComponent), 9 },
+		{ typeof(Ecs.Game.Components.Combat.EquippedWeaponComponent), 10 },
+		{ typeof(Ecs.Game.Components.Combat.PerformingAttackComponent), 11 },
+		{ typeof(Ecs.Game.Components.Combat.WeaponComponent), 12 },
+		{ typeof(Ecs.Game.Components.DeadComponent), 13 },
+		{ typeof(Ecs.Game.Components.EnemyComponent), 14 },
+		{ typeof(Ecs.Game.Components.HoveredObjectComponent), 15 },
+		{ typeof(Ecs.Game.Components.IncomeComponent), 16 },
+		{ typeof(Ecs.Game.Components.IncomeTimer), 17 },
+		{ typeof(Ecs.Game.Components.InstantiateComponent), 18 },
+		{ typeof(Ecs.Game.Components.MoveDirectionComponent), 19 },
+		{ typeof(Ecs.Game.Components.OwnerComponent), 20 },
+		{ typeof(Ecs.Game.Components.ParentTransformComponent), 21 },
+		{ typeof(Ecs.Game.Components.PlayerCoinsComponent), 22 },
+		{ typeof(Ecs.Game.Components.PlayerComponent), 23 },
+		{ typeof(Ecs.Game.Components.PositionComponent), 24 },
+		{ typeof(Ecs.Game.Components.PrefabComponent), 25 },
+		{ typeof(Ecs.Game.Components.RotationComponent), 26 },
+		{ typeof(Ecs.Game.Components.TimeComponent), 27 },
+		{ typeof(Ecs.Game.Components.TransformComponent), 28 },
+		{ typeof(Ecs.Game.Components.UnitParameters.HealthComponent), 29 },
+		{ typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent), 30 },
+		{ typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent), 31 },
+		{ typeof(Ecs.Game.Components.VisibleComponent), 32 },
+		{ typeof(Ecs.Game.Components.WeaponRootComponent), 33 },
+		{ typeof(EquippedWeaponListenerComponent), 34 },
+		{ typeof(GameDestroyedListenerComponent), 35 },
+		{ typeof(HealthListenerComponent), 36 },
+		{ typeof(MoveDirectionListenerComponent), 37 },
+		{ typeof(ParentTransformListenerComponent), 38 },
+		{ typeof(PerformingAttackListenerComponent), 39 },
+		{ typeof(PlayerCoinsListenerComponent), 40 },
+		{ typeof(PositionListenerComponent), 41 },
+		{ typeof(RotationListenerComponent), 42 },
+		{ typeof(VisibleListenerComponent), 43 },
+		{ typeof(VisibleRemovedListenerComponent), 44 }
 	};
 
 	/// <summary>

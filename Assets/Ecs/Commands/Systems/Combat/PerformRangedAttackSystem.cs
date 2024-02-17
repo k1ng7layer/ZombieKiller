@@ -27,9 +27,8 @@ namespace Ecs.Commands.Systems.Combat
         {
             var attacker = _game.GetEntityWithUid(command.Attacker);
             
-            var weaponId = attacker.EquippedWeapon.Value;
-            var weaponEntity = _game.GetEntityWithUid(weaponId);
-            var weapon = _weaponBase.GetWeapon(weaponEntity.Weapon.WeaponId);
+            var weaponId = attacker.EquippedWeapon.Value.Id;
+            var weapon = _weaponBase.GetWeapon(weaponId);
             
             if (weapon.WeaponType != EWeaponType.Ranged)
                 return;

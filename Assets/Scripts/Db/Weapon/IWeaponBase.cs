@@ -1,7 +1,9 @@
-﻿namespace Db.Weapon
+﻿using Game.Utils;
+
+namespace Db.Weapon
 {
     public interface IWeaponBase
     {
-        WeaponSettings GetWeapon(string weaponName);
+        WeaponSettings GetWeapon(EWeaponId weaponId);
     }
 }

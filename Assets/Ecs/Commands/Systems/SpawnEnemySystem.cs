@@ -1,5 +1,6 @@
 ﻿using Db.Enemies;
 using Ecs.Commands.Systems.Spawn;
+using Ecs.Extensions.UidGenerator;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
@@ -33,6 +34,7 @@ namespace Ecs.Commands.Systems
             enemyEntity.AddRotation(command.Rotation);
             enemyEntity.AddPrefab(enemyType.ToString());
             enemyEntity.AddHealth(enemyParams.BaseHealth);
+            enemyEntity.AddUid(UidGenerator.Next());
             enemyEntity.IsInstantiate = true;
         }
     }

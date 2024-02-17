@@ -12,7 +12,7 @@ public partial class GameEntity
 	public Ecs.Game.Components.Combat.EquippedWeaponComponent EquippedWeapon { get { return (Ecs.Game.Components.Combat.EquippedWeaponComponent)GetComponent(GameComponentsLookup.EquippedWeapon); } }
 	public bool HasEquippedWeapon { get { return HasComponent(GameComponentsLookup.EquippedWeapon); } }
 
-	public void AddEquippedWeapon(Ecs.Extensions.UidGenerator.Uid newValue)
+	public void AddEquippedWeapon(Ecs.Utils.EquippedWeaponInfo newValue)
 	{
 		var index = GameComponentsLookup.EquippedWeapon;
 		var component = (Ecs.Game.Components.Combat.EquippedWeaponComponent)CreateComponent(index, typeof(Ecs.Game.Components.Combat.EquippedWeaponComponent));
@@ -22,7 +22,7 @@ public partial class GameEntity
 		AddComponent(index, component);
 	}
 
-	public void ReplaceEquippedWeapon(Ecs.Extensions.UidGenerator.Uid newValue)
+	public void ReplaceEquippedWeapon(Ecs.Utils.EquippedWeaponInfo newValue)
 	{
 		var index = GameComponentsLookup.EquippedWeapon;
 		var component = (Ecs.Game.Components.Combat.EquippedWeaponComponent)CreateComponent(index, typeof(Ecs.Game.Components.Combat.EquippedWeaponComponent));
