@@ -18,3 +18,4 @@ MonoBehaviour:
   weaponBase: {fileID: 11400000, guid: f2e77455162fffc44944b7adf754f231, type: 2}
   enemyParamsBase: {fileID: 11400000, guid: dad79fbaa9eda7d4ba1079cd22cfaeee, type: 2}
   projectileBase: {fileID: 11400000, guid: f71f970b8eb91b6458e3e0818a2cc91c, type: 2}
+  bTreesBase: {fileID: 11400000, guid: a55c35ba18c7f5d42a30448d1fe55bf8, type: 2}

@@ -1,4 +1,7 @@
-﻿using Db.Enemies;
+﻿using AiTasks;
+using BehaviorDesigner.Runtime;
+using Db.BTrees;
+using Db.Enemies;
 using Game.Utils;
 using Game.Views;
 using JCMG.EntitasRedux;
@@ -11,7 +14,11 @@ namespace Ecs.Views.Linkable.Impl
     public class EnemyView : UnitView
     {
         [SerializeField] private UnitParamBarView healthBarView;
+        [SerializeField] private BehaviorTree behaviorTree;
+        
         [Inject] private IEnemyParamsBase _enemyParamsBase;
+        [Inject] private DiContainer _diContainer;
+        [Inject] private IBTreesBase _bTreesBase;
 
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
@@ -20,6 +27,7 @@ namespace Ecs.Views.Linkable.Impl
             var enemyEntity = (GameEntity)entity;
 
             enemyEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
+            enemyEntity.SubscribeEnemy(OnEnemy).AddTo(unsubscribe);
         }
 
         private void OnHealthChanged(GameEntity entity, float value)
@@ -31,12 +39,28 @@ namespace Ecs.Views.Linkable.Impl
             
             _animator.SetTrigger(AnimationKeys.TakeDamage);
         }
+        
+        private void OnEnemy(GameEntity entity, EEnemyType enemyType)
+        {
+            InitializeBTree(enemyType);
+        }
 
         protected override void OnDead(GameEntity _)
         {
             base.OnDead(_);
             
             healthBarView.gameObject.SetActive(false);
+        }
+
+        private void InitializeBTree(EEnemyType enemyType)
+        {
+            var bTree = _bTreesBase.GetBehaviorTree(enemyType);
+            
+            behaviorTree.QueueAllTasksForInject(_diContainer);
+            
+            behaviorTree.ExternalBehavior = bTree;
+            
+            behaviorTree.EnableBehavior();
         }
     }
 }

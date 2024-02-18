@@ -26,30 +26,6 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
-		else if (component is Ecs.Game.Components.ActiveComponent Active)
-		{
-			IsActive = true;
-		}
-		else if (component is Ecs.Game.Components.LinkComponent Link)
-		{
-			CopyLinkTo(Link);
-		}
-		else if (component is Ecs.Game.Components.SpeedComponent Speed)
-		{
-			CopySpeedTo(Speed);
-		}
-		else if (component is Ecs.Game.Components.ProjectileComponent Projectile)
-		{
-			CopyProjectileTo(Projectile);
-		}
-		else if (component is Ecs.Game.Components.WeaponRootComponent WeaponRoot)
-		{
-			CopyWeaponRootTo(WeaponRoot);
-		}
-		else if (component is Ecs.Game.Components.ParentTransformComponent ParentTransform)
-		{
-			CopyParentTransformTo(ParentTransform);
-		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
@@ -61,6 +37,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.PlayerCoinsComponent PlayerCoins)
 		{
 			CopyPlayerCoinsTo(PlayerCoins);
+		}
+		else if (component is Ecs.Game.Components.WeaponRootComponent WeaponRoot)
+		{
+			CopyWeaponRootTo(WeaponRoot);
 		}
 		else if (component is Ecs.Game.Components.DeadComponent Dead)
 		{
@@ -74,6 +54,10 @@ public partial class GameEntity
 		{
 			CopyIncomeTimerTo(IncomeTimer);
 		}
+		else if (component is Ecs.Game.Components.ParentTransformComponent ParentTransform)
+		{
+			CopyParentTransformTo(ParentTransform);
+		}
 		else if (component is Ecs.Game.Components.PrefabComponent Prefab)
 		{
 			CopyPrefabTo(Prefab);
@@ -81,6 +65,14 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.CanMoveComponent CanMove)
 		{
 			IsCanMove = true;
+		}
+		else if (component is Ecs.Game.Components.ActiveComponent Active)
+		{
+			IsActive = true;
+		}
+		else if (component is Ecs.Game.Components.SpeedComponent Speed)
+		{
+			CopySpeedTo(Speed);
 		}
 		else if (component is Ecs.Game.Components.RotationComponent Rotation)
 		{
@@ -90,6 +82,10 @@ public partial class GameEntity
 		{
 			CopyTransformTo(Transform);
 		}
+		else if (component is Ecs.Game.Components.LinkComponent Link)
+		{
+			CopyLinkTo(Link);
+		}
 		else if (component is Ecs.Game.Components.MoveDirectionComponent MoveDirection)
 		{
 			CopyMoveDirectionTo(MoveDirection);
@@ -97,6 +93,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.EnemyComponent Enemy)
 		{
 			CopyEnemyTo(Enemy);
+		}
+		else if (component is Ecs.Game.Components.ProjectileComponent Projectile)
+		{
+			CopyProjectileTo(Projectile);
 		}
 		else if (component is Ecs.Game.Components.VisibleComponent Visible)
 		{

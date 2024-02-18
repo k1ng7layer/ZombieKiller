@@ -53,20 +53,21 @@ public static class GameComponentsLookup
 	public const int PhysicalDamage = 37;
 	public const int Visible = 38;
 	public const int WeaponRoot = 39;
-	public const int EquippedWeaponListener = 40;
-	public const int GameDestroyedListener = 41;
-	public const int HealthListener = 42;
-	public const int LinkRemovedListener = 43;
-	public const int MoveDirectionListener = 44;
-	public const int ParentTransformListener = 45;
-	public const int PerformingAttackListener = 46;
-	public const int PlayerCoinsListener = 47;
-	public const int PositionListener = 48;
-	public const int RotationListener = 49;
-	public const int VisibleListener = 50;
-	public const int VisibleRemovedListener = 51;
+	public const int EnemyListener = 40;
+	public const int EquippedWeaponListener = 41;
+	public const int GameDestroyedListener = 42;
+	public const int HealthListener = 43;
+	public const int LinkRemovedListener = 44;
+	public const int MoveDirectionListener = 45;
+	public const int ParentTransformListener = 46;
+	public const int PerformingAttackListener = 47;
+	public const int PlayerCoinsListener = 48;
+	public const int PositionListener = 49;
+	public const int RotationListener = 50;
+	public const int VisibleListener = 51;
+	public const int VisibleRemovedListener = 52;
 
-	public const int TotalComponents = 52;
+	public const int TotalComponents = 53;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -110,6 +111,7 @@ public static class GameComponentsLookup
 		"PhysicalDamage",
 		"Visible",
 		"WeaponRoot",
+		"EnemyListener",
 		"EquippedWeaponListener",
 		"GameDestroyedListener",
 		"HealthListener",
@@ -166,6 +168,7 @@ public static class GameComponentsLookup
 		typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent),
 		typeof(Ecs.Game.Components.VisibleComponent),
 		typeof(Ecs.Game.Components.WeaponRootComponent),
+		typeof(EnemyListenerComponent),
 		typeof(EquippedWeaponListenerComponent),
 		typeof(GameDestroyedListenerComponent),
 		typeof(HealthListenerComponent),
@@ -222,18 +225,19 @@ public static class GameComponentsLookup
 		{ typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent), 37 },
 		{ typeof(Ecs.Game.Components.VisibleComponent), 38 },
 		{ typeof(Ecs.Game.Components.WeaponRootComponent), 39 },
-		{ typeof(EquippedWeaponListenerComponent), 40 },
-		{ typeof(GameDestroyedListenerComponent), 41 },
-		{ typeof(HealthListenerComponent), 42 },
-		{ typeof(LinkRemovedListenerComponent), 43 },
-		{ typeof(MoveDirectionListenerComponent), 44 },
-		{ typeof(ParentTransformListenerComponent), 45 },
-		{ typeof(PerformingAttackListenerComponent), 46 },
-		{ typeof(PlayerCoinsListenerComponent), 47 },
-		{ typeof(PositionListenerComponent), 48 },
-		{ typeof(RotationListenerComponent), 49 },
-		{ typeof(VisibleListenerComponent), 50 },
-		{ typeof(VisibleRemovedListenerComponent), 51 }
+		{ typeof(EnemyListenerComponent), 40 },
+		{ typeof(EquippedWeaponListenerComponent), 41 },
+		{ typeof(GameDestroyedListenerComponent), 42 },
+		{ typeof(HealthListenerComponent), 43 },
+		{ typeof(LinkRemovedListenerComponent), 44 },
+		{ typeof(MoveDirectionListenerComponent), 45 },
+		{ typeof(ParentTransformListenerComponent), 46 },
+		{ typeof(PerformingAttackListenerComponent), 47 },
+		{ typeof(PlayerCoinsListenerComponent), 48 },
+		{ typeof(PositionListenerComponent), 49 },
+		{ typeof(RotationListenerComponent), 50 },
+		{ typeof(VisibleListenerComponent), 51 },
+		{ typeof(VisibleRemovedListenerComponent), 52 }
 	};
 
 	/// <summary>
