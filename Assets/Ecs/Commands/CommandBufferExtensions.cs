@@ -91,11 +91,10 @@ namespace Ecs.Commands
             command.AttackerUid = attackerUid;
         }
 
-        public static void DestroyProjectile(this ICommandBuffer commandBuffer, Int32 projectileHash, Int32 targetHash)
+        public static void DestroyProjectile(this ICommandBuffer commandBuffer, Int32 projectileHash)
         {
             ref var command = ref commandBuffer.Create<DestroyProjectileCommand>();
             command.ProjectileHash = projectileHash;
-            command.TargetHash = targetHash;
         }
 
         public static void PerformAttack(this ICommandBuffer commandBuffer, Uid attacker)
@@ -115,9 +114,9 @@ namespace Ecs.Commands
             command.Attacker = attacker;
         }
 
-        public static void TakeDamage(this ICommandBuffer commandBuffer, Int32 weaponHash, Int32 targetHash)
+        public static void TakeDamageByWeapon(this ICommandBuffer commandBuffer, Int32 weaponHash, Int32 targetHash)
         {
-            ref var command = ref commandBuffer.Create<TakeDamageCommand>();
+            ref var command = ref commandBuffer.Create<TakeDamageByWeaponCommand>();
             command.WeaponHash = weaponHash;
             command.TargetHash = targetHash;
         }

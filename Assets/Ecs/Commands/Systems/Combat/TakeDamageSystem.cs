@@ -8,8 +8,9 @@ using UnityEngine;
 namespace Ecs.Commands.Systems.Combat
 {
     [Install(ExecutionType.Game, ExecutionPriority.High, 700, nameof(EFeatures.Combat))]
-    public class TakeDamageSystem : ForEachCommandUpdateSystem<TakeDamageCommand>
+    public class TakeDamageSystem : ForEachCommandUpdateSystem<TakeDamageByWeaponCommand>
     {
+        private readonly ICommandBuffer _commandBuffer;
         private readonly ILinkedEntityRepository _linkedEntityRepository;
 
         public TakeDamageSystem(
@@ -17,12 +18,13 @@ namespace Ecs.Commands.Systems.Combat
             ILinkedEntityRepository linkedEntityRepository
         ) : base(commandBuffer)
         {
+            _commandBuffer = commandBuffer;
             _linkedEntityRepository = linkedEntityRepository;
         }
 
-        protected override void Execute(ref TakeDamageCommand command)
+        protected override void Execute(ref TakeDamageByWeaponCommand byWeaponCommand)
         {
-            var hasWeapon = _linkedEntityRepository.TryGet(command.WeaponHash, out var weaponEntity);
+            var hasWeapon = _linkedEntityRepository.TryGet(byWeaponCommand.WeaponHash, out var weaponEntity);
 
             if (!hasWeapon)
                 return;
@@ -31,7 +33,7 @@ namespace Ecs.Commands.Systems.Combat
                 return;
             
             var weaponTargets = weaponEntity.AttackTargets.Value;
-            var hasTargetEntity = _linkedEntityRepository.TryGet(command.TargetHash, out var targetEntity);
+            var hasTargetEntity = _linkedEntityRepository.TryGet(byWeaponCommand.TargetHash, out var targetEntity);
             
             if (!hasTargetEntity)
                 return;
@@ -53,8 +55,12 @@ namespace Ecs.Commands.Systems.Combat
             health -= damage;
             
             targetEntity.ReplaceHealth(health);
-            
             Debug.Log($"TakeDamageSystem. targetEntity: {targetUid}, damage: {damage}");
+
+            if (weaponEntity.HasProjectile)
+            {
+                _commandBuffer.DestroyProjectile(weaponEntity.Transform.Value.GetHashCode());
+            }
         }
     }
 }

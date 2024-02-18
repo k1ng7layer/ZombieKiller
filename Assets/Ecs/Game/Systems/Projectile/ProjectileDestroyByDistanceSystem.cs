@@ -38,7 +38,7 @@ namespace Ecs.Game.Systems.Projectile
 
                 if (dist2 >= 100 * 100)
                 {
-                    _commandBuffer.DestroyProjectile(projectile.Transform.Value.GetHashCode(), 0);
+                    _commandBuffer.DestroyProjectile(projectile.Transform.Value.GetHashCode());
                 }
             }
         }

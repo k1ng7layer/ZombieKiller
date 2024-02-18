@@ -65,7 +65,7 @@ namespace Ecs.Views.Linkable.Impl
             {
                 var weaponHash = other.transform.GetHashCode();
                 
-                _commandBuffer.TakeDamage(weaponHash, transform.GetHashCode());
+                _commandBuffer.TakeDamageByWeapon(weaponHash, transform.GetHashCode());
             }
         }
 

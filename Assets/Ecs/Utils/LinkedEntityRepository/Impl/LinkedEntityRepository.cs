@@ -39,6 +39,11 @@ namespace Ecs.Utils.LinkedEntityRepository.Impl
 			return true;
 		}
 
+		public bool Contains(int id)
+		{
+			return _links.ContainsKey(id);
+		}
+
 		public bool HasItem(int id) => _links.ContainsKey(id);
 
 		public void Update(int id, GameEntity item)

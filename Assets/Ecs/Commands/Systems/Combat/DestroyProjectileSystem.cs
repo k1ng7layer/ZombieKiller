@@ -13,45 +13,25 @@ namespace Ecs.Commands.Systems.Combat
     {
         private readonly ILinkedEntityRepository _linkedEntityRepository;
         private readonly IProjectilePoolRepository _projectilePoolRepository;
-        private readonly GameContext _game;
 
         public DestroyProjectileSystem(
             ICommandBuffer commandBuffer, 
             ILinkedEntityRepository linkedEntityRepository,
-            IProjectilePoolRepository projectilePoolRepository,
-            GameContext game
+            IProjectilePoolRepository projectilePoolRepository
         ) : base(commandBuffer)
         {
             _linkedEntityRepository = linkedEntityRepository;
             _projectilePoolRepository = projectilePoolRepository;
-            _game = game;
         }
 
         protected override void Execute(ref DestroyProjectileCommand command)
         {
             var projectileEntity = _linkedEntityRepository.Get(command.ProjectileHash);
-            
-            var hasTarget = _linkedEntityRepository.TryGet(command.TargetHash, out var targetEntity);
             var view = (ProjectileView)projectileEntity.Link.View;
             var projectilePool = _projectilePoolRepository.GetPool(projectileEntity.Projectile.ProjectileType);
             
-            if (!hasTarget)
-            {
-                projectileEntity.IsDead = true;
-                projectileEntity.IsDestroyed = true;
-                projectilePool.Despawn(view);
-                
-                return;
-            }
-            
-            var projectileOwner = _game.GetEntityWithUid(projectileEntity.Owner.Value);
-            
-            if (projectileOwner.Uid.Value == targetEntity.Uid.Value)
-                return;
-            
             projectileEntity.IsDead = true;
             projectileEntity.IsDestroyed = true;
-            
             projectilePool.Despawn(view);
         }
     }
