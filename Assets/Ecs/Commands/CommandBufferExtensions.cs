@@ -44,6 +44,16 @@ namespace Ecs.Commands
             command.Owner = owner;
         }
 
+        public static void LoadNextStage(this ICommandBuffer commandBuffer)
+        {
+            ref var command = ref commandBuffer.Create<LoadNextStageCommand>();
+        }
+
+        public static void LoadShelter(this ICommandBuffer commandBuffer)
+        {
+            ref var command = ref commandBuffer.Create<LoadShelterCommand>();
+        }
+
         public static void MouseDown(this ICommandBuffer commandBuffer, Int32 button)
         {
             ref var command = ref commandBuffer.Create<MouseDownCommand>();
@@ -57,6 +67,17 @@ namespace Ecs.Commands
             command.Rotation = rotation;
             command.UnitType = unitType;
             command.IsPlayerUnit = isPlayerUnit;
+        }
+
+        public static void StageWin(this ICommandBuffer commandBuffer)
+        {
+            ref var command = ref commandBuffer.Create<StageWinCommand>();
+        }
+
+        public static void TeleportPlayer(this ICommandBuffer commandBuffer, Int32 portalHash)
+        {
+            ref var command = ref commandBuffer.Create<TeleportPlayerCommand>();
+            command.PortalHash = portalHash;
         }
 
         public static void PointerDown(this ICommandBuffer commandBuffer, Int32 touchId)

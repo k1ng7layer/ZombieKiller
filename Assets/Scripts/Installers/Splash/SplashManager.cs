@@ -1,4 +1,4 @@
-﻿using Ecs.Core.SceneLoading.SceneLoading;
+﻿using Ecs.Core.SceneLoading.SceneLoadingManager;
 using Zenject;
 
 namespace Installers.Splash

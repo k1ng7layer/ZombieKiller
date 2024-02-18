@@ -24,6 +24,7 @@ namespace Installers.Game
         [SerializeField] private WeaponBase weaponBase;
         [SerializeField] private EnemyParamsBase enemyParamsBase;
         [SerializeField] private ProjectileBase projectileBase;
+       
 
         public override void InstallBindings()
         {
