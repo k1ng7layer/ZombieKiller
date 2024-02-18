@@ -58,6 +58,7 @@ namespace Ecs.Installers {
 
 			// Common 0100
 			SystemInstallHelper.Install<InstantiateSystem>(container);	// 0100 Common
+			SystemInstallHelper.Install<StartPerformingAttackSystem>(container);	// 0100 Combat
 
 			// Coins 0130
 			SystemInstallHelper.Install<AddCoinsSystem>(container);	// 0130 Coins

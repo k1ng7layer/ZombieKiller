@@ -38,6 +38,11 @@ namespace Ecs.Views.Linkable.Impl
             {
                 _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
             }).AddTo(gameObject);
+
+            attackEndTrigger?.AttackStart.Subscribe(_ =>
+            {
+                _commandBuffer.PerformAttack(unitEntity.Uid.Value);
+            });
         }
 
         private void OnDirectionChanged(GameEntity entity, Vector3 dir)

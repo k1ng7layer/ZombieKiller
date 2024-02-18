@@ -37,7 +37,7 @@ namespace Ecs.Game.Systems
         {
             var player = _game.PlayerEntity;
             
-            _commandBuffer.PerformAttack(player.Uid.Value);
+            _commandBuffer.StartPerformingAttack(player.Uid.Value);
         }
     }
 }
