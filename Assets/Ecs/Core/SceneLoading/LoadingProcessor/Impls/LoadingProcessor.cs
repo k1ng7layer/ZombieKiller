@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using Core.LoadingProcessor;
+using Core.LoadingProcessor.Impls;
 
-namespace Core.LoadingProcessor.Impls
+namespace Ecs.Core.SceneLoading.LoadingProcessor.Impls
 {
     public class LoadingProcessor : ILoadingProcessor
     {

@@ -1,9 +1,10 @@
 ﻿using System;
+using Core.LoadingProcessor.Impls;
 using Ecs.Core.SceneLoading.SceneLoadingManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Core.LoadingProcessor.Impls
+namespace Ecs.Core.SceneLoading.LoadingProcessor.Impls
 {
     public class UnloadProcess : Process
     {

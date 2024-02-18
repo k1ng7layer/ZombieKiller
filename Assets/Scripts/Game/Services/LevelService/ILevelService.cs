@@ -1,12 +1,10 @@
-﻿using Ecs.Core.SceneLoading.SceneLoadingManager;
-
-namespace Game.Services.LevelService
+﻿namespace Game.Services.LevelService
 {
     public interface ILevelService
     {
-        int CurrentLevelIndex { get; }
-        
-        void NextLevel();
-        string GetCurrentLevel();
+        int CurrentLevel { get; }
+        int GetNextLevel();
+        void SetCurrentLevel(int levelId);
+        string GetLevelSceneName(int levelId);
     }
 }
