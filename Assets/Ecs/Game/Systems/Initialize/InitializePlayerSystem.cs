@@ -48,6 +48,7 @@ namespace Ecs.Game.Systems.Initialize
             player.IsCanMove = true;
             player.AddUid(playerUid);
             player.AddRotation(playerView.transform.rotation);
+            player.AddPosition(playerView.transform.position);
             player.AddHealth(100);
 
             var starterWeapon = _playerSettings.StarterWeapon;

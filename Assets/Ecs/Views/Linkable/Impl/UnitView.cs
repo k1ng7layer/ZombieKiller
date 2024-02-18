@@ -47,6 +47,7 @@ namespace Ecs.Views.Linkable.Impl
 
         private void OnDirectionChanged(GameEntity entity, Vector3 dir)
         {
+            entity.Position.Value = transform.position;
             _rb.velocity = dir;
             Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}");
             _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
