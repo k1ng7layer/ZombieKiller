@@ -1,5 +1,5 @@
 using Ecs.Commands;
-using Ecs.Utils;
+using Ecs.Utils.LinkedEntityRepository;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using JCMG.EntitasRedux.Core.Utils;
@@ -16,6 +16,7 @@ namespace Ecs.Views.Linkable.Impl.Projectiles
         [SerializeField] private GameObject _fx;
 
         [Inject] private ICommandBuffer _commandBuffer;
+        [Inject] private ILinkedEntityRepository _linkedEntityRepository;
 
         public void SetState(bool v)
         {
@@ -49,16 +50,9 @@ namespace Ecs.Views.Linkable.Impl.Projectiles
 
         private void OnProjectileTouch(Collider other)
         {
-            var isEnv = LayerMask.GetMask(LayerNames.Environment) == (LayerMask.GetMask(LayerNames.Environment)
-                                                                            | 1 << other.gameObject.layer);
-            
-            var isUnits = LayerMask.GetMask(LayerNames.Units) == (LayerMask.GetMask(LayerNames.Units)
-                                                                        | 1 << other.gameObject.layer);
-            if (isEnv || isUnits)
+            if (!_linkedEntityRepository.Contains(other.transform.GetHashCode()))
             {
-                var targetHash = other.transform.GetHashCode();
-                
-                _commandBuffer.DestroyProjectile(transform.GetHashCode(), targetHash);
+                _commandBuffer.DestroyProjectile(transform.GetHashCode());
             }
         }
 

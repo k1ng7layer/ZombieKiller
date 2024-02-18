@@ -1,17 +1,14 @@
-using Db.Weapon;
 using Ecs.Utils;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Core.Utils;
 using UnityEngine;
-using Zenject;
 
 namespace Ecs.Views.Linkable.Impl
 {
     public class PlayerView : UnitView
     {
         [SerializeField] private GameObject weaponRoot;
-        [Inject] private IWeaponBase _weaponBase;
-        
+
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
             base.Subscribe(entity, unsubscribe);

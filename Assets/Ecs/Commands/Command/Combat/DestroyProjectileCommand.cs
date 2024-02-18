@@ -6,6 +6,5 @@ namespace Ecs.Commands.Command.Combat
     public struct DestroyProjectileCommand
     {
         public int ProjectileHash;
-        public int TargetHash;
     }
 }
