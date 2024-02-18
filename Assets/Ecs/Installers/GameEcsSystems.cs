@@ -58,6 +58,7 @@ namespace Ecs.Installers {
 
 			// Common 0100
 			SystemInstallHelper.Install<InstantiateSystem>(container);	// 0100 Common
+			SystemInstallHelper.Install<StartPerformingAttackSystem>(container);	// 0100 Combat
 
 			// Coins 0130
 			SystemInstallHelper.Install<AddCoinsSystem>(container);	// 0130 Coins
@@ -71,6 +72,7 @@ namespace Ecs.Installers {
 
 			// Combat 0700
 			SystemInstallHelper.Install<ProjectileMovementSystem>(container);	// 0700 Combat
+			SystemInstallHelper.Install<ProjectileDestroyByDistanceSystem>(container);	// 0710 Combat
 
 			// Input 1000
 			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input

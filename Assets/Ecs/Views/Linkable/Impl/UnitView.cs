@@ -38,10 +38,16 @@ namespace Ecs.Views.Linkable.Impl
             {
                 _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
             }).AddTo(gameObject);
+
+            attackEndTrigger?.AttackStart.Subscribe(_ =>
+            {
+                _commandBuffer.PerformAttack(unitEntity.Uid.Value);
+            });
         }
 
         private void OnDirectionChanged(GameEntity entity, Vector3 dir)
         {
+            entity.Position.Value = transform.position;
             _rb.velocity = dir;
             Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}");
             _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
@@ -59,7 +65,7 @@ namespace Ecs.Views.Linkable.Impl
             {
                 var weaponHash = other.transform.GetHashCode();
                 
-                _commandBuffer.TakeDamage(weaponHash, transform.GetHashCode());
+                _commandBuffer.TakeDamageByWeapon(weaponHash, transform.GetHashCode());
             }
         }
 

@@ -43,11 +43,6 @@ namespace Ecs.Commands.Systems.Combat
             
             if (weaponSettings.WeaponType != EWeaponType.Ranged)
                 return;
-
-            if (attacker.IsPerformingAttack)
-                return;
-            
-            attacker.IsPerformingAttack = true;
             
             var weaponEntity = _game.GetEntityWithUid(attacker.EquippedWeapon.Value.WeaponEntityUid);
             var projectileType = weaponSettings.ProjectileSettings.ProjectileType;
@@ -76,6 +71,8 @@ namespace Ecs.Commands.Systems.Combat
             _linkedEntityRepository.Add(projectileView.transform.GetHashCode(), projectileEntity);
 
             projectileEntity.IsActive = true;
+            
+            Debug.Log($"spawn projectile");
         }
     }
 }
