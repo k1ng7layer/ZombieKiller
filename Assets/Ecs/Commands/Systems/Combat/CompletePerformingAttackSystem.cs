@@ -2,6 +2,7 @@
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Commands.Systems.Combat
 {
@@ -10,7 +11,9 @@ namespace Ecs.Commands.Systems.Combat
     {
         private readonly GameContext _game;
 
-        public CompletePerformingAttackSystem(ICommandBuffer commandBuffer, GameContext game) : base(commandBuffer)
+        public CompletePerformingAttackSystem
+        (ICommandBuffer commandBuffer, 
+            GameContext game) : base(commandBuffer)
         {
             _game = game;
         }
@@ -25,6 +28,8 @@ namespace Ecs.Commands.Systems.Combat
             var weaponEntity = _game.GetEntityWithUid(weaponUid);
             weaponEntity.IsPerformingAttack = false;
             weaponEntity.AttackTargets.Value.Clear();
+            
+            Debug.Log($"CompletePerformingAttackSystem");
         }
     }
 }

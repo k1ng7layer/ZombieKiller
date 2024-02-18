@@ -19,4 +19,4 @@ MonoBehaviour:
   MagicDamage: 20
   ProjectileSettings:
     ProjectileType: 1
-    ProjectileSpeed: 9
+    ProjectileSpeed: 15

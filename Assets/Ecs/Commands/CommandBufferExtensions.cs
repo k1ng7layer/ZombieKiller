@@ -109,6 +109,12 @@ namespace Ecs.Commands
             ref var command = ref commandBuffer.Create<PlayerBasicAttackCommand>();
         }
 
+        public static void StartPerformingAttack(this ICommandBuffer commandBuffer, Uid attacker)
+        {
+            ref var command = ref commandBuffer.Create<StartPerformingAttackCommand>();
+            command.Attacker = attacker;
+        }
+
         public static void TakeDamage(this ICommandBuffer commandBuffer, Int32 weaponHash, Int32 targetHash)
         {
             ref var command = ref commandBuffer.Create<TakeDamageCommand>();
