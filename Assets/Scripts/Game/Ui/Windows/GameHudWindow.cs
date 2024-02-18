@@ -1,4 +1,5 @@
-﻿using Game.Ui.Input;
+﻿using Game.Ui.PlayerStats.Exp;
+using Game.Ui.PlayerStats.Health;
 using SimpleUi;
 
 namespace Game.Ui.Windows
@@ -8,9 +9,9 @@ namespace Game.Ui.Windows
         public override string Name => "GameHudWindow";
 
         protected override void AddControllers()
-        {
-            AddController<InputController>();
-            //AddController<CoinsController>();
+        { 
+            AddController<PlayerExperienceController>();
+            AddController<PlayerHealthController>();
         }
     }
 }

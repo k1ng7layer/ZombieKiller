@@ -26,6 +26,14 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Game.Components.UnitLevelComponent UnitLevel)
+		{
+			CopyUnitLevelTo(UnitLevel);
+		}
+		else if (component is Ecs.Game.Components.ExperienceComponent Experience)
+		{
+			CopyExperienceTo(Experience);
+		}
 		else if (component is Ecs.Game.Components.PortalComponent Portal)
 		{
 			CopyPortalTo(Portal);
@@ -121,6 +129,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.IncomeComponent Income)
 		{
 			CopyIncomeTo(Income);
+		}
+		else if (component is Ecs.Game.Components.MaxHealthComponent MaxHealth)
+		{
+			CopyMaxHealthTo(MaxHealth);
 		}
 		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
 		{

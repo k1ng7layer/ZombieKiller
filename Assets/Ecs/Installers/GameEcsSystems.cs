@@ -33,12 +33,15 @@ namespace Ecs.Installers {
 			// Combat 0450
 			SystemInstallHelper.Install<AttachWeaponSystem>(container);	// 0450 Combat
 
-			// Combat 0500
-			SystemInstallHelper.Install<EquipWeaponSystem>(container);	// 0500 Combat
+			// Spawn 0500
 			SystemInstallHelper.Install<SpawnEnemySystem>(container);	// 0500 Spawn
+			SystemInstallHelper.Install<EquipWeaponSystem>(container);	// 0500 Combat
 
 			// Combat 0700
 			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0700 Combat
+
+			// Combat 0720
+			SystemInstallHelper.Install<AddPlayerExperienceByEnemyDeadSystem>(container);	// 0720 Combat
 
 			// Common 0850
 			SystemInstallHelper.Install<CheckAliveEnemiesSystem>(container);	// 0850 Common
@@ -53,8 +56,8 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<LoadShelterSystem>(container);	// 0950 Common
 
 			// Input 1000
-			SystemInstallHelper.Install<PlayerMovementSystem>(container);	// 1000 Input
 			SystemInstallHelper.Install<PlayerRotationSystem>(container);	// 1000 Input
+			SystemInstallHelper.Install<PlayerMovementSystem>(container);	// 1000 Input
 
 			// Initialization 3000
 			SystemInstallHelper.Install<InitializeUiSystem>(container);	// 3000 Initialization

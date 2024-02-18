@@ -49,7 +49,12 @@ namespace Ecs.Game.Systems.Initialize
             player.AddUid(playerUid);
             player.AddRotation(playerView.transform.rotation);
             player.AddPosition(playerView.transform.position);
-            player.AddHealth(100);
+            player.AddHealth(_playerSettings.BaseMaxHealth);
+            player.AddMaxHealth(_playerSettings.BaseMaxHealth);
+            
+            //TODO: save this
+            player.AddUnitLevel(1);
+            player.AddExperience(0);
 
             var starterWeapon = _playerSettings.StarterWeapon;
             

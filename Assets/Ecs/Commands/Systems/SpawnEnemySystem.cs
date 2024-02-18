@@ -36,6 +36,7 @@ namespace Ecs.Commands.Systems
             enemyEntity.AddHealth(enemyParams.BaseHealth);
             enemyEntity.AddUid(UidGenerator.Next());
             enemyEntity.IsInstantiate = true;
+            enemyEntity.AddExperience(enemyParams.BaseExperience);
         }
     }
 }

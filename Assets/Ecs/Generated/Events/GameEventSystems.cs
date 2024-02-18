@@ -19,6 +19,7 @@ public sealed class GameEventSystems : Feature
 		Add(new DeadEventSystem(context)); // priority: 0
 		Add(new GameDestroyedEventSystem(context)); // priority: 0
 		Add(new EquippedWeaponEventSystem(context)); // priority: 0
+		Add(new ExperienceEventSystem(context)); // priority: 0
 		Add(new HealthEventSystem(context)); // priority: 0
 		Add(new LinkRemovedEventSystem(context)); // priority: 0
 		Add(new MoveDirectionEventSystem(context)); // priority: 0
@@ -27,6 +28,7 @@ public sealed class GameEventSystems : Feature
 		Add(new PlayerCoinsEventSystem(context)); // priority: 0
 		Add(new PositionEventSystem(context)); // priority: 0
 		Add(new RotationEventSystem(context)); // priority: 0
+		Add(new UnitLevelEventSystem(context)); // priority: 0
 		Add(new VisibleEventSystem(context)); // priority: 0
 		Add(new VisibleRemovedEventSystem(context)); // priority: 0
 	}
