@@ -72,6 +72,7 @@ namespace Ecs.Installers {
 
 			// Combat 0700
 			SystemInstallHelper.Install<ProjectileMovementSystem>(container);	// 0700 Combat
+			SystemInstallHelper.Install<ProjectileDestroyByDistanceSystem>(container);	// 0710 Combat
 
 			// Input 1000
 			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
