@@ -49,8 +49,9 @@ public partial class Contexts : JCMG.EntitasRedux.IContexts
 
 	public GameContext Game { get; set; }
 	public InputContext Input { get; set; }
+	public PowerUpContext PowerUp { get; set; }
 
-	public JCMG.EntitasRedux.IContext[] AllContexts { get { return new JCMG.EntitasRedux.IContext [] { Game, Input }; } }
+	public JCMG.EntitasRedux.IContext[] AllContexts { get { return new JCMG.EntitasRedux.IContext [] { Game, Input, PowerUp }; } }
 
 	private readonly string _name;
 
@@ -58,6 +59,7 @@ public partial class Contexts : JCMG.EntitasRedux.IContexts
 	{
 		Game = new GameContext();
 		Input = new InputContext();
+		PowerUp = new PowerUpContext();
 
 		_name = name;
 		var postConstructors = System.Linq.Enumerable.Where(
@@ -102,6 +104,10 @@ public partial class Contexts
 			GameComponentsLookup.Owner,
 			Game.GetGroup(GameMatcher.Owner),
 			(e, c) => ((Ecs.Game.Components.OwnerComponent)c).Value));
+		PowerUp.AddEntityIndex(new JCMG.EntitasRedux.EntityIndex<PowerUpEntity, Ecs.Extensions.UidGenerator.Uid>(
+			PowerUpComponentsLookup.Owner,
+			PowerUp.GetGroup(PowerUpMatcher.Owner),
+			(e, c) => ((Ecs.Game.Components.OwnerComponent)c).Value));
 
 		Game.AddEntityIndex(new JCMG.EntitasRedux.PrimaryEntityIndex<GameEntity, Ecs.Extensions.UidGenerator.Uid>(
 			GameComponentsLookup.Uid,
@@ -119,6 +125,11 @@ public static class ContextsExtensions
 	public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithOwner(this GameContext context, Ecs.Extensions.UidGenerator.Uid Value)
 	{
 		return ((JCMG.EntitasRedux.EntityIndex<GameEntity, Ecs.Extensions.UidGenerator.Uid>)context.GetEntityIndex(GameComponentsLookup.Owner)).GetEntities(Value);
+	}
+
+	public static System.Collections.Generic.HashSet<PowerUpEntity> GetEntitiesWithOwner(this PowerUpContext context, Ecs.Extensions.UidGenerator.Uid Value)
+	{
+		return ((JCMG.EntitasRedux.EntityIndex<PowerUpEntity, Ecs.Extensions.UidGenerator.Uid>)context.GetEntityIndex(PowerUpComponentsLookup.Owner)).GetEntities(Value);
 	}
 
 	public static GameEntity GetEntityWithUid(this GameContext context, Ecs.Extensions.UidGenerator.Uid Value)
@@ -162,6 +173,7 @@ public partial class Contexts {
 		{
 			CreateContextObserver(Game, parent);
 			CreateContextObserver(Input, parent);
+			CreateContextObserver(PowerUp, parent);
 		}
 		catch(System.Exception)
 		{

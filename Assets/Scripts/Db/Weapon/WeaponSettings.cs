@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Db.Weapon
 {
-    [CreateAssetMenu(menuName = "Settings/Weapons" + nameof(WeaponSettings), fileName = "Weapon")]
+    [CreateAssetMenu(menuName = "Settings/Weapons/" + nameof(WeaponSettings), fileName = "Weapon")]
     public class WeaponSettings : ScriptableObject
     {
         public EWeaponId WeaponId;

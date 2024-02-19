@@ -241,5 +241,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a875de21d8404ba7ba9a54746a4d2282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4800054315030633121, guid: 08b5bd3e106993c43830e08ca84674da, type: 3}
+  prefab: {fileID: 2265935809765486879, guid: 08b5bd3e106993c43830e08ca84674da, type: 3}
   collectionRoot: {fileID: 4005823986271733189}

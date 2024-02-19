@@ -4,6 +4,7 @@ using JCMG.EntitasRedux;
 namespace Ecs.Game.Components
 {
     [Game]
+    [PowerUp]
     public class OwnerComponent : IComponent
     {
         [EntityIndex]

@@ -26,17 +26,9 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
-		else if (component is Ecs.Game.Components.UnitLevelComponent UnitLevel)
+		else if (component is Ecs.Game.Components.TimerComponent Timer)
 		{
-			CopyUnitLevelTo(UnitLevel);
-		}
-		else if (component is Ecs.Game.Components.ExperienceComponent Experience)
-		{
-			CopyExperienceTo(Experience);
-		}
-		else if (component is Ecs.Game.Components.PortalComponent Portal)
-		{
-			CopyPortalTo(Portal);
+			CopyTimerTo(Timer);
 		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
@@ -94,6 +86,14 @@ public partial class GameEntity
 		{
 			CopyTransformTo(Transform);
 		}
+		else if (component is Ecs.Game.Components.ExperienceComponent Experience)
+		{
+			CopyExperienceTo(Experience);
+		}
+		else if (component is Ecs.Game.Components.MaxHealthComponent MaxHealth)
+		{
+			CopyMaxHealthTo(MaxHealth);
+		}
 		else if (component is Ecs.Game.Components.LinkComponent Link)
 		{
 			CopyLinkTo(Link);
@@ -105,6 +105,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.EnemyComponent Enemy)
 		{
 			CopyEnemyTo(Enemy);
+		}
+		else if (component is Ecs.Game.Components.UnitLevelComponent UnitLevel)
+		{
+			CopyUnitLevelTo(UnitLevel);
 		}
 		else if (component is Ecs.Game.Components.ProjectileComponent Projectile)
 		{
@@ -130,9 +134,9 @@ public partial class GameEntity
 		{
 			CopyIncomeTo(Income);
 		}
-		else if (component is Ecs.Game.Components.MaxHealthComponent MaxHealth)
+		else if (component is Ecs.Game.Components.PortalComponent Portal)
 		{
-			CopyMaxHealthTo(MaxHealth);
+			CopyPortalTo(Portal);
 		}
 		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
 		{

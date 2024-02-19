@@ -2,6 +2,7 @@
 using Ecs.Utils.Interfaces;
 using Game.Ui.Utils;
 using UniRx;
+using UnityEngine;
 
 namespace Game.Ui.PlayerStats.Exp
 {
@@ -21,8 +22,8 @@ namespace Game.Ui.PlayerStats.Exp
         {
             var player = _game.PlayerEntity;
             
-            player.SubscribeExperience(OnExperienceChanged).AddTo(_disposables);
-            player.SubscribeUnitLevel((_, value) => OnUnitLevelChanged(value)).AddTo(_disposables);
+            player.SubscribeExperience(OnExperienceChanged).AddTo(View);
+            player.SubscribeUnitLevel((_, value) => OnUnitLevelChanged(value)).AddTo(View);
         }
         
         private void OnExperienceChanged(GameEntity player, float exp)
@@ -30,12 +31,13 @@ namespace Game.Ui.PlayerStats.Exp
             var level = player.UnitLevel.Value;
             var expGoal = _playerSettings.LevelRequiredExpMultiplier * level * _playerSettings.BaseExperienceRequired;
 
+            Debug.Log($"player exp gained: {exp}, goal: {expGoal}");
             View.Slider.value = exp / expGoal;
         }
 
         private void OnUnitLevelChanged(int level)
         {
-            View.LevelText.text = $"{level}";
+             View.LevelText.text = $"{level}";
         }
     }
 }

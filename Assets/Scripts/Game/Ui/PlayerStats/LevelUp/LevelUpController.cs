@@ -1,4 +1,5 @@
 using Ecs.Utils.Interfaces;
+using Game.Providers.PowerUpProvider;
 using Game.Ui.Utils;
 using UniRx;
 
@@ -8,17 +9,22 @@ namespace Game.Ui.PlayerStats.LevelUp
         IUiInitialize
     {
         private readonly GameContext _game;
+        private readonly IPowerUpProvider _powerUpProvider;
 
-        public LevelUpController(GameContext game)
+        public LevelUpController(
+            GameContext game, 
+            IPowerUpProvider powerUpProvider
+        )
         {
             _game = game;
+            _powerUpProvider = powerUpProvider;
         }
         
         public void Initialize()
         {
             var player = _game.PlayerEntity;
             
-            player.SubscribeUnitLevel((_, value) => OnUnitLevelChanged(value)).AddTo(_disposables);
+            player.SubscribeUnitLevel((_, value) => OnUnitLevelChanged(value)).AddTo(View);
         }
 
         public override void OnHide()
@@ -28,7 +34,19 @@ namespace Game.Ui.PlayerStats.LevelUp
 
         private void OnUnitLevelChanged(int level)
         {
-            var powerUp = View.PowerUpElementCollection.Create();
+            if (level == 1)
+                return;
+
+            for (int i = 0; i < 3; i++)
+            {
+                var powerUpSettings = _powerUpProvider.Get();
+                var powerUp = View.PowerUpElementCollection.Create();
+                
+                powerUp.SetInfo(
+                    powerUpSettings.Icon, 
+                    powerUpSettings.Name, 
+                    powerUpSettings.Description);
+            }
         }
     }
 }

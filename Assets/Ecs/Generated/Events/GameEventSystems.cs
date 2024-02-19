@@ -13,8 +13,8 @@ public sealed class GameEventSystems : Feature
 {
 	public GameEventSystems(IContext<GameEntity> context)
 	{
-		Add(new ActiveEventSystem(context)); // priority: 0
-		Add(new ActiveRemovedEventSystem(context)); // priority: 0
+		Add(new GameActiveEventSystem(context)); // priority: 0
+		Add(new GameActiveRemovedEventSystem(context)); // priority: 0
 		Add(new CameraModeEventSystem(context)); // priority: 0
 		Add(new DeadEventSystem(context)); // priority: 0
 		Add(new GameDestroyedEventSystem(context)); // priority: 0
@@ -28,6 +28,7 @@ public sealed class GameEventSystems : Feature
 		Add(new PlayerCoinsEventSystem(context)); // priority: 0
 		Add(new PositionEventSystem(context)); // priority: 0
 		Add(new RotationEventSystem(context)); // priority: 0
+		Add(new GameTimerEventSystem(context)); // priority: 0
 		Add(new UnitLevelEventSystem(context)); // priority: 0
 		Add(new VisibleEventSystem(context)); // priority: 0
 		Add(new VisibleRemovedEventSystem(context)); // priority: 0

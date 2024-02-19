@@ -18,4 +18,4 @@ MonoBehaviour:
   weaponBase: {fileID: 11400000, guid: f2e77455162fffc44944b7adf754f231, type: 2}
   enemyParamsBase: {fileID: 11400000, guid: dad79fbaa9eda7d4ba1079cd22cfaeee, type: 2}
   projectileBase: {fileID: 11400000, guid: f71f970b8eb91b6458e3e0818a2cc91c, type: 2}
-  levelSettingsBase: {fileID: 11400000, guid: b6d061087aa8d8d42a63e4b687cb3fc7, type: 2}
+  powerUpBase: {fileID: 11400000, guid: 5baaa8d268776ea4caeae69f9ba7f57b, type: 2}

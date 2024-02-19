@@ -1,5 +1,7 @@
 ﻿using Ecs.Utils.LinkedEntityRepository.Impl;
 using Ecs.Utils.SpawnService.Impl;
+using Game.Providers.PowerUpProvider.Impl;
+using Game.Providers.RandomProvider.Impl;
 using Game.Services.InputService.Impl;
 using Game.Services.PrefabPoolService.Impl;
 using Game.Ui.PlayerStats.LevelUp;
@@ -37,6 +39,8 @@ namespace Installers.Game
             Container.BindInterfacesTo<PrefabPoolService>().AsSingle();
             Container.BindInterfacesTo<UnityInputService>().AsSingle();
             Container.BindInterfacesAndSelfTo<RayCastProvider>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SystemRandomProvider>().AsSingle();
+            Container.BindInterfacesAndSelfTo<RandomPowerUpProvider>().AsSingle();
         }
     }
 }

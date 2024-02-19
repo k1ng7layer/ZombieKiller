@@ -14,6 +14,7 @@ using Ecs.Commands.Command;
 using Ecs.Extensions.UidGenerator;
 using System;
 using Game.Utils.Units;
+using Ecs.Commands.Command.PowerUp;
 using Ecs.Commands.Command.Input;
 using Ecs.Commands.Command.Income;
 using Ecs.Commands.Command.Combat;
@@ -78,6 +79,12 @@ namespace Ecs.Commands
         {
             ref var command = ref commandBuffer.Create<TeleportPlayerCommand>();
             command.PortalHash = portalHash;
+        }
+
+        public static void CreatePowerUp(this ICommandBuffer commandBuffer, Uid owner)
+        {
+            ref var command = ref commandBuffer.Create<CreatePowerUp>();
+            command.Owner = owner;
         }
 
         public static void PointerDown(this ICommandBuffer commandBuffer, Int32 touchId)
