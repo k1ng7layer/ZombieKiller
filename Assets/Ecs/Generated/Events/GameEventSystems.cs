@@ -22,6 +22,7 @@ public sealed class GameEventSystems : Feature
 		Add(new ExperienceEventSystem(context)); // priority: 0
 		Add(new HealthEventSystem(context)); // priority: 0
 		Add(new LinkRemovedEventSystem(context)); // priority: 0
+		Add(new MaxHealthEventSystem(context)); // priority: 0
 		Add(new MoveDirectionEventSystem(context)); // priority: 0
 		Add(new ParentTransformEventSystem(context)); // priority: 0
 		Add(new PerformingAttackEventSystem(context)); // priority: 0

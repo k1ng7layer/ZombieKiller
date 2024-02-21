@@ -117,6 +117,10 @@ public partial class Contexts
 			InputComponentsLookup.Uid,
 			Input.GetGroup(InputMatcher.Uid),
 			(e, c) => ((Ecs.Common.Components.UidComponent)c).Value));
+		PowerUp.AddEntityIndex(new JCMG.EntitasRedux.PrimaryEntityIndex<PowerUpEntity, Ecs.Extensions.UidGenerator.Uid>(
+			PowerUpComponentsLookup.Uid,
+			PowerUp.GetGroup(PowerUpMatcher.Uid),
+			(e, c) => ((Ecs.Common.Components.UidComponent)c).Value));
 	}
 }
 
@@ -140,6 +144,11 @@ public static class ContextsExtensions
 	public static InputEntity GetEntityWithUid(this InputContext context, Ecs.Extensions.UidGenerator.Uid Value)
 	{
 		return ((JCMG.EntitasRedux.PrimaryEntityIndex<InputEntity, Ecs.Extensions.UidGenerator.Uid>)context.GetEntityIndex(InputComponentsLookup.Uid)).GetEntity(Value);
+	}
+
+	public static PowerUpEntity GetEntityWithUid(this PowerUpContext context, Ecs.Extensions.UidGenerator.Uid Value)
+	{
+		return ((JCMG.EntitasRedux.PrimaryEntityIndex<PowerUpEntity, Ecs.Extensions.UidGenerator.Uid>)context.GetEntityIndex(PowerUpComponentsLookup.Uid)).GetEntity(Value);
 	}
 }
 //------------------------------------------------------------------------------

@@ -4,7 +4,8 @@ using UnityEngine;
 namespace Db.PowerUps.Impl
 {
     [CreateAssetMenu(menuName = "Settings/PowerUps/" + nameof(PowerUpS), fileName = "PowerUpBase")]
-    public class PowerUpBase : ScriptableObject, IPowerUpBase
+    public class PowerUpBase : ScriptableObject, 
+        IPowerUpBase
     {
         [SerializeField] private List<PowerUpSettings> powerUpSettings;
         

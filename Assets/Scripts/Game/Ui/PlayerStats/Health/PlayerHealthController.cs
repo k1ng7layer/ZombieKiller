@@ -19,6 +19,7 @@ namespace Game.Ui.PlayerStats.Health
             var player = _game.PlayerEntity;
 
             player.SubscribeHealth(OnHealthChanged).AddTo(_disposables);
+            player.SubscribeMaxHealth(OnMaxHealthChanged).AddTo(_disposables);
         }
 
         private void OnHealthChanged(GameEntity player, float health)
@@ -26,7 +27,14 @@ namespace Game.Ui.PlayerStats.Health
             var maxHp = player.MaxHealth.Value;
             
             View.Slider.value = health / maxHp;
-            View.TextValue.text = $"{health}";
+            View.TextValue.text = $"{health} / {maxHp}";
+        }
+
+        private void OnMaxHealthChanged(GameEntity player, float maxHp)
+        {
+            var currHealth = player.Health.Value;
+            View.Slider.value = currHealth / maxHp;
+            View.TextValue.text = $"{currHealth} / {maxHp}";
         }
     }
 }

@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 public partial interface IMaxHealthEntity
 {
-	Ecs.Game.Components.MaxHealthComponent MaxHealth { get; }
+	Ecs.Game.Components.UnitParameters.MaxHealthComponent MaxHealth { get; }
 	bool HasMaxHealth { get; }
 
 	void AddMaxHealth(float newValue);

@@ -18,6 +18,7 @@ using Ecs.Commands.Command.PowerUp;
 using Ecs.Commands.Command.Input;
 using Ecs.Commands.Command.Income;
 using Ecs.Commands.Command.Combat;
+using Ecs.Commands.Command.Attributes;
 
 namespace Ecs.Commands
 {
@@ -81,10 +82,17 @@ namespace Ecs.Commands
             command.PortalHash = portalHash;
         }
 
-        public static void CreatePowerUp(this ICommandBuffer commandBuffer, Uid owner)
+        public static void CreatePowerUp(this ICommandBuffer commandBuffer, Uid owner, Int32 id)
         {
-            ref var command = ref commandBuffer.Create<CreatePowerUp>();
+            ref var command = ref commandBuffer.Create<CreatePowerUpCommand>();
             command.Owner = owner;
+            command.Id = id;
+        }
+
+        public static void DeactivatePowerUp(this ICommandBuffer commandBuffer, Uid powerUpUid)
+        {
+            ref var command = ref commandBuffer.Create<DeactivatePowerUpCommand>();
+            command.PowerUpUid = powerUpUid;
         }
 
         public static void PointerDown(this ICommandBuffer commandBuffer, Int32 touchId)
@@ -147,6 +155,12 @@ namespace Ecs.Commands
             ref var command = ref commandBuffer.Create<TakeDamageByWeaponCommand>();
             command.WeaponHash = weaponHash;
             command.TargetHash = targetHash;
+        }
+
+        public static void RecalculateUnitAttributes(this ICommandBuffer commandBuffer, Uid unitUid)
+        {
+            ref var command = ref commandBuffer.Create<RecalculateUnitAttributesCommand>();
+            command.UnitUid = unitUid;
         }
     }
 }

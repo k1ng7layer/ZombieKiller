@@ -40,7 +40,7 @@ namespace Installers.Game
             Container.BindInterfacesTo<UnityInputService>().AsSingle();
             Container.BindInterfacesAndSelfTo<RayCastProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<SystemRandomProvider>().AsSingle();
-            Container.BindInterfacesAndSelfTo<RandomPowerUpProvider>().AsSingle();
+            Container.BindInterfacesAndSelfTo<RandomPowerUpIdProvider>().AsSingle();
         }
     }
 }

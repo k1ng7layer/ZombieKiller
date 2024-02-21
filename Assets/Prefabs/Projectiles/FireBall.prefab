@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityLink: {fileID: 4449363741877254274}
   touchTrigger: {fileID: 4695531866803231240}
-  _fx: {fileID: 4449363740445348191}
+  mainFx: {fileID: 4449363740445348191}
   _explosiveFxGo: {fileID: 2393529036800717094}
 --- !u!1001 &2393529036800724486
 PrefabInstance:

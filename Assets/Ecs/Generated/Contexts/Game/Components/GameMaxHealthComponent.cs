@@ -9,13 +9,13 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity
 {
-	public Ecs.Game.Components.MaxHealthComponent MaxHealth { get { return (Ecs.Game.Components.MaxHealthComponent)GetComponent(GameComponentsLookup.MaxHealth); } }
+	public Ecs.Game.Components.UnitParameters.MaxHealthComponent MaxHealth { get { return (Ecs.Game.Components.UnitParameters.MaxHealthComponent)GetComponent(GameComponentsLookup.MaxHealth); } }
 	public bool HasMaxHealth { get { return HasComponent(GameComponentsLookup.MaxHealth); } }
 
 	public void AddMaxHealth(float newValue)
 	{
 		var index = GameComponentsLookup.MaxHealth;
-		var component = (Ecs.Game.Components.MaxHealthComponent)CreateComponent(index, typeof(Ecs.Game.Components.MaxHealthComponent));
+		var component = (Ecs.Game.Components.UnitParameters.MaxHealthComponent)CreateComponent(index, typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent));
 		#if !ENTITAS_REDUX_NO_IMPL
 		component.Value = newValue;
 		#endif
@@ -25,17 +25,17 @@ public partial class GameEntity
 	public void ReplaceMaxHealth(float newValue)
 	{
 		var index = GameComponentsLookup.MaxHealth;
-		var component = (Ecs.Game.Components.MaxHealthComponent)CreateComponent(index, typeof(Ecs.Game.Components.MaxHealthComponent));
+		var component = (Ecs.Game.Components.UnitParameters.MaxHealthComponent)CreateComponent(index, typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent));
 		#if !ENTITAS_REDUX_NO_IMPL
 		component.Value = newValue;
 		#endif
 		ReplaceComponent(index, component);
 	}
 
-	public void CopyMaxHealthTo(Ecs.Game.Components.MaxHealthComponent copyComponent)
+	public void CopyMaxHealthTo(Ecs.Game.Components.UnitParameters.MaxHealthComponent copyComponent)
 	{
 		var index = GameComponentsLookup.MaxHealth;
-		var component = (Ecs.Game.Components.MaxHealthComponent)CreateComponent(index, typeof(Ecs.Game.Components.MaxHealthComponent));
+		var component = (Ecs.Game.Components.UnitParameters.MaxHealthComponent)CreateComponent(index, typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent));
 		#if !ENTITAS_REDUX_NO_IMPL
 		component.Value = copyComponent.Value;
 		#endif

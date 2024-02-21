@@ -20,7 +20,7 @@ MonoBehaviour:
     Value: 300
     Operation: 0
   MinExpRequired: 0
-  NextGradeValueMultiplier: 2
+  NextGradeValueMultiplier: 1
   LifeTime:
-    LifeTimeType: 0
-    LifeTimeValue: 0
+    LifeTimeType: 1
+    LifeTimeValue: 5

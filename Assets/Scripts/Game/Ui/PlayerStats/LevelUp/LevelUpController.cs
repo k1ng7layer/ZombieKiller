@@ -1,7 +1,12 @@
+using Db.PowerUps;
+using Ecs.Commands;
 using Ecs.Utils.Interfaces;
 using Game.Providers.PowerUpProvider;
 using Game.Ui.Utils;
+using JCMG.EntitasRedux.Commands;
+using SimpleUi.Signals;
 using UniRx;
+using Zenject;
 
 namespace Game.Ui.PlayerStats.LevelUp
 {
@@ -9,15 +14,24 @@ namespace Game.Ui.PlayerStats.LevelUp
         IUiInitialize
     {
         private readonly GameContext _game;
-        private readonly IPowerUpProvider _powerUpProvider;
+        private readonly IPowerUpIdProvider _powerUpIdProvider;
+        private readonly ICommandBuffer _commandBuffer;
+        private readonly IPowerUpBase _powerUpBase;
+        private readonly SignalBus _signalBus;
 
         public LevelUpController(
             GameContext game, 
-            IPowerUpProvider powerUpProvider
+            IPowerUpIdProvider powerUpIdProvider,
+            ICommandBuffer commandBuffer,
+            IPowerUpBase powerUpBase,
+            SignalBus signalBus
         )
         {
             _game = game;
-            _powerUpProvider = powerUpProvider;
+            _powerUpIdProvider = powerUpIdProvider;
+            _commandBuffer = commandBuffer;
+            _powerUpBase = powerUpBase;
+            _signalBus = signalBus;
         }
         
         public void Initialize()
@@ -39,13 +53,22 @@ namespace Game.Ui.PlayerStats.LevelUp
 
             for (int i = 0; i < 3; i++)
             {
-                var powerUpSettings = _powerUpProvider.Get();
-                var powerUp = View.PowerUpElementCollection.Create();
+                var powerUpId = _powerUpIdProvider.Get();
+                var elementView = View.PowerUpElementCollection.Create();
+                var powerUpSettings = _powerUpBase.PowerUpS[powerUpId];
                 
-                powerUp.SetInfo(
+                elementView.SetInfo(
+                    powerUpId,
                     powerUpSettings.Icon, 
                     powerUpSettings.Name, 
                     powerUpSettings.Description);
+
+                elementView.PickButton.OnClickAsObservable().Subscribe(_ =>
+                {
+                    _commandBuffer.CreatePowerUp(_game.PlayerEntity.Uid.Value, powerUpId);
+                    
+                    _signalBus.BackWindow();
+                });
             }
         }
     }

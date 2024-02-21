@@ -1,10 +1,13 @@
 using Ecs.Commands.Systems;
+using Ecs.Commands.Systems.Attributes;
 using Ecs.Commands.Systems.Combat;
 using Ecs.Commands.Systems.Income;
+using Ecs.Commands.Systems.PowerUp;
 using Ecs.Game.Systems;
 using Ecs.Game.Systems.Initialize;
 using Ecs.Game.Systems.Player;
 using Ecs.Game.Systems.Projectile;
+using Ecs.PowerUp.System;
 using Plugins.Extensions.InstallerGenerator.Utils;
 using Zenject;
 
@@ -76,8 +79,8 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<AddCoinsSystem>(container);	// 0130 Coins
 
 			// Combat 0200
-			SystemInstallHelper.Install<PerformMeleeAttackSystem>(container);	// 0200 Combat
 			SystemInstallHelper.Install<PerformRangedAttackSystem>(container);	// 0200 Combat
+			SystemInstallHelper.Install<PerformMeleeAttackSystem>(container);	// 0200 Combat
 
 			// Combat 0300
 			SystemInstallHelper.Install<CompletePerformingAttackSystem>(container);	// 0300 Combat
@@ -87,12 +90,19 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<ProjectileDestroyByDistanceSystem>(container);	// 0710 Combat
 			SystemInstallHelper.Install<PlayerLevelUpSystem>(container);	// 0720 Combat
 
-			// Combat 0740
-			SystemInstallHelper.Install<PlayerPowerUpByLevelSystem>(container);	// 0740 Combat
+			// Combat 0750
+			SystemInstallHelper.Install<CreatePowerUpSystem>(container);	// 0750 Combat
+			SystemInstallHelper.Install<RecalculateAttributesSystem>(container);	// 0760 Combat
 
-			// Input 1000
-			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
+			// Combat 0810
+			SystemInstallHelper.Install<PowerUpTimerLifeTimeSystem>(container);	// 0810 Combat
+			SystemInstallHelper.Install<DeactivatePowerUpSystem>(container);	// 0820 Combat
+
+			// Combat 0900
+
+			// Combat 1000
 			SystemInstallHelper.Install<DestroyProjectileSystem>(container);	// 1000 Combat
+			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
 
 			// Combat 1500
 			SystemInstallHelper.Install<PerformAttackCleanupSystem>(container);	// 1500 Combat

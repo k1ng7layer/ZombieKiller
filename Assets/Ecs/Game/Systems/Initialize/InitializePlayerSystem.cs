@@ -51,6 +51,8 @@ namespace Ecs.Game.Systems.Initialize
             player.AddPosition(playerView.transform.position);
             player.AddHealth(_playerSettings.BaseMaxHealth);
             player.AddMaxHealth(_playerSettings.BaseMaxHealth);
+            player.AddMagicDamage(0);
+            player.AddAdditionalHealth(0);
             
             //TODO: save this
             player.AddUnitLevel(1);

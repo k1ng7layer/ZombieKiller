@@ -3,12 +3,12 @@ using Game.Providers.RandomProvider;
 
 namespace Game.Providers.PowerUpProvider.Impl
 {
-    public class RandomPowerUpProvider : IPowerUpProvider
+    public class RandomPowerUpIdProvider : IPowerUpIdProvider
     {
         private readonly IPowerUpBase _powerUpBase;
         private readonly IRandomProvider _randomProvider;
 
-        public RandomPowerUpProvider(
+        public RandomPowerUpIdProvider(
             IPowerUpBase powerUpBase, 
             IRandomProvider randomProvider
         )
@@ -17,13 +17,12 @@ namespace Game.Providers.PowerUpProvider.Impl
             _randomProvider = randomProvider;
         }
         
-        public PowerUpSettings Get()
+        public int Get()
         {
             var powerUps = _powerUpBase.PowerUpS;
             var randomId = _randomProvider.Range(0, powerUps.Count);
-            var randomPowerUpSettings = powerUps[randomId];
 
-            return randomPowerUpSettings;
+            return randomId;
         }
     }
 }

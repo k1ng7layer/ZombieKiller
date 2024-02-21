@@ -18,21 +18,25 @@ public partial class PowerUpEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-		if (component is Ecs.PowerUp.Components.LifeTimeComponent LifeTime)
+		if (component is Ecs.Common.Components.UidComponent Uid)
+		{
+			CopyUidTo(Uid);
+		}
+		else if (component is Ecs.Common.Components.DestroyedComponent Destroyed)
+		{
+			IsDestroyed = true;
+		}
+		else if (component is Ecs.PowerUp.Components.PowerUpComponent PowerUp)
+		{
+			CopyPowerUpTo(PowerUp);
+		}
+		else if (component is Ecs.PowerUp.Components.LifeTimeComponent LifeTime)
 		{
 			CopyLifeTimeTo(LifeTime);
 		}
 		else if (component is Ecs.PowerUp.Components.ResourceComponent Resource)
 		{
 			CopyResourceTo(Resource);
-		}
-		else if (component is Ecs.PowerUp.Components.PowerUpComponent PowerUp)
-		{
-			CopyPowerUpTo(PowerUp);
-		}
-		else if (component is Ecs.Common.Components.DestroyedComponent Destroyed)
-		{
-			IsDestroyed = true;
 		}
 		else if (component is Ecs.Game.Components.TimerComponent Timer)
 		{
