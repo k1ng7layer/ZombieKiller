@@ -9,5 +9,7 @@ namespace Db.Enemies
         public EEnemyType EnemyType;
 
         public float BaseHealth;
+        public float AttackRange;
+        public float AttackCooldown;
     }
 }

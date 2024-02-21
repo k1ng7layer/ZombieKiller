@@ -134,18 +134,6 @@ public partial class GameEntity
 		{
 			IsCamera = true;
 		}
-		else if (component is Ecs.Game.Components.UnitParameters.PhysicalDamageComponent PhysicalDamage)
-		{
-			CopyPhysicalDamageTo(PhysicalDamage);
-		}
-		else if (component is Ecs.Game.Components.UnitParameters.HealthComponent Health)
-		{
-			CopyHealthTo(Health);
-		}
-		else if (component is Ecs.Game.Components.UnitParameters.MagicDamageComponent MagicDamage)
-		{
-			CopyMagicDamageTo(MagicDamage);
-		}
 		else if (component is Ecs.Game.Components.Combat.WeaponComponent Weapon)
 		{
 			CopyWeaponTo(Weapon);
@@ -161,6 +149,30 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.Combat.AttackTargetsComponent AttackTargets)
 		{
 			CopyAttackTargetsTo(AttackTargets);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AttackCooldownComponent AttackCooldown)
+		{
+			CopyAttackCooldownTo(AttackCooldown);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AttackRangeComponent AttackRange)
+		{
+			CopyAttackRangeTo(AttackRange);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.PhysicalDamageComponent PhysicalDamage)
+		{
+			CopyPhysicalDamageTo(PhysicalDamage);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.HealthComponent Health)
+		{
+			CopyHealthTo(Health);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.MagicDamageComponent MagicDamage)
+		{
+			CopyMagicDamageTo(MagicDamage);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.DestinationPositionComponent DestinationPosition)
+		{
+			CopyDestinationPositionTo(DestinationPosition);
 		}
 
 		#endif

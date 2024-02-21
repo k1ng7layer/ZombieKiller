@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorTrees:
   - enemyType: 0
-    behaviorTree: {fileID: 11400000, guid: 86743e73ab9c03d4f81508f62729e479, type: 2}
+    behaviorTree: {fileID: 11400000, guid: e1dda86f4e0735d499064895aa7a8b24, type: 2}

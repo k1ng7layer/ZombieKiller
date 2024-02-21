@@ -17,6 +17,7 @@ public sealed class GameEventSystems : Feature
 		Add(new ActiveRemovedEventSystem(context)); // priority: 0
 		Add(new CameraModeEventSystem(context)); // priority: 0
 		Add(new DeadEventSystem(context)); // priority: 0
+		Add(new DestinationPositionEventSystem(context)); // priority: 0
 		Add(new GameDestroyedEventSystem(context)); // priority: 0
 		Add(new EnemyEventSystem(context)); // priority: 0
 		Add(new EquippedWeaponEventSystem(context)); // priority: 0

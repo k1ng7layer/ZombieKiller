@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using Db.Enemies;
 using Db.Weapon;
 using Ecs.Extensions.UidGenerator;
 using Game.Utils;
@@ -49,6 +50,30 @@ namespace Ecs.Game.Extensions
             projectileEntity.AddPhysicalDamage(physicalDamage);
             projectileEntity.AddMagicDamage(magicDamage);
             return projectileEntity;
+        }
+        
+        public static GameEntity CreateEnemy(
+            this GameContext game, 
+            EEnemyType enemyType,
+            EnemyParams enemyParams,
+            Vector3 position, 
+            Quaternion rotation
+        )
+        {
+            var enemyEntity = game.CreateEntity();
+            
+            enemyEntity.AddEnemy(enemyType);
+            enemyEntity.AddPosition(position);
+            enemyEntity.AddRotation(rotation);
+            enemyEntity.AddPrefab(enemyType.ToString());
+            enemyEntity.AddHealth(enemyParams.BaseHealth);
+            enemyEntity.AddAttackRange(enemyParams.AttackRange);
+            enemyEntity.AddAttackCooldown(enemyParams.AttackCooldown);
+            enemyEntity.AddTime(0);
+            enemyEntity.AddUid(UidGenerator.Next());
+            enemyEntity.IsInstantiate = true;
+            
+            return enemyEntity;
         }
     }
 }

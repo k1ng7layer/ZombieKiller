@@ -1,4 +1,5 @@
-﻿using AiTasks;
+﻿using System;
+using Ai.SharedVariables;
 using BehaviorDesigner.Runtime;
 using Db.BTrees;
 using Db.Enemies;
@@ -6,7 +7,9 @@ using Game.Utils;
 using Game.Views;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Core.Utils;
+using UniRx;
 using UnityEngine;
+using UnityEngine.AI;
 using Zenject;
 
 namespace Ecs.Views.Linkable.Impl
@@ -15,6 +18,7 @@ namespace Ecs.Views.Linkable.Impl
     {
         [SerializeField] private UnitParamBarView healthBarView;
         [SerializeField] private BehaviorTree behaviorTree;
+        [SerializeField] private NavMeshAgent enemyAgent;
         
         [Inject] private IEnemyParamsBase _enemyParamsBase;
         [Inject] private DiContainer _diContainer;
@@ -23,11 +27,10 @@ namespace Ecs.Views.Linkable.Impl
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
             base.Subscribe(entity, unsubscribe);
-
-            var enemyEntity = (GameEntity)entity;
-
-            enemyEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
-            enemyEntity.SubscribeEnemy(OnEnemy).AddTo(unsubscribe);
+            
+            SelfEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
+            SelfEntity.SubscribeEnemy(OnEnemy).AddTo(unsubscribe);
+            SelfEntity.SubscribeDestinationPosition(OnDestinationPosition).AddTo(unsubscribe);
         }
 
         private void OnHealthChanged(GameEntity entity, float value)
@@ -52,6 +55,11 @@ namespace Ecs.Views.Linkable.Impl
             healthBarView.gameObject.SetActive(false);
         }
 
+        private void OnDestinationPosition(GameEntity entity, Vector3 value)
+        {
+            enemyAgent.SetDestination(value);
+        }
+        
         private void InitializeBTree(EEnemyType enemyType)
         {
             var bTree = _bTreesBase.GetBehaviorTree(enemyType);
@@ -59,6 +67,10 @@ namespace Ecs.Views.Linkable.Impl
             behaviorTree.QueueAllTasksForInject(_diContainer);
             
             behaviorTree.ExternalBehavior = bTree;
+            behaviorTree.SetVariable("Uid", new SharedUid
+            {
+                Value = SelfEntity.Uid.Value
+            });
             
             behaviorTree.EnableBehavior();
         }

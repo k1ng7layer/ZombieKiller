@@ -2,7 +2,7 @@
 using BehaviorDesigner.Runtime;
 using Ecs.Extensions.UidGenerator;
 
-namespace AiTasks.SharedVariables
+namespace Ai.SharedVariables
 {
     [Serializable]
     public class SharedUid : SharedVariable<Uid>
