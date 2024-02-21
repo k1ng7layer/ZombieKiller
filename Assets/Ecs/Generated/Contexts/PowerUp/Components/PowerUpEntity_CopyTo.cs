@@ -26,6 +26,14 @@ public partial class PowerUpEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.PowerUp.Components.PlayerPowerUpComponent PlayerPowerUp)
+		{
+			IsPlayerPowerUp = true;
+		}
+		else if (component is Ecs.PowerUp.Components.PlayerBuffComponent PlayerBuff)
+		{
+			IsPlayerBuff = true;
+		}
 		else if (component is Ecs.PowerUp.Components.PowerUpComponent PowerUp)
 		{
 			CopyPowerUpTo(PowerUp);

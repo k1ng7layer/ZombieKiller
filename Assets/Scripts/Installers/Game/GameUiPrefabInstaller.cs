@@ -1,4 +1,5 @@
 
+using Game.Ui.Buffs;
 using Game.Ui.Income;
 using Game.Ui.Input;
 using Game.Ui.PlayerStats.Exp;
@@ -20,6 +21,7 @@ namespace Installers.Game
         [SerializeField] private LevelUpView levelUpView;
         [SerializeField] private PlayerExperienceView playerExpView;
         [SerializeField] private PlayerHealthView playerHealthView;
+        [SerializeField] private CurrentBuffsView currentBuffsView;
         
         public override void InstallBindings()
         {
@@ -31,6 +33,7 @@ namespace Installers.Game
             Container.BindUiView<LevelUpController, LevelUpView>(levelUpView, canvasTransform);
             Container.BindUiView<PlayerExperienceController, PlayerExperienceView>(playerExpView, canvasTransform);
             Container.BindUiView<PlayerHealthController, PlayerHealthView>(playerHealthView, canvasTransform);
+            Container.BindUiView<CurrentBuffsController, CurrentBuffsView>(currentBuffsView, canvasTransform);
         }
     }
 }

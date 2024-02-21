@@ -32,7 +32,8 @@ namespace Ecs.Commands.Systems.PowerUp
         {
             var powerUpEntity = _powerUp.GetEntityWithUid(command.PowerUpUid);
             powerUpEntity.IsDestroyed = true;
-
+            powerUpEntity.IsPlayerBuff = false;
+            
             var powerUpId = powerUpEntity.PowerUp.Id;
             var powerUpParams = _powerUpBase.Get(powerUpId);
             var owner = powerUpEntity.Owner.Value;

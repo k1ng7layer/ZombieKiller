@@ -31,9 +31,10 @@ namespace Ecs.PowerUp.System
         {
             using var powerUpGroup = _powerUpGroupUtils
                 .GetActivePowerUps(out var powerUpEntities, 
-                    p => p.HasLifeTime && p.LifeTime.Value == EPowerUpLifeTime.Temporary && p.HasResource);
-
-
+                    p => p.HasLifeTime && 
+                         p.LifeTime.Value == EPowerUpLifeTime.Temporary && 
+                         p.HasResource);
+            
             foreach (var powerUpEntity in powerUpEntities)
             {
                 var timer = powerUpEntity.Resource.Value;

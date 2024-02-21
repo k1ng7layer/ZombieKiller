@@ -1,4 +1,5 @@
-﻿using Game.Ui.PlayerStats.Exp;
+﻿using Game.Ui.Buffs;
+using Game.Ui.PlayerStats.Exp;
 using Game.Ui.PlayerStats.Health;
 using SimpleUi;
 
@@ -12,6 +13,7 @@ namespace Game.Ui.Windows
         { 
             AddController<PlayerExperienceController>();
             AddController<PlayerHealthController>();
+            AddController<CurrentBuffsController>();
         }
     }
 }

@@ -18,13 +18,15 @@ namespace Ecs.Commands.Systems.PowerUp
         private readonly IRandomProvider _randomProvider;
         private readonly PowerUpGroupUtils _powerUpGroupUtils;
         private readonly PowerUpContext _powerUp;
+        private readonly GameContext _game;
 
         public CreatePowerUpSystem(
             ICommandBuffer commandBuffer, 
             IPowerUpBase powerUpBase,
             IRandomProvider randomProvider,
             PowerUpGroupUtils powerUpGroupUtils,
-            PowerUpContext powerUp
+            PowerUpContext powerUp,
+            GameContext game
         ) : base(commandBuffer)
         {
             _commandBuffer = commandBuffer;
@@ -32,6 +34,7 @@ namespace Ecs.Commands.Systems.PowerUp
             _randomProvider = randomProvider;
             _powerUpGroupUtils = powerUpGroupUtils;
             _powerUp = powerUp;
+            _game = game;
         }
 
         protected override void Execute(ref CreatePowerUpCommand command)
@@ -42,13 +45,14 @@ namespace Ecs.Commands.Systems.PowerUp
            var randomId = _randomProvider.Range(0, powerUps.Count);
            var powerUpSettings = _powerUpBase.PowerUpS[command.Id];
            var powerUpEntity = _powerUp.CreateEntity();
+           var powerUpOwner = _game.GetEntityWithUid(command.Owner);
            
            powerUpEntity.AddPowerUp(randomId);
            powerUpEntity.AddOwner(command.Owner);
            powerUpEntity.IsActive = true;
            powerUpEntity.AddUid(UidGenerator.Next());
            powerUpEntity.AddLifeTime(powerUpSettings.LifeTime.LifeTimeType);
-           
+           powerUpEntity.IsPlayerBuff = powerUpOwner.IsPlayer;
            
            
            if (powerUpSettings.LifeTime.LifeTimeType is EPowerUpLifeTime.Temporary or EPowerUpLifeTime.Charges)

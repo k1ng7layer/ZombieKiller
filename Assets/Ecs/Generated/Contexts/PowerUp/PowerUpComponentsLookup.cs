@@ -13,34 +13,44 @@ using JCMG.EntitasRedux;
 
 public static class PowerUpComponentsLookup
 {
-	public const int Destroyed = 0;
-	public const int Uid = 1;
-	public const int Active = 2;
-	public const int Owner = 3;
-	public const int Timer = 4;
-	public const int LifeTime = 5;
-	public const int PowerUp = 6;
-	public const int Resource = 7;
-	public const int PowerUpActiveListener = 8;
-	public const int PowerUpActiveRemovedListener = 9;
-	public const int PowerUpDestroyedListener = 10;
-	public const int PowerUpListener = 11;
-	public const int PowerUpRemovedListener = 12;
-	public const int PowerUpTimerListener = 13;
-	public const int ResourceListener = 14;
+	public const int AnyPlayerBuffListener = 0;
+	public const int AnyPowerUpListener = 1;
+	public const int Destroyed = 2;
+	public const int Uid = 3;
+	public const int Active = 4;
+	public const int Owner = 5;
+	public const int Timer = 6;
+	public const int LifeTime = 7;
+	public const int PlayerBuff = 8;
+	public const int PlayerPowerUp = 9;
+	public const int PowerUp = 10;
+	public const int Resource = 11;
+	public const int PlayerBuffRemovedListener = 12;
+	public const int PowerUpActiveListener = 13;
+	public const int PowerUpActiveRemovedListener = 14;
+	public const int PowerUpDestroyedListener = 15;
+	public const int PowerUpListener = 16;
+	public const int PowerUpRemovedListener = 17;
+	public const int PowerUpTimerListener = 18;
+	public const int ResourceListener = 19;
 
-	public const int TotalComponents = 15;
+	public const int TotalComponents = 20;
 
 	public static readonly string[] ComponentNames =
 	{
+		"AnyPlayerBuffListener",
+		"AnyPowerUpListener",
 		"Destroyed",
 		"Uid",
 		"Active",
 		"Owner",
 		"Timer",
 		"LifeTime",
+		"PlayerBuff",
+		"PlayerPowerUp",
 		"PowerUp",
 		"Resource",
+		"PlayerBuffRemovedListener",
 		"PowerUpActiveListener",
 		"PowerUpActiveRemovedListener",
 		"PowerUpDestroyedListener",
@@ -52,14 +62,19 @@ public static class PowerUpComponentsLookup
 
 	public static readonly System.Type[] ComponentTypes =
 	{
+		typeof(AnyPlayerBuffListenerComponent),
+		typeof(AnyPowerUpListenerComponent),
 		typeof(Ecs.Common.Components.DestroyedComponent),
 		typeof(Ecs.Common.Components.UidComponent),
 		typeof(Ecs.Game.Components.ActiveComponent),
 		typeof(Ecs.Game.Components.OwnerComponent),
 		typeof(Ecs.Game.Components.TimerComponent),
 		typeof(Ecs.PowerUp.Components.LifeTimeComponent),
+		typeof(Ecs.PowerUp.Components.PlayerBuffComponent),
+		typeof(Ecs.PowerUp.Components.PlayerPowerUpComponent),
 		typeof(Ecs.PowerUp.Components.PowerUpComponent),
 		typeof(Ecs.PowerUp.Components.ResourceComponent),
+		typeof(PlayerBuffRemovedListenerComponent),
 		typeof(PowerUpActiveListenerComponent),
 		typeof(PowerUpActiveRemovedListenerComponent),
 		typeof(PowerUpDestroyedListenerComponent),
@@ -71,21 +86,26 @@ public static class PowerUpComponentsLookup
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
-		{ typeof(Ecs.Common.Components.DestroyedComponent), 0 },
-		{ typeof(Ecs.Common.Components.UidComponent), 1 },
-		{ typeof(Ecs.Game.Components.ActiveComponent), 2 },
-		{ typeof(Ecs.Game.Components.OwnerComponent), 3 },
-		{ typeof(Ecs.Game.Components.TimerComponent), 4 },
-		{ typeof(Ecs.PowerUp.Components.LifeTimeComponent), 5 },
-		{ typeof(Ecs.PowerUp.Components.PowerUpComponent), 6 },
-		{ typeof(Ecs.PowerUp.Components.ResourceComponent), 7 },
-		{ typeof(PowerUpActiveListenerComponent), 8 },
-		{ typeof(PowerUpActiveRemovedListenerComponent), 9 },
-		{ typeof(PowerUpDestroyedListenerComponent), 10 },
-		{ typeof(PowerUpListenerComponent), 11 },
-		{ typeof(PowerUpRemovedListenerComponent), 12 },
-		{ typeof(PowerUpTimerListenerComponent), 13 },
-		{ typeof(ResourceListenerComponent), 14 }
+		{ typeof(AnyPlayerBuffListenerComponent), 0 },
+		{ typeof(AnyPowerUpListenerComponent), 1 },
+		{ typeof(Ecs.Common.Components.DestroyedComponent), 2 },
+		{ typeof(Ecs.Common.Components.UidComponent), 3 },
+		{ typeof(Ecs.Game.Components.ActiveComponent), 4 },
+		{ typeof(Ecs.Game.Components.OwnerComponent), 5 },
+		{ typeof(Ecs.Game.Components.TimerComponent), 6 },
+		{ typeof(Ecs.PowerUp.Components.LifeTimeComponent), 7 },
+		{ typeof(Ecs.PowerUp.Components.PlayerBuffComponent), 8 },
+		{ typeof(Ecs.PowerUp.Components.PlayerPowerUpComponent), 9 },
+		{ typeof(Ecs.PowerUp.Components.PowerUpComponent), 10 },
+		{ typeof(Ecs.PowerUp.Components.ResourceComponent), 11 },
+		{ typeof(PlayerBuffRemovedListenerComponent), 12 },
+		{ typeof(PowerUpActiveListenerComponent), 13 },
+		{ typeof(PowerUpActiveRemovedListenerComponent), 14 },
+		{ typeof(PowerUpDestroyedListenerComponent), 15 },
+		{ typeof(PowerUpListenerComponent), 16 },
+		{ typeof(PowerUpRemovedListenerComponent), 17 },
+		{ typeof(PowerUpTimerListenerComponent), 18 },
+		{ typeof(ResourceListenerComponent), 19 }
 	};
 
 	/// <summary>
