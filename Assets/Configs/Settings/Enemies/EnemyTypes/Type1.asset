@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyType: 0
   BaseHealth: 100
-  AttackRange: 0.3
+  AttackRange: 1
   AttackCooldown: 1
