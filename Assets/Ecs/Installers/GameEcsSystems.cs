@@ -28,8 +28,8 @@ namespace Ecs.Installers {
 		private static void High(DiContainer container, bool isDebug) {
  
 			// Initialization 0050
-			SystemInstallHelper.Install<GameInitializeSystem>(container);	// 0050 Initialization
 			SystemInstallHelper.Install<InitializePlayerSystem>(container);	// 0050 Initialization
+			SystemInstallHelper.Install<InitializeStageSystem>(container);	// 0050 Initialization
 			SystemInstallHelper.Install<CameraInitializeSystem>(container);	// 0060 Initialization
 
 			// Combat 0450
@@ -42,8 +42,17 @@ namespace Ecs.Installers {
 			// Combat 0700
 			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0700 Combat
 
+			// Common 0850
+			SystemInstallHelper.Install<CheckAliveEnemiesSystem>(container);	// 0850 Common
+
 			// Combat 0900
 			SystemInstallHelper.Install<EnemyDeathSystem>(container);	// 0900 Combat
+			SystemInstallHelper.Install<StageWinSystem>(container);	// 0900 Common
+			SystemInstallHelper.Install<TeleportPlayerSystem>(container);	// 0900 Common
+
+			// Common 0950
+			SystemInstallHelper.Install<LoadNextStageSystem>(container);	// 0950 Common
+			SystemInstallHelper.Install<LoadShelterSystem>(container);	// 0950 Common
 
 			// Input 1000
 			SystemInstallHelper.Install<PlayerMovementSystem>(container);	// 1000 Input

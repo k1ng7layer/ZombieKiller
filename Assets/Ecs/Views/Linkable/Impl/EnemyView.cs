@@ -53,6 +53,8 @@ namespace Ecs.Views.Linkable.Impl
             base.OnDead(_);
             
             healthBarView.gameObject.SetActive(false);
+            
+            enemyAgent.enabled = false;
         }
 
         private void OnDestinationPosition(GameEntity entity, Vector3 value)

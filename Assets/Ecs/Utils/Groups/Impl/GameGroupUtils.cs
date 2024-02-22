@@ -9,15 +9,16 @@ namespace Ecs.Utils.Groups.Impl
     public class GameGroupUtils : IGameGroupUtils
     {
         private readonly IGroup<GameEntity> _unitsGroup;
-        private readonly IGroup<GameEntity> _buildingSlotsGroup;
-        private readonly IGroup<GameEntity> _buildingsGroup;
-        private readonly IGroup<GameEntity> _enemyBuildingSlot;
         private readonly IGroup<GameEntity> _projectiles;
+        private readonly IGroup<GameEntity> _enemiesGroup;
+        private readonly IGroup<GameEntity> _portalGroup;
         private readonly IGroup<GameEntity> _timeGroup;
 
         public GameGroupUtils(GameContext game)
         {
             _projectiles = game.GetGroup(GameMatcher.Projectile);
+            _enemiesGroup = game.GetGroup(GameMatcher.Enemy);
+            _portalGroup = game.GetGroup(GameMatcher.Portal);
             _timeGroup = game.GetGroup(GameMatcher.Time);
         }
         
@@ -35,6 +36,20 @@ namespace Ecs.Utils.Groups.Impl
                 : e => e.HasTime && e.Time.Value > 0 && !e.IsDestroyed;
             
             return GetEntities(out buffer, _timeGroup, baseFilter, filter);
+        }
+        
+        public IDisposable GetEnemies(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
+        {
+            Func<GameEntity, bool> baseFilter = e => e.HasEnemy && !e.IsDestroyed;
+
+            return GetEntities(out buffer, _enemiesGroup, baseFilter, filter);
+        }
+
+        public IDisposable GetStagePortals(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
+        {
+            Func<GameEntity, bool> baseFilter = e => e.HasPortal && !e.IsDestroyed;
+
+            return GetEntities(out buffer, _portalGroup, baseFilter, filter);
         }
 
         public IDisposable GetUnits(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null, bool nonDestroyed = true)
