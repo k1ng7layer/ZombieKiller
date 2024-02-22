@@ -19,3 +19,4 @@ MonoBehaviour:
   enemyParamsBase: {fileID: 11400000, guid: dad79fbaa9eda7d4ba1079cd22cfaeee, type: 2}
   projectileBase: {fileID: 11400000, guid: f71f970b8eb91b6458e3e0818a2cc91c, type: 2}
   levelSettingsBase: {fileID: 11400000, guid: b6d061087aa8d8d42a63e4b687cb3fc7, type: 2}
+  bTreesBase: {fileID: 11400000, guid: a55c35ba18c7f5d42a30448d1fe55bf8, type: 2}

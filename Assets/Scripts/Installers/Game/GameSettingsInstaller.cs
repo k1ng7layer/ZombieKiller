@@ -1,3 +1,5 @@
+using Db.BTrees;
+using Db.BTrees.Impl;
 using Db.Camera;
 using Db.Camera.Impl;
 using Db.Enemies;
@@ -24,7 +26,7 @@ namespace Installers.Game
         [SerializeField] private WeaponBase weaponBase;
         [SerializeField] private EnemyParamsBase enemyParamsBase;
         [SerializeField] private ProjectileBase projectileBase;
-       
+        [SerializeField] private BTreesBase bTreesBase;
 
         public override void InstallBindings()
         {
@@ -34,6 +36,7 @@ namespace Installers.Game
             Container.Bind<IWeaponBase>().FromInstance(weaponBase);
             Container.Bind<IEnemyParamsBase>().FromInstance(enemyParamsBase);
             Container.Bind<IProjectileBase>().FromInstance(projectileBase);
+            Container.Bind<IBTreesBase>().FromInstance(bTreesBase);
         }
     }
 }

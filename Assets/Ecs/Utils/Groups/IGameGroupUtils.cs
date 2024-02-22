@@ -8,5 +8,6 @@ namespace Ecs.Utils.Groups
         IDisposable GetProjectiles(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null);
         IDisposable GetEnemies(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null);
         IDisposable GetStagePortals(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null);
+        IDisposable GetTimeEntities(out List<GameEntity> buffer, bool isTimeEnd, Func<GameEntity, bool> filter = null);
     }
 }

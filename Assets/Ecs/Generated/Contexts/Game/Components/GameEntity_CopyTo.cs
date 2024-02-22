@@ -138,6 +138,18 @@ public partial class GameEntity
 		{
 			IsCamera = true;
 		}
+		else if (component is Ecs.Game.Components.UnitParameters.AttackRangeComponent AttackRange)
+		{
+			CopyAttackRangeTo(AttackRange);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.DestinationPositionComponent DestinationPosition)
+		{
+			CopyDestinationPositionTo(DestinationPosition);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AttackCooldownComponent AttackCooldown)
+		{
+			CopyAttackCooldownTo(AttackCooldown);
+		}
 		else if (component is Ecs.Game.Components.UnitParameters.PhysicalDamageComponent PhysicalDamage)
 		{
 			CopyPhysicalDamageTo(PhysicalDamage);
