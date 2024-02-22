@@ -13,10 +13,28 @@ namespace Ecs.Utils.Groups.Impl
         private readonly IGroup<GameEntity> _buildingsGroup;
         private readonly IGroup<GameEntity> _enemyBuildingSlot;
         private readonly IGroup<GameEntity> _projectiles;
+        private readonly IGroup<GameEntity> _timeGroup;
 
         public GameGroupUtils(GameContext game)
         {
             _projectiles = game.GetGroup(GameMatcher.Projectile);
+            _timeGroup = game.GetGroup(GameMatcher.Time);
+        }
+        
+        public IDisposable GetProjectiles(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
+        {
+            Func<GameEntity, bool> baseFilter = e => e.HasProjectile && !e.IsDestroyed;
+
+            return GetEntities(out buffer, _projectiles, baseFilter, filter);
+        }
+
+        public IDisposable GetTimeEntities(out List<GameEntity> buffer, bool isTimeEnd, Func<GameEntity, bool> filter = null)
+        {
+            Func<GameEntity, bool> baseFilter = isTimeEnd
+                ? e => e.HasTime && e.Time.Value <= 0 && !e.IsDestroyed
+                : e => e.HasTime && e.Time.Value > 0 && !e.IsDestroyed;
+            
+            return GetEntities(out buffer, _timeGroup, baseFilter, filter);
         }
 
         public IDisposable GetUnits(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null, bool nonDestroyed = true)
@@ -66,13 +84,6 @@ namespace Ecs.Utils.Groups.Impl
             }
             
             return pooledObject;
-        }
-
-        public IDisposable GetProjectiles(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
-        {
-            Func<GameEntity, bool> baseFilter = e => e.HasProjectile && !e.IsDestroyed;
-
-            return GetEntities(out buffer, _projectiles, baseFilter, filter);
         }
     }
 }
