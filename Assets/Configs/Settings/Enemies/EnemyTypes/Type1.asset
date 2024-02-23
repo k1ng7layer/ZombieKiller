@@ -16,5 +16,6 @@ MonoBehaviour:
   Weapon: 1
   BaseHealth: 300
   BaseExperience: 30000
-  BaseAttackRange: 2
-  BaseMoveSpeed: 40
+  BaseAttackRange: 1
+  BaseMoveSpeed: 20
+  BaseAttackSpeed: 1

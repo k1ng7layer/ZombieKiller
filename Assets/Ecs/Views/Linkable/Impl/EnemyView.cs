@@ -1,4 +1,5 @@
 ﻿using Db.Enemies;
+using Game.Utils;
 using Game.Views;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Core.Utils;
@@ -31,6 +32,7 @@ namespace Ecs.Views.Linkable.Impl
             navMeshAgent.updatePosition = false;
             navMeshAgent.updateRotation = false;
             navMeshAgent.stoppingDistance = _enemyEntity.AttackRange.Value;
+            navMeshAgent.speed = _enemyEntity.MoveSpeed.Value / Constants.RbSpeedToNavmeshScale;
         }
 
         private void OnHealthChanged(GameEntity entity, float value)
