@@ -1,3 +1,5 @@
+using Db.Ai;
+using Db.Ai.Impl;
 using Db.Camera;
 using Db.Camera.Impl;
 using Db.Enemies;
@@ -27,6 +29,7 @@ namespace Installers.Game
         [SerializeField] private EnemyParamsBase enemyParamsBase;
         [SerializeField] private ProjectileBase projectileBase;
         [SerializeField] private PowerUpBase powerUpBase;
+        [SerializeField] private AiBTreeSettingsBase aiBTreeSettingsBase;
        
 
         public override void InstallBindings()
@@ -38,6 +41,7 @@ namespace Installers.Game
             Container.Bind<IEnemyParamsBase>().FromInstance(enemyParamsBase);
             Container.Bind<IProjectileBase>().FromInstance(projectileBase);
             Container.Bind<IPowerUpBase>().FromInstance(powerUpBase);
+            Container.Bind<IAiBTreeSettingsBase>().To<AiBTreeSettingsBase>().FromInstance(aiBTreeSettingsBase).AsSingle();
         }
     }
 }

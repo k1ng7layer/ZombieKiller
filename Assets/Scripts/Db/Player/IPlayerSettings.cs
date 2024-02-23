@@ -10,5 +10,6 @@ namespace Db.Player
         float BaseExperienceRequired { get; }
         EWeaponId StarterWeapon { get; }
         float BaseMaxHealth { get; }
+        float BaseAttackSpeed { get; }
     }
 }

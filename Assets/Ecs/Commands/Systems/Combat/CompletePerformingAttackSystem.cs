@@ -28,6 +28,7 @@ namespace Ecs.Commands.Systems.Combat
             var weaponEntity = _game.GetEntityWithUid(weaponUid);
             weaponEntity.IsPerformingAttack = false;
             weaponEntity.AttackTargets.Value.Clear();
+            attacker.ReplaceAttackCooldown(1f / attacker.AttackSpeed.Value);
             
             Debug.Log($"CompletePerformingAttackSystem");
         }

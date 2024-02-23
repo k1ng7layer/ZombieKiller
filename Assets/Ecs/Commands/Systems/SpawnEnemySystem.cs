@@ -28,7 +28,7 @@ namespace Ecs.Commands.Systems
             var enemyType = command.EnemyType;
             var enemyParams = _enemyParamsBase.GetEnemyParams(enemyType);
             var enemyEntity = _game.CreateEntity();
-            
+            var player = _game.PlayerEntity.Uid.Value;
             enemyEntity.AddEnemy(enemyType);
             enemyEntity.AddPosition(command.Position);
             enemyEntity.AddRotation(command.Rotation);
@@ -37,6 +37,13 @@ namespace Ecs.Commands.Systems
             enemyEntity.AddUid(UidGenerator.Next());
             enemyEntity.IsInstantiate = true;
             enemyEntity.AddExperience(enemyParams.BaseExperience);
+            enemyEntity.AddTarget(player);
+            enemyEntity.AddAttackRange(enemyParams.BaseAttackRange);
+            enemyEntity.AddMoveSpeed(enemyParams.BaseMoveSpeed);
+            enemyEntity.ReplaceAttackSpeed(enemyParams.BaseAttackSpeed);
+            enemyEntity.AddAttackCooldown(0);
+            enemyEntity.IsUnit = true;
+            enemyEntity.IsAi = true;
         }
     }
 }

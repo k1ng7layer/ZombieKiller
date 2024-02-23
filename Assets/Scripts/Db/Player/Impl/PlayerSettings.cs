@@ -6,12 +6,13 @@ namespace Db.Player.Impl
     [CreateAssetMenu(menuName = "Settings/" + nameof(PlayerSettings), fileName = nameof(PlayerSettings))]
     public class PlayerSettings : ScriptableObject, IPlayerSettings
     {
-        [SerializeField] private float _baseMoveSpeed;
         [SerializeField] private EWeaponId _starterWeapon;
+        [SerializeField] private float _baseMoveSpeed;
         [SerializeField] private float _levelExpMultiplier = 1.3f;
         [SerializeField] private float _levelRequiredMultiplier = 1.3f;
         [SerializeField] private float _baseExperienceRequired = 100f;
         [SerializeField] private float _baseMaxHealth = 100f;
+        [SerializeField] private float _baseAttackSpeed = 1.7f;
 
         public float BaseMoveSpeed => _baseMoveSpeed;
 
@@ -20,5 +21,7 @@ namespace Db.Player.Impl
         public float BaseExperienceRequired => _baseExperienceRequired;
         public EWeaponId StarterWeapon => _starterWeapon;
         public float BaseMaxHealth => _baseMaxHealth;
+
+        public float BaseAttackSpeed => _baseAttackSpeed;
     }
 }

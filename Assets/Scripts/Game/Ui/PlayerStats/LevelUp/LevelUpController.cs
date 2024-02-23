@@ -38,7 +38,7 @@ namespace Game.Ui.PlayerStats.LevelUp
         {
             var player = _game.PlayerEntity;
             
-            player.SubscribeUnitLevel((_, value) => OnUnitLevelChanged(value)).AddTo(View);
+            player.SubscribeUnitLevel(OnUnitLevelChanged).AddTo(View);
         }
 
         public override void OnHide()
@@ -46,7 +46,7 @@ namespace Game.Ui.PlayerStats.LevelUp
             View.PowerUpElementCollection.Clear();
         }
 
-        private void OnUnitLevelChanged(int level)
+        private void OnUnitLevelChanged(GameEntity player, int level)
         {
             if (level == 1)
                 return;
@@ -68,6 +68,8 @@ namespace Game.Ui.PlayerStats.LevelUp
                     _commandBuffer.CreatePowerUp(_game.PlayerEntity.Uid.Value, powerUpId);
                     
                     _signalBus.BackWindow();
+                    
+                    player.IsCanMove = true;
                 });
             }
         }

@@ -38,6 +38,7 @@ namespace Ecs.Game.Systems.Player
                 if (currExp >= expGoal)
                 {
                     entity.ReplaceUnitLevel(level + 1);
+                    entity.IsCanMove = false;
                     _signalBus.OpenWindow<LevelUpWindow>();
                 }
             }

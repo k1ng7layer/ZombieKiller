@@ -23,7 +23,10 @@ namespace Ecs.Game.Systems.Player
         public void Update()
         {
             var player = _game.PlayerEntity;
-            var speed = 3f;
+            
+            if (!player.IsCanMove || player.IsDead)
+                return;
+
             var playerRotation = player.Rotation.Value;
             var inputVector = _inputService.InputDirection;
            

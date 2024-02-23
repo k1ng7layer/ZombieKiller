@@ -19,3 +19,4 @@ MonoBehaviour:
   enemyParamsBase: {fileID: 11400000, guid: dad79fbaa9eda7d4ba1079cd22cfaeee, type: 2}
   projectileBase: {fileID: 11400000, guid: f71f970b8eb91b6458e3e0818a2cc91c, type: 2}
   powerUpBase: {fileID: 11400000, guid: 5baaa8d268776ea4caeae69f9ba7f57b, type: 2}
+  aiBTreeSettingsBase: {fileID: 11400000, guid: 58129ff6ed872074cbf13c2076c9eb0a, type: 2}
