@@ -1,7 +1,6 @@
 ﻿using Ecs.Commands;
 using Ecs.Utils.LinkedEntityRepository;
 using Game.Providers.GameFieldProvider;
-using Game.Utils;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
@@ -34,7 +33,10 @@ namespace Ecs.Game.Systems.Initialize
         {
             foreach (var enemySpawnPoint in _gameFieldProvider.GameField.EnemySpawnPoints)
             {
-                _commandBuffer.SpawnEnemy(EEnemyType.Type1, enemySpawnPoint.position, enemySpawnPoint.rotation);
+                _commandBuffer.SpawnEnemy(
+                    enemySpawnPoint.EnemyType, 
+                    enemySpawnPoint.SpawnTransform.position, 
+                    enemySpawnPoint.SpawnTransform.rotation);
             }
 
             InitPortals();

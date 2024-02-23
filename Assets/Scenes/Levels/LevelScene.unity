@@ -752,8 +752,10 @@ MonoBehaviour:
   startCameraPosition: {fileID: 2056382328}
   playerView: {fileID: 5277602330854475987}
   enemySpawnPoints:
-  - {fileID: 894061113}
-  - {fileID: 1657956036}
+  - SpawnTransform: {fileID: 894061113}
+    EnemyType: 0
+  - SpawnTransform: {fileID: 1657956036}
+    EnemyType: 0
   levelPortals:
   - {fileID: 1990724796}
   - {fileID: 566074221}
