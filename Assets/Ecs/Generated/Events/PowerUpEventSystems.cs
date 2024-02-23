@@ -21,6 +21,7 @@ public sealed class PowerUpEventSystems : Feature
 		Add(new PowerUpEventSystem(context)); // priority: 0
 		Add(new AnyPowerUpEventSystem(context)); // priority: 0
 		Add(new PowerUpRemovedEventSystem(context)); // priority: 0
+		Add(new AnyPowerUpRemovedEventSystem(context)); // priority: 0
 		Add(new ResourceEventSystem(context)); // priority: 0
 		Add(new PowerUpTimerEventSystem(context)); // priority: 0
 	}

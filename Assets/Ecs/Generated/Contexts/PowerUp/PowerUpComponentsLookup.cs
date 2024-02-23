@@ -15,31 +15,33 @@ public static class PowerUpComponentsLookup
 {
 	public const int AnyPlayerBuffListener = 0;
 	public const int AnyPowerUpListener = 1;
-	public const int Destroyed = 2;
-	public const int Uid = 3;
-	public const int Active = 4;
-	public const int Owner = 5;
-	public const int Timer = 6;
-	public const int LifeTime = 7;
-	public const int PlayerBuff = 8;
-	public const int PlayerPowerUp = 9;
-	public const int PowerUp = 10;
-	public const int Resource = 11;
-	public const int PlayerBuffRemovedListener = 12;
-	public const int PowerUpActiveListener = 13;
-	public const int PowerUpActiveRemovedListener = 14;
-	public const int PowerUpDestroyedListener = 15;
-	public const int PowerUpListener = 16;
-	public const int PowerUpRemovedListener = 17;
-	public const int PowerUpTimerListener = 18;
-	public const int ResourceListener = 19;
+	public const int AnyPowerUpRemovedListener = 2;
+	public const int Destroyed = 3;
+	public const int Uid = 4;
+	public const int Active = 5;
+	public const int Owner = 6;
+	public const int Timer = 7;
+	public const int LifeTime = 8;
+	public const int PlayerBuff = 9;
+	public const int PlayerPowerUp = 10;
+	public const int PowerUp = 11;
+	public const int Resource = 12;
+	public const int PlayerBuffRemovedListener = 13;
+	public const int PowerUpActiveListener = 14;
+	public const int PowerUpActiveRemovedListener = 15;
+	public const int PowerUpDestroyedListener = 16;
+	public const int PowerUpListener = 17;
+	public const int PowerUpRemovedListener = 18;
+	public const int PowerUpTimerListener = 19;
+	public const int ResourceListener = 20;
 
-	public const int TotalComponents = 20;
+	public const int TotalComponents = 21;
 
 	public static readonly string[] ComponentNames =
 	{
 		"AnyPlayerBuffListener",
 		"AnyPowerUpListener",
+		"AnyPowerUpRemovedListener",
 		"Destroyed",
 		"Uid",
 		"Active",
@@ -64,6 +66,7 @@ public static class PowerUpComponentsLookup
 	{
 		typeof(AnyPlayerBuffListenerComponent),
 		typeof(AnyPowerUpListenerComponent),
+		typeof(AnyPowerUpRemovedListenerComponent),
 		typeof(Ecs.Common.Components.DestroyedComponent),
 		typeof(Ecs.Common.Components.UidComponent),
 		typeof(Ecs.Game.Components.ActiveComponent),
@@ -88,24 +91,25 @@ public static class PowerUpComponentsLookup
 	{
 		{ typeof(AnyPlayerBuffListenerComponent), 0 },
 		{ typeof(AnyPowerUpListenerComponent), 1 },
-		{ typeof(Ecs.Common.Components.DestroyedComponent), 2 },
-		{ typeof(Ecs.Common.Components.UidComponent), 3 },
-		{ typeof(Ecs.Game.Components.ActiveComponent), 4 },
-		{ typeof(Ecs.Game.Components.OwnerComponent), 5 },
-		{ typeof(Ecs.Game.Components.TimerComponent), 6 },
-		{ typeof(Ecs.PowerUp.Components.LifeTimeComponent), 7 },
-		{ typeof(Ecs.PowerUp.Components.PlayerBuffComponent), 8 },
-		{ typeof(Ecs.PowerUp.Components.PlayerPowerUpComponent), 9 },
-		{ typeof(Ecs.PowerUp.Components.PowerUpComponent), 10 },
-		{ typeof(Ecs.PowerUp.Components.ResourceComponent), 11 },
-		{ typeof(PlayerBuffRemovedListenerComponent), 12 },
-		{ typeof(PowerUpActiveListenerComponent), 13 },
-		{ typeof(PowerUpActiveRemovedListenerComponent), 14 },
-		{ typeof(PowerUpDestroyedListenerComponent), 15 },
-		{ typeof(PowerUpListenerComponent), 16 },
-		{ typeof(PowerUpRemovedListenerComponent), 17 },
-		{ typeof(PowerUpTimerListenerComponent), 18 },
-		{ typeof(ResourceListenerComponent), 19 }
+		{ typeof(AnyPowerUpRemovedListenerComponent), 2 },
+		{ typeof(Ecs.Common.Components.DestroyedComponent), 3 },
+		{ typeof(Ecs.Common.Components.UidComponent), 4 },
+		{ typeof(Ecs.Game.Components.ActiveComponent), 5 },
+		{ typeof(Ecs.Game.Components.OwnerComponent), 6 },
+		{ typeof(Ecs.Game.Components.TimerComponent), 7 },
+		{ typeof(Ecs.PowerUp.Components.LifeTimeComponent), 8 },
+		{ typeof(Ecs.PowerUp.Components.PlayerBuffComponent), 9 },
+		{ typeof(Ecs.PowerUp.Components.PlayerPowerUpComponent), 10 },
+		{ typeof(Ecs.PowerUp.Components.PowerUpComponent), 11 },
+		{ typeof(Ecs.PowerUp.Components.ResourceComponent), 12 },
+		{ typeof(PlayerBuffRemovedListenerComponent), 13 },
+		{ typeof(PowerUpActiveListenerComponent), 14 },
+		{ typeof(PowerUpActiveRemovedListenerComponent), 15 },
+		{ typeof(PowerUpDestroyedListenerComponent), 16 },
+		{ typeof(PowerUpListenerComponent), 17 },
+		{ typeof(PowerUpRemovedListenerComponent), 18 },
+		{ typeof(PowerUpTimerListenerComponent), 19 },
+		{ typeof(ResourceListenerComponent), 20 }
 	};
 
 	/// <summary>

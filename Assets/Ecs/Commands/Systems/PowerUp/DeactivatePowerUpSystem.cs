@@ -31,14 +31,13 @@ namespace Ecs.Commands.Systems.PowerUp
         protected override void Execute(ref DeactivatePowerUpCommand command)
         {
             var powerUpEntity = _powerUp.GetEntityWithUid(command.PowerUpUid);
-            powerUpEntity.IsDestroyed = true;
             powerUpEntity.IsPlayerBuff = false;
-            
+            powerUpEntity.IsDestroyed = true;
             var powerUpId = powerUpEntity.PowerUp.Id;
             var powerUpParams = _powerUpBase.Get(powerUpId);
             var owner = powerUpEntity.Owner.Value;
             var ownerEntity = _game.GetEntityWithUid(owner);
-
+           
             foreach (var powerUpParam in powerUpParams.UnitStatsGain)
             {
                 if (powerUpParam.StatType != EUnitStat.HEALTH)
@@ -64,6 +63,8 @@ namespace Ecs.Commands.Systems.PowerUp
             }
             
             _commandBuffer.RecalculateUnitAttributes(owner);
+            
+            powerUpEntity.RemovePowerUp();
         }
     }
 }
