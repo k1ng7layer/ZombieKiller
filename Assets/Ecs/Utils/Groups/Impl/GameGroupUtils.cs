@@ -13,11 +13,12 @@ namespace Ecs.Utils.Groups.Impl
         private readonly IGroup<GameEntity> _enemiesGroup;
         private readonly IGroup<GameEntity> _portalGroup;
 
-        public GameGroupUtils(GameContext game)
+        public GameGroupUtils(GameContext game, PowerUpContext powerUp)
         {
             _projectiles = game.GetGroup(GameMatcher.Projectile);
             _enemiesGroup = game.GetGroup(GameMatcher.Enemy);
             _portalGroup = game.GetGroup(GameMatcher.Portal);
+          
         }
 
         public IDisposable GetUnits(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null, bool nonDestroyed = true)

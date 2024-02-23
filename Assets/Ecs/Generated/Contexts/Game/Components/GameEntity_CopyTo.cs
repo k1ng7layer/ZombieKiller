@@ -26,10 +26,6 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
-		else if (component is Ecs.Game.Components.PortalComponent Portal)
-		{
-			CopyPortalTo(Portal);
-		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
@@ -49,6 +45,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.DeadComponent Dead)
 		{
 			IsDead = true;
+		}
+		else if (component is Ecs.Game.Components.TimerComponent Timer)
+		{
+			CopyTimerTo(Timer);
 		}
 		else if (component is Ecs.Game.Components.TimeComponent Time)
 		{
@@ -86,6 +86,10 @@ public partial class GameEntity
 		{
 			CopyTransformTo(Transform);
 		}
+		else if (component is Ecs.Game.Components.ExperienceComponent Experience)
+		{
+			CopyExperienceTo(Experience);
+		}
 		else if (component is Ecs.Game.Components.LinkComponent Link)
 		{
 			CopyLinkTo(Link);
@@ -97,6 +101,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.EnemyComponent Enemy)
 		{
 			CopyEnemyTo(Enemy);
+		}
+		else if (component is Ecs.Game.Components.UnitLevelComponent UnitLevel)
+		{
+			CopyUnitLevelTo(UnitLevel);
 		}
 		else if (component is Ecs.Game.Components.ProjectileComponent Projectile)
 		{
@@ -122,6 +130,10 @@ public partial class GameEntity
 		{
 			CopyIncomeTo(Income);
 		}
+		else if (component is Ecs.Game.Components.PortalComponent Portal)
+		{
+			CopyPortalTo(Portal);
+		}
 		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
 		{
 			CopyCameraModeTo(CameraMode);
@@ -138,9 +150,25 @@ public partial class GameEntity
 		{
 			IsCamera = true;
 		}
+		else if (component is Ecs.Game.Components.UnitParameters.AdditionalMagicDamage AdditionalMagicDamage)
+		{
+			CopyAdditionalMagicDamageTo(AdditionalMagicDamage);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage AdditionalPhysicalDamage)
+		{
+			CopyAdditionalPhysicalDamageTo(AdditionalPhysicalDamage);
+		}
 		else if (component is Ecs.Game.Components.UnitParameters.PhysicalDamageComponent PhysicalDamage)
 		{
 			CopyPhysicalDamageTo(PhysicalDamage);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.MaxHealthComponent MaxHealth)
+		{
+			CopyMaxHealthTo(MaxHealth);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AdditionalHealthComponent AdditionalHealth)
+		{
+			CopyAdditionalHealthTo(AdditionalHealth);
 		}
 		else if (component is Ecs.Game.Components.UnitParameters.HealthComponent Health)
 		{

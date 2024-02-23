@@ -8,6 +8,7 @@ namespace Db.Enemies
     {
         public EEnemyType EnemyType;
 
-        public float BaseHealth;
+        public float BaseHealth = 100;
+        public float BaseExperience = 10;
     }
 }
