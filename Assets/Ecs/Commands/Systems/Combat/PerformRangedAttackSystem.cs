@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Ecs.Commands.Systems.Combat
 {
-    [Install(ExecutionType.Game, ExecutionPriority.Normal, 200, nameof(EFeatures.Combat))]
+    [Install(ExecutionType.Game, ExecutionPriority.Normal, 210, nameof(EFeatures.Combat))]
     public class PerformRangedAttackSystem : ForEachCommandUpdateSystem<PerformAttackCommand>
     {
         private readonly IWeaponBase _weaponBase;

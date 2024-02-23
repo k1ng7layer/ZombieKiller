@@ -80,8 +80,8 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<AddCoinsSystem>(container);	// 0130 Coins
 
 			// Combat 0200
-			SystemInstallHelper.Install<PerformRangedAttackSystem>(container);	// 0200 Combat
 			SystemInstallHelper.Install<PerformMeleeAttackSystem>(container);	// 0200 Combat
+			SystemInstallHelper.Install<PerformRangedAttackSystem>(container);	// 0210 Combat
 
 			// Combat 0300
 			SystemInstallHelper.Install<CompletePerformingAttackSystem>(container);	// 0300 Combat
