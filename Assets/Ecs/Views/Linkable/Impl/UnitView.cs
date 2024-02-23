@@ -1,4 +1,5 @@
 ﻿using AnimationTriggers;
+using Db.Weapon;
 using Ecs.Commands;
 using Ecs.Utils;
 using Game.Utils;
@@ -14,11 +15,13 @@ namespace Ecs.Views.Linkable.Impl
 {
     public class UnitView : ObjectView
     {
+        [SerializeField] protected GameObject weaponRoot;
         [SerializeField] private Rigidbody _rb;
         [SerializeField] protected Animator _animator;
         [SerializeField] private Collider _damageTrigger;
         
         [Inject] private ICommandBuffer _commandBuffer;
+        [Inject] private IWeaponBase _weaponBase;
 
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
@@ -29,23 +32,29 @@ namespace Ecs.Views.Linkable.Impl
             unitEntity.SubscribeMoveDirection(OnDirectionChanged).AddTo(unsubscribe);
             unitEntity.SubscribePerformingAttack(OnPerformingAttack).AddTo(unsubscribe);
             unitEntity.SubscribeDead(OnDead).AddTo(unsubscribe);
-
+            unitEntity.ReplaceWeaponRoot(weaponRoot.transform);
+            unitEntity.SubscribeHitCounter(OnHitCounterChanged).AddTo(unsubscribe);
+            
             _damageTrigger.OnTriggerEnterAsObservable().Subscribe(OnUnitTriggerEnter).AddTo(unsubscribe);
             
-            var attackEndTrigger = _animator.GetBehaviour<CompleteAttackTrigger>();
-            
-            attackEndTrigger?.AttackEnd.Subscribe(_ =>
-            {
-                _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
-            }).AddTo(gameObject);
+            var attackEndTriggers = _animator.GetBehaviours<CompleteAttackTrigger>();
 
-            attackEndTrigger?.AttackStart.Subscribe(_ =>
+            foreach (var attackEndTrigger in attackEndTriggers)
             {
-                _commandBuffer.PerformAttack(unitEntity.Uid.Value);
-            });
+                attackEndTrigger?.AttackEnd.Subscribe(_ =>
+                {
+                    _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
+                }).AddTo(gameObject);
+                
+                
+                attackEndTrigger?.AttackStart.Subscribe(_ =>
+                {
+                    _commandBuffer.PerformAttack(unitEntity.Uid.Value);
+                });
+            }
         }
 
-        private void OnDirectionChanged(GameEntity entity, Vector3 dir)
+        protected virtual void OnDirectionChanged(GameEntity entity, Vector3 dir)
         {
             entity.Position.Value = transform.position;
             _rb.velocity = dir;
@@ -55,7 +64,12 @@ namespace Ecs.Views.Linkable.Impl
 
         private void OnPerformingAttack(GameEntity entity)
         {
-            _animator.SetTrigger(AnimationKeys.Attack);
+            var weaponId = entity.EquippedWeapon.Value.Id;
+            int paramId;
+            
+            paramId = _weaponBase.GetWeapon(weaponId).WeaponType == EWeaponType.Melee ? AnimationKeys.Attack : AnimationKeys.RangedAttack;
+            
+            _animator.SetTrigger(paramId);
         }
 
         private void OnUnitTriggerEnter(Collider other)
@@ -73,6 +87,11 @@ namespace Ecs.Views.Linkable.Impl
         {
             _damageTrigger.enabled = false;
             _animator.SetTrigger(AnimationKeys.Death);
+        }
+
+        private void OnHitCounterChanged(GameEntity entity, int value)
+        {
+            _animator.SetTrigger(AnimationKeys.TakeDamage);
         }
     }
 }

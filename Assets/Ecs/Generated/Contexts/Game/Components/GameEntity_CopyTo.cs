@@ -26,6 +26,18 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Game.Components.UnitComponent Unit)
+		{
+			IsUnit = true;
+		}
+		else if (component is Ecs.Game.Components.MovingComponent Moving)
+		{
+			IsMoving = true;
+		}
+		else if (component is Ecs.Game.Components.AiComponent Ai)
+		{
+			IsAi = true;
+		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
@@ -134,6 +146,26 @@ public partial class GameEntity
 		{
 			CopyPortalTo(Portal);
 		}
+		else if (component is Ecs.Game.Components.Ai.NavmeshAgentComponent NavmeshAgent)
+		{
+			CopyNavmeshAgentTo(NavmeshAgent);
+		}
+		else if (component is Ecs.Game.Components.Ai.DestinationComponent Destination)
+		{
+			CopyDestinationTo(Destination);
+		}
+		else if (component is Ecs.Game.Components.Ai.BehaviourTreeComponent BehaviourTree)
+		{
+			CopyBehaviourTreeTo(BehaviourTree);
+		}
+		else if (component is Ecs.Game.Components.Ai.TargetComponent Target)
+		{
+			CopyTargetTo(Target);
+		}
+		else if (component is Ecs.Game.Components.Camera.AttackCooldownComponent AttackCooldown)
+		{
+			CopyAttackCooldownTo(AttackCooldown);
+		}
 		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
 		{
 			CopyCameraModeTo(CameraMode);
@@ -149,6 +181,18 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.Camera.CameraComponent Camera)
 		{
 			IsCamera = true;
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AdditionalAttackSpeedComponent AdditionalAttackSpeed)
+		{
+			CopyAdditionalAttackSpeedTo(AdditionalAttackSpeed);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AttackSpeedComponent AttackSpeed)
+		{
+			CopyAttackSpeedTo(AttackSpeed);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.MoveSpeedComponent MoveSpeed)
+		{
+			CopyMoveSpeedTo(MoveSpeed);
 		}
 		else if (component is Ecs.Game.Components.UnitParameters.AdditionalMagicDamage AdditionalMagicDamage)
 		{
@@ -177,6 +221,14 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.UnitParameters.MagicDamageComponent MagicDamage)
 		{
 			CopyMagicDamageTo(MagicDamage);
+		}
+		else if (component is Ecs.Game.Components.Combat.HitCounterComponent HitCounter)
+		{
+			CopyHitCounterTo(HitCounter);
+		}
+		else if (component is Ecs.Game.Components.Combat.AttackRangeComponent AttackRange)
+		{
+			CopyAttackRangeTo(AttackRange);
 		}
 		else if (component is Ecs.Game.Components.Combat.WeaponComponent Weapon)
 		{

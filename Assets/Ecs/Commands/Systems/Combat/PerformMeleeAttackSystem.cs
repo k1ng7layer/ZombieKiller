@@ -38,7 +38,7 @@ namespace Ecs.Commands.Systems.Combat
             if (weapon.WeaponType != EWeaponType.Melee)
                 return;
             
-            attacker.IsPerformingAttack = true;
+            // attacker.IsPerformingAttack = true;
             var weaponUid = attacker.EquippedWeapon.Value.WeaponEntityUid;
             var weaponEntity = _game.GetEntityWithUid(weaponUid);
             weaponEntity.IsPerformingAttack = true;

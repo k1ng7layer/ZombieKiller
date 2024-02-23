@@ -15,8 +15,7 @@ namespace Ecs.Game.Systems
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
             context.CreateCollector(GameMatcher.Health);
 
-        protected override bool Filter(GameEntity entity) =>
-            entity.HasEnemy && entity.Health.Value <= 0 && !entity.IsDead && !entity.IsDestroyed;
+        protected override bool Filter(GameEntity entity) => entity.Health.Value <= 0 && !entity.IsDead && !entity.IsDestroyed;
 
         protected override void Execute(IEnumerable<GameEntity> entities)
         {

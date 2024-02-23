@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Ecs.Commands.Systems.Combat
 {
-    [Install(ExecutionType.Game, ExecutionPriority.High, 700, nameof(EFeatures.Combat))]
+    [Install(ExecutionType.Game, ExecutionPriority.Normal, 205, nameof(EFeatures.Combat))]
     public class TakeDamageSystem : ForEachCommandUpdateSystem<TakeDamageByWeaponCommand>
     {
         private readonly ICommandBuffer _commandBuffer;
@@ -55,6 +55,16 @@ namespace Ecs.Commands.Systems.Combat
             health -= damage;
             
             targetEntity.ReplaceHealth(health);
+
+            if (!targetEntity.HasHitCounter)
+            {
+                targetEntity.AddHitCounter(0);
+            }
+            else
+            {
+                var hitCounter = targetEntity.HitCounter.Value;
+                targetEntity.ReplaceHitCounter(++hitCounter);
+            }
             Debug.Log($"TakeDamageSystem. targetEntity: {targetUid}, damage: {damage}");
 
             if (weaponEntity.HasProjectile)

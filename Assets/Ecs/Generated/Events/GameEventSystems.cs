@@ -15,15 +15,20 @@ public sealed class GameEventSystems : Feature
 	{
 		Add(new GameActiveEventSystem(context)); // priority: 0
 		Add(new GameActiveRemovedEventSystem(context)); // priority: 0
+		Add(new BehaviourTreeEventSystem(context)); // priority: 0
 		Add(new CameraModeEventSystem(context)); // priority: 0
 		Add(new DeadEventSystem(context)); // priority: 0
+		Add(new DestinationEventSystem(context)); // priority: 0
 		Add(new GameDestroyedEventSystem(context)); // priority: 0
 		Add(new EquippedWeaponEventSystem(context)); // priority: 0
 		Add(new ExperienceEventSystem(context)); // priority: 0
 		Add(new HealthEventSystem(context)); // priority: 0
+		Add(new HitCounterEventSystem(context)); // priority: 0
 		Add(new LinkRemovedEventSystem(context)); // priority: 0
 		Add(new MaxHealthEventSystem(context)); // priority: 0
 		Add(new MoveDirectionEventSystem(context)); // priority: 0
+		Add(new MovingEventSystem(context)); // priority: 0
+		Add(new MovingRemovedEventSystem(context)); // priority: 0
 		Add(new ParentTransformEventSystem(context)); // priority: 0
 		Add(new PerformingAttackEventSystem(context)); // priority: 0
 		Add(new PlayerCoinsEventSystem(context)); // priority: 0

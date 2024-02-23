@@ -19,3 +19,5 @@ MonoBehaviour:
     gameObject: {fileID: 5737562238685456744, guid: d1bffc8d5c9f8fe43bdce738c7b4149c, type: 3}
   - name: BasicStaff
     gameObject: {fileID: 8096514219888216453, guid: 4ddfacd01d9821a4ebb15ed62b9890c3, type: 3}
+  - name: Type2
+    gameObject: {fileID: 7733725048035950936, guid: b4a3fe2974a9abc469b73bb8d29a83ac, type: 3}

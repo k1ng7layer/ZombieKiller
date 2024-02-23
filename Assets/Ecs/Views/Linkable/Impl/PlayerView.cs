@@ -7,8 +7,6 @@ namespace Ecs.Views.Linkable.Impl
 {
     public class PlayerView : UnitView
     {
-        [SerializeField] private GameObject weaponRoot;
-
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
             base.Subscribe(entity, unsubscribe);
@@ -17,8 +15,6 @@ namespace Ecs.Views.Linkable.Impl
             
             playerEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
             playerEntity.SubscribeEquippedWeapon(OnEquippedWeaponChanged).AddTo(unsubscribe);
-            
-            playerEntity.ReplaceWeaponRoot(weaponRoot.transform);
         }
         
         private void OnHealthChanged(GameEntity entity, float value)

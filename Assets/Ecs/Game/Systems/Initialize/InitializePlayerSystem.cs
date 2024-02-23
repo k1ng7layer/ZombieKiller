@@ -53,6 +53,9 @@ namespace Ecs.Game.Systems.Initialize
             player.AddMaxHealth(_playerSettings.BaseMaxHealth);
             player.AddMagicDamage(0);
             player.AddAdditionalHealth(0);
+            player.AddAttackCooldown(0);
+            player.AddAttackSpeed(_playerSettings.BaseAttackSpeed);
+            player.IsUnit = true;
             
             //TODO: save this
             player.AddUnitLevel(1);

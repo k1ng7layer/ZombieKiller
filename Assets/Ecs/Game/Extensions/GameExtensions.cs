@@ -48,6 +48,7 @@ namespace Ecs.Game.Extensions
             projectileEntity.AddSpeed(speed);
             projectileEntity.AddPhysicalDamage(physicalDamage);
             projectileEntity.AddMagicDamage(magicDamage);
+            
             return projectileEntity;
         }
 
