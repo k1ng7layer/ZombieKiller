@@ -50,6 +50,8 @@ namespace Ecs.Commands.Systems.Combat
             var weaponOwner = _game.GetEntityWithUid(weaponEntity.Owner.Value);
             
             var projectileView = projectileRepository.Spawn();
+           
+            
             var ownerForward = weaponOwner.Transform.Value.forward;
             var rotation = Quaternion.LookRotation(ownerForward);
             var weaponRoot = weaponOwner.WeaponRoot.Value;
@@ -63,6 +65,8 @@ namespace Ecs.Commands.Systems.Combat
                 weaponSettings.PhysicalDamage, 
                 weaponSettings.MagicDamage);
             
+            Debug.Log($"Projectile spawn: {projectileView.transform.GetHashCode()}");
+            
             projectileEntity.IsPerformingAttack = true;
             
             projectileView.Link(projectileEntity);
@@ -72,7 +76,6 @@ namespace Ecs.Commands.Systems.Combat
 
             projectileEntity.IsActive = true;
             
-            Debug.Log($"spawn projectile");
         }
     }
 }
