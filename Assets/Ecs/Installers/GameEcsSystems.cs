@@ -104,14 +104,16 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<CreatePowerUpSystem>(container);	// 0750 Combat
 			SystemInstallHelper.Install<RecalculateAttributesSystem>(container);	// 0760 Combat
 
-			// Combat 0810
+			// Common 0800
+			SystemInstallHelper.Install<FreezePlayerSystem>(container);	// 0800 Common
 			SystemInstallHelper.Install<PowerUpTimerLifeTimeSystem>(container);	// 0810 Combat
 			SystemInstallHelper.Install<DeactivatePowerUpSystem>(container);	// 0820 Combat
 
 			// Combat 0900
 			SystemInstallHelper.Install<AttackCooldownSystem>(container);	// 0900 Combat
 
-			// Combat 1000
+			// Common 1000
+			SystemInstallHelper.Install<SetGameStateSystem>(container);	// 1000 Common
 			SystemInstallHelper.Install<DestroyProjectileSystem>(container);	// 1000 Combat
 			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
 

@@ -3,6 +3,7 @@ using Ecs.Commands;
 using Ecs.Utils.Interfaces;
 using Game.Providers.PowerUpProvider;
 using Game.Ui.Utils;
+using Game.Utils;
 using JCMG.EntitasRedux.Commands;
 using SimpleUi.Signals;
 using UniRx;
@@ -70,6 +71,7 @@ namespace Game.Ui.PlayerStats.LevelUp
                     _signalBus.BackWindow();
                     
                     player.IsCanMove = true;
+                    _commandBuffer.SetGameState(EGameState.Game);
                 });
             }
         }

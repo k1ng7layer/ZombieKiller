@@ -51,6 +51,8 @@ namespace Ecs.Views.Linkable.Impl
             base.OnDead(_);
             
             healthBarView.gameObject.SetActive(false);
+            navMeshAgent.isStopped = true;
+            OnDirectionChanged(_, Vector3.zero);
         }
 
         private void OnDestinationAdded(GameEntity _, Vector3 destination)

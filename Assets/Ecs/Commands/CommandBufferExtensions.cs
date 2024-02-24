@@ -62,6 +62,12 @@ namespace Ecs.Commands
             command.Button = button;
         }
 
+        public static void SetGameState(this ICommandBuffer commandBuffer, EGameState gameState)
+        {
+            ref var command = ref commandBuffer.Create<SetGameStateCommand>();
+            command.GameState = gameState;
+        }
+
         public static void SpawnUnit(this ICommandBuffer commandBuffer, Vector3 position, Quaternion rotation, EUnitType unitType, Boolean isPlayerUnit)
         {
             ref var command = ref commandBuffer.Create<SpawnUnitCommand>();

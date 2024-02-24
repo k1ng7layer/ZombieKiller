@@ -69,7 +69,7 @@ namespace Ecs.Commands.Systems.Combat
 
             if (weaponEntity.HasProjectile)
             {
-                //_commandBuffer.DestroyProjectile(weaponEntity.Transform.Value.GetHashCode());
+                _commandBuffer.DestroyProjectile(weaponEntity.Transform.Value.GetHashCode());
             }
         }
     }

@@ -54,6 +54,8 @@ namespace Ecs.Views.Linkable.Impl.Projectiles
             {
                 _commandBuffer.DestroyProjectile(transform.GetHashCode());
             }
+            
+            //_commandBuffer.DestroyProjectile(transform.GetHashCode());
         }
 
         protected virtual void OnDead(GameEntity _)
