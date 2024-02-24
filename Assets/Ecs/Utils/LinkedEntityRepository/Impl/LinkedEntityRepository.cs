@@ -22,7 +22,7 @@ namespace Ecs.Utils.LinkedEntityRepository.Impl
 
 		public void Add(int id, GameEntity item)
 		{
-			var decorator = _decoratorsPool.Count > 0 ? _decoratorsPool.Dequeue() : new EntityDecorator(Delete);
+			var decorator = _decoratorsPool.Count > 0 ? _decoratorsPool.Dequeue() : new EntityDecorator(TryDelete);
 			decorator.Decorate(id, item);
 			_links.TryAdd(id, decorator);
 		}
@@ -56,22 +56,27 @@ namespace Ecs.Utils.LinkedEntityRepository.Impl
 			_links[id] = decorator;
 		}
 
-		public void Delete(int id)
+		public bool TryDelete(int id)
 		{
+			if (!HasItem(id))
+				return false;
+			
 			var entityDecorator = _links[id];
 			entityDecorator.Clear();
 			_decoratorsPool.Enqueue(entityDecorator);
 			_links.Remove(id);
+
+			return true;
 		}
 
 		private struct EntityDecorator
 		{
-			private readonly Action<int> _destroy;
+			private readonly Func<int, bool> _destroy;
 
 			private int _id;
 			private GameEntity _entity;
 
-			public EntityDecorator(Action<int> destroy)
+			public EntityDecorator(Func<int, bool> destroy)
 			{
 				_destroy = destroy;
 				_id = -1;

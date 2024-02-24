@@ -38,6 +38,8 @@ namespace Ecs.Game.Systems
                     continue;
 				
                 linkable.Link(entity);
+                entity.AddLink(linkable);
+                
                 _linkedEntityRepository.Add(linkable.Hash, entity);
             }
         }

@@ -28,24 +28,28 @@ namespace Ecs.Installers.Game
 		private void BindGroups()
 		{
 			Container.BindInterfacesTo<GameGroupUtils>().AsSingle();
+			Container.BindInterfacesAndSelfTo<PowerUpGroupUtils>().AsSingle();
 		}
 
 		private void BindContexts()
 		{
 			BindContext<GameContext>();
 			BindContext<InputContext>();
+			BindContext<PowerUpContext>();
 		}
 		
 		private void BindEventSystems()
 		{
 			Container.BindInterfacesTo<GameEventSystems>().AsSingle();
 			Container.BindInterfacesTo<InputEventSystems>().AsSingle();
+			Container.BindInterfacesTo<PowerUpEventSystems>().AsSingle();
 		}
 
 		private void BindCleanupSystems()
 		{
 			Container.BindInterfacesTo<GameCleanupSystems>().AsSingle();
 			Container.BindInterfacesTo<InputCleanupSystems>().AsSingle();
+			Container.BindInterfacesTo<PowerUpCleanupSystems>().AsSingle();
 		}
 	}
 }

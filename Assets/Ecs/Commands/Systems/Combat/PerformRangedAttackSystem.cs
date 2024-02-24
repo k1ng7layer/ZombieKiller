@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Ecs.Commands.Systems.Combat
 {
-    [Install(ExecutionType.Game, ExecutionPriority.Normal, 200, nameof(EFeatures.Combat))]
+    [Install(ExecutionType.Game, ExecutionPriority.Normal, 210, nameof(EFeatures.Combat))]
     public class PerformRangedAttackSystem : ForEachCommandUpdateSystem<PerformAttackCommand>
     {
         private readonly IWeaponBase _weaponBase;
@@ -50,6 +50,8 @@ namespace Ecs.Commands.Systems.Combat
             var weaponOwner = _game.GetEntityWithUid(weaponEntity.Owner.Value);
             
             var projectileView = projectileRepository.Spawn();
+           
+            
             var ownerForward = weaponOwner.Transform.Value.forward;
             var rotation = Quaternion.LookRotation(ownerForward);
             var weaponRoot = weaponOwner.WeaponRoot.Value;
@@ -63,6 +65,8 @@ namespace Ecs.Commands.Systems.Combat
                 weaponSettings.PhysicalDamage, 
                 weaponSettings.MagicDamage);
             
+            Debug.Log($"Projectile spawn: {projectileView.transform.GetHashCode()}");
+            
             projectileEntity.IsPerformingAttack = true;
             
             projectileView.Link(projectileEntity);
@@ -71,8 +75,6 @@ namespace Ecs.Commands.Systems.Combat
             _linkedEntityRepository.Add(projectileView.transform.GetHashCode(), projectileEntity);
 
             projectileEntity.IsActive = true;
-            
-            Debug.Log($"spawn projectile");
         }
     }
 }

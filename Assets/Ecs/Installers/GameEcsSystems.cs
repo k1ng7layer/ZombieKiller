@@ -1,10 +1,16 @@
 using Ecs.Commands.Systems;
+using Ecs.Commands.Systems.Attributes;
 using Ecs.Commands.Systems.Combat;
 using Ecs.Commands.Systems.Income;
+using Ecs.Commands.Systems.PowerUp;
 using Ecs.Game.Systems;
+using Ecs.Game.Systems.Ai;
+using Ecs.Game.Systems.Combat;
+using Ecs.Game.Systems.Enemy;
 using Ecs.Game.Systems.Initialize;
 using Ecs.Game.Systems.Player;
 using Ecs.Game.Systems.Projectile;
+using Ecs.PowerUp.System;
 using Plugins.Extensions.InstallerGenerator.Utils;
 using Zenject;
 
@@ -26,26 +32,44 @@ namespace Ecs.Installers {
 		private static void High(DiContainer container, bool isDebug) {
  
 			// Initialization 0050
-			SystemInstallHelper.Install<GameInitializeSystem>(container);	// 0050 Initialization
 			SystemInstallHelper.Install<InitializePlayerSystem>(container);	// 0050 Initialization
+			SystemInstallHelper.Install<InitializeStageSystem>(container);	// 0050 Initialization
+			SystemInstallHelper.Install<InitializePlayerBuffSystem>(container);	// 0060 Initialization
+			SystemInstallHelper.Install<AiInitializeSystem>(container);	// 0060 Initialization
 			SystemInstallHelper.Install<CameraInitializeSystem>(container);	// 0060 Initialization
 
 			// Combat 0450
 			SystemInstallHelper.Install<AttachWeaponSystem>(container);	// 0450 Combat
 
-			// Combat 0500
-			SystemInstallHelper.Install<EquipWeaponSystem>(container);	// 0500 Combat
+			// Spawn 0500
 			SystemInstallHelper.Install<SpawnEnemySystem>(container);	// 0500 Spawn
+			SystemInstallHelper.Install<EquipWeaponSystem>(container);	// 0500 Combat
 
-			// Combat 0700
-			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0700 Combat
+			// Spawn 0550
+			SystemInstallHelper.Install<InitializeEnemyWeaponSystem>(container);	// 0550 Spawn
 
-			// Combat 0900
+			// Combat 0720
+			SystemInstallHelper.Install<AddPlayerExperienceByEnemyDeadSystem>(container);	// 0720 Combat
+
+			// Common 0850
+			SystemInstallHelper.Install<CheckAliveEnemiesSystem>(container);	// 0850 Common
+
+			// Common 0900
+			SystemInstallHelper.Install<TeleportPlayerSystem>(container);	// 0900 Common
 			SystemInstallHelper.Install<EnemyDeathSystem>(container);	// 0900 Combat
+			SystemInstallHelper.Install<StageWinSystem>(container);	// 0900 Common
 
-			// Input 1000
-			SystemInstallHelper.Install<PlayerMovementSystem>(container);	// 1000 Input
+			// Common 0950
+			SystemInstallHelper.Install<LoadNextStageSystem>(container);	// 0950 Common
+			SystemInstallHelper.Install<LoadShelterSystem>(container);	// 0950 Common
+
+			// Ai 1000
+			SystemInstallHelper.Install<BehaviourTreeUpdateSystem>(container);	// 1000 Ai
 			SystemInstallHelper.Install<PlayerRotationSystem>(container);	// 1000 Input
+			SystemInstallHelper.Install<PlayerMovementSystem>(container);	// 1000 Input
+
+			// Ai 1050
+			SystemInstallHelper.Install<AiMoveSystem>(container);	// 1050 Ai
 
 			// Initialization 3000
 			SystemInstallHelper.Install<InitializeUiSystem>(container);	// 3000 Initialization
@@ -65,7 +89,8 @@ namespace Ecs.Installers {
 
 			// Combat 0200
 			SystemInstallHelper.Install<PerformMeleeAttackSystem>(container);	// 0200 Combat
-			SystemInstallHelper.Install<PerformRangedAttackSystem>(container);	// 0200 Combat
+			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0205 Combat
+			SystemInstallHelper.Install<PerformRangedAttackSystem>(container);	// 0210 Combat
 
 			// Combat 0300
 			SystemInstallHelper.Install<CompletePerformingAttackSystem>(container);	// 0300 Combat
@@ -73,10 +98,24 @@ namespace Ecs.Installers {
 			// Combat 0700
 			SystemInstallHelper.Install<ProjectileMovementSystem>(container);	// 0700 Combat
 			SystemInstallHelper.Install<ProjectileDestroyByDistanceSystem>(container);	// 0710 Combat
+			SystemInstallHelper.Install<PlayerLevelUpSystem>(container);	// 0720 Combat
 
-			// Input 1000
-			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
+			// Combat 0750
+			SystemInstallHelper.Install<CreatePowerUpSystem>(container);	// 0750 Combat
+			SystemInstallHelper.Install<RecalculateAttributesSystem>(container);	// 0760 Combat
+
+			// Common 0800
+			SystemInstallHelper.Install<FreezePlayerSystem>(container);	// 0800 Common
+			SystemInstallHelper.Install<PowerUpTimerLifeTimeSystem>(container);	// 0810 Combat
+			SystemInstallHelper.Install<DeactivatePowerUpSystem>(container);	// 0820 Combat
+
+			// Combat 0900
+			SystemInstallHelper.Install<AttackCooldownSystem>(container);	// 0900 Combat
+
+			// Common 1000
+			SystemInstallHelper.Install<SetGameStateSystem>(container);	// 1000 Common
 			SystemInstallHelper.Install<DestroyProjectileSystem>(container);	// 1000 Combat
+			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
 
 			// Combat 1500
 			SystemInstallHelper.Install<PerformAttackCleanupSystem>(container);	// 1500 Combat

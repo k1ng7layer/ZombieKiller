@@ -5,6 +5,7 @@ namespace Ecs.Common.Components
 {
     [Game]
     [Input]
+    [PowerUp]
     public class UidComponent : IComponent
     {
         [PrimaryEntityIndex] public Uid Value;

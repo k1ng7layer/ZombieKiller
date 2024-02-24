@@ -43,6 +43,9 @@ namespace AnimationTriggers
         {
             base.OnStateExit(animator, stateInfo, layerIndex);
             
+            if (!_completed)
+                _attackEnd?.Execute();
+            
             _started = false;
         }
     }

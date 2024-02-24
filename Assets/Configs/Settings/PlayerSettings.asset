@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab4e5dbee7d5a04bafe95545df0487f, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  _baseMoveSpeed: 300
   _starterWeapon: 2
+  _baseMoveSpeed: 300
+  _levelExpMultiplier: 1.3
+  _levelRequiredMultiplier: 1.3
+  _baseExperienceRequired: 100
+  _baseMaxHealth: 1000
+  _baseAttackSpeed: 1.7

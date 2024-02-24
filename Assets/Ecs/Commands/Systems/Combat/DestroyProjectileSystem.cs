@@ -5,6 +5,7 @@ using Game.Services.ProjectilePoolRepository;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Commands.Systems.Combat
 {
@@ -26,10 +27,15 @@ namespace Ecs.Commands.Systems.Combat
 
         protected override void Execute(ref DestroyProjectileCommand command)
         {
+            if (!_linkedEntityRepository.Contains(command.ProjectileHash))
+                return;
+            
             var projectileEntity = _linkedEntityRepository.Get(command.ProjectileHash);
+            _linkedEntityRepository.TryDelete(command.ProjectileHash);
             var view = (ProjectileView)projectileEntity.Link.View;
             var projectilePool = _projectilePoolRepository.GetPool(projectileEntity.Projectile.ProjectileType);
             
+            Debug.Log($"Projectile despawn: {view.transform.GetHashCode()}");
             projectileEntity.IsDead = true;
             projectileEntity.IsDestroyed = true;
             projectilePool.Despawn(view);

@@ -48,7 +48,13 @@ namespace Ecs.Game.Extensions
             projectileEntity.AddSpeed(speed);
             projectileEntity.AddPhysicalDamage(physicalDamage);
             projectileEntity.AddMagicDamage(magicDamage);
+            
             return projectileEntity;
         }
+
+        // public static void AddUnitAttributes(GameEntity entity, float maxHealth, float)
+        // {
+        //     
+        // }
     }
 }

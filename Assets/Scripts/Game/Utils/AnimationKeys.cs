@@ -6,6 +6,7 @@ namespace Game.Utils
     {
         public static readonly int Walk = Animator.StringToHash("Walk");
         public static readonly int Attack = Animator.StringToHash("Attack");
+        public static readonly int RangedAttack = Animator.StringToHash("RangedAttack");
         public static readonly int Death = Animator.StringToHash("Death");
         public static readonly int Movement = Animator.StringToHash("Movement");
         public static readonly int TakeDamage = Animator.StringToHash("TakeDamage");

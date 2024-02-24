@@ -1,6 +1,7 @@
 ﻿
 using Ecs.Views.Linkable.Impl;
 using Ecs.Views.Linkable.Impl.Camera;
+using Ecs.Views.Linkable.Impl.Portals;
 using UnityEngine;
 
 namespace Game.Utils
@@ -11,12 +12,14 @@ namespace Game.Utils
         [SerializeField] private PhysicalCameraView physicalCameraView;
         [SerializeField] private Transform startCameraPosition;
         [SerializeField] private PlayerView playerView;
-        [SerializeField] private Transform[] enemySpawnPoints;
+        [SerializeField] private EnemySpawnPointSettings[] enemySpawnPoints;
+        [SerializeField] private PortalView[] levelPortals;
         
         public Transform StartCameraPosition => startCameraPosition;
         public VirtualCameraView VirtualCameraView => virtualCameraView;
         public PhysicalCameraView PhysicalCameraView => physicalCameraView;
         public PlayerView PlayerView => playerView;
-        public Transform[] EnemySpawnPoints => enemySpawnPoints;
+        public EnemySpawnPointSettings[] EnemySpawnPoints => enemySpawnPoints;
+        public PortalView[] LevelPortals => levelPortals;
     }
 }

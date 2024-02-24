@@ -9,6 +9,7 @@
         Coins,
         Input,
         Combat,
-        Spawn
+        Spawn,
+        Ai
     }
 }

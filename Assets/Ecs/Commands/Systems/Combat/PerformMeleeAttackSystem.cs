@@ -28,8 +28,8 @@ namespace Ecs.Commands.Systems.Combat
         {
             var attacker = _game.GetEntityWithUid(command.Attacker);
             
-            if (attacker.IsPerformingAttack)
-                return;
+            // if (attacker.IsPerformingAttack)
+            //     return;
             
             var weaponId = attacker.EquippedWeapon.Value.Id;
             
@@ -38,7 +38,7 @@ namespace Ecs.Commands.Systems.Combat
             if (weapon.WeaponType != EWeaponType.Melee)
                 return;
             
-            attacker.IsPerformingAttack = true;
+            // attacker.IsPerformingAttack = true;
             var weaponUid = attacker.EquippedWeapon.Value.WeaponEntityUid;
             var weaponEntity = _game.GetEntityWithUid(weaponUid);
             weaponEntity.IsPerformingAttack = true;
