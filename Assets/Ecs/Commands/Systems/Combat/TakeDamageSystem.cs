@@ -12,14 +12,17 @@ namespace Ecs.Commands.Systems.Combat
     {
         private readonly ICommandBuffer _commandBuffer;
         private readonly ILinkedEntityRepository _linkedEntityRepository;
+        private readonly GameContext _game;
 
         public TakeDamageSystem(
             ICommandBuffer commandBuffer, 
-            ILinkedEntityRepository linkedEntityRepository
+            ILinkedEntityRepository linkedEntityRepository,
+            GameContext game
         ) : base(commandBuffer)
         {
             _commandBuffer = commandBuffer;
             _linkedEntityRepository = linkedEntityRepository;
+            _game = game;
         }
 
         protected override void Execute(ref TakeDamageByWeaponCommand byWeaponCommand)
@@ -40,16 +43,20 @@ namespace Ecs.Commands.Systems.Combat
             
             var targetUid = targetEntity.Uid.Value;
 
-            var weaponOwner = weaponEntity.Owner.Value;
+            var weaponOwnerUid = weaponEntity.Owner.Value;
+            var weaponOwner = _game.GetEntityWithUid(weaponOwnerUid);
             
-            if (weaponOwner == targetUid)
+            if (weaponOwner.HasEnemy && targetEntity.HasEnemy)
+                return;
+            
+            if (weaponOwnerUid == targetUid)
                 return;
             
             if (weaponTargets.Contains(targetUid))
                 return;
             
             weaponTargets.Add(targetUid);
-
+            
             var damage = weaponEntity.PhysicalDamage.Value + weaponEntity.MagicDamage.Value;
             var health = targetEntity.Health.Value;
             health -= damage;
