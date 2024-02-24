@@ -75,7 +75,6 @@ namespace Ecs.Commands.Systems.Combat
             _linkedEntityRepository.Add(projectileView.transform.GetHashCode(), projectileEntity);
 
             projectileEntity.IsActive = true;
-            
         }
     }
 }
