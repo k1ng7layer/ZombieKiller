@@ -1,4 +1,4 @@
-using Db.Weapon;
+using Db.Items.Repositories;
 using Ecs.Commands.Command;
 using Ecs.Game.Extensions;
 using Ecs.Utils;
@@ -13,23 +13,23 @@ namespace Ecs.Commands.Systems
     public class EquipWeaponSystem : ForEachCommandUpdateSystem<EquipWeaponCommand>
     {
         private readonly ICommandBuffer _commandBuffer;
-        private readonly IWeaponBase _weaponBase;
+        private readonly IWeaponRepository _weaponRepository;
         private readonly GameContext _game;
 
         public EquipWeaponSystem(
             ICommandBuffer commandBuffer,
-            IWeaponBase weaponBase,
+            IWeaponRepository weaponRepository,
             GameContext game
         ) : base(commandBuffer)
         {
             _commandBuffer = commandBuffer;
-            _weaponBase = weaponBase;
+            _weaponRepository = weaponRepository;
             _game = game;
         }
 
         protected override void Execute(ref EquipWeaponCommand command)
         {
-            var weaponSettings = _weaponBase.GetWeapon(command.WeaponId);
+            var weaponSettings = _weaponRepository.GetWeapon(command.WeaponId);
             var owner = _game.GetEntityWithUid(command.Owner);
             var weaponEntity = _game.CreateWeapon(command.WeaponId, weaponSettings, owner.Uid.Value);
             

@@ -1,6 +1,6 @@
 ﻿
 using System.Collections.Generic;
-using Db.Weapon;
+using Db.Items.Impl;
 using Ecs.Extensions.UidGenerator;
 using Game.Utils;
 using UnityEngine;
@@ -11,7 +11,7 @@ namespace Ecs.Game.Extensions
     {
         public static GameEntity CreateWeapon(this GameContext game, 
             EWeaponId weaponId, 
-            WeaponSettings weaponSettings, 
+            Weapon weapon, 
             Uid owner
         )
         {
@@ -22,8 +22,8 @@ namespace Ecs.Game.Extensions
             weaponEntity.AddOwner(owner);
             weaponEntity.AddPrefab(weaponId.ToString());
             weaponEntity.AddAttackTargets(new HashSet<Uid>());
-            weaponEntity.AddPhysicalDamage(weaponSettings.PhysicalDamage);
-            weaponEntity.AddMagicDamage(weaponSettings.MagicDamage);
+            weaponEntity.AddPhysicalDamage(weapon.PhysicalDamage);
+            weaponEntity.AddMagicDamage(weapon.MagicDamage);
             weaponEntity.IsInstantiate = true;
 
             return weaponEntity;

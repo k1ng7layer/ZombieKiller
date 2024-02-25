@@ -1,8 +1,10 @@
-﻿using Db.Player;
+﻿using Db.Inventory;
+using Db.Player;
 using Ecs.Commands;
 using Ecs.Extensions.UidGenerator;
 using Ecs.Utils.LinkedEntityRepository;
 using Game.Providers.GameFieldProvider;
+using Game.Services.Inventory;
 using Game.Utils;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
@@ -18,6 +20,8 @@ namespace Ecs.Game.Systems.Initialize
         private readonly IPlayerSettings _playerSettings;
         private readonly ICommandBuffer _commandBuffer;
         private readonly ILinkedEntityRepository _linkedEntityRepository;
+        private readonly IPlayerInventorySettings _playerInventorySettings;
+        private readonly IPlayerInventoryService _playerInventoryService;
         private readonly GameContext _game;
 
         public InitializePlayerSystem(
@@ -25,6 +29,8 @@ namespace Ecs.Game.Systems.Initialize
             IPlayerSettings playerSettings,
             ICommandBuffer commandBuffer,
             ILinkedEntityRepository linkedEntityRepository,
+            IPlayerInventorySettings playerInventorySettings,
+            IPlayerInventoryService playerInventoryService,
             GameContext game
         )
         {
@@ -32,6 +38,8 @@ namespace Ecs.Game.Systems.Initialize
             _playerSettings = playerSettings;
             _commandBuffer = commandBuffer;
             _linkedEntityRepository = linkedEntityRepository;
+            _playerInventorySettings = playerInventorySettings;
+            _playerInventoryService = playerInventoryService;
             _game = game;
         }
         
@@ -69,11 +77,25 @@ namespace Ecs.Game.Systems.Initialize
             }
             
             _linkedEntityRepository.Add(playerView.transform.GetHashCode(), player);
+
+            InitializeInventory();
         }
 
         private void CreateWeapon(EWeaponId weaponId, Uid playerUid)
         {
             _commandBuffer.EquipWeapon(weaponId, playerUid);
+        }
+
+        private void InitializeInventory()
+        {
+            var capacity = _playerInventorySettings.BasicCapacity;
+            
+            _playerInventoryService.ChangeCapacity(capacity);
+
+            foreach (var starterItemId in _playerInventorySettings.StarterItemsIds)
+            {
+                _playerInventoryService.TryAdd(starterItemId);
+            }
         }
     }
 }

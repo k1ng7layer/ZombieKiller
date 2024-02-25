@@ -1,0 +1,103 @@
+using Db.Items;
+using Ecs.Commands;
+using Game.Services.Inventory;
+using Game.Utils;
+using JCMG.EntitasRedux.Commands;
+using SimpleUi.Abstracts;
+using SimpleUi.Signals;
+using UniRx;
+using UniRx.Triggers;
+using Zenject;
+
+namespace Game.Ui.Inventory
+{
+    public class PlayerBagInventoryController : UiController<PlayerBagInventoryView>, 
+        IInitializable
+    {
+        private readonly IPlayerInventoryService _inventoryService;
+        private readonly IItemsBase _itemsBase;
+        private readonly SignalBus _signalBus;
+        private readonly ICommandBuffer _commandBuffer;
+
+        public PlayerBagInventoryController(
+            IPlayerInventoryService inventoryService, 
+            IItemsBase itemsBase,
+            SignalBus signalBus,
+            ICommandBuffer commandBuffer
+        )
+        {
+            _inventoryService = inventoryService;
+            _itemsBase = itemsBase;
+            _signalBus = signalBus;
+            _commandBuffer = commandBuffer;
+        }
+        
+        public void Initialize()
+        {
+            ClosePopup();
+            
+            View.InfoPopupView.Background.OnPointerClickAsObservable()
+                .Subscribe(_ => ClosePopup())
+                .AddTo(View);
+
+            View.BackButton.OnClickAsObservable().Subscribe(_ => CloseInventory()).AddTo(View);
+        }
+        
+        public override void OnShow()
+        {
+            foreach (var id in _inventoryService.GetAll())
+            {
+                var item = _itemsBase.GetItem(id);
+
+                var itemView = View.ItemListCollection.Create();
+                itemView.Icon.sprite = item.Icon;
+                itemView.ItemId = id;
+                
+                itemView.Btn.OnClickAsObservable()
+                    .Subscribe(_ => OnItemClick(id))
+                    .AddTo(itemView.gameObject);
+
+                itemView.OnPointerEnterAsObservable()
+                    .Subscribe(_ => ToggleItemHighlight(itemView, true)).AddTo(itemView.gameObject);
+                
+                itemView.OnPointerExitAsObservable()
+                    .Subscribe(_ => ToggleItemHighlight(itemView, false)).AddTo(itemView.gameObject);
+            }
+        }
+
+        public override void OnHide()
+        {
+            View.ItemListCollection.Clear();
+        }
+
+        private void OnItemClick(int itemId)
+        {
+            var item = _itemsBase.GetItem(itemId);
+            
+            View.InfoPopupView.gameObject.SetActive(true);
+            View.InfoPopupView.Icon.sprite = item.Icon;
+            View.InfoPopupView.Description.text = item.Description;
+            
+            //TODO:
+            //var descriptionArgs = item.GetDescriptionArgs();
+        }
+        
+        private void ClosePopup()
+        {
+            View.InfoPopupView.gameObject.SetActive(false);
+        }
+
+        private void CloseInventory()
+        {
+            _signalBus.BackWindow();
+            _commandBuffer.SetGameState(EGameState.Game);
+        }
+
+        private void ToggleItemHighlight(InventoryItemView itemView, bool v)
+        {
+            var color = itemView.Frame.color;
+            color.a = v ? 1f : 0;
+            itemView.Frame.color = color;
+        }
+    }
+}

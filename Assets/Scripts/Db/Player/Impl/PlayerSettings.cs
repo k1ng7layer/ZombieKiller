@@ -13,15 +13,15 @@ namespace Db.Player.Impl
         [SerializeField] private float _baseExperienceRequired = 100f;
         [SerializeField] private float _baseMaxHealth = 100f;
         [SerializeField] private float _baseAttackSpeed = 1.7f;
+        [SerializeField] private float _collectItemsDist = 1f;
 
         public float BaseMoveSpeed => _baseMoveSpeed;
-
         public float LevelGainExpMultiplier => _levelExpMultiplier;
         public float LevelRequiredExpMultiplier => _levelRequiredMultiplier;
         public float BaseExperienceRequired => _baseExperienceRequired;
         public EWeaponId StarterWeapon => _starterWeapon;
         public float BaseMaxHealth => _baseMaxHealth;
-
         public float BaseAttackSpeed => _baseAttackSpeed;
+        public float CollectItemsDist => _collectItemsDist = 1f;
     }
 }

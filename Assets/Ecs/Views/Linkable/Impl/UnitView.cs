@@ -1,5 +1,5 @@
 ﻿using AnimationTriggers;
-using Db.Weapon;
+using Db.Items.Repositories;
 using Ecs.Commands;
 using Ecs.Utils;
 using Game.Utils;
@@ -21,7 +21,7 @@ namespace Ecs.Views.Linkable.Impl
         [SerializeField] private Collider _damageTrigger;
         
         [Inject] private ICommandBuffer _commandBuffer;
-        [Inject] private IWeaponBase _weaponBase;
+        [Inject] private IWeaponRepository _weaponRepository;
 
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
@@ -67,7 +67,7 @@ namespace Ecs.Views.Linkable.Impl
             var weaponId = entity.EquippedWeapon.Value.Id;
             int paramId;
             
-            paramId = _weaponBase.GetWeapon(weaponId).WeaponType == EWeaponType.Melee ? AnimationKeys.Attack : AnimationKeys.RangedAttack;
+            paramId = _weaponRepository.GetWeapon(weaponId).WeaponType == EWeaponType.Melee ? AnimationKeys.Attack : AnimationKeys.RangedAttack;
             
             _animator.SetTrigger(paramId);
         }

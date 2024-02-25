@@ -11,5 +11,6 @@ namespace Db.Player
         EWeaponId StarterWeapon { get; }
         float BaseMaxHealth { get; }
         float BaseAttackSpeed { get; }
+        float CollectItemsDist { get; }
     }
 }

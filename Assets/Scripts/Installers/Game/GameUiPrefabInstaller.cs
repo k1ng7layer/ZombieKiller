@@ -2,6 +2,8 @@
 using Game.Ui.Buffs;
 using Game.Ui.Income;
 using Game.Ui.Input;
+using Game.Ui.Inventory;
+using Game.Ui.Inventory.BagButton;
 using Game.Ui.PlayerStats.Exp;
 using Game.Ui.PlayerStats.Health;
 using Game.Ui.PlayerStats.LevelUp;
@@ -22,6 +24,8 @@ namespace Installers.Game
         [SerializeField] private PlayerExperienceView playerExpView;
         [SerializeField] private PlayerHealthView playerHealthView;
         [SerializeField] private CurrentBuffsView currentBuffsView;
+        [SerializeField] private PlayerBagInventoryView playerBagInventoryView;
+        [SerializeField] private OpenBagButtonView openBagButtonView;
         
         public override void InstallBindings()
         {
@@ -34,6 +38,8 @@ namespace Installers.Game
             Container.BindUiView<PlayerExperienceController, PlayerExperienceView>(playerExpView, canvasTransform);
             Container.BindUiView<PlayerHealthController, PlayerHealthView>(playerHealthView, canvasTransform);
             Container.BindUiView<CurrentBuffsController, CurrentBuffsView>(currentBuffsView, canvasTransform);
+            Container.BindUiView<PlayerBagInventoryController, PlayerBagInventoryView>(playerBagInventoryView, canvasTransform);
+            Container.BindUiView<OpenBagButtonController, OpenBagButtonView>(openBagButtonView, canvasTransform);
         }
     }
 }

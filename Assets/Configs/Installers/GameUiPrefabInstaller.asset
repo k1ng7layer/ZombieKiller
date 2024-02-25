@@ -19,3 +19,5 @@ MonoBehaviour:
   playerExpView: {fileID: 1649603115818013537, guid: 5f08ef1e8d4b7b840a3069d8d799b588, type: 3}
   playerHealthView: {fileID: 7064121134235247581, guid: e8b64f3b7d1b23c47a6f6052d28292d8, type: 3}
   currentBuffsView: {fileID: 5289381512880382376, guid: 693cd2a732127a747a17b2b57eb5f64b, type: 3}
+  playerBagInventoryView: {fileID: 7570951477642995986, guid: 994288d960c3a7a42b1a059e056ec5c1, type: 3}
+  openBagButtonView: {fileID: 3559062231091897649, guid: 6752adaca59daff43ac87f0b721ee151, type: 3}

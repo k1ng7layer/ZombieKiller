@@ -3,6 +3,8 @@ using Db.Level.Impl;
 using Ecs.Core.SceneLoading.LoadingProcessor.Impls;
 using Ecs.Core.SceneLoading.SceneLoadingManager;
 using Ecs.Core.SceneLoading.SceneLoadingManager.Impls;
+using Game.Services.Inventory;
+using Game.Services.Inventory.Impl;
 using Game.Services.LevelService.Impl;
 using Game.Services.TimeProvider;
 using UnityEngine;
@@ -21,6 +23,7 @@ namespace Installers.Project
             Container.BindInterfacesTo<UnityTimerProvider>().AsSingle();
             Container.Bind<ISceneLoadingManager>().To<SceneLoadingManager>().AsSingle();
             Container.Bind<ILevelSettingsBase>().FromInstance(levelSettingsBase);
+            Container.Bind<IPlayerInventoryService>().To<PlayerInventoryService>().AsSingle();
             
             SignalBusInstaller.Install(Container);
         }

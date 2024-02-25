@@ -1,4 +1,4 @@
-using Db.Weapon;
+using Db.Items.Repositories;
 using Ecs.Commands.Command.Combat;
 using Game.Utils;
 using JCMG.EntitasRedux.Commands;
@@ -10,15 +10,15 @@ namespace Ecs.Commands.Systems.Combat
     [Install(ExecutionType.Game, ExecutionPriority.Normal, 200, nameof(EFeatures.Combat))]
     public class PerformMeleeAttackSystem : ForEachCommandUpdateSystem<PerformAttackCommand>
     {
-        private readonly IWeaponBase _weaponBase;
+        private readonly IWeaponRepository _weaponRepository;
         private readonly GameContext _game;
         
         public PerformMeleeAttackSystem(
             ICommandBuffer commandBuffer, 
-            IWeaponBase weaponBase, 
+            IWeaponRepository weaponRepository, 
             GameContext game) : base(commandBuffer)
         {
-            _weaponBase = weaponBase;
+            _weaponRepository = weaponRepository;
             _game = game;
         }
         
@@ -33,7 +33,7 @@ namespace Ecs.Commands.Systems.Combat
             
             var weaponId = attacker.EquippedWeapon.Value.Id;
             
-            var weapon = _weaponBase.GetWeapon(weaponId);
+            var weapon = _weaponRepository.GetWeapon(weaponId);
             
             if (weapon.WeaponType != EWeaponType.Melee)
                 return;

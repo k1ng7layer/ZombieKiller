@@ -1,5 +1,4 @@
-﻿
-using Db.Weapon;
+﻿using Db.Items.Repositories;
 using Ecs.Commands.Command.Combat;
 using Ecs.Game.Extensions;
 using Ecs.Utils.LinkedEntityRepository;
@@ -15,20 +14,20 @@ namespace Ecs.Commands.Systems.Combat
     [Install(ExecutionType.Game, ExecutionPriority.Normal, 210, nameof(EFeatures.Combat))]
     public class PerformRangedAttackSystem : ForEachCommandUpdateSystem<PerformAttackCommand>
     {
-        private readonly IWeaponBase _weaponBase;
+        private readonly IWeaponRepository _weaponRepository;
         private readonly IProjectilePoolRepository _poolRepository;
         private readonly ILinkedEntityRepository _linkedEntityRepository;
         private readonly GameContext _game;
 
         public PerformRangedAttackSystem(
             ICommandBuffer commandBuffer, 
-            IWeaponBase weaponBase,
+            IWeaponRepository weaponRepository,
             IProjectilePoolRepository poolRepository,
             ILinkedEntityRepository linkedEntityRepository,
             GameContext game
         ) : base(commandBuffer)
         {
-            _weaponBase = weaponBase;
+            _weaponRepository = weaponRepository;
             _poolRepository = poolRepository;
             _linkedEntityRepository = linkedEntityRepository;
             _game = game;
@@ -39,7 +38,7 @@ namespace Ecs.Commands.Systems.Combat
             var attacker = _game.GetEntityWithUid(command.Attacker);
             
             var weaponId = attacker.EquippedWeapon.Value.Id;
-            var weaponSettings = _weaponBase.GetWeapon(weaponId);
+            var weaponSettings = _weaponRepository.GetWeapon(weaponId);
             
             if (weaponSettings.WeaponType != EWeaponType.Ranged)
                 return;
