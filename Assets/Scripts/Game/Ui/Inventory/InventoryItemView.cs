@@ -1,4 +1,5 @@
 using SimpleUi.Abstracts;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Game.Ui.Inventory
@@ -8,6 +9,6 @@ namespace Game.Ui.Inventory
         public int ItemId;
         public Image Icon;
         public Button Btn;
-        public Image Frame;
+        public Image Selected;
     }
 }

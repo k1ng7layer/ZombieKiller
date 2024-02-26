@@ -1,3 +1,4 @@
+using Db.Inventory;
 using Db.Items;
 using Ecs.Commands;
 using Game.Services.Inventory;
@@ -18,18 +19,21 @@ namespace Game.Ui.Inventory
         private readonly IItemsBase _itemsBase;
         private readonly SignalBus _signalBus;
         private readonly ICommandBuffer _commandBuffer;
+        private readonly IPlayerInventorySettings _playerInventorySettings;
 
         public PlayerBagInventoryController(
             IPlayerInventoryService inventoryService, 
             IItemsBase itemsBase,
             SignalBus signalBus,
-            ICommandBuffer commandBuffer
+            ICommandBuffer commandBuffer,
+            IPlayerInventorySettings playerInventorySettings
         )
         {
             _inventoryService = inventoryService;
             _itemsBase = itemsBase;
             _signalBus = signalBus;
             _commandBuffer = commandBuffer;
+            _playerInventorySettings = playerInventorySettings;
         }
         
         public void Initialize()
@@ -41,6 +45,12 @@ namespace Game.Ui.Inventory
                 .AddTo(View);
 
             View.BackButton.OnClickAsObservable().Subscribe(_ => CloseInventory()).AddTo(View);
+            
+            for (int i = 0; i < _playerInventorySettings.BasicCapacity; i++)
+            {
+                var itemView = View.ItemListCollection.Create();
+                itemView.Icon.gameObject.SetActive(false);
+            }
         }
         
         public override void OnShow()
@@ -49,8 +59,10 @@ namespace Game.Ui.Inventory
             {
                 var item = _itemsBase.GetItem(id);
 
-                var itemView = View.ItemListCollection.Create();
+                // var itemView = View.ItemListCollection.Create();
+                var itemView = View.ItemListCollection[id];
                 itemView.Icon.sprite = item.Icon;
+                itemView.Icon.gameObject.SetActive(true);
                 itemView.ItemId = id;
                 
                 itemView.Btn.OnClickAsObservable()
@@ -58,16 +70,18 @@ namespace Game.Ui.Inventory
                     .AddTo(itemView.gameObject);
 
                 itemView.OnPointerEnterAsObservable()
-                    .Subscribe(_ => ToggleItemHighlight(itemView, true)).AddTo(itemView.gameObject);
+                    .Subscribe(_ => ToggleItemHighlight(itemView, true))
+                    .AddTo(itemView.gameObject);
                 
                 itemView.OnPointerExitAsObservable()
-                    .Subscribe(_ => ToggleItemHighlight(itemView, false)).AddTo(itemView.gameObject);
+                    .Subscribe(_ => ToggleItemHighlight(itemView, false))
+                    .AddTo(itemView.gameObject);
             }
         }
 
         public override void OnHide()
         {
-            View.ItemListCollection.Clear();
+            //View.ItemListCollection.Clear();
         }
 
         private void OnItemClick(int itemId)
@@ -95,9 +109,10 @@ namespace Game.Ui.Inventory
 
         private void ToggleItemHighlight(InventoryItemView itemView, bool v)
         {
-            var color = itemView.Frame.color;
-            color.a = v ? 1f : 0;
-            itemView.Frame.color = color;
+            // var color = itemView.Selected.color;
+            // color.a = v ? 1f : 0;
+            //itemView.Selected.color = color;
+            itemView.Selected.gameObject.SetActive(v);
         }
     }
 }
