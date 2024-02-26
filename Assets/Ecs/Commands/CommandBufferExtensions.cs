@@ -39,7 +39,19 @@ namespace Ecs.Commands
             command.Transform = transform;
         }
 
-        public static void EquipWeapon(this ICommandBuffer commandBuffer, EWeaponId weaponId, Uid owner)
+        public static void CollectItem(this ICommandBuffer commandBuffer, Int32 id)
+        {
+            ref var command = ref commandBuffer.Create<CollectItemCommand>();
+            command.id = id;
+        }
+
+        public static void DropItem(this ICommandBuffer commandBuffer, CollectableInfo info)
+        {
+            ref var command = ref commandBuffer.Create<DropItemCommand>();
+            command.Info = info;
+        }
+
+        public static void EquipWeapon(this ICommandBuffer commandBuffer, string weaponId, Uid owner)
         {
             ref var command = ref commandBuffer.Create<EquipWeaponCommand>();
             command.WeaponId = weaponId;
@@ -60,6 +72,11 @@ namespace Ecs.Commands
         {
             ref var command = ref commandBuffer.Create<MouseDownCommand>();
             command.Button = button;
+        }
+
+        public static void SaveGame(this ICommandBuffer commandBuffer)
+        {
+            ref var command = ref commandBuffer.Create<SaveGameCommand>();
         }
 
         public static void SetGameState(this ICommandBuffer commandBuffer, EGameState gameState)

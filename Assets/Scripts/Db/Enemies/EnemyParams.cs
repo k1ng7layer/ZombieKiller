@@ -1,3 +1,4 @@
+using Db.LootParams;
 using Game.Utils;
 using UnityEngine;
 
@@ -7,12 +8,19 @@ namespace Db.Enemies
     public class EnemyParams : ScriptableObject
     {
         public EEnemyType EnemyType;
-        public EWeaponId Weapon;
+        public string Weapon;
 
+        [Space]
+        [Header("Loot")]
+        public LootPreset LootPreset;
+
+        [Space]
+        [Header("Attributes")]
         public float BaseHealth = 100;
         public float BaseExperience = 10;
         public float BaseAttackRange = 3;
         public float BaseMoveSpeed = 3;
         public float BaseAttackSpeed = 1;
+        
     }
 }

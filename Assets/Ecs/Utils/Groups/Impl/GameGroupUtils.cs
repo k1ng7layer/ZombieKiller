@@ -13,6 +13,7 @@ namespace Ecs.Utils.Groups.Impl
         private readonly IGroup<GameEntity> _enemiesGroup;
         private readonly IGroup<GameEntity> _portalGroup;
         private readonly IGroup<GameEntity> _aiGroup;
+        private readonly IGroup<GameEntity> _collectablesGroup;
 
         public GameGroupUtils(GameContext game, PowerUpContext powerUp)
         {
@@ -21,6 +22,7 @@ namespace Ecs.Utils.Groups.Impl
             _portalGroup = game.GetGroup(GameMatcher.Portal);
             _aiGroup = game.GetGroup(GameMatcher.Ai);
             _unitsGroup = game.GetGroup(GameMatcher.Unit);
+            _collectablesGroup = game.GetGroup(GameMatcher.Collectable);
         }
 
         public IDisposable GetUnits(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null, bool nonDestroyed = true)
@@ -70,6 +72,13 @@ namespace Ecs.Utils.Groups.Impl
             }
             
             return pooledObject;
+        }
+
+        public IDisposable GetCollectables(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
+        {
+            Func<GameEntity, bool> baseFilter = e => e.HasCollectable && !e.IsDestroyed;
+
+            return GetEntities(out buffer, _collectablesGroup, baseFilter, filter);
         }
 
         public IDisposable GetUnits(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Type2
   m_EditorClassIdentifier: 
   EnemyType: 1
-  Weapon: 2
+  Weapon: 0HN1N1TM2FUSU
+  LootPreset: {fileID: 11400000, guid: f4ebaf661f1fbe640a4f644965880bde, type: 2}
   BaseHealth: 300
   BaseExperience: 30000
   BaseAttackRange: 10

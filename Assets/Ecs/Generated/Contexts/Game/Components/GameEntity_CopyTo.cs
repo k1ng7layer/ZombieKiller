@@ -26,21 +26,13 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
-		else if (component is Ecs.Game.Components.UnitComponent Unit)
-		{
-			IsUnit = true;
-		}
-		else if (component is Ecs.Game.Components.MovingComponent Moving)
-		{
-			IsMoving = true;
-		}
-		else if (component is Ecs.Game.Components.AiComponent Ai)
-		{
-			IsAi = true;
-		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
+		}
+		else if (component is Ecs.Game.Components.UnitComponent Unit)
+		{
+			IsUnit = true;
 		}
 		else if (component is Ecs.Game.Components.PositionComponent Position)
 		{
@@ -78,6 +70,10 @@ public partial class GameEntity
 		{
 			CopyPrefabTo(Prefab);
 		}
+		else if (component is Ecs.Game.Components.AiComponent Ai)
+		{
+			IsAi = true;
+		}
 		else if (component is Ecs.Game.Components.CanMoveComponent CanMove)
 		{
 			IsCanMove = true;
@@ -101,6 +97,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.ExperienceComponent Experience)
 		{
 			CopyExperienceTo(Experience);
+		}
+		else if (component is Ecs.Game.Components.MovingComponent Moving)
+		{
+			IsMoving = true;
 		}
 		else if (component is Ecs.Game.Components.LinkComponent Link)
 		{
@@ -146,25 +146,9 @@ public partial class GameEntity
 		{
 			CopyPortalTo(Portal);
 		}
-		else if (component is Ecs.Game.Components.Ai.NavmeshAgentComponent NavmeshAgent)
+		else if (component is Ecs.Game.Components.Collectables.CollectableComponent Collectable)
 		{
-			CopyNavmeshAgentTo(NavmeshAgent);
-		}
-		else if (component is Ecs.Game.Components.Ai.DestinationComponent Destination)
-		{
-			CopyDestinationTo(Destination);
-		}
-		else if (component is Ecs.Game.Components.Ai.BehaviourTreeComponent BehaviourTree)
-		{
-			CopyBehaviourTreeTo(BehaviourTree);
-		}
-		else if (component is Ecs.Game.Components.Ai.TargetComponent Target)
-		{
-			CopyTargetTo(Target);
-		}
-		else if (component is Ecs.Game.Components.Camera.AttackCooldownComponent AttackCooldown)
-		{
-			CopyAttackCooldownTo(AttackCooldown);
+			CopyCollectableTo(Collectable);
 		}
 		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
 		{
@@ -174,6 +158,10 @@ public partial class GameEntity
 		{
 			IsCameraMove = true;
 		}
+		else if (component is Ecs.Game.Components.Camera.AttackCooldownComponent AttackCooldown)
+		{
+			CopyAttackCooldownTo(AttackCooldown);
+		}
 		else if (component is Ecs.Game.Components.Camera.VirtualCameraComponent VirtualCamera)
 		{
 			IsVirtualCamera = true;
@@ -182,18 +170,6 @@ public partial class GameEntity
 		{
 			IsCamera = true;
 		}
-		else if (component is Ecs.Game.Components.UnitParameters.AdditionalAttackSpeedComponent AdditionalAttackSpeed)
-		{
-			CopyAdditionalAttackSpeedTo(AdditionalAttackSpeed);
-		}
-		else if (component is Ecs.Game.Components.UnitParameters.AttackSpeedComponent AttackSpeed)
-		{
-			CopyAttackSpeedTo(AttackSpeed);
-		}
-		else if (component is Ecs.Game.Components.UnitParameters.MoveSpeedComponent MoveSpeed)
-		{
-			CopyMoveSpeedTo(MoveSpeed);
-		}
 		else if (component is Ecs.Game.Components.UnitParameters.AdditionalMagicDamage AdditionalMagicDamage)
 		{
 			CopyAdditionalMagicDamageTo(AdditionalMagicDamage);
@@ -201,6 +177,14 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage AdditionalPhysicalDamage)
 		{
 			CopyAdditionalPhysicalDamageTo(AdditionalPhysicalDamage);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AdditionalAttackSpeedComponent AdditionalAttackSpeed)
+		{
+			CopyAdditionalAttackSpeedTo(AdditionalAttackSpeed);
+		}
+		else if (component is Ecs.Game.Components.UnitParameters.AttackSpeedComponent AttackSpeed)
+		{
+			CopyAttackSpeedTo(AttackSpeed);
 		}
 		else if (component is Ecs.Game.Components.UnitParameters.PhysicalDamageComponent PhysicalDamage)
 		{
@@ -222,13 +206,25 @@ public partial class GameEntity
 		{
 			CopyMagicDamageTo(MagicDamage);
 		}
-		else if (component is Ecs.Game.Components.Combat.HitCounterComponent HitCounter)
+		else if (component is Ecs.Game.Components.UnitParameters.MoveSpeedComponent MoveSpeed)
 		{
-			CopyHitCounterTo(HitCounter);
+			CopyMoveSpeedTo(MoveSpeed);
 		}
-		else if (component is Ecs.Game.Components.Combat.AttackRangeComponent AttackRange)
+		else if (component is Ecs.Game.Components.Ai.DestinationComponent Destination)
 		{
-			CopyAttackRangeTo(AttackRange);
+			CopyDestinationTo(Destination);
+		}
+		else if (component is Ecs.Game.Components.Ai.TargetComponent Target)
+		{
+			CopyTargetTo(Target);
+		}
+		else if (component is Ecs.Game.Components.Ai.NavmeshAgentComponent NavmeshAgent)
+		{
+			CopyNavmeshAgentTo(NavmeshAgent);
+		}
+		else if (component is Ecs.Game.Components.Ai.BehaviourTreeComponent BehaviourTree)
+		{
+			CopyBehaviourTreeTo(BehaviourTree);
 		}
 		else if (component is Ecs.Game.Components.Combat.WeaponComponent Weapon)
 		{
@@ -237,6 +233,14 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.Combat.PerformingAttackComponent PerformingAttack)
 		{
 			IsPerformingAttack = true;
+		}
+		else if (component is Ecs.Game.Components.Combat.AttackRangeComponent AttackRange)
+		{
+			CopyAttackRangeTo(AttackRange);
+		}
+		else if (component is Ecs.Game.Components.Combat.HitCounterComponent HitCounter)
+		{
+			CopyHitCounterTo(HitCounter);
 		}
 		else if (component is Ecs.Game.Components.Combat.EquippedWeaponComponent EquippedWeapon)
 		{

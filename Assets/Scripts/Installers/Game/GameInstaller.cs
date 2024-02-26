@@ -4,6 +4,7 @@ using Game.Providers.PowerUpProvider.Impl;
 using Game.Providers.RandomProvider.Impl;
 using Game.Services.InputService.Impl;
 using Game.Services.PrefabPoolService.Impl;
+using Game.Ui.Inventory;
 using Game.Ui.PlayerStats.LevelUp;
 using Game.Ui.Windows;
 using Game.Utils.Raycast.Impl;
@@ -30,6 +31,7 @@ namespace Installers.Game
         {
             Container.BindInterfacesAndSelfTo<GameHudWindow>().AsSingle();
             Container.BindInterfacesAndSelfTo<LevelUpWindow>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerBagInventoryWindow>().AsSingle();
         }
         
         private void BindServices()

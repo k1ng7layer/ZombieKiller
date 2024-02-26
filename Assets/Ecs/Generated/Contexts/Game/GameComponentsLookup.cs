@@ -31,72 +31,73 @@ public static class GameComponentsLookup
 	public const int CameraMove = 15;
 	public const int VirtualCamera = 16;
 	public const int CanMove = 17;
-	public const int AttackRange = 18;
-	public const int AttackTargets = 19;
-	public const int EquippedWeapon = 20;
-	public const int HitCounter = 21;
-	public const int PerformingAttack = 22;
-	public const int Weapon = 23;
-	public const int Dead = 24;
-	public const int Enemy = 25;
-	public const int Experience = 26;
-	public const int HoveredObject = 27;
-	public const int Income = 28;
-	public const int IncomeTimer = 29;
-	public const int Instantiate = 30;
-	public const int Link = 31;
-	public const int MoveDirection = 32;
-	public const int Moving = 33;
-	public const int Owner = 34;
-	public const int ParentTransform = 35;
-	public const int PlayerCoins = 36;
-	public const int Player = 37;
-	public const int Portal = 38;
-	public const int Position = 39;
-	public const int Prefab = 40;
-	public const int Projectile = 41;
-	public const int Rotation = 42;
-	public const int Speed = 43;
-	public const int Time = 44;
-	public const int Timer = 45;
-	public const int Transform = 46;
-	public const int Unit = 47;
-	public const int UnitLevel = 48;
-	public const int AdditionalAttackSpeed = 49;
-	public const int AdditionalHealth = 50;
-	public const int AdditionalMagicDamage = 51;
-	public const int AdditionalPhysicalDamage = 52;
-	public const int AttackSpeed = 53;
-	public const int Health = 54;
-	public const int MagicDamage = 55;
-	public const int MaxHealth = 56;
-	public const int MoveSpeed = 57;
-	public const int PhysicalDamage = 58;
-	public const int Visible = 59;
-	public const int WeaponRoot = 60;
-	public const int EquippedWeaponListener = 61;
-	public const int ExperienceListener = 62;
-	public const int GameActiveListener = 63;
-	public const int GameActiveRemovedListener = 64;
-	public const int GameDestroyedListener = 65;
-	public const int GameTimerListener = 66;
-	public const int HealthListener = 67;
-	public const int HitCounterListener = 68;
-	public const int LinkRemovedListener = 69;
-	public const int MaxHealthListener = 70;
-	public const int MoveDirectionListener = 71;
-	public const int MovingListener = 72;
-	public const int MovingRemovedListener = 73;
-	public const int ParentTransformListener = 74;
-	public const int PerformingAttackListener = 75;
-	public const int PlayerCoinsListener = 76;
-	public const int PositionListener = 77;
-	public const int RotationListener = 78;
-	public const int UnitLevelListener = 79;
-	public const int VisibleListener = 80;
-	public const int VisibleRemovedListener = 81;
+	public const int Collectable = 18;
+	public const int AttackRange = 19;
+	public const int AttackTargets = 20;
+	public const int EquippedWeapon = 21;
+	public const int HitCounter = 22;
+	public const int PerformingAttack = 23;
+	public const int Weapon = 24;
+	public const int Dead = 25;
+	public const int Enemy = 26;
+	public const int Experience = 27;
+	public const int HoveredObject = 28;
+	public const int Income = 29;
+	public const int IncomeTimer = 30;
+	public const int Instantiate = 31;
+	public const int Link = 32;
+	public const int MoveDirection = 33;
+	public const int Moving = 34;
+	public const int Owner = 35;
+	public const int ParentTransform = 36;
+	public const int PlayerCoins = 37;
+	public const int Player = 38;
+	public const int Portal = 39;
+	public const int Position = 40;
+	public const int Prefab = 41;
+	public const int Projectile = 42;
+	public const int Rotation = 43;
+	public const int Speed = 44;
+	public const int Time = 45;
+	public const int Timer = 46;
+	public const int Transform = 47;
+	public const int Unit = 48;
+	public const int UnitLevel = 49;
+	public const int AdditionalAttackSpeed = 50;
+	public const int AdditionalHealth = 51;
+	public const int AdditionalMagicDamage = 52;
+	public const int AdditionalPhysicalDamage = 53;
+	public const int AttackSpeed = 54;
+	public const int Health = 55;
+	public const int MagicDamage = 56;
+	public const int MaxHealth = 57;
+	public const int MoveSpeed = 58;
+	public const int PhysicalDamage = 59;
+	public const int Visible = 60;
+	public const int WeaponRoot = 61;
+	public const int EquippedWeaponListener = 62;
+	public const int ExperienceListener = 63;
+	public const int GameActiveListener = 64;
+	public const int GameActiveRemovedListener = 65;
+	public const int GameDestroyedListener = 66;
+	public const int GameTimerListener = 67;
+	public const int HealthListener = 68;
+	public const int HitCounterListener = 69;
+	public const int LinkRemovedListener = 70;
+	public const int MaxHealthListener = 71;
+	public const int MoveDirectionListener = 72;
+	public const int MovingListener = 73;
+	public const int MovingRemovedListener = 74;
+	public const int ParentTransformListener = 75;
+	public const int PerformingAttackListener = 76;
+	public const int PlayerCoinsListener = 77;
+	public const int PositionListener = 78;
+	public const int RotationListener = 79;
+	public const int UnitLevelListener = 80;
+	public const int VisibleListener = 81;
+	public const int VisibleRemovedListener = 82;
 
-	public const int TotalComponents = 82;
+	public const int TotalComponents = 83;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -118,6 +119,7 @@ public static class GameComponentsLookup
 		"CameraMove",
 		"VirtualCamera",
 		"CanMove",
+		"Collectable",
 		"AttackRange",
 		"AttackTargets",
 		"EquippedWeapon",
@@ -204,6 +206,7 @@ public static class GameComponentsLookup
 		typeof(Ecs.Game.Components.Camera.CameraMoveComponent),
 		typeof(Ecs.Game.Components.Camera.VirtualCameraComponent),
 		typeof(Ecs.Game.Components.CanMoveComponent),
+		typeof(Ecs.Game.Components.Collectables.CollectableComponent),
 		typeof(Ecs.Game.Components.Combat.AttackRangeComponent),
 		typeof(Ecs.Game.Components.Combat.AttackTargetsComponent),
 		typeof(Ecs.Game.Components.Combat.EquippedWeaponComponent),
@@ -290,70 +293,71 @@ public static class GameComponentsLookup
 		{ typeof(Ecs.Game.Components.Camera.CameraMoveComponent), 15 },
 		{ typeof(Ecs.Game.Components.Camera.VirtualCameraComponent), 16 },
 		{ typeof(Ecs.Game.Components.CanMoveComponent), 17 },
-		{ typeof(Ecs.Game.Components.Combat.AttackRangeComponent), 18 },
-		{ typeof(Ecs.Game.Components.Combat.AttackTargetsComponent), 19 },
-		{ typeof(Ecs.Game.Components.Combat.EquippedWeaponComponent), 20 },
-		{ typeof(Ecs.Game.Components.Combat.HitCounterComponent), 21 },
-		{ typeof(Ecs.Game.Components.Combat.PerformingAttackComponent), 22 },
-		{ typeof(Ecs.Game.Components.Combat.WeaponComponent), 23 },
-		{ typeof(Ecs.Game.Components.DeadComponent), 24 },
-		{ typeof(Ecs.Game.Components.EnemyComponent), 25 },
-		{ typeof(Ecs.Game.Components.ExperienceComponent), 26 },
-		{ typeof(Ecs.Game.Components.HoveredObjectComponent), 27 },
-		{ typeof(Ecs.Game.Components.IncomeComponent), 28 },
-		{ typeof(Ecs.Game.Components.IncomeTimer), 29 },
-		{ typeof(Ecs.Game.Components.InstantiateComponent), 30 },
-		{ typeof(Ecs.Game.Components.LinkComponent), 31 },
-		{ typeof(Ecs.Game.Components.MoveDirectionComponent), 32 },
-		{ typeof(Ecs.Game.Components.MovingComponent), 33 },
-		{ typeof(Ecs.Game.Components.OwnerComponent), 34 },
-		{ typeof(Ecs.Game.Components.ParentTransformComponent), 35 },
-		{ typeof(Ecs.Game.Components.PlayerCoinsComponent), 36 },
-		{ typeof(Ecs.Game.Components.PlayerComponent), 37 },
-		{ typeof(Ecs.Game.Components.PortalComponent), 38 },
-		{ typeof(Ecs.Game.Components.PositionComponent), 39 },
-		{ typeof(Ecs.Game.Components.PrefabComponent), 40 },
-		{ typeof(Ecs.Game.Components.ProjectileComponent), 41 },
-		{ typeof(Ecs.Game.Components.RotationComponent), 42 },
-		{ typeof(Ecs.Game.Components.SpeedComponent), 43 },
-		{ typeof(Ecs.Game.Components.TimeComponent), 44 },
-		{ typeof(Ecs.Game.Components.TimerComponent), 45 },
-		{ typeof(Ecs.Game.Components.TransformComponent), 46 },
-		{ typeof(Ecs.Game.Components.UnitComponent), 47 },
-		{ typeof(Ecs.Game.Components.UnitLevelComponent), 48 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalAttackSpeedComponent), 49 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalHealthComponent), 50 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalMagicDamage), 51 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage), 52 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AttackSpeedComponent), 53 },
-		{ typeof(Ecs.Game.Components.UnitParameters.HealthComponent), 54 },
-		{ typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent), 55 },
-		{ typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent), 56 },
-		{ typeof(Ecs.Game.Components.UnitParameters.MoveSpeedComponent), 57 },
-		{ typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent), 58 },
-		{ typeof(Ecs.Game.Components.VisibleComponent), 59 },
-		{ typeof(Ecs.Game.Components.WeaponRootComponent), 60 },
-		{ typeof(EquippedWeaponListenerComponent), 61 },
-		{ typeof(ExperienceListenerComponent), 62 },
-		{ typeof(GameActiveListenerComponent), 63 },
-		{ typeof(GameActiveRemovedListenerComponent), 64 },
-		{ typeof(GameDestroyedListenerComponent), 65 },
-		{ typeof(GameTimerListenerComponent), 66 },
-		{ typeof(HealthListenerComponent), 67 },
-		{ typeof(HitCounterListenerComponent), 68 },
-		{ typeof(LinkRemovedListenerComponent), 69 },
-		{ typeof(MaxHealthListenerComponent), 70 },
-		{ typeof(MoveDirectionListenerComponent), 71 },
-		{ typeof(MovingListenerComponent), 72 },
-		{ typeof(MovingRemovedListenerComponent), 73 },
-		{ typeof(ParentTransformListenerComponent), 74 },
-		{ typeof(PerformingAttackListenerComponent), 75 },
-		{ typeof(PlayerCoinsListenerComponent), 76 },
-		{ typeof(PositionListenerComponent), 77 },
-		{ typeof(RotationListenerComponent), 78 },
-		{ typeof(UnitLevelListenerComponent), 79 },
-		{ typeof(VisibleListenerComponent), 80 },
-		{ typeof(VisibleRemovedListenerComponent), 81 }
+		{ typeof(Ecs.Game.Components.Collectables.CollectableComponent), 18 },
+		{ typeof(Ecs.Game.Components.Combat.AttackRangeComponent), 19 },
+		{ typeof(Ecs.Game.Components.Combat.AttackTargetsComponent), 20 },
+		{ typeof(Ecs.Game.Components.Combat.EquippedWeaponComponent), 21 },
+		{ typeof(Ecs.Game.Components.Combat.HitCounterComponent), 22 },
+		{ typeof(Ecs.Game.Components.Combat.PerformingAttackComponent), 23 },
+		{ typeof(Ecs.Game.Components.Combat.WeaponComponent), 24 },
+		{ typeof(Ecs.Game.Components.DeadComponent), 25 },
+		{ typeof(Ecs.Game.Components.EnemyComponent), 26 },
+		{ typeof(Ecs.Game.Components.ExperienceComponent), 27 },
+		{ typeof(Ecs.Game.Components.HoveredObjectComponent), 28 },
+		{ typeof(Ecs.Game.Components.IncomeComponent), 29 },
+		{ typeof(Ecs.Game.Components.IncomeTimer), 30 },
+		{ typeof(Ecs.Game.Components.InstantiateComponent), 31 },
+		{ typeof(Ecs.Game.Components.LinkComponent), 32 },
+		{ typeof(Ecs.Game.Components.MoveDirectionComponent), 33 },
+		{ typeof(Ecs.Game.Components.MovingComponent), 34 },
+		{ typeof(Ecs.Game.Components.OwnerComponent), 35 },
+		{ typeof(Ecs.Game.Components.ParentTransformComponent), 36 },
+		{ typeof(Ecs.Game.Components.PlayerCoinsComponent), 37 },
+		{ typeof(Ecs.Game.Components.PlayerComponent), 38 },
+		{ typeof(Ecs.Game.Components.PortalComponent), 39 },
+		{ typeof(Ecs.Game.Components.PositionComponent), 40 },
+		{ typeof(Ecs.Game.Components.PrefabComponent), 41 },
+		{ typeof(Ecs.Game.Components.ProjectileComponent), 42 },
+		{ typeof(Ecs.Game.Components.RotationComponent), 43 },
+		{ typeof(Ecs.Game.Components.SpeedComponent), 44 },
+		{ typeof(Ecs.Game.Components.TimeComponent), 45 },
+		{ typeof(Ecs.Game.Components.TimerComponent), 46 },
+		{ typeof(Ecs.Game.Components.TransformComponent), 47 },
+		{ typeof(Ecs.Game.Components.UnitComponent), 48 },
+		{ typeof(Ecs.Game.Components.UnitLevelComponent), 49 },
+		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalAttackSpeedComponent), 50 },
+		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalHealthComponent), 51 },
+		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalMagicDamage), 52 },
+		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage), 53 },
+		{ typeof(Ecs.Game.Components.UnitParameters.AttackSpeedComponent), 54 },
+		{ typeof(Ecs.Game.Components.UnitParameters.HealthComponent), 55 },
+		{ typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent), 56 },
+		{ typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent), 57 },
+		{ typeof(Ecs.Game.Components.UnitParameters.MoveSpeedComponent), 58 },
+		{ typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent), 59 },
+		{ typeof(Ecs.Game.Components.VisibleComponent), 60 },
+		{ typeof(Ecs.Game.Components.WeaponRootComponent), 61 },
+		{ typeof(EquippedWeaponListenerComponent), 62 },
+		{ typeof(ExperienceListenerComponent), 63 },
+		{ typeof(GameActiveListenerComponent), 64 },
+		{ typeof(GameActiveRemovedListenerComponent), 65 },
+		{ typeof(GameDestroyedListenerComponent), 66 },
+		{ typeof(GameTimerListenerComponent), 67 },
+		{ typeof(HealthListenerComponent), 68 },
+		{ typeof(HitCounterListenerComponent), 69 },
+		{ typeof(LinkRemovedListenerComponent), 70 },
+		{ typeof(MaxHealthListenerComponent), 71 },
+		{ typeof(MoveDirectionListenerComponent), 72 },
+		{ typeof(MovingListenerComponent), 73 },
+		{ typeof(MovingRemovedListenerComponent), 74 },
+		{ typeof(ParentTransformListenerComponent), 75 },
+		{ typeof(PerformingAttackListenerComponent), 76 },
+		{ typeof(PlayerCoinsListenerComponent), 77 },
+		{ typeof(PositionListenerComponent), 78 },
+		{ typeof(RotationListenerComponent), 79 },
+		{ typeof(UnitLevelListenerComponent), 80 },
+		{ typeof(VisibleListenerComponent), 81 },
+		{ typeof(VisibleRemovedListenerComponent), 82 }
 	};
 
 	/// <summary>
