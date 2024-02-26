@@ -6,10 +6,10 @@ namespace Db.Inventory.Impl
     public class PlayerInventorySettings : ScriptableObject, IPlayerInventorySettings
     {
         [SerializeField] private int _basicCapacity;
-        [SerializeField] private int[] _starterItemsIds;
+        [SerializeField] private string[] _starterItemsIds;
 
         public int BasicCapacity => _basicCapacity;
 
-        public int[] StarterItemsIds => _starterItemsIds;
+        public string[] StarterItemsIds => _starterItemsIds;
     }
 }

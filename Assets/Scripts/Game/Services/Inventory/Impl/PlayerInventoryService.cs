@@ -5,18 +5,18 @@ namespace Game.Services.Inventory.Impl
 {
     public class PlayerInventoryService : IPlayerInventoryService
     {
-        private readonly List<int> _items = new();
+        private readonly List<string> _items = new();
         public int Capacity { get; private set; }
         public bool IsFull => _items.Count == Capacity;
 
-        public event Action<int> ItemAdded;
+        public event Action<string> ItemAdded;
 
-        public IEnumerable<int> GetAll()
+        public IReadOnlyList<string> GetAll()
         {
             return _items;
         }
 
-        public bool TryAdd(int itemId)
+        public bool TryAdd(string itemId)
         {
             if (_items.Count == Capacity)
                 return false;

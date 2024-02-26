@@ -10,7 +10,7 @@ namespace Ecs.Game.Extensions
     public static class GameExtensions
     {
         public static GameEntity CreateWeapon(this GameContext game, 
-            EWeaponId weaponId, 
+            string weaponId, 
             Weapon weapon, 
             Uid owner
         )
@@ -20,7 +20,7 @@ namespace Ecs.Game.Extensions
             weaponEntity.AddUid(weaponUid);
             weaponEntity.AddWeapon(weaponId);
             weaponEntity.AddOwner(owner);
-            weaponEntity.AddPrefab(weaponId.ToString());
+            weaponEntity.AddPrefab(weapon.Name);
             weaponEntity.AddAttackTargets(new HashSet<Uid>());
             weaponEntity.AddPhysicalDamage(weapon.PhysicalDamage);
             weaponEntity.AddMagicDamage(weapon.MagicDamage);

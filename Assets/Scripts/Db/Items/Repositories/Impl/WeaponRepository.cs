@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using Game.Utils;
 using UnityEngine;
 
 namespace Db.Items.Repositories.Impl
 {
     [CreateAssetMenu(menuName = "Settings/Items/Repositories/" + nameof(WeaponRepository), fileName = "WeaponRepository")]
-    public class WeaponRepository : ItemRepository<Items.Impl.Weapon>, IWeaponRepository
+    public class WeaponRepository : ItemRepository<Items.Impl.Weapon>, 
+        IWeaponRepository
     {
         [SerializeField] private List<Items.Impl.Weapon> _items;
 
         public override List<Items.Impl.Weapon> Items => _items;
         
-        public Items.Impl.Weapon GetWeapon(EWeaponId weaponId)
+        public Items.Impl.Weapon GetWeapon(string weaponId)
         {
             foreach (var weapon in Items)
             {
-                if (weapon.WeaponId == weaponId)
+                if (weapon.Id == weaponId)
                     return weapon;
             }
             

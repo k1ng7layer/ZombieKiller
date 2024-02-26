@@ -9,6 +9,7 @@ namespace Ecs.Commands.Systems
     [Install(ExecutionType.Game, ExecutionPriority.High, 950, nameof(EFeatures.Common))]
     public class LoadShelterSystem : ForEachCommandUpdateSystem<LoadShelterCommand>
     {
+        private readonly ICommandBuffer _commandBuffer;
         private readonly ISceneLoadingManager _sceneLoadingManager;
 
         public LoadShelterSystem(
@@ -16,11 +17,13 @@ namespace Ecs.Commands.Systems
             ISceneLoadingManager sceneLoadingManager
         ) : base(commandBuffer)
         {
+            _commandBuffer = commandBuffer;
             _sceneLoadingManager = sceneLoadingManager;
         }
 
         protected override void Execute(ref LoadShelterCommand command)
         {
+            _commandBuffer.SaveGame();
             _sceneLoadingManager.LoadGameLevel(ELevelName.SHELTER.ToString());
         }
     }

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PlayerInventorySettings
   m_EditorClassIdentifier: 
   _basicCapacity: 12
-  _starterItemsIds: 0000000001000000
+  _starterItemsIds:
+  - 0HN1N1TM2FUSV

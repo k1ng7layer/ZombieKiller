@@ -5,11 +5,11 @@ namespace Game.Services.Inventory
 {
     public interface IPlayerInventoryService
     {
-        event Action<int> ItemAdded;
+        event Action<string> ItemAdded;
         int Capacity { get; }
         bool IsFull { get; }
-        IEnumerable<int> GetAll();
-        bool TryAdd(int itemId);
+        IReadOnlyList<string> GetAll();
+        bool TryAdd(string itemId);
         void ChangeCapacity(int capacity);
     }
 }

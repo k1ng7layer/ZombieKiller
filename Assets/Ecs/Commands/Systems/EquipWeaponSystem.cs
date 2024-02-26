@@ -2,7 +2,6 @@ using Db.Items.Repositories;
 using Ecs.Commands.Command;
 using Ecs.Game.Extensions;
 using Ecs.Utils;
-using Game.Utils;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
@@ -33,7 +32,7 @@ namespace Ecs.Commands.Systems
             var owner = _game.GetEntityWithUid(command.Owner);
             var weaponEntity = _game.CreateWeapon(command.WeaponId, weaponSettings, owner.Uid.Value);
             
-            if (owner.HasEquippedWeapon && owner.EquippedWeapon.Value.Id != EWeaponId.None)
+            if (owner.HasEquippedWeapon && owner.EquippedWeapon.Value.Id != string.Empty)
             {
                 var currentWeapon = _game.GetEntityWithUid(owner.EquippedWeapon.Value.WeaponEntityUid);
                 currentWeapon.IsDestroyed = true;

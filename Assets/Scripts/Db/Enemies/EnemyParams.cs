@@ -8,7 +8,7 @@ namespace Db.Enemies
     public class EnemyParams : ScriptableObject
     {
         public EEnemyType EnemyType;
-        public EWeaponId Weapon;
+        public string Weapon;
 
         [Space]
         [Header("Loot")]

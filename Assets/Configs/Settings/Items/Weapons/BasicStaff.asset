@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3e9d2bcb574f77a61ee5f37ceba722, type: 3}
   m_Name: BasicStaff
   m_EditorClassIdentifier: 
+  Id: 
   Name: BasicStaff
   Description: Basic staff
   Icon: {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}
-  WeaponId: 2
   WeaponType: 1
   PhysicalDamage: 0
-  MagicDamage: 50
+  MagicDamage: 500
   ProjectileSettings:
     ProjectileType: 1
     ProjectileSpeed: 15

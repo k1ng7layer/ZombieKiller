@@ -7,7 +7,6 @@ namespace Db.Items.Impl
     [CreateAssetMenu(menuName = "Settings/Items/" + nameof(Weapon), fileName = "WeaponItem")]
     public class Weapon : Item
     {
-        public EWeaponId WeaponId;
         public EWeaponType WeaponType;
         
         [Space]

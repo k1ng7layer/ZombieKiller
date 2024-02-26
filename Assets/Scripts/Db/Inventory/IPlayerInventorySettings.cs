@@ -4,6 +4,6 @@
     {
         int BasicCapacity { get; }
         
-        int[] StarterItemsIds { get; }
+        string[] StarterItemsIds { get; }
     }
 }

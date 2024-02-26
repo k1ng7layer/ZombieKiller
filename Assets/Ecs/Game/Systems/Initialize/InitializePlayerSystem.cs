@@ -5,7 +5,6 @@ using Ecs.Extensions.UidGenerator;
 using Ecs.Utils.LinkedEntityRepository;
 using Game.Providers.GameFieldProvider;
 using Game.Services.Inventory;
-using Game.Utils;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
@@ -71,7 +70,7 @@ namespace Ecs.Game.Systems.Initialize
 
             var starterWeapon = _playerSettings.StarterWeapon;
             
-            if (starterWeapon != EWeaponId.None)
+            if (starterWeapon != string.Empty)
             {
                 CreateWeapon(starterWeapon, playerUid);
             }
@@ -81,7 +80,7 @@ namespace Ecs.Game.Systems.Initialize
             InitializeInventory();
         }
 
-        private void CreateWeapon(EWeaponId weaponId, Uid playerUid)
+        private void CreateWeapon(string weaponId, Uid playerUid)
         {
             _commandBuffer.EquipWeapon(weaponId, playerUid);
         }

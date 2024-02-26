@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8083ae164237431fb582b36118bc6d4d, type: 3}
   m_Name: HealPotionSmall
   m_EditorClassIdentifier: 
+  Id: 0HN1N15HVNIDN
   Name: Small health potion
   Description: Add 10 health
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 9e4fbebb6cde952428e19243aeb3289f, type: 3}
   PotionType: 0
   Effects:
   - StatType: 0

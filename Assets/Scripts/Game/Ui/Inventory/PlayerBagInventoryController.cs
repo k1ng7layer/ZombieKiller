@@ -55,18 +55,19 @@ namespace Game.Ui.Inventory
         
         public override void OnShow()
         {
-            foreach (var id in _inventoryService.GetAll())
+            var items = _inventoryService.GetAll();
+            for (int i = 0; i < items.Count; i++)
             {
-                var item = _itemsBase.GetItem(id);
-
-                // var itemView = View.ItemListCollection.Create();
-                var itemView = View.ItemListCollection[id];
+                var itemId = items[i];
+                var item = _itemsBase.GetItem(itemId);
+                
+                var itemView = View.ItemListCollection[i];
                 itemView.Icon.sprite = item.Icon;
                 itemView.Icon.gameObject.SetActive(true);
-                itemView.ItemId = id;
+                itemView.ItemId = itemId;
                 
                 itemView.Btn.OnClickAsObservable()
-                    .Subscribe(_ => OnItemClick(id))
+                    .Subscribe(_ => OnItemClick(itemId))
                     .AddTo(itemView.gameObject);
 
                 itemView.OnPointerEnterAsObservable()
@@ -84,7 +85,7 @@ namespace Game.Ui.Inventory
             //View.ItemListCollection.Clear();
         }
 
-        private void OnItemClick(int itemId)
+        private void OnItemClick(string itemId)
         {
             var item = _itemsBase.GetItem(itemId);
             

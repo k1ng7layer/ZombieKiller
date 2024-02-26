@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Db.Items.Repositories.Impl;
+using Game.Utils;
 using Unity.Collections;
 using UnityEngine;
 
@@ -25,9 +27,29 @@ namespace Db.Items.Impl
             _items.AddRange(_potionRepo.Items);
         }
 
-        public Item GetItem(int id)
+        public Item GetItem(string id)
         {
-            return _items[id];
+            foreach (var item in _items)
+            {
+                if (item.Id == id)
+                    return item;
+            }
+
+            throw new Exception($"[{nameof(ItemsBase)}] can't find item with id {id}");
+        }
+
+        public void GenerateIds()
+        {
+            OnValidate();
+
+            foreach (var item in _items)
+            {
+                if (item.Id == string.Empty)
+                {
+                    item.Id = CorrelationIdGenerator.GetNextId();
+                    //Thread.Sleep(1);
+                }
+            }
         }
     }
     
