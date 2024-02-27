@@ -16,6 +16,8 @@ namespace Db.Items.Editor
             if (GUILayout.Button("Generate Ids"))
             {
                 itemBase.GenerateIds();
+                EditorUtility.SetDirty(target);
+                AssetDatabase.SaveAssets();
             }
         }
     }
