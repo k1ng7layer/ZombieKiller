@@ -13,9 +13,5 @@ MonoBehaviour:
   m_Name: LevelSettingsBase
   m_EditorClassIdentifier: 
   levelParams:
-  - SceneName: LevelScene
+  - SceneName: LevelScene-3
     DisplayName: 1-1
-  - SceneName: LevelScene-1
-    DisplayName: 1-2
-  - SceneName: LevelScene-2
-    DisplayName: 1-3

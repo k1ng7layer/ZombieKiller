@@ -41,6 +41,9 @@ namespace Ecs.Game.Systems.Player
         {
             foreach (var entity in entities)
             {
+                if (entity.UnitLevel.Value == 0)
+                    continue;
+                
                 var level = entity.UnitLevel.Value;
                 var expGoal = _playerSettings.LevelRequiredExpMultiplier * level * _playerSettings.BaseExperienceRequired;
                 var currExp = entity.Experience.Value;

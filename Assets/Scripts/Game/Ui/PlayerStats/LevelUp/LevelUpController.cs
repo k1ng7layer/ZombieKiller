@@ -49,7 +49,7 @@ namespace Game.Ui.PlayerStats.LevelUp
 
         private void OnUnitLevelChanged(GameEntity player, int level)
         {
-            if (level == 1)
+            if (level is 1 or 0)
                 return;
 
             for (int i = 0; i < 3; i++)

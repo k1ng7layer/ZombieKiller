@@ -3,7 +3,9 @@ using Db.Player;
 using Ecs.Commands;
 using Ecs.Extensions.UidGenerator;
 using Ecs.Utils.LinkedEntityRepository;
+using Game.Data;
 using Game.Providers.GameFieldProvider;
+using Game.Services.Dao;
 using Game.Services.Inventory;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
@@ -21,6 +23,7 @@ namespace Ecs.Game.Systems.Initialize
         private readonly ILinkedEntityRepository _linkedEntityRepository;
         private readonly IPlayerInventorySettings _playerInventorySettings;
         private readonly IPlayerInventoryService _playerInventoryService;
+        private readonly IDao<GameData> _saveGameData;
         private readonly GameContext _game;
 
         public InitializePlayerSystem(
@@ -30,6 +33,7 @@ namespace Ecs.Game.Systems.Initialize
             ILinkedEntityRepository linkedEntityRepository,
             IPlayerInventorySettings playerInventorySettings,
             IPlayerInventoryService playerInventoryService,
+            IDao<GameData> saveGameData,
             GameContext game
         )
         {
@@ -39,11 +43,14 @@ namespace Ecs.Game.Systems.Initialize
             _linkedEntityRepository = linkedEntityRepository;
             _playerInventorySettings = playerInventorySettings;
             _playerInventoryService = playerInventoryService;
+            _saveGameData = saveGameData;
             _game = game;
         }
         
         public void Initialize()
         {
+            var saveData = _saveGameData.Load();
+            
             var playerView = _gameFieldProvider.GameField.PlayerView;
             var player = _game.CreateEntity();
             
@@ -65,8 +72,8 @@ namespace Ecs.Game.Systems.Initialize
             player.IsUnit = true;
             
             //TODO: save this
-            player.AddUnitLevel(1);
-            player.AddExperience(0);
+            player.AddUnitLevel(saveData == null ? 1 : saveData.Player.Level);
+            player.AddExperience(saveData == null ? 0f : saveData.Player.Experience);
 
             var starterWeapon = _playerSettings.StarterWeapon;
             
