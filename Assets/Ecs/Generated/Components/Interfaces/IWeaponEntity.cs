@@ -12,7 +12,7 @@ public partial interface IWeaponEntity
 	Ecs.Game.Components.Combat.WeaponComponent Weapon { get; }
 	bool HasWeapon { get; }
 
-	void AddWeapon(Game.Utils.EWeaponId newWeaponId);
-	void ReplaceWeapon(Game.Utils.EWeaponId newWeaponId);
+	void AddWeapon(string newWeaponId);
+	void ReplaceWeapon(string newWeaponId);
 	void RemoveWeapon();
 }

@@ -35,7 +35,7 @@ namespace Ecs.Game.Systems.Enemy
             foreach (var entity in entities)
             {
                 var enemyParams = _enemyParamsBase.GetEnemyParams(entity.Enemy.EnemyType);
-                _commandBuffer.EquipWeapon(enemyParams.Weapon, entity.Uid.Value);
+               _commandBuffer.EquipWeapon(enemyParams.Weapon, entity.Uid.Value);
             }
         }
     }

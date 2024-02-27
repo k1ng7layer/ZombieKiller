@@ -1,6 +1,4 @@
-﻿using Game.Utils;
-
-namespace Db.Player
+﻿namespace Db.Player
 {
     public interface IPlayerSettings
     {
@@ -8,8 +6,9 @@ namespace Db.Player
         float LevelGainExpMultiplier { get; }
         float LevelRequiredExpMultiplier { get; }
         float BaseExperienceRequired { get; }
-        EWeaponId StarterWeapon { get; }
+        string StarterWeapon { get; }
         float BaseMaxHealth { get; }
         float BaseAttackSpeed { get; }
+        float CollectItemsDist { get; }
     }
 }

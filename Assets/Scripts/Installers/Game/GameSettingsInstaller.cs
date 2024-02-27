@@ -4,6 +4,12 @@ using Db.Camera;
 using Db.Camera.Impl;
 using Db.Enemies;
 using Db.Enemies.Impl;
+using Db.Inventory;
+using Db.Inventory.Impl;
+using Db.Items;
+using Db.Items.Impl;
+using Db.Items.Repositories;
+using Db.Items.Repositories.Impl;
 using Db.Player;
 using Db.Player.Impl;
 using Db.PowerUps;
@@ -12,8 +18,6 @@ using Db.Prefabs;
 using Db.Prefabs.Impl;
 using Db.ProjectileBase;
 using Db.ProjectileBase.Impl;
-using Db.Weapon;
-using Db.Weapon.Impl;
 using UnityEngine;
 using Zenject;
 
@@ -25,23 +29,29 @@ namespace Installers.Game
         [SerializeField] private PrefabsBase prefabsBase;
         [SerializeField] private CameraBase cameraBase;
         [SerializeField] private PlayerSettings playerSettings;
-        [SerializeField] private WeaponBase weaponBase;
+        [SerializeField] private WeaponRepository weaponRepository;
         [SerializeField] private EnemyParamsBase enemyParamsBase;
         [SerializeField] private ProjectileBase projectileBase;
         [SerializeField] private PowerUpBase powerUpBase;
         [SerializeField] private AiBTreeSettingsBase aiBTreeSettingsBase;
+        [SerializeField] private ItemsBase itemsBase;
+        [SerializeField] private PotionRepository potionRepository;
+        [SerializeField] private PlayerInventorySettings playerInventorySettings;
        
 
         public override void InstallBindings()
         {
+            Container.Bind<IWeaponRepository>().FromInstance(weaponRepository);
+            Container.Bind<IPotionRepository>().FromInstance(potionRepository);
             Container.Bind<IPrefabsBase>().FromInstance(prefabsBase);
             Container.Bind<ICameraBase>().FromInstance(cameraBase);
             Container.Bind<IPlayerSettings>().FromInstance(playerSettings);
-            Container.Bind<IWeaponBase>().FromInstance(weaponBase);
             Container.Bind<IEnemyParamsBase>().FromInstance(enemyParamsBase);
             Container.Bind<IProjectileBase>().FromInstance(projectileBase);
             Container.Bind<IPowerUpBase>().FromInstance(powerUpBase);
             Container.Bind<IAiBTreeSettingsBase>().To<AiBTreeSettingsBase>().FromInstance(aiBTreeSettingsBase).AsSingle();
+            Container.Bind<IItemsBase>().To<ItemsBase>().FromInstance(itemsBase).AsSingle();
+            Container.Bind<IPlayerInventorySettings>().To<PlayerInventorySettings>().FromInstance(playerInventorySettings).AsSingle();
         }
     }
 }
