@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using Db.Items.Repositories.Impl;
+using Game.Extensions;
 using Game.Utils;
 using Unity.Collections;
+using UnityEditor;
 using UnityEngine;
 
 namespace Db.Items.Impl
@@ -25,7 +27,9 @@ namespace Db.Items.Impl
             
             _items.AddRange(_weaponRepo.Items);
             _items.AddRange(_potionRepo.Items);
+            //GenerateIds();
         }
+        
 
         public Item GetItem(string id)
         {
@@ -46,10 +50,14 @@ namespace Db.Items.Impl
             {
                 if (item.Id == string.Empty)
                 {
-                    item.Id = CorrelationIdGenerator.GetNextId();
+                     item.Id = CorrelationIdGenerator.GetNextId();
+                     EditorUtility.SetDirty(item);
+                    //item.Id = Guid.NewGuid().CreateShortGuid();
                     //Thread.Sleep(1);
                 }
             }
+           
+            AssetDatabase.SaveAssets();
         }
     }
     
