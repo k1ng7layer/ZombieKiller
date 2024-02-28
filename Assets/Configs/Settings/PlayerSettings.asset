@@ -17,6 +17,6 @@ MonoBehaviour:
   _levelExpMultiplier: 1.3
   _levelRequiredMultiplier: 1.3
   _baseExperienceRequired: 100
-  _baseMaxHealth: 1000
+  _baseMaxHealth: 2000
   _baseAttackSpeed: 1.7
   _collectItemsDist: 1

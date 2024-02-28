@@ -19,4 +19,4 @@ MonoBehaviour:
   BaseExperience: 10
   BaseAttackRange: 10
   BaseMoveSpeed: 20
-  BaseAttackSpeed: 1
+  BaseAttackSpeed: 0.5

@@ -18,7 +18,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}
   WeaponType: 1
   PhysicalDamage: 0
-  MagicDamage: 500
+  MagicDamage: 50
   ProjectileSettings:
     ProjectileType: 1
     ProjectileSpeed: 15
