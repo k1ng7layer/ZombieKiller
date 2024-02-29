@@ -65,6 +65,7 @@ namespace Ecs.Game.Systems.Initialize
             player.AddPosition(playerView.transform.position);
             player.AddHealth(_playerSettings.BaseMaxHealth);
             player.AddMaxHealth(_playerSettings.BaseMaxHealth);
+            player.AddBaseMaxHealth(_playerSettings.BaseMaxHealth);
             player.AddMagicDamage(0);
             player.AddAdditionalHealth(0);
             player.AddAttackCooldown(0);

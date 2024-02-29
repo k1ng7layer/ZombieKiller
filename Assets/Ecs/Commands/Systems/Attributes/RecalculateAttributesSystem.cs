@@ -36,7 +36,7 @@ namespace Ecs.Commands.Systems.Attributes
             
             powerUpOwner.ReplaceAdditionalPhysicalDamage(0);
             powerUpOwner.ReplaceAdditionalMagicDamage(0);
-            powerUpOwner.ReplaceMaxHealth(0);
+            powerUpOwner.ReplaceMaxHealth(powerUpOwner.BaseMaxHealth.Value);
             
             foreach (var powerUpEntity in powerUps)
             {

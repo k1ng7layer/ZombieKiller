@@ -68,36 +68,37 @@ public static class GameComponentsLookup
 	public const int AdditionalMagicDamage = 52;
 	public const int AdditionalPhysicalDamage = 53;
 	public const int AttackSpeed = 54;
-	public const int Health = 55;
-	public const int MagicDamage = 56;
-	public const int MaxHealth = 57;
-	public const int MoveSpeed = 58;
-	public const int PhysicalDamage = 59;
-	public const int Visible = 60;
-	public const int WeaponRoot = 61;
-	public const int EquippedWeaponListener = 62;
-	public const int ExperienceListener = 63;
-	public const int GameActiveListener = 64;
-	public const int GameActiveRemovedListener = 65;
-	public const int GameDestroyedListener = 66;
-	public const int GameTimerListener = 67;
-	public const int HealthListener = 68;
-	public const int HitCounterListener = 69;
-	public const int LinkRemovedListener = 70;
-	public const int MaxHealthListener = 71;
-	public const int MoveDirectionListener = 72;
-	public const int MovingListener = 73;
-	public const int MovingRemovedListener = 74;
-	public const int ParentTransformListener = 75;
-	public const int PerformingAttackListener = 76;
-	public const int PlayerCoinsListener = 77;
-	public const int PositionListener = 78;
-	public const int RotationListener = 79;
-	public const int UnitLevelListener = 80;
-	public const int VisibleListener = 81;
-	public const int VisibleRemovedListener = 82;
+	public const int BaseMaxHealth = 55;
+	public const int Health = 56;
+	public const int MagicDamage = 57;
+	public const int MaxHealth = 58;
+	public const int MoveSpeed = 59;
+	public const int PhysicalDamage = 60;
+	public const int Visible = 61;
+	public const int WeaponRoot = 62;
+	public const int EquippedWeaponListener = 63;
+	public const int ExperienceListener = 64;
+	public const int GameActiveListener = 65;
+	public const int GameActiveRemovedListener = 66;
+	public const int GameDestroyedListener = 67;
+	public const int GameTimerListener = 68;
+	public const int HealthListener = 69;
+	public const int HitCounterListener = 70;
+	public const int LinkRemovedListener = 71;
+	public const int MaxHealthListener = 72;
+	public const int MoveDirectionListener = 73;
+	public const int MovingListener = 74;
+	public const int MovingRemovedListener = 75;
+	public const int ParentTransformListener = 76;
+	public const int PerformingAttackListener = 77;
+	public const int PlayerCoinsListener = 78;
+	public const int PositionListener = 79;
+	public const int RotationListener = 80;
+	public const int UnitLevelListener = 81;
+	public const int VisibleListener = 82;
+	public const int VisibleRemovedListener = 83;
 
-	public const int TotalComponents = 83;
+	public const int TotalComponents = 84;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -156,6 +157,7 @@ public static class GameComponentsLookup
 		"AdditionalMagicDamage",
 		"AdditionalPhysicalDamage",
 		"AttackSpeed",
+		"BaseMaxHealth",
 		"Health",
 		"MagicDamage",
 		"MaxHealth",
@@ -243,6 +245,7 @@ public static class GameComponentsLookup
 		typeof(Ecs.Game.Components.UnitParameters.AdditionalMagicDamage),
 		typeof(Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage),
 		typeof(Ecs.Game.Components.UnitParameters.AttackSpeedComponent),
+		typeof(Ecs.Game.Components.UnitParameters.BaseMaxHealthComponent),
 		typeof(Ecs.Game.Components.UnitParameters.HealthComponent),
 		typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent),
 		typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent),
@@ -330,34 +333,35 @@ public static class GameComponentsLookup
 		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalMagicDamage), 52 },
 		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage), 53 },
 		{ typeof(Ecs.Game.Components.UnitParameters.AttackSpeedComponent), 54 },
-		{ typeof(Ecs.Game.Components.UnitParameters.HealthComponent), 55 },
-		{ typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent), 56 },
-		{ typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent), 57 },
-		{ typeof(Ecs.Game.Components.UnitParameters.MoveSpeedComponent), 58 },
-		{ typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent), 59 },
-		{ typeof(Ecs.Game.Components.VisibleComponent), 60 },
-		{ typeof(Ecs.Game.Components.WeaponRootComponent), 61 },
-		{ typeof(EquippedWeaponListenerComponent), 62 },
-		{ typeof(ExperienceListenerComponent), 63 },
-		{ typeof(GameActiveListenerComponent), 64 },
-		{ typeof(GameActiveRemovedListenerComponent), 65 },
-		{ typeof(GameDestroyedListenerComponent), 66 },
-		{ typeof(GameTimerListenerComponent), 67 },
-		{ typeof(HealthListenerComponent), 68 },
-		{ typeof(HitCounterListenerComponent), 69 },
-		{ typeof(LinkRemovedListenerComponent), 70 },
-		{ typeof(MaxHealthListenerComponent), 71 },
-		{ typeof(MoveDirectionListenerComponent), 72 },
-		{ typeof(MovingListenerComponent), 73 },
-		{ typeof(MovingRemovedListenerComponent), 74 },
-		{ typeof(ParentTransformListenerComponent), 75 },
-		{ typeof(PerformingAttackListenerComponent), 76 },
-		{ typeof(PlayerCoinsListenerComponent), 77 },
-		{ typeof(PositionListenerComponent), 78 },
-		{ typeof(RotationListenerComponent), 79 },
-		{ typeof(UnitLevelListenerComponent), 80 },
-		{ typeof(VisibleListenerComponent), 81 },
-		{ typeof(VisibleRemovedListenerComponent), 82 }
+		{ typeof(Ecs.Game.Components.UnitParameters.BaseMaxHealthComponent), 55 },
+		{ typeof(Ecs.Game.Components.UnitParameters.HealthComponent), 56 },
+		{ typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent), 57 },
+		{ typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent), 58 },
+		{ typeof(Ecs.Game.Components.UnitParameters.MoveSpeedComponent), 59 },
+		{ typeof(Ecs.Game.Components.UnitParameters.PhysicalDamageComponent), 60 },
+		{ typeof(Ecs.Game.Components.VisibleComponent), 61 },
+		{ typeof(Ecs.Game.Components.WeaponRootComponent), 62 },
+		{ typeof(EquippedWeaponListenerComponent), 63 },
+		{ typeof(ExperienceListenerComponent), 64 },
+		{ typeof(GameActiveListenerComponent), 65 },
+		{ typeof(GameActiveRemovedListenerComponent), 66 },
+		{ typeof(GameDestroyedListenerComponent), 67 },
+		{ typeof(GameTimerListenerComponent), 68 },
+		{ typeof(HealthListenerComponent), 69 },
+		{ typeof(HitCounterListenerComponent), 70 },
+		{ typeof(LinkRemovedListenerComponent), 71 },
+		{ typeof(MaxHealthListenerComponent), 72 },
+		{ typeof(MoveDirectionListenerComponent), 73 },
+		{ typeof(MovingListenerComponent), 74 },
+		{ typeof(MovingRemovedListenerComponent), 75 },
+		{ typeof(ParentTransformListenerComponent), 76 },
+		{ typeof(PerformingAttackListenerComponent), 77 },
+		{ typeof(PlayerCoinsListenerComponent), 78 },
+		{ typeof(PositionListenerComponent), 79 },
+		{ typeof(RotationListenerComponent), 80 },
+		{ typeof(UnitLevelListenerComponent), 81 },
+		{ typeof(VisibleListenerComponent), 82 },
+		{ typeof(VisibleRemovedListenerComponent), 83 }
 	};
 
 	/// <summary>
