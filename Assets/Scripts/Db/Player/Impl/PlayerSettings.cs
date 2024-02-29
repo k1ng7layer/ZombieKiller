@@ -8,7 +8,7 @@ namespace Db.Player.Impl
         [SerializeField] private string _starterWeapon;
         [SerializeField] private float _baseMoveSpeed;
         [SerializeField] private float _levelExpMultiplier = 1.3f;
-        [SerializeField] private float _levelRequiredMultiplier = 1.3f;
+        [SerializeField] private float _levelRequiredMultiplier = 1.5f;
         [SerializeField] private float _baseExperienceRequired = 100f;
         [SerializeField] private float _baseMaxHealth = 100f;
         [SerializeField] private float _baseAttackSpeed = 1.7f;

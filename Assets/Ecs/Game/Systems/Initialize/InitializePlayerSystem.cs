@@ -73,6 +73,7 @@ namespace Ecs.Game.Systems.Initialize
             
             //TODO: save this
             player.AddUnitLevel(saveData == null ? 1 : saveData.Player.Level);
+            //player.AddExperience(100f);
             player.AddExperience(saveData == null ? 0f : saveData.Player.Experience);
 
             var starterWeapon = _playerSettings.StarterWeapon;

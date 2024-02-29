@@ -22,10 +22,10 @@ namespace Game.Ui.PlayerStats.Exp
         {
             var player = _game.PlayerEntity;
             
-            player.SubscribeExperience(OnExperienceChanged).AddTo(View);
+            player.SubscribeExperience(OnExperienceChanged).AddTo(View.gameObject);
             player.SubscribeUnitLevel((_, value) => OnUnitLevelChanged(value)).AddTo(View);
         }
-        
+
         private void OnExperienceChanged(GameEntity player, float exp)
         {
             var level = player.UnitLevel.Value;
