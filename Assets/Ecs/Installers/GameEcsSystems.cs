@@ -105,7 +105,7 @@ namespace Ecs.Installers {
 			// Combat 0700
 			SystemInstallHelper.Install<ProjectileMovementSystem>(container);	// 0700 Combat
 			SystemInstallHelper.Install<ProjectileDestroyByDistanceSystem>(container);	// 0710 Combat
-			SystemInstallHelper.Install<PlayerLevelUpSystem>(container);	// 0720 Combat
+			SystemInstallHelper.Install<PlayerLevelByExperienceUpSystem>(container);	// 0720 Combat
 
 			// Combat 0750
 			SystemInstallHelper.Install<CreatePowerUpSystem>(container);	// 0750 Combat

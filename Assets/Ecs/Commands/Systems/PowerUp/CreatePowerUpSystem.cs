@@ -7,6 +7,7 @@ using Game.Utils;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Commands.Systems.PowerUp
 {
@@ -41,6 +42,8 @@ namespace Ecs.Commands.Systems.PowerUp
         {
            using var powerUpGroup = _powerUpGroupUtils.GetActivePowerUps(out var buffer, p => p.IsActive);
 
+           Debug.Log($"CreatePowerUpSystem");
+           
            var powerUps = _powerUpBase.PowerUpS;
            var randomId = _randomProvider.Range(0, powerUps.Count);
            var powerUpSettings = _powerUpBase.PowerUpS[command.Id];

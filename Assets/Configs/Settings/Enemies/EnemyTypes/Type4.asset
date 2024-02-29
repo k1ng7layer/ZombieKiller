@@ -16,7 +16,7 @@ MonoBehaviour:
   Weapon: 0HN1OIA3UIM6F
   LootPreset: {fileID: 11400000, guid: f4ebaf661f1fbe640a4f644965880bde, type: 2}
   BaseHealth: 300
-  BaseExperience: 30000
+  BaseExperience: 300
   BaseAttackRange: 1
   BaseMoveSpeed: 20
   BaseAttackSpeed: 1

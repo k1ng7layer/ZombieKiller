@@ -8,18 +8,19 @@ using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
 using SimpleUi.Signals;
+using UnityEngine;
 using Zenject;
 
 namespace Ecs.Game.Systems.Player
 {
     [Install(ExecutionType.Game, ExecutionPriority.Normal, 720, nameof(EFeatures.Combat))]
-    public class PlayerLevelUpSystem : ReactiveSystem<GameEntity>
+    public class PlayerLevelByExperienceUpSystem : ReactiveSystem<GameEntity>
     {
         private readonly SignalBus _signalBus;
         private readonly IPlayerSettings _playerSettings;
         private readonly ICommandBuffer _commandBuffer;
 
-        public PlayerLevelUpSystem(
+        public PlayerLevelByExperienceUpSystem(
             GameContext game, 
             SignalBus signalBus, 
             IPlayerSettings playerSettings,
@@ -45,15 +46,25 @@ namespace Ecs.Game.Systems.Player
                     continue;
                 
                 var level = entity.UnitLevel.Value;
-                var expGoal = _playerSettings.LevelRequiredExpMultiplier * level * _playerSettings.BaseExperienceRequired;
+                var expGoal = _playerSettings.LevelRequiredExpMultiplier 
+                              * level * _playerSettings.BaseExperienceRequired;
+                
                 var currExp = entity.Experience.Value;
+                var reminder = currExp - expGoal;
                 
                 if (currExp >= expGoal)
                 {
+                    Debug.Log($"Level up");
                     entity.ReplaceUnitLevel(level + 1);
                     entity.IsCanMove = false;
                     _signalBus.OpenWindow<LevelUpWindow>();
                     _commandBuffer.SetGameState(EGameState.Pause);
+                }
+
+                if (reminder > 0)
+                {
+                    Debug.Log($"Level up reminder: {reminder}");
+                    entity.ReplaceExperience(reminder);
                 }
             }
         }

@@ -4,6 +4,7 @@ using Game.Utils;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Commands.Systems.PowerUp
 {
@@ -50,6 +51,7 @@ namespace Ecs.Commands.Systems.PowerUp
                     case EOperation.Add:
                         maxHealth -= powerUpParam.Value;
                         ownerEntity.ReplaceMaxHealth(maxHealth);
+                        Debug.Log($"decrease health: {maxHealth}");
                         break;
                     case EOperation.Subtract:
                         maxHealth += powerUpParam.Value;
@@ -62,9 +64,10 @@ namespace Ecs.Commands.Systems.PowerUp
                 }
             }
             
-            _commandBuffer.RecalculateUnitAttributes(owner);
+            //
             
             powerUpEntity.RemovePowerUp();
+            //_commandBuffer.RecalculateUnitAttributes(owner);
         }
     }
 }

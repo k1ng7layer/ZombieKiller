@@ -79,12 +79,5 @@ namespace Game.Ui.PlayerStats.LevelUp
                 });
             }
         }
-
-        // private void OnUnitLevelChanged(GameEntity player, int level)
-        // {
-        //     if (level is 1 or 0)
-        //         return;
-        //     
-        // }
     }
 }
