@@ -23,4 +23,4 @@ MonoBehaviour:
   NextGradeValueMultiplier: 1
   LifeTime:
     LifeTimeType: 1
-    LifeTimeValue: 5
+    LifeTimeValue: 7

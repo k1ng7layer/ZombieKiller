@@ -16,7 +16,7 @@ MonoBehaviour:
   Weapon: 0HN1NNP00D13S
   LootPreset: {fileID: 0}
   BaseHealth: 100
-  BaseExperience: 10000
+  BaseExperience: 1000
   BaseAttackRange: 10
   BaseMoveSpeed: 20
   BaseAttackSpeed: 0.5
