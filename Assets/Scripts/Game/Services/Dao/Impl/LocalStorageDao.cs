@@ -28,6 +28,7 @@ namespace Game.Services.Dao.Impl
             if (!File.Exists(path))
                 return null;
             var json = File.ReadAllText(path).Base64Decode();
+            
             return JsonUtility.FromJson<T>(json);
         }
 

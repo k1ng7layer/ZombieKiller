@@ -64,10 +64,10 @@ public static class GameComponentsLookup
 	public const int Unit = 48;
 	public const int UnitLevel = 49;
 	public const int AdditionalAttackSpeed = 50;
-	public const int AdditionalHealth = 51;
-	public const int AdditionalMagicDamage = 52;
-	public const int AdditionalPhysicalDamage = 53;
-	public const int AttackSpeed = 54;
+	public const int AdditionalMagicDamage = 51;
+	public const int AdditionalPhysicalDamage = 52;
+	public const int AttackSpeed = 53;
+	public const int BaseMaxHealth = 54;
 	public const int Health = 55;
 	public const int MagicDamage = 56;
 	public const int MaxHealth = 57;
@@ -152,10 +152,10 @@ public static class GameComponentsLookup
 		"Unit",
 		"UnitLevel",
 		"AdditionalAttackSpeed",
-		"AdditionalHealth",
 		"AdditionalMagicDamage",
 		"AdditionalPhysicalDamage",
 		"AttackSpeed",
+		"BaseMaxHealth",
 		"Health",
 		"MagicDamage",
 		"MaxHealth",
@@ -239,10 +239,10 @@ public static class GameComponentsLookup
 		typeof(Ecs.Game.Components.UnitComponent),
 		typeof(Ecs.Game.Components.UnitLevelComponent),
 		typeof(Ecs.Game.Components.UnitParameters.AdditionalAttackSpeedComponent),
-		typeof(Ecs.Game.Components.UnitParameters.AdditionalHealthComponent),
 		typeof(Ecs.Game.Components.UnitParameters.AdditionalMagicDamage),
 		typeof(Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage),
 		typeof(Ecs.Game.Components.UnitParameters.AttackSpeedComponent),
+		typeof(Ecs.Game.Components.UnitParameters.BaseMaxHealthComponent),
 		typeof(Ecs.Game.Components.UnitParameters.HealthComponent),
 		typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent),
 		typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent),
@@ -326,10 +326,10 @@ public static class GameComponentsLookup
 		{ typeof(Ecs.Game.Components.UnitComponent), 48 },
 		{ typeof(Ecs.Game.Components.UnitLevelComponent), 49 },
 		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalAttackSpeedComponent), 50 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalHealthComponent), 51 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalMagicDamage), 52 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage), 53 },
-		{ typeof(Ecs.Game.Components.UnitParameters.AttackSpeedComponent), 54 },
+		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalMagicDamage), 51 },
+		{ typeof(Ecs.Game.Components.UnitParameters.AdditionalPhysicalDamage), 52 },
+		{ typeof(Ecs.Game.Components.UnitParameters.AttackSpeedComponent), 53 },
+		{ typeof(Ecs.Game.Components.UnitParameters.BaseMaxHealthComponent), 54 },
 		{ typeof(Ecs.Game.Components.UnitParameters.HealthComponent), 55 },
 		{ typeof(Ecs.Game.Components.UnitParameters.MagicDamageComponent), 56 },
 		{ typeof(Ecs.Game.Components.UnitParameters.MaxHealthComponent), 57 },

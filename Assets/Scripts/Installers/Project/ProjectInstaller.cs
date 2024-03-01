@@ -28,7 +28,6 @@ namespace Installers.Project
             Container.Bind<ISceneLoadingManager>().To<SceneLoadingManager>().AsSingle();
             Container.Bind<ILevelSettingsBase>().FromInstance(levelSettingsBase);
             Container.Bind<IPlayerInventoryService>().To<PlayerInventoryService>().AsSingle();
-            Container.BindInterfacesAndSelfTo<SaveGameService>().AsSingle();
             
             Container.BindInterfacesTo<LocalStorageDao<GameData>>()
                 .AsSingle()

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Game.Data;
 using Game.Services.Dao;
+using Game.Services.Inventory;
 using Zenject;
 
 namespace Game.Services.SaveService.Impl
@@ -9,10 +11,18 @@ namespace Game.Services.SaveService.Impl
         IInitializable
     {
         private readonly IDao<GameData> _gameDataDao;
+        private readonly GameContext _game;
+        private readonly IPlayerInventoryService _playerInventoryService;
 
-        public SaveGameService(IDao<GameData> gameDataDao)
+        public SaveGameService(
+            IDao<GameData> gameDataDao, 
+            GameContext game, 
+            IPlayerInventoryService playerInventoryService
+        )
         {
             _gameDataDao = gameDataDao;
+            _game = game;
+            _playerInventoryService = playerInventoryService;
         }
         
         public GameData CurrentGameData { get; private set; }
@@ -39,6 +49,24 @@ namespace Game.Services.SaveService.Impl
         
         public void Save()
         {
+            var player = _game.PlayerEntity;
+            
+            CurrentGameData.Inventory.Items = _playerInventoryService.GetAll().ToList();
+            CurrentGameData.Player.Experience = player.Experience.Value;
+            CurrentGameData.Player.Level = player.UnitLevel.Value;
+            
+            CurrentGameData.Player.Attributes.Add(new AttributeDto
+            {
+                Attribute = 0,
+                Value = player.MaxHealth.Value
+            });
+            
+            CurrentGameData.Player.Attributes.Add(new AttributeDto
+            {
+                Attribute = 4,
+                Value = player.MagicDamage.Value
+            });
+            
             _gameDataDao.Save(CurrentGameData);
         }
     }

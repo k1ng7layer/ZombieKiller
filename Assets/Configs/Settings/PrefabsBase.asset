@@ -21,3 +21,11 @@ MonoBehaviour:
     gameObject: {fileID: 8096514219888216453, guid: 4ddfacd01d9821a4ebb15ed62b9890c3, type: 3}
   - name: Type2
     gameObject: {fileID: 7733725048035950936, guid: b4a3fe2974a9abc469b73bb8d29a83ac, type: 3}
+  - name: Type3
+    gameObject: {fileID: 7038831773883647760, guid: 72039d1ede33e6844949528ef9123160, type: 3}
+  - name: PureMagic
+    gameObject: {fileID: 6802357574676876136, guid: 045c6ec3bf94f6e49aeaa74413387680, type: 3}
+  - name: Type4
+    gameObject: {fileID: 7819823662282697564, guid: 2ccf0cb1a7e32f646aeac0b6f85ad232, type: 3}
+  - name: BeetoFangs
+    gameObject: {fileID: 4801127462382050865, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}

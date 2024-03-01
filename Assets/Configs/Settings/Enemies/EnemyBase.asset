@@ -15,3 +15,5 @@ MonoBehaviour:
   enemyParamsArray:
   - {fileID: 11400000, guid: 347f3eab8dc7e6f4a85d9952fd91ceaf, type: 2}
   - {fileID: 11400000, guid: 97d2a90440787674fb5cb921c5a998d7, type: 2}
+  - {fileID: 11400000, guid: 6debf58d46478704a9eef673b7a2e697, type: 2}
+  - {fileID: 11400000, guid: 139d612bfc345b04dae545c560e648a6, type: 2}

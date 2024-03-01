@@ -6,6 +6,7 @@ using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.PowerUp.System
 {
@@ -44,6 +45,7 @@ namespace Ecs.PowerUp.System
 
                 if (timer <= 0)
                 {
+                    Debug.Log($"PowerUpTimerLifeTimeSystem");
                     _commandBuffer.DeactivatePowerUp(powerUpEntity.Uid.Value);
                 }
             }

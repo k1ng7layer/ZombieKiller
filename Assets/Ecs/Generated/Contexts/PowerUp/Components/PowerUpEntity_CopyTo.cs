@@ -26,14 +26,6 @@ public partial class PowerUpEntity
 		{
 			IsDestroyed = true;
 		}
-		else if (component is Ecs.PowerUp.Components.PowerUpComponent PowerUp)
-		{
-			CopyPowerUpTo(PowerUp);
-		}
-		else if (component is Ecs.PowerUp.Components.PlayerPowerUpComponent PlayerPowerUp)
-		{
-			IsPlayerPowerUp = true;
-		}
 		else if (component is Ecs.PowerUp.Components.LifeTimeComponent LifeTime)
 		{
 			CopyLifeTimeTo(LifeTime);
@@ -42,9 +34,21 @@ public partial class PowerUpEntity
 		{
 			CopyResourceTo(Resource);
 		}
+		else if (component is Ecs.PowerUp.Components.PowerUpComponent PowerUp)
+		{
+			CopyPowerUpTo(PowerUp);
+		}
+		else if (component is Ecs.PowerUp.Components.PlayerPowerUpComponent PlayerPowerUp)
+		{
+			IsPlayerPowerUp = true;
+		}
 		else if (component is Ecs.PowerUp.Components.PlayerBuffComponent PlayerBuff)
 		{
 			IsPlayerBuff = true;
+		}
+		else if (component is Ecs.Game.Components.OwnerComponent Owner)
+		{
+			CopyOwnerTo(Owner);
 		}
 		else if (component is Ecs.Game.Components.TimerComponent Timer)
 		{
@@ -53,10 +57,6 @@ public partial class PowerUpEntity
 		else if (component is Ecs.Game.Components.ActiveComponent Active)
 		{
 			IsActive = true;
-		}
-		else if (component is Ecs.Game.Components.OwnerComponent Owner)
-		{
-			CopyOwnerTo(Owner);
 		}
 
 		#endif

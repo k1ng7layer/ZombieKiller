@@ -37,9 +37,14 @@ namespace Game.Ui.PlayerStats.LevelUp
         
         public void Initialize()
         {
-            var player = _game.PlayerEntity;
-            
-            player.SubscribeUnitLevel(OnUnitLevelChanged).AddTo(View);
+            // var player = _game.PlayerEntity;
+            //
+            // player.SubscribeUnitLevel(OnUnitLevelChanged, false).AddTo(View);
+        }
+
+        public override void OnShow()
+        {
+            ShowBuffs();
         }
 
         public override void OnHide()
@@ -47,11 +52,10 @@ namespace Game.Ui.PlayerStats.LevelUp
             View.PowerUpElementCollection.Clear();
         }
 
-        private void OnUnitLevelChanged(GameEntity player, int level)
+        private void ShowBuffs()
         {
-            if (level == 1)
-                return;
-
+            var player = _game.PlayerEntity;
+            
             for (int i = 0; i < 3; i++)
             {
                 var powerUpId = _powerUpIdProvider.Get();

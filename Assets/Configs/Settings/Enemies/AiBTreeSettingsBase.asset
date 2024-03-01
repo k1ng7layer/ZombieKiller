@@ -19,3 +19,9 @@ MonoBehaviour:
   - aiType: 1
     trees:
     - {fileID: 11400000, guid: 4c4d975a7d5a8884387ad3d209f580a9, type: 2}
+  - aiType: 2
+    trees:
+    - {fileID: 11400000, guid: 4c4d975a7d5a8884387ad3d209f580a9, type: 2}
+  - aiType: 3
+    trees:
+    - {fileID: 11400000, guid: 4c4d975a7d5a8884387ad3d209f580a9, type: 2}

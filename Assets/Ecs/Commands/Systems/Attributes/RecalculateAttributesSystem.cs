@@ -4,6 +4,7 @@ using Game.Utils;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Commands.Systems.Attributes
 {
@@ -28,12 +29,14 @@ namespace Ecs.Commands.Systems.Attributes
 
         protected override void Execute(ref RecalculateUnitAttributesCommand command)
         {
+            Debug.Log($"RecalculateUnitAttributesCommand");
             var powerUps = _powerUp.GetEntitiesWithOwner(command.UnitUid);
             var powerUpOwner = _game.GetEntityWithUid(command.UnitUid);
             var ownerLevel = powerUpOwner.UnitLevel.Value;
             
             powerUpOwner.ReplaceAdditionalPhysicalDamage(0);
             powerUpOwner.ReplaceAdditionalMagicDamage(0);
+            powerUpOwner.ReplaceMaxHealth(powerUpOwner.BaseMaxHealth.Value);
             
             foreach (var powerUpEntity in powerUps)
             {
@@ -50,6 +53,7 @@ namespace Ecs.Commands.Systems.Attributes
                             value = powerUpOwner.MaxHealth.Value;
                             newValue = Recalculate(powerUpStat.Operation, value, delta);
                             powerUpOwner.ReplaceMaxHealth(newValue);
+                            Debug.Log($"increase health: {newValue}");
                             break;
                         case EUnitStat.MOVE_SPEED:
                             break;

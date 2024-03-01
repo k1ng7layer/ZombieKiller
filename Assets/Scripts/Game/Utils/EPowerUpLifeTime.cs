@@ -2,7 +2,7 @@
 {
     public enum EPowerUpLifeTime
     {
-        Persistent,
+        Permanent,
         Temporary,
         Charges,
     }

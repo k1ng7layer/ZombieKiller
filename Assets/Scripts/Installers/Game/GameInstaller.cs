@@ -4,6 +4,7 @@ using Game.Providers.PowerUpProvider.Impl;
 using Game.Providers.RandomProvider.Impl;
 using Game.Services.InputService.Impl;
 using Game.Services.PrefabPoolService.Impl;
+using Game.Services.SaveService.Impl;
 using Game.Ui.Inventory;
 using Game.Ui.PlayerStats.LevelUp;
 using Game.Ui.Windows;
@@ -43,6 +44,7 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<RayCastProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<SystemRandomProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<RandomPowerUpIdProvider>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SaveGameService>().AsSingle();
         }
     }
 }
