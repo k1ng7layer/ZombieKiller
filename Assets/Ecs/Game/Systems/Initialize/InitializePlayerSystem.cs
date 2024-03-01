@@ -64,21 +64,11 @@ namespace Ecs.Game.Systems.Initialize
             player.AddUid(playerUid);
             player.AddRotation(playerView.transform.rotation);
             player.AddPosition(playerView.transform.position);
-           
-            var hasHealth = TryLoadAttribute(EUnitStat.HEALTH, saveData, out var maxHealth);
-            player.AddHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
-            player.AddMaxHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
-            player.AddBaseMaxHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
+
+            SetupAttributes(player, saveData);
             
-            var hasMagicDmg = TryLoadAttribute(EUnitStat.ABILITY_POWER, saveData, out var abPower);
-            player.AddMagicDamage(hasMagicDmg ? 0 : abPower);
-            player.AddAttackCooldown(0);
-            player.AddAttackSpeed(_playerSettings.BaseAttackSpeed);
-            player.IsUnit = true;
             
-            //TODO: save this
             player.AddUnitLevel(saveData == null ? 1 : saveData.Player.Level);
-            //player.AddExperience(100f);
             player.AddExperience(saveData == null ? 0f : saveData.Player.Experience);
 
             var starterWeapon = _playerSettings.StarterWeapon;
@@ -110,6 +100,20 @@ namespace Ecs.Game.Systems.Initialize
             }
         }
 
+        private void SetupAttributes(GameEntity player, GameData gameData)
+        {
+            var hasHealth = TryLoadAttribute(EUnitStat.HEALTH, gameData, out var maxHealth);
+            player.AddHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
+            player.AddMaxHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
+            player.AddBaseMaxHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
+            
+            var hasMagicDmg = TryLoadAttribute(EUnitStat.ABILITY_POWER, gameData, out var abPower);
+            player.AddMagicDamage(hasMagicDmg ? 0 : abPower);
+            player.AddAttackCooldown(0);
+            player.AddAttackSpeed(_playerSettings.BaseAttackSpeed);
+            player.IsUnit = true;
+        }
+        
         private bool TryLoadAttribute(
             EUnitStat unitStat, 
             GameData gameData, 
