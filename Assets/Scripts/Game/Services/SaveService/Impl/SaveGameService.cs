@@ -54,6 +54,19 @@ namespace Game.Services.SaveService.Impl
             CurrentGameData.Inventory.Items = _playerInventoryService.GetAll().ToList();
             CurrentGameData.Player.Experience = player.Experience.Value;
             CurrentGameData.Player.Level = player.UnitLevel.Value;
+            
+            CurrentGameData.Player.Attributes.Add(new AttributeDto
+            {
+                Attribute = 0,
+                Value = player.MaxHealth.Value
+            });
+            
+            CurrentGameData.Player.Attributes.Add(new AttributeDto
+            {
+                Attribute = 4,
+                Value = player.MagicDamage.Value
+            });
+            
             _gameDataDao.Save(CurrentGameData);
         }
     }

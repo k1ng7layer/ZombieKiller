@@ -186,6 +186,10 @@ public partial class GameEntity
 		{
 			CopyNavmeshAgentTo(NavmeshAgent);
 		}
+		else if (component is Ecs.Game.Components.UnitParameters.BaseMaxHealthComponent BaseMaxHealth)
+		{
+			CopyBaseMaxHealthTo(BaseMaxHealth);
+		}
 		else if (component is Ecs.Game.Components.UnitParameters.AdditionalMagicDamage AdditionalMagicDamage)
 		{
 			CopyAdditionalMagicDamageTo(AdditionalMagicDamage);
@@ -206,10 +210,6 @@ public partial class GameEntity
 		{
 			CopyMaxHealthTo(MaxHealth);
 		}
-		else if (component is Ecs.Game.Components.UnitParameters.AdditionalHealthComponent AdditionalHealth)
-		{
-			CopyAdditionalHealthTo(AdditionalHealth);
-		}
 		else if (component is Ecs.Game.Components.UnitParameters.MagicDamageComponent MagicDamage)
 		{
 			CopyMagicDamageTo(MagicDamage);
@@ -225,10 +225,6 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.UnitParameters.HealthComponent Health)
 		{
 			CopyHealthTo(Health);
-		}
-		else if (component is Ecs.Game.Components.UnitParameters.BaseMaxHealthComponent BaseMaxHealth)
-		{
-			CopyBaseMaxHealthTo(BaseMaxHealth);
 		}
 		else if (component is Ecs.Game.Components.Combat.WeaponComponent Weapon)
 		{

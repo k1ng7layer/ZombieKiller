@@ -46,24 +46,84 @@ namespace Ecs.Commands.Systems.PowerUp
            
            var powerUps = _powerUpBase.PowerUpS;
            var randomId = _randomProvider.Range(0, powerUps.Count);
-           var powerUpSettings = _powerUpBase.PowerUpS[command.Id];
-           var powerUpEntity = _powerUp.CreateEntity();
-           var powerUpOwner = _game.GetEntityWithUid(command.Owner);
-           
-           powerUpEntity.AddPowerUp(randomId);
-           powerUpEntity.AddOwner(command.Owner);
-           powerUpEntity.IsActive = true;
-           powerUpEntity.AddUid(UidGenerator.Next());
-           powerUpEntity.AddLifeTime(powerUpSettings.LifeTime.LifeTimeType);
-           powerUpEntity.IsPlayerBuff = powerUpOwner.IsPlayer;
-           
-           
-           if (powerUpSettings.LifeTime.LifeTimeType is EPowerUpLifeTime.Temporary or EPowerUpLifeTime.Charges)
+           var powerUpSettings = _powerUpBase.PowerUpS[randomId];
+           var ownerEntity = _game.GetEntityWithUid(command.Owner);
+
+           if (powerUpSettings.LifeTime.LifeTimeType != EPowerUpLifeTime.Permanent)
            {
-               powerUpEntity.AddResource(powerUpSettings.LifeTime.LifeTimeValue);
+               CreateTemporaryPowerUp(randomId, command.Owner);
            }
+           else
+           {
+               foreach (var powerUpStat in powerUpSettings.UnitStatsGain)
+               {
+                   switch (powerUpStat.StatType)
+                   {
+                       case EUnitStat.HEALTH:
+                           var maxHealth = ownerEntity.MaxHealth.Value;
+                           var newHealth = Recalculate(powerUpStat.Operation, maxHealth, powerUpStat.Value);
+                           ownerEntity.ReplaceMaxHealth(newHealth);
+                           ownerEntity.ReplaceBaseMaxHealth(newHealth);
+                           break;
+                       case EUnitStat.MOVE_SPEED:
+                           break;
+                       case EUnitStat.ARMOR:
+                           break;
+                       case EUnitStat.ATTACK_DAMAGE:
+                           var dmg = ownerEntity.PhysicalDamage.Value;
+                           var newDmg = Recalculate(powerUpStat.Operation, dmg, powerUpStat.Value);
+                           ownerEntity.ReplacePhysicalDamage(newDmg);
+                           break;
+                       case EUnitStat.ABILITY_POWER:
+                           // var maxHealth = ownerEntity.MaxHealth.Value;
+                           // var newHealth = Recalculate(powerUpStat.Operation, maxHealth, powerUpStat.Value);
+                           // ownerEntity.ReplaceMaxHealth(newHealth);
+                           // ownerEntity.ReplaceBaseMaxHealth(newHealth);
+                           break;
+                   }
+               }
+           }
+          
+        }
+        
+        private float Recalculate(EOperation operation, float current, float delta)
+        {
+            switch (operation)
+            {
+                case EOperation.Add:
+                    current += delta;
+                    break;
+                case EOperation.Subtract:
+                    current -= delta;
+                    break;
+                case EOperation.Multiply:
+                    current *= delta;
+                    break;
+            }
+
+            return current;
+        }
+
+        private void CreateTemporaryPowerUp(int powerUpId, Uid owner)
+        {
+            var powerUpSettings = _powerUpBase.PowerUpS[powerUpId];
+            var powerUpEntity = _powerUp.CreateEntity();
+            var powerUpOwner = _game.GetEntityWithUid(owner);
            
-           _commandBuffer.RecalculateUnitAttributes(command.Owner);
+            powerUpEntity.AddPowerUp(powerUpId);
+            powerUpEntity.AddOwner(owner);
+            powerUpEntity.IsActive = true;
+            powerUpEntity.AddUid(UidGenerator.Next());
+            powerUpEntity.AddLifeTime(powerUpSettings.LifeTime.LifeTimeType);
+            powerUpEntity.IsPlayerBuff = powerUpOwner.IsPlayer;
+           
+           
+            if (powerUpSettings.LifeTime.LifeTimeType is EPowerUpLifeTime.Temporary or EPowerUpLifeTime.Charges)
+            {
+                powerUpEntity.AddResource(powerUpSettings.LifeTime.LifeTimeValue);
+            }
+           
+            _commandBuffer.RecalculateUnitAttributes(owner);
         }
     }
 }

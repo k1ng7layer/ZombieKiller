@@ -7,6 +7,7 @@ using Game.Data;
 using Game.Providers.GameFieldProvider;
 using Game.Services.Dao;
 using Game.Services.Inventory;
+using Game.Utils;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
@@ -63,11 +64,14 @@ namespace Ecs.Game.Systems.Initialize
             player.AddUid(playerUid);
             player.AddRotation(playerView.transform.rotation);
             player.AddPosition(playerView.transform.position);
-            player.AddHealth(_playerSettings.BaseMaxHealth);
-            player.AddMaxHealth(_playerSettings.BaseMaxHealth);
-            player.AddBaseMaxHealth(_playerSettings.BaseMaxHealth);
-            player.AddMagicDamage(0);
-            player.AddAdditionalHealth(0);
+           
+            var hasHealth = TryLoadAttribute(EUnitStat.HEALTH, saveData, out var maxHealth);
+            player.AddHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
+            player.AddMaxHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
+            player.AddBaseMaxHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
+            
+            var hasMagicDmg = TryLoadAttribute(EUnitStat.ABILITY_POWER, saveData, out var abPower);
+            player.AddMagicDamage(hasMagicDmg ? 0 : abPower);
             player.AddAttackCooldown(0);
             player.AddAttackSpeed(_playerSettings.BaseAttackSpeed);
             player.IsUnit = true;
@@ -104,6 +108,32 @@ namespace Ecs.Game.Systems.Initialize
             {
                 _playerInventoryService.TryAdd(starterItemId);
             }
+        }
+
+        private bool TryLoadAttribute(
+            EUnitStat unitStat, 
+            GameData gameData, 
+            out float value
+        )
+        {
+            value = 0;
+            
+            if (gameData == null)
+                return false;
+            
+            foreach (var attributeDto in gameData.Player.Attributes)
+            { 
+                var attrType = (EUnitStat)attributeDto.Attribute;
+                
+                if (unitStat != attrType)
+                    continue;
+
+                value = attributeDto.Value;
+
+                return true;
+            }
+            
+            return false;
         }
     }
 }

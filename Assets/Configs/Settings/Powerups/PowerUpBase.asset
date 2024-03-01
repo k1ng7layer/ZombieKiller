@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PowerUpBase
   m_EditorClassIdentifier: 
   powerUpSettings:
-  - {fileID: 11400000, guid: f729507d612d35342b14bbb0f3c90d8b, type: 2}
+  - {fileID: 11400000, guid: e468f06c80bd0a1439d5272ca619d19a, type: 2}
