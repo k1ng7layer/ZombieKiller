@@ -7,6 +7,6 @@ namespace Db.LootParams
     public class LootParams
     {
         public EItemType ItemType;
-        public int[] ItemsIds;
+        public string[] ItemsIds;
     }
 }

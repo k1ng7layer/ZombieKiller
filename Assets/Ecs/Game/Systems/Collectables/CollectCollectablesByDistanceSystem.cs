@@ -1,4 +1,5 @@
 using Db.Player;
+using Ecs.Commands;
 using Ecs.Utils.Groups;
 using Game.Services.Inventory;
 using JCMG.EntitasRedux;
@@ -6,7 +7,7 @@ using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
 
-namespace Ecs.Game.Systems
+namespace Ecs.Game.Systems.Collectables
 {
     [Install(ExecutionType.Game, ExecutionPriority.High, 900, nameof(EFeatures.Common))]
     public class CollectCollectablesByDistanceSystem : IUpdateSystem
@@ -51,7 +52,7 @@ namespace Ecs.Game.Systems
                        continue; 
                     }
                     
-                    //_commandBuffer.CollectItem(collectable.Collectable.Info);
+                    _commandBuffer.CollectItem(collectable.Collectable.CollectableInfo.ItemId);
                     collectable.IsDestroyed = true;
                 }
             }

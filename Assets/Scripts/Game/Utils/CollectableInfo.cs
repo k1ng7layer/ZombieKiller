@@ -1,14 +1,22 @@
+using UnityEngine;
+
 namespace Game.Utils
 {
     public readonly struct CollectableInfo
     {
         public readonly EItemType Type;
-        public readonly int Id;
+        public readonly string ItemId;
+        public readonly Vector3 DropCenter;
 
-        public CollectableInfo(EItemType type, int id)
+        public CollectableInfo(
+            EItemType type, 
+            string itemId, 
+            Vector3 dropCenter
+        )
         {
             Type = type;
-            Id = id;
+            ItemId = itemId;
+            DropCenter = dropCenter;
         }
     }
 }

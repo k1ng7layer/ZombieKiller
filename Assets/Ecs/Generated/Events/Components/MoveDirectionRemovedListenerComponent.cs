@@ -7,12 +7,14 @@
 //		the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial interface ICollectableEntity
+[JCMG.EntitasRedux.DontGenerate(false)]
+public sealed class MoveDirectionRemovedListenerComponent : JCMG.EntitasRedux.IComponent, System.IDisposable
 {
-	Ecs.Game.Components.Collectables.CollectableComponent Collectable { get; }
-	bool HasCollectable { get; }
+	public event OnGameMoveDirectionRemoved Delegate;
 
-	void AddCollectable(Game.Utils.CollectableInfo newCollectableInfo);
-	void ReplaceCollectable(Game.Utils.CollectableInfo newCollectableInfo);
-	void RemoveCollectable();
+	public bool IsEmpty => Delegate == null;
+
+	public void Invoke(GameEntity entity) => Delegate(entity);
+
+	void System.IDisposable.Dispose() => Delegate = null;
 }

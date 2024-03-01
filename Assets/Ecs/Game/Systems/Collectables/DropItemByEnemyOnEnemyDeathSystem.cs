@@ -9,7 +9,7 @@ using Plugins.Extensions.InstallerGenerator.Enums;
 
 namespace Ecs.Game.Systems.Collectables
 {
-   // [Install(ExecutionType.Game, ExecutionPriority.High, 950, nameof(EFeatures.Combat))]
+   [Install(ExecutionType.Game, ExecutionPriority.High, 950, nameof(EFeatures.Combat))]
     public class DropItemByEnemyOnEnemyDeathSystem : ReactiveSystem<GameEntity>
     {
         private readonly ICommandBuffer _commandBuffer;
@@ -34,15 +34,20 @@ namespace Ecs.Game.Systems.Collectables
         {
             foreach (var entity in entities)
             {
-                // var enemyParams = _enemyParamsBase.GetEnemyParams(entity.Enemy.EnemyType);
-                //
-                // foreach (var lootParams in enemyParams.LootPreset.LootPresets)
-                // {
-                //     foreach (var itemId in lootParams.ItemsIds)
-                //     {
-                //         _commandBuffer.DropItem(new CollectableInfo(lootParams.ItemType, itemId));
-                //     }
-                // }
+                var enemyParams = _enemyParamsBase.GetEnemyParams(entity.Enemy.EnemyType);
+                
+                foreach (var lootParams in enemyParams.LootPreset.LootPresets)
+                {
+                    foreach (var itemId in lootParams.ItemsIds)
+                    {
+                        _commandBuffer.DropItem(
+                            new CollectableInfo(
+                                lootParams.ItemType, 
+                                itemId, 
+                                entity.Position.Value
+                                ));
+                    }   
+                }
             }
         }
     }

@@ -7,12 +7,4 @@
 //		the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial interface ICollectableEntity
-{
-	Ecs.Game.Components.Collectables.CollectableComponent Collectable { get; }
-	bool HasCollectable { get; }
-
-	void AddCollectable(Game.Utils.CollectableInfo newCollectableInfo);
-	void ReplaceCollectable(Game.Utils.CollectableInfo newCollectableInfo);
-	void RemoveCollectable();
-}
+public delegate void OnGameMoveDirectionRemoved(GameEntity entity);
