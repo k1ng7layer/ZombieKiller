@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Db.Items.Repositories.Impl;
-using Game.Extensions;
 using Game.Utils;
 using Unity.Collections;
 using UnityEditor;
@@ -30,6 +29,9 @@ namespace Db.Items.Impl
             //GenerateIds();
         }
         
+        public IReadOnlyList<Item> Items => _items;
+        public ItemRepository<Potion> PotionRepository => _potionRepo;
+        public ItemRepository<Weapon> WeaponRepository => _weaponRepo;
 
         public Item GetItem(string id)
         {
@@ -58,6 +60,18 @@ namespace Db.Items.Impl
             }
            
             AssetDatabase.SaveAssets();
+        }
+
+        public IReadOnlyList<Item> GetItemsByType(EItemType itemType)
+        {
+            return itemType switch
+            {
+                EItemType.Any => default,
+                EItemType.Weapon => _weaponRepo.Items,
+                EItemType.Cloth => default,
+                EItemType.Potion => _potionRepo.Items,
+                EItemType.Special => default,
+            };
         }
     }
     

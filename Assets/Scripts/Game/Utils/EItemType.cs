@@ -5,7 +5,7 @@ namespace Game.Utils
         Any,
         Weapon,
         Cloth,
-        Consumable,
+        Potion,
         Special
     }
 }
