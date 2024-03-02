@@ -50,10 +50,12 @@ namespace Game.Services.SaveService.Impl
         public void Save()
         {
             var player = _game.PlayerEntity;
-            
+
+            CurrentGameData.Inventory.Capacity = _playerInventoryService.Capacity;
             CurrentGameData.Inventory.Items = _playerInventoryService.GetAll().ToList();
             CurrentGameData.Player.Experience = player.Experience.Value;
             CurrentGameData.Player.Level = player.UnitLevel.Value;
+            CurrentGameData.Player.Attributes.Clear();
             
             CurrentGameData.Player.Attributes.Add(new AttributeDto
             {

@@ -79,27 +79,13 @@ namespace Ecs.Game.Systems.Initialize
             }
             
             _linkedEntityRepository.Add(playerView.transform.GetHashCode(), player);
-
-            InitializeInventory();
         }
 
         private void CreateWeapon(string weaponId, Uid playerUid)
         {
             _commandBuffer.EquipWeapon(weaponId, playerUid);
         }
-
-        private void InitializeInventory()
-        {
-            var capacity = _playerInventorySettings.BasicCapacity;
-            
-            _playerInventoryService.ChangeCapacity(capacity);
-
-            foreach (var starterItemId in _playerInventorySettings.StarterItemsIds)
-            {
-                _playerInventoryService.TryAdd(starterItemId);
-            }
-        }
-
+        
         private void SetupAttributes(GameEntity player, GameData gameData)
         {
             var hasHealth = TryLoadAttribute(EUnitStat.HEALTH, gameData, out var maxHealth);

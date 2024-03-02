@@ -39,10 +39,10 @@ namespace Ecs.Commands
             command.Transform = transform;
         }
 
-        public static void CollectItem(this ICommandBuffer commandBuffer, Int32 id)
+        public static void CollectItem(this ICommandBuffer commandBuffer, String itemId)
         {
             ref var command = ref commandBuffer.Create<CollectItemCommand>();
-            command.id = id;
+            command.ItemId = itemId;
         }
 
         public static void DropItem(this ICommandBuffer commandBuffer, CollectableInfo info)
@@ -51,11 +51,16 @@ namespace Ecs.Commands
             command.Info = info;
         }
 
-        public static void EquipWeapon(this ICommandBuffer commandBuffer, string weaponId, Uid owner)
+        public static void EquipWeapon(this ICommandBuffer commandBuffer, String weaponId, Uid owner)
         {
             ref var command = ref commandBuffer.Create<EquipWeaponCommand>();
             command.WeaponId = weaponId;
             command.Owner = owner;
+        }
+
+        public static void LevelUp(this ICommandBuffer commandBuffer)
+        {
+            ref var command = ref commandBuffer.Create<LevelUpCommand>();
         }
 
         public static void LoadNextStage(this ICommandBuffer commandBuffer)

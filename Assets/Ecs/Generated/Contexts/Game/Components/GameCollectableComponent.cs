@@ -12,22 +12,22 @@ public partial class GameEntity
 	public Ecs.Game.Components.Collectables.CollectableComponent Collectable { get { return (Ecs.Game.Components.Collectables.CollectableComponent)GetComponent(GameComponentsLookup.Collectable); } }
 	public bool HasCollectable { get { return HasComponent(GameComponentsLookup.Collectable); } }
 
-	public void AddCollectable(Game.Utils.CollectableInfo newInfo)
+	public void AddCollectable(Game.Utils.CollectableInfo newCollectableInfo)
 	{
 		var index = GameComponentsLookup.Collectable;
 		var component = (Ecs.Game.Components.Collectables.CollectableComponent)CreateComponent(index, typeof(Ecs.Game.Components.Collectables.CollectableComponent));
 		#if !ENTITAS_REDUX_NO_IMPL
-		component.Info = newInfo;
+		component.CollectableInfo = newCollectableInfo;
 		#endif
 		AddComponent(index, component);
 	}
 
-	public void ReplaceCollectable(Game.Utils.CollectableInfo newInfo)
+	public void ReplaceCollectable(Game.Utils.CollectableInfo newCollectableInfo)
 	{
 		var index = GameComponentsLookup.Collectable;
 		var component = (Ecs.Game.Components.Collectables.CollectableComponent)CreateComponent(index, typeof(Ecs.Game.Components.Collectables.CollectableComponent));
 		#if !ENTITAS_REDUX_NO_IMPL
-		component.Info = newInfo;
+		component.CollectableInfo = newCollectableInfo;
 		#endif
 		ReplaceComponent(index, component);
 	}
@@ -37,7 +37,7 @@ public partial class GameEntity
 		var index = GameComponentsLookup.Collectable;
 		var component = (Ecs.Game.Components.Collectables.CollectableComponent)CreateComponent(index, typeof(Ecs.Game.Components.Collectables.CollectableComponent));
 		#if !ENTITAS_REDUX_NO_IMPL
-		component.Info = copyComponent.Info;
+		component.CollectableInfo = copyComponent.CollectableInfo;
 		#endif
 		ReplaceComponent(index, component);
 	}

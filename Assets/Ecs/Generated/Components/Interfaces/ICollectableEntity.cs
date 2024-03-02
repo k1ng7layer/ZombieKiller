@@ -12,7 +12,7 @@ public partial interface ICollectableEntity
 	Ecs.Game.Components.Collectables.CollectableComponent Collectable { get; }
 	bool HasCollectable { get; }
 
-	void AddCollectable(Game.Utils.CollectableInfo newInfo);
-	void ReplaceCollectable(Game.Utils.CollectableInfo newInfo);
+	void AddCollectable(Game.Utils.CollectableInfo newCollectableInfo);
+	void ReplaceCollectable(Game.Utils.CollectableInfo newCollectableInfo);
 	void RemoveCollectable();
 }

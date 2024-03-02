@@ -9,5 +9,10 @@ namespace Game.Ui.Inventory
         public Image Icon;
         public Button Btn;
         public Image Selected;
+
+        public void ResetView()
+        {
+            Icon.sprite = null;
+        }
     }
 }

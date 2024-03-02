@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: HealthPotionLoot
   m_EditorClassIdentifier: 
   LootPresets:
-  - ItemType: 2
-    ItemsIds: 00000000
+  - ItemType: 3
+    ItemsIds:
+    - 0HN1N15HVNIDN

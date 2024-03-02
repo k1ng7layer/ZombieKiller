@@ -86,18 +86,19 @@ public static class GameComponentsLookup
 	public const int LinkRemovedListener = 70;
 	public const int MaxHealthListener = 71;
 	public const int MoveDirectionListener = 72;
-	public const int MovingListener = 73;
-	public const int MovingRemovedListener = 74;
-	public const int ParentTransformListener = 75;
-	public const int PerformingAttackListener = 76;
-	public const int PlayerCoinsListener = 77;
-	public const int PositionListener = 78;
-	public const int RotationListener = 79;
-	public const int UnitLevelListener = 80;
-	public const int VisibleListener = 81;
-	public const int VisibleRemovedListener = 82;
+	public const int MoveDirectionRemovedListener = 73;
+	public const int MovingListener = 74;
+	public const int MovingRemovedListener = 75;
+	public const int ParentTransformListener = 76;
+	public const int PerformingAttackListener = 77;
+	public const int PlayerCoinsListener = 78;
+	public const int PositionListener = 79;
+	public const int RotationListener = 80;
+	public const int UnitLevelListener = 81;
+	public const int VisibleListener = 82;
+	public const int VisibleRemovedListener = 83;
 
-	public const int TotalComponents = 83;
+	public const int TotalComponents = 84;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -174,6 +175,7 @@ public static class GameComponentsLookup
 		"LinkRemovedListener",
 		"MaxHealthListener",
 		"MoveDirectionListener",
+		"MoveDirectionRemovedListener",
 		"MovingListener",
 		"MovingRemovedListener",
 		"ParentTransformListener",
@@ -261,6 +263,7 @@ public static class GameComponentsLookup
 		typeof(LinkRemovedListenerComponent),
 		typeof(MaxHealthListenerComponent),
 		typeof(MoveDirectionListenerComponent),
+		typeof(MoveDirectionRemovedListenerComponent),
 		typeof(MovingListenerComponent),
 		typeof(MovingRemovedListenerComponent),
 		typeof(ParentTransformListenerComponent),
@@ -348,16 +351,17 @@ public static class GameComponentsLookup
 		{ typeof(LinkRemovedListenerComponent), 70 },
 		{ typeof(MaxHealthListenerComponent), 71 },
 		{ typeof(MoveDirectionListenerComponent), 72 },
-		{ typeof(MovingListenerComponent), 73 },
-		{ typeof(MovingRemovedListenerComponent), 74 },
-		{ typeof(ParentTransformListenerComponent), 75 },
-		{ typeof(PerformingAttackListenerComponent), 76 },
-		{ typeof(PlayerCoinsListenerComponent), 77 },
-		{ typeof(PositionListenerComponent), 78 },
-		{ typeof(RotationListenerComponent), 79 },
-		{ typeof(UnitLevelListenerComponent), 80 },
-		{ typeof(VisibleListenerComponent), 81 },
-		{ typeof(VisibleRemovedListenerComponent), 82 }
+		{ typeof(MoveDirectionRemovedListenerComponent), 73 },
+		{ typeof(MovingListenerComponent), 74 },
+		{ typeof(MovingRemovedListenerComponent), 75 },
+		{ typeof(ParentTransformListenerComponent), 76 },
+		{ typeof(PerformingAttackListenerComponent), 77 },
+		{ typeof(PlayerCoinsListenerComponent), 78 },
+		{ typeof(PositionListenerComponent), 79 },
+		{ typeof(RotationListenerComponent), 80 },
+		{ typeof(UnitLevelListenerComponent), 81 },
+		{ typeof(VisibleListenerComponent), 82 },
+		{ typeof(VisibleRemovedListenerComponent), 83 }
 	};
 
 	/// <summary>

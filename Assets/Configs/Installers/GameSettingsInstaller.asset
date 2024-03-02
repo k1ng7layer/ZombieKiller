@@ -15,11 +15,8 @@ MonoBehaviour:
   prefabsBase: {fileID: 11400000, guid: f4ee8c4e413ab1d4aaecbe14de1fc22a, type: 2}
   cameraBase: {fileID: 11400000, guid: f7a3e81b87488e54db5bc00f204aeba7, type: 2}
   playerSettings: {fileID: 11400000, guid: f55ac37274fbc2c41bdcda26294a240c, type: 2}
-  weaponRepository: {fileID: 11400000, guid: 1ef29f4177fca7d47b23b319ff313a47, type: 2}
   enemyParamsBase: {fileID: 11400000, guid: dad79fbaa9eda7d4ba1079cd22cfaeee, type: 2}
   projectileBase: {fileID: 11400000, guid: f71f970b8eb91b6458e3e0818a2cc91c, type: 2}
   powerUpBase: {fileID: 11400000, guid: 5baaa8d268776ea4caeae69f9ba7f57b, type: 2}
   aiBTreeSettingsBase: {fileID: 11400000, guid: 58129ff6ed872074cbf13c2076c9eb0a, type: 2}
-  itemsBase: {fileID: 11400000, guid: a10744c23a05b3f4da2cd5e33802a9b8, type: 2}
-  potionRepository: {fileID: 11400000, guid: 6fbf36f3ca1684543bb3bf54c43c4829, type: 2}
-  playerInventorySettings: {fileID: 11400000, guid: 52b4ef15516c35444b4ce5df2f242064, type: 2}
+  lootSettings: {fileID: 11400000, guid: b06778631309ac44685e2d33faa5fcaf, type: 2}

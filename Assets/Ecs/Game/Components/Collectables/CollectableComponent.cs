@@ -6,6 +6,6 @@ namespace Ecs.Game.Components.Collectables
     [Game]
     public class CollectableComponent : IComponent
     {
-        public CollectableInfo Info;
+        public CollectableInfo CollectableInfo;
     }
 }

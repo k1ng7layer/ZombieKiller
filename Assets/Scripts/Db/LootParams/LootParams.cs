@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Game.Utils;
 
 namespace Db.LootParams
@@ -7,6 +8,7 @@ namespace Db.LootParams
     public class LootParams
     {
         public EItemType ItemType;
-        public int[] ItemsIds;
+        public List<string> ItemsIds;
+        public bool IsRandom;
     }
 }

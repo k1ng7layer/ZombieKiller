@@ -27,7 +27,7 @@ namespace Installers.Project
             Container.BindInterfacesTo<UnityTimerProvider>().AsSingle();
             Container.Bind<ISceneLoadingManager>().To<SceneLoadingManager>().AsSingle();
             Container.Bind<ILevelSettingsBase>().FromInstance(levelSettingsBase);
-            Container.Bind<IPlayerInventoryService>().To<PlayerInventoryService>().AsSingle();
+            Container.BindInterfacesTo<PlayerInventoryService>().AsSingle();
             
             Container.BindInterfacesTo<LocalStorageDao<GameData>>()
                 .AsSingle()

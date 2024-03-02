@@ -10,6 +10,8 @@ using Db.Items;
 using Db.Items.Impl;
 using Db.Items.Repositories;
 using Db.Items.Repositories.Impl;
+using Db.Loot;
+using Db.Loot.Impl;
 using Db.Player;
 using Db.Player.Impl;
 using Db.PowerUps;
@@ -29,20 +31,16 @@ namespace Installers.Game
         [SerializeField] private PrefabsBase prefabsBase;
         [SerializeField] private CameraBase cameraBase;
         [SerializeField] private PlayerSettings playerSettings;
-        [SerializeField] private WeaponRepository weaponRepository;
         [SerializeField] private EnemyParamsBase enemyParamsBase;
         [SerializeField] private ProjectileBase projectileBase;
         [SerializeField] private PowerUpBase powerUpBase;
         [SerializeField] private AiBTreeSettingsBase aiBTreeSettingsBase;
-        [SerializeField] private ItemsBase itemsBase;
-        [SerializeField] private PotionRepository potionRepository;
-        [SerializeField] private PlayerInventorySettings playerInventorySettings;
+        [SerializeField] private LootSettings lootSettings;
+
        
 
         public override void InstallBindings()
-        {
-            Container.Bind<IWeaponRepository>().FromInstance(weaponRepository);
-            Container.Bind<IPotionRepository>().FromInstance(potionRepository);
+        { ;
             Container.Bind<IPrefabsBase>().FromInstance(prefabsBase);
             Container.Bind<ICameraBase>().FromInstance(cameraBase);
             Container.Bind<IPlayerSettings>().FromInstance(playerSettings);
@@ -50,8 +48,7 @@ namespace Installers.Game
             Container.Bind<IProjectileBase>().FromInstance(projectileBase);
             Container.Bind<IPowerUpBase>().FromInstance(powerUpBase);
             Container.Bind<IAiBTreeSettingsBase>().To<AiBTreeSettingsBase>().FromInstance(aiBTreeSettingsBase).AsSingle();
-            Container.Bind<IItemsBase>().To<ItemsBase>().FromInstance(itemsBase).AsSingle();
-            Container.Bind<IPlayerInventorySettings>().To<PlayerInventorySettings>().FromInstance(playerInventorySettings).AsSingle();
+            Container.Bind<ILootSettings>().To<LootSettings>().FromInstance(lootSettings).AsSingle();
         }
     }
 }

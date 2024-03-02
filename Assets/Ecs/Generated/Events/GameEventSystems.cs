@@ -27,6 +27,7 @@ public sealed class GameEventSystems : Feature
 		Add(new LinkRemovedEventSystem(context)); // priority: 0
 		Add(new MaxHealthEventSystem(context)); // priority: 0
 		Add(new MoveDirectionEventSystem(context)); // priority: 0
+		Add(new MoveDirectionRemovedEventSystem(context)); // priority: 0
 		Add(new MovingEventSystem(context)); // priority: 0
 		Add(new MovingRemovedEventSystem(context)); // priority: 0
 		Add(new ParentTransformEventSystem(context)); // priority: 0

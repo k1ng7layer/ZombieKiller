@@ -4,7 +4,7 @@ namespace Db.Items.Repositories
 {
     public interface IItemRepository<T> where T : Item
     {
-        IReadOnlyList<T> Items { get; }
+        List<T> Items { get; }
         // void Add(T item);
         // void Clear();
     }
