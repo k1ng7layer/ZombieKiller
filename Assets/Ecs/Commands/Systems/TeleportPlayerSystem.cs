@@ -27,10 +27,13 @@ namespace Ecs.Commands.Systems
             var portalHash = command.PortalHash;
 
             var portal = _linkedEntityRepository.Get(portalHash);
-            
-            if (portal.Portal.PortalDestination == EPortalDestination.NextLevel)
+
+            if (portal.Portal.PortalDestination == EPortalDestination.NextLevel && portal.IsActive)
+            {
+                portal.IsActive = false;
                 _commandBuffer.LoadNextStage();
-                
+            }
+            
             if (portal.Portal.PortalDestination == EPortalDestination.Shelter)
                 _commandBuffer.LoadShelter();
         }

@@ -83,6 +83,11 @@ namespace Game.Ui.Inventory
         public override void OnHide()
         {
             //View.ItemListCollection.Clear();
+
+            foreach (var itemView in View.ItemListCollection)
+            {
+                itemView.ResetView();
+            }
         }
 
         private void OnItemClick(string itemId)

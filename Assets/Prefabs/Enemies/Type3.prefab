@@ -76,7 +76,8 @@ GameObject:
   - component: {fileID: 7038831773883647762}
   - component: {fileID: 7038831773883647761}
   - component: {fileID: 7550322361234063816}
-  - component: {fileID: 4899592217304936324}
+  - component: {fileID: 5866072844296301743}
+  - component: {fileID: 3758697213159543714}
   m_Layer: 10
   m_Name: Type3
   m_TagString: Untagged
@@ -129,7 +130,7 @@ MonoBehaviour:
   weaponRoot: {fileID: 1177782013289785512}
   _rb: {fileID: 7038831773883647761}
   _animator: {fileID: 8577407286779001862}
-  _damageTrigger: {fileID: 4899592217304936324}
+  _damageTrigger: {fileID: 3758697213159543714}
   healthBarView: {fileID: 7984936004286567157}
   navMeshAgent: {fileID: 7550322361234063816}
 --- !u!54 &7038831773883647761
@@ -170,8 +171,8 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &4899592217304936324
-BoxCollider:
+--- !u!136 &5866072844296301743
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -180,9 +181,24 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.9726317, z: 1}
-  m_Center: {x: 0, y: 1.0226067, z: 0}
+  m_Radius: 0.35
+  m_Height: 2.42
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!136 &3758697213159543714
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038831773883647760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.89
+  m_Height: 2.68
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.12, z: 0}
 --- !u!1001 &1177782012514493349
 PrefabInstance:
   m_ObjectHideFlags: 0

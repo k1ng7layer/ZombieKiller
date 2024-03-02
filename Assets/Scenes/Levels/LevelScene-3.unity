@@ -1901,10 +1901,6 @@ MonoBehaviour:
   enemySpawnPoints:
   - SpawnTransform: {fileID: 445162486}
     EnemyType: 2
-  - SpawnTransform: {fileID: 1080192308}
-    EnemyType: 2
-  - SpawnTransform: {fileID: 1697953364}
-    EnemyType: 2
   levelPortals:
   - {fileID: 1973904108}
   - {fileID: 1316960874}
@@ -3245,7 +3241,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.11000001
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: f92b00397943dcc449824217222b8594, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 20cbc508c644b8044a96e5900bf5b479, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &1483712348
 PrefabInstance:

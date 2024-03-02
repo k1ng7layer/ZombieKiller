@@ -80,7 +80,7 @@ namespace Ecs.Game.Systems.Initialize
             
             _linkedEntityRepository.Add(playerView.transform.GetHashCode(), player);
 
-            InitializeInventory();
+            InitializeInventory(saveData);
         }
 
         private void CreateWeapon(string weaponId, Uid playerUid)
@@ -88,12 +88,13 @@ namespace Ecs.Game.Systems.Initialize
             _commandBuffer.EquipWeapon(weaponId, playerUid);
         }
 
-        private void InitializeInventory()
+        private void InitializeInventory(GameData gameData)
         {
-            var capacity = _playerInventorySettings.BasicCapacity;
+            if (gameData != null)
+                return;
             
-            _playerInventoryService.ChangeCapacity(capacity);
-
+            _playerInventoryService.ChangeCapacity(_playerInventorySettings.BasicCapacity);
+            
             foreach (var starterItemId in _playerInventorySettings.StarterItemsIds)
             {
                 _playerInventoryService.TryAdd(starterItemId);
