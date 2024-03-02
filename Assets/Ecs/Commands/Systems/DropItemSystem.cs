@@ -1,4 +1,5 @@
 using Db.Items;
+using Db.Loot;
 using Ecs.Commands.Command;
 using Game.Providers.RandomProvider;
 using JCMG.EntitasRedux.Commands;
@@ -13,17 +14,20 @@ namespace Ecs.Commands.Systems
     {
         private readonly IRandomProvider _randomProvider;
         private readonly IItemsBase _itemsBase;
+        private readonly ILootSettings _lootSettings;
         private readonly GameContext _game;
 
         public DropItemSystem(
             ICommandBuffer commandBuffer,
             IRandomProvider randomProvider,
             IItemsBase itemsBase,
+            ILootSettings lootSettings,
             GameContext game
         ) : base(commandBuffer)
         {
             _randomProvider = randomProvider;
             _itemsBase = itemsBase;
+            _lootSettings = lootSettings;
             _game = game;
         }
 
@@ -36,7 +40,7 @@ namespace Ecs.Commands.Systems
             var itemSettings = _itemsBase.GetItem(command.Info.ItemId);
             collectable.AddPrefab(itemSettings.Name);
 
-            var dir = Vector3.up * _randomProvider.Range(6f, 8f);
+            var dir = Vector3.up * _lootSettings.InitialVelocityMultiplier;
             dir += new Vector3(_randomProvider.Range(-1f, 1f), 0f, _randomProvider.Range(-1f, 1f));
             
             collectable.ReplaceMoveDirection(dir);

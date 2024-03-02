@@ -10,6 +10,8 @@ using Db.Items;
 using Db.Items.Impl;
 using Db.Items.Repositories;
 using Db.Items.Repositories.Impl;
+using Db.Loot;
+using Db.Loot.Impl;
 using Db.Player;
 using Db.Player.Impl;
 using Db.PowerUps;
@@ -33,6 +35,7 @@ namespace Installers.Game
         [SerializeField] private ProjectileBase projectileBase;
         [SerializeField] private PowerUpBase powerUpBase;
         [SerializeField] private AiBTreeSettingsBase aiBTreeSettingsBase;
+        [SerializeField] private LootSettings lootSettings;
 
        
 
@@ -45,6 +48,7 @@ namespace Installers.Game
             Container.Bind<IProjectileBase>().FromInstance(projectileBase);
             Container.Bind<IPowerUpBase>().FromInstance(powerUpBase);
             Container.Bind<IAiBTreeSettingsBase>().To<AiBTreeSettingsBase>().FromInstance(aiBTreeSettingsBase).AsSingle();
+            Container.Bind<ILootSettings>().To<LootSettings>().FromInstance(lootSettings).AsSingle();
         }
     }
 }

@@ -19,9 +19,9 @@ namespace Installers.Project
         
         public override void InstallBindings()
         {
-            Container.Bind<IItemsBase>().FromInstance(itemsBase);
-            Container.Bind<IWeaponRepository>().FromInstance(weaponRepository);
-            Container.Bind<IPotionRepository>().FromInstance(potionRepository);
+            Container.Bind<IItemsBase>().FromInstance(itemsBase).AsSingle();
+            Container.Bind<IWeaponRepository>().FromInstance(weaponRepository).AsSingle();
+            Container.Bind<IPotionRepository>().FromInstance(potionRepository).AsSingle();
             Container.Bind<IPlayerInventorySettings>().To<PlayerInventorySettings>().FromInstance(playerInventorySettings).AsSingle();
         }
     }

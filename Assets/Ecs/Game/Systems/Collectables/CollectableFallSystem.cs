@@ -1,3 +1,4 @@
+using Db.Loot;
 using Ecs.Core.Interfaces;
 using Ecs.Utils.Groups;
 using Game.Providers.RandomProvider;
@@ -14,16 +15,19 @@ namespace Ecs.Game.Systems.Collectables
         private readonly IGameGroupUtils _gameGroupUtils;
         private readonly IRandomProvider _randomProvider;
         private readonly ITimeProvider _timeProvider;
+        private readonly ILootSettings _lootSettings;
 
         public CollectableFallSystem(
             IGameGroupUtils gameGroupUtils, 
             IRandomProvider randomProvider,
-            ITimeProvider timeProvider
+            ITimeProvider timeProvider,
+            ILootSettings lootSettings
         )
         {
             _gameGroupUtils = gameGroupUtils;
             _randomProvider = randomProvider;
             _timeProvider = timeProvider;
+            _lootSettings = lootSettings;
         }
         
         public void Update()
@@ -46,7 +50,7 @@ namespace Ecs.Game.Systems.Collectables
                     moveDir.y = -4f;
                 else
                 {
-                    moveDir -= Vector3.up * 9 * _timeProvider.DeltaTime;
+                    moveDir -= Vector3.up * _lootSettings.Gravity * _timeProvider.DeltaTime;
                 }
                 
                 collectable.ReplaceMoveDirection(moveDir);
