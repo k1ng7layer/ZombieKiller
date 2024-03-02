@@ -55,6 +55,7 @@ namespace Game.Services.SaveService.Impl
             CurrentGameData.Inventory.Items = _playerInventoryService.GetAll().ToList();
             CurrentGameData.Player.Experience = player.Experience.Value;
             CurrentGameData.Player.Level = player.UnitLevel.Value;
+            CurrentGameData.Player.Attributes.Clear();
             
             CurrentGameData.Player.Attributes.Add(new AttributeDto
             {
