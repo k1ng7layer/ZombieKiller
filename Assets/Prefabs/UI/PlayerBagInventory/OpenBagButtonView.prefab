@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OpenBagBtn: {fileID: 8016798015830938587}
+  CanvasGroup: {fileID: 0}
 --- !u!114 &8016798015830938587
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,7 +26,9 @@ namespace Game.Ui.Inventory.BagButton
         
         public void Initialize()
         {
-            View.OpenBagBtn.OnClickAsObservable().Subscribe(_ => OpenInventory()).AddTo(View);
+            View.OpenBagBtn.OnClickAsObservable()
+                .Subscribe(_ => OpenInventory())
+                 .AddTo(View);
         }
 
         private void OpenInventory()

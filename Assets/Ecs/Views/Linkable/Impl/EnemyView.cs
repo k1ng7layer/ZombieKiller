@@ -43,7 +43,7 @@ namespace Ecs.Views.Linkable.Impl
                 navMeshAgent.enabled = false;
                 Observable.NextFrame().Subscribe(_ =>
                 {
-                    _rb.AddForce(-transform.forward * 5f, ForceMode.Impulse);
+                    _rb.AddForce(-transform.forward * 100f, ForceMode.Impulse);
                 }).AddTo(unsubscribe);
                 
 

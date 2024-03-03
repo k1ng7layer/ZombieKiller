@@ -19,6 +19,7 @@ namespace Ecs.Views.Linkable.Impl
         [SerializeField] protected Rigidbody _rb;
         [SerializeField] protected Animator _animator;
         [SerializeField] private Collider _damageTrigger;
+        [SerializeField] protected Collider _rootCollider;
         
         [Inject] private ICommandBuffer _commandBuffer;
         [Inject] private IWeaponRepository _weaponRepository;
@@ -85,6 +86,7 @@ namespace Ecs.Views.Linkable.Impl
 
         protected virtual void OnDead(GameEntity _)
         {
+            _rootCollider.enabled = false;
             _damageTrigger.enabled = false;
             _animator.SetTrigger(AnimationKeys.Death);
         }

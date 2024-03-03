@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54970127050743dfbd42e104526c8311, type: 3}
-  m_Name: Type4
+  m_Name: Type5
   m_EditorClassIdentifier: 
-  EnemyType: 3
-  Weapon: 0HN1OIA3UIM6F
+  EnemyType: 4
+  Weapon: 0HN1RMD3J338A
   LootPreset: {fileID: 11400000, guid: f4ebaf661f1fbe640a4f644965880bde, type: 2}
-  BaseHealth: 300
+  BaseHealth: 5
   BaseExperience: 300
-  BaseAttackRange: 1.5
-  BaseMoveSpeed: 30
+  BaseAttackRange: 2.5
+  BaseMoveSpeed: 20
   BaseAttackSpeed: 1
