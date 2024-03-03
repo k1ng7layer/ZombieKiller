@@ -58,7 +58,7 @@ namespace Ecs.Views.Linkable.Impl
         {
             entity.Position.Value = transform.position;
             _rb.velocity = dir;
-            Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}, go: {gameObject.name}, velocity {_rb.velocity}");
+            //Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}, go: {gameObject.name}, velocity {_rb.velocity}");
             _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
         }
 

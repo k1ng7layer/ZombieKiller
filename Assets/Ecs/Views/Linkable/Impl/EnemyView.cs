@@ -1,8 +1,10 @@
-﻿using Db.Enemies;
+﻿using System.Collections;
+using Db.Enemies;
 using Game.Utils;
 using Game.Views;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Core.Utils;
+using UniRx;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -39,7 +41,20 @@ namespace Ecs.Views.Linkable.Impl
             {
                 navMeshAgent.isStopped = true;
                 navMeshAgent.enabled = false;
-                _rb.AddForce(-transform.forward * 3.5f, ForceMode.Impulse);
+                Observable.NextFrame().Subscribe(_ =>
+                {
+                    _rb.AddForce(-transform.forward * 5f, ForceMode.Impulse);
+                }).AddTo(unsubscribe);
+                
+
+                Observable.FromCoroutine(StopForce).Subscribe(_ =>
+                {
+                    navMeshAgent.isStopped = false;
+                    navMeshAgent.enabled = true;
+                    navMeshAgent.Warp(_rb.transform.position);
+                    _enemyEntity.Position.Value = transform.position;
+                    _enemyEntity.IsActive = true;
+                });
             }).AddTo(unsubscribe);
             
             navMeshAgent.updatePosition = false;
@@ -52,7 +67,7 @@ namespace Ecs.Views.Linkable.Impl
         {
             var enemyParams = _enemyParamsBase.GetEnemyParams(entity.Enemy.EnemyType);
             var percents = value / enemyParams.BaseHealth;
-            Debug.Log($"EnemyView OnHealthChanged percents: {percents}, value: {value}");
+            //Debug.Log($"EnemyView OnHealthChanged percents: {percents}, value: {value}");
             healthBarView.SetValue(percents);
             
             // _animator.SetTrigger(AnimationKeys.TakeDamage);
@@ -94,39 +109,37 @@ namespace Ecs.Views.Linkable.Impl
 
         private void Update()
         {
-            Debug.Log($"OnDirectionChanged: velocity {_rb.velocity}");
-            if (Input.GetKeyDown(KeyCode.P))
-            { 
-                // navMeshAgent.isStopped = true;
-                // navMeshAgent.enabled = false;
-                //
-                // _rb.AddForce(-transform.forward * 30f, ForceMode.Impulse);
-                
-                
-                // navMeshAgent.isStopped = false;
-                // navMeshAgent.enabled = true;
-                //navMeshAgent.velocity = _rb.velocity;
-
-
-                //navMeshAgent.isStopped = false;
-
-                // _enemyEntity.MoveDirection.Value = -transform.forward * 40f;
-                // _rb.velocity = -transform.forward * 40f;
-            }
-
-            if (_rb.velocity.magnitude <= 0.7f)
-            {
-                navMeshAgent.isStopped = false;
-                navMeshAgent.enabled = true;
-                _enemyEntity.IsActive = true;
-            }
-            
-            if (_enemyEntity == null)
-                return;
+            // Debug.Log($"OnDirectionChanged: velocity {_rb.velocity}, navmesh : {navMeshAgent.isStopped}");
+            // if (Input.GetKeyDown(KeyCode.P))
+            // { 
+            //     // navMeshAgent.isStopped = true;
+            //     // navMeshAgent.enabled = false;
+            //     //
+            //     _rb.AddForce(-transform.forward * 5f, ForceMode.Impulse);
+            //     
+            //     
+            //     // navMeshAgent.isStopped = false;
+            //     // navMeshAgent.enabled = true;
+            //     //navMeshAgent.velocity = _rb.velocity;
             //
-            // var transform1 = transform;
-            // _enemyEntity.Position.Value = transform1.position;
-            // _enemyEntity.Rotation.Value = transform1.rotation;
+            //
+            //     //navMeshAgent.isStopped = false;
+            //
+            //     // _enemyEntity.MoveDirection.Value = -transform.forward * 40f;
+            //     // _rb.velocity = -transform.forward * 40f;
+            // }
+        }
+
+        private IEnumerator StopForce()
+        {
+            float time = 0.5f;
+
+            while (time > 0)
+            {
+                yield return null;
+
+                time -= Time.deltaTime;
+            }
         }
         
     }

@@ -1901,6 +1901,8 @@ MonoBehaviour:
   enemySpawnPoints:
   - SpawnTransform: {fileID: 445162486}
     EnemyType: 3
+  - SpawnTransform: {fileID: 1080192308}
+    EnemyType: 2
   levelPortals:
   - {fileID: 1973904108}
   - {fileID: 1316960874}

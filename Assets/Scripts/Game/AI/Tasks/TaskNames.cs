@@ -40,5 +40,8 @@ namespace Game.AI.Tasks
 		
 		public const string IS_ATTACKING = "is attacking";
 		public const string IS_ATTACKING_PATH = "Condition/is attacking";
+		
+		public const string IS_ACTIVE = "is active";
+		public const string IS_ACTIVE_PATH = "Condition/is active";
 	}
 }
