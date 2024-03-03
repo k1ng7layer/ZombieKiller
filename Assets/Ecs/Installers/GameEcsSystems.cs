@@ -100,6 +100,9 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0205 Combat
 			SystemInstallHelper.Install<PerformRangedAttackSystem>(container);	// 0210 Combat
 
+			// Combat 0225
+			SystemInstallHelper.Install<TurnOffAiAtDamageSystem>(container);	// 0225 Combat
+
 			// Combat 0300
 			SystemInstallHelper.Install<CompletePerformingAttackSystem>(container);	// 0300 Combat
 
@@ -120,10 +123,10 @@ namespace Ecs.Installers {
 			// Combat 0900
 			SystemInstallHelper.Install<AttackCooldownSystem>(container);	// 0900 Combat
 
-			// Common 1000
-			SystemInstallHelper.Install<SetGameStateSystem>(container);	// 1000 Common
-			SystemInstallHelper.Install<DestroyProjectileSystem>(container);	// 1000 Combat
+			// Input 1000
 			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
+			SystemInstallHelper.Install<DestroyProjectileSystem>(container);	// 1000 Combat
+			SystemInstallHelper.Install<SetGameStateSystem>(container);	// 1000 Common
 
 			// Combat 1500
 			SystemInstallHelper.Install<PerformAttackCleanupSystem>(container);	// 1500 Combat

@@ -16,7 +16,7 @@ namespace Ecs.Views.Linkable.Impl
     public class UnitView : ObjectView
     {
         [SerializeField] protected GameObject weaponRoot;
-        [SerializeField] private Rigidbody _rb;
+        [SerializeField] protected Rigidbody _rb;
         [SerializeField] protected Animator _animator;
         [SerializeField] private Collider _damageTrigger;
         
@@ -58,7 +58,7 @@ namespace Ecs.Views.Linkable.Impl
         {
             entity.Position.Value = transform.position;
             _rb.velocity = dir;
-            Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}");
+            Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}, go: {gameObject.name}, velocity {_rb.velocity}");
             _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
         }
 

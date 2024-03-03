@@ -44,6 +44,7 @@ namespace Ecs.Commands.Systems
             enemyEntity.AddAttackCooldown(0);
             enemyEntity.IsUnit = true;
             enemyEntity.IsAi = true;
+            enemyEntity.IsActive = true;
         }
     }
 }

@@ -28,6 +28,19 @@ namespace Ecs.Views.Linkable.Impl
             _enemyEntity.SubscribeDestination(OnDestinationAdded).AddTo(unsubscribe);
             _enemyEntity.SubscribeMoving(_ => { OnMovingStateChanged(true);}).AddTo(unsubscribe);
             _enemyEntity.SubscribeMovingRemoved(_=> {OnMovingStateChanged(false);}).AddTo(unsubscribe);
+            _enemyEntity.SubscribeActiveRemoved(_ =>
+            {
+                // navMeshAgent.isStopped = true;
+                // navMeshAgent.enabled = false;
+                
+            }).AddTo(unsubscribe);
+
+            _enemyEntity.SubscribeHitCounter((_, _) =>
+            {
+                navMeshAgent.isStopped = true;
+                navMeshAgent.enabled = false;
+                _rb.AddForce(-transform.forward * 3.5f, ForceMode.Impulse);
+            }).AddTo(unsubscribe);
             
             navMeshAgent.updatePosition = false;
             navMeshAgent.updateRotation = false;
@@ -81,12 +94,40 @@ namespace Ecs.Views.Linkable.Impl
 
         private void Update()
         {
+            Debug.Log($"OnDirectionChanged: velocity {_rb.velocity}");
+            if (Input.GetKeyDown(KeyCode.P))
+            { 
+                // navMeshAgent.isStopped = true;
+                // navMeshAgent.enabled = false;
+                //
+                // _rb.AddForce(-transform.forward * 30f, ForceMode.Impulse);
+                
+                
+                // navMeshAgent.isStopped = false;
+                // navMeshAgent.enabled = true;
+                //navMeshAgent.velocity = _rb.velocity;
+
+
+                //navMeshAgent.isStopped = false;
+
+                // _enemyEntity.MoveDirection.Value = -transform.forward * 40f;
+                // _rb.velocity = -transform.forward * 40f;
+            }
+
+            if (_rb.velocity.magnitude <= 0.7f)
+            {
+                navMeshAgent.isStopped = false;
+                navMeshAgent.enabled = true;
+                _enemyEntity.IsActive = true;
+            }
+            
             if (_enemyEntity == null)
                 return;
-
-            var transform1 = transform;
-            _enemyEntity.Position.Value = transform1.position;
-            _enemyEntity.Rotation.Value = transform1.rotation;
+            //
+            // var transform1 = transform;
+            // _enemyEntity.Position.Value = transform1.position;
+            // _enemyEntity.Rotation.Value = transform1.rotation;
         }
+        
     }
 }
