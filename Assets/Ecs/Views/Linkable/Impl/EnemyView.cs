@@ -57,8 +57,8 @@ namespace Ecs.Views.Linkable.Impl
                 });
             }).AddTo(unsubscribe);
             
-            navMeshAgent.updatePosition = false;
-            navMeshAgent.updateRotation = false;
+            // navMeshAgent.updatePosition = false;
+            // navMeshAgent.updateRotation = false;
             navMeshAgent.stoppingDistance = _enemyEntity.AttackRange.Value;
             navMeshAgent.speed = _enemyEntity.MoveSpeed.Value / Constants.RbSpeedToNavmeshScale;
         }
@@ -93,10 +93,12 @@ namespace Ecs.Views.Linkable.Impl
             //navMeshAgent.enabled = isMove;
             //_animator.SetFloat(AnimationKeys.Movement, isMove ? 0.7 : 0, Time.deltaTime);
         }
+        
+        
 
         protected override void OnDirectionChanged(GameEntity entity, Vector3 dir)
         {
-            base.OnDirectionChanged(entity, dir);
+            //base.OnDirectionChanged(entity, dir);
             
             // var horizontalVelocity = new Vector3(dir.x, 0, dir.z);
             // var isMoving = horizontalVelocity.magnitude >= 0.01f;
@@ -128,6 +130,11 @@ namespace Ecs.Views.Linkable.Impl
             //     // _enemyEntity.MoveDirection.Value = -transform.forward * 40f;
             //     // _rb.velocity = -transform.forward * 40f;
             // }
+
+            if (_enemyEntity != null)
+            {
+                _enemyEntity.Position.Value = transform.position;
+            }
         }
 
         private IEnumerator StopForce()

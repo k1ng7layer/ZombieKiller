@@ -1900,10 +1900,6 @@ MonoBehaviour:
   playerView: {fileID: 5277602330854475987}
   enemySpawnPoints:
   - SpawnTransform: {fileID: 1697953364}
-    EnemyType: 4
-  - SpawnTransform: {fileID: 445162486}
-    EnemyType: 3
-  - SpawnTransform: {fileID: 1080192308}
     EnemyType: 3
   levelPortals:
   - {fileID: 1973904108}

@@ -21,7 +21,7 @@ namespace Ecs.Game.Systems.Ai
         {
             foreach (var entity in entities)
             {
-                entity.IsActive = false;
+                //entity.IsActive = false;
             }
         }
     }
