@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityLink: {fileID: 5737562238685456533}
+  attackTrigger: {fileID: 3909738970972526437}
 --- !u!65 &3909738970972526437
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -92,14 +92,15 @@ public static class GameComponentsLookup
 	public const int MovingRemovedListener = 76;
 	public const int ParentTransformListener = 77;
 	public const int PerformingAttackListener = 78;
-	public const int PlayerCoinsListener = 79;
-	public const int PositionListener = 80;
-	public const int RotationListener = 81;
-	public const int UnitLevelListener = 82;
-	public const int VisibleListener = 83;
-	public const int VisibleRemovedListener = 84;
+	public const int PerformingAttackRemovedListener = 79;
+	public const int PlayerCoinsListener = 80;
+	public const int PositionListener = 81;
+	public const int RotationListener = 82;
+	public const int UnitLevelListener = 83;
+	public const int VisibleListener = 84;
+	public const int VisibleRemovedListener = 85;
 
-	public const int TotalComponents = 85;
+	public const int TotalComponents = 86;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -182,6 +183,7 @@ public static class GameComponentsLookup
 		"MovingRemovedListener",
 		"ParentTransformListener",
 		"PerformingAttackListener",
+		"PerformingAttackRemovedListener",
 		"PlayerCoinsListener",
 		"PositionListener",
 		"RotationListener",
@@ -271,6 +273,7 @@ public static class GameComponentsLookup
 		typeof(MovingRemovedListenerComponent),
 		typeof(ParentTransformListenerComponent),
 		typeof(PerformingAttackListenerComponent),
+		typeof(PerformingAttackRemovedListenerComponent),
 		typeof(PlayerCoinsListenerComponent),
 		typeof(PositionListenerComponent),
 		typeof(RotationListenerComponent),
@@ -360,12 +363,13 @@ public static class GameComponentsLookup
 		{ typeof(MovingRemovedListenerComponent), 76 },
 		{ typeof(ParentTransformListenerComponent), 77 },
 		{ typeof(PerformingAttackListenerComponent), 78 },
-		{ typeof(PlayerCoinsListenerComponent), 79 },
-		{ typeof(PositionListenerComponent), 80 },
-		{ typeof(RotationListenerComponent), 81 },
-		{ typeof(UnitLevelListenerComponent), 82 },
-		{ typeof(VisibleListenerComponent), 83 },
-		{ typeof(VisibleRemovedListenerComponent), 84 }
+		{ typeof(PerformingAttackRemovedListenerComponent), 79 },
+		{ typeof(PlayerCoinsListenerComponent), 80 },
+		{ typeof(PositionListenerComponent), 81 },
+		{ typeof(RotationListenerComponent), 82 },
+		{ typeof(UnitLevelListenerComponent), 83 },
+		{ typeof(VisibleListenerComponent), 84 },
+		{ typeof(VisibleRemovedListenerComponent), 85 }
 	};
 
 	/// <summary>

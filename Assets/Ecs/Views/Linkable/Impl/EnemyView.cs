@@ -43,12 +43,14 @@ namespace Ecs.Views.Linkable.Impl
                 navMeshAgent.enabled = false;
                 Observable.NextFrame().Subscribe(_ =>
                 {
+                    _rb.isKinematic = false;
                     _rb.AddForce(-transform.forward * 100f, ForceMode.Impulse);
                 }).AddTo(unsubscribe);
                 
 
                 Observable.FromCoroutine(StopForce).Subscribe(_ =>
                 {
+                    _rb.isKinematic = true;
                     navMeshAgent.isStopped = false;
                     navMeshAgent.enabled = true;
                     navMeshAgent.Warp(_rb.transform.position);
@@ -133,7 +135,9 @@ namespace Ecs.Views.Linkable.Impl
 
             if (_enemyEntity != null)
             {
-                _enemyEntity.Position.Value = transform.position;
+                var transform1 = transform;
+                _enemyEntity.Position.Value = transform1.position;
+                _enemyEntity.Rotation.Value = transform1.rotation;
             }
         }
 

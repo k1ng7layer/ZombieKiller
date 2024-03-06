@@ -26,10 +26,6 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
-		else if (component is Ecs.Game.Components.RigidbodyComponent Rigidbody)
-		{
-			CopyRigidbodyTo(Rigidbody);
-		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
@@ -121,6 +117,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.PrefabComponent Prefab)
 		{
 			CopyPrefabTo(Prefab);
+		}
+		else if (component is Ecs.Game.Components.RigidbodyComponent Rigidbody)
+		{
+			CopyRigidbodyTo(Rigidbody);
 		}
 		else if (component is Ecs.Game.Components.ActiveComponent Active)
 		{
