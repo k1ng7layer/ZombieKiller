@@ -1,4 +1,5 @@
 ﻿using Game.Ui.Buffs;
+using Game.Ui.Debug;
 using Game.Ui.Inventory.BagButton;
 using Game.Ui.PlayerStats.Exp;
 using Game.Ui.PlayerStats.Health;
@@ -16,6 +17,7 @@ namespace Game.Ui.Windows
             AddController<PlayerHealthController>();
             AddController<CurrentBuffsController>();
             AddController<OpenBagButtonController>();
+            AddController<ReloadButtonController>();
         }
     }
 }

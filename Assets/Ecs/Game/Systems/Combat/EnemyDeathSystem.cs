@@ -5,11 +5,14 @@ using Plugins.Extensions.InstallerGenerator.Enums;
 
 namespace Ecs.Game.Systems.Combat
 {
-    [Install(ExecutionType.Game, ExecutionPriority.High, 900, nameof(EFeatures.Combat))]
+    [Install(ExecutionType.Game, ExecutionPriority.Normal, 1000, nameof(EFeatures.Combat))]
     public class EnemyDeathSystem : ReactiveSystem<GameEntity>
     {
+        private readonly GameContext _game;
+
         public EnemyDeathSystem(GameContext game) : base(game)
         {
+            _game = game;
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
@@ -22,6 +25,9 @@ namespace Ecs.Game.Systems.Combat
             foreach (var entity in entities)
             {
                 entity.IsDead = true;
+                var weaponInfo = entity.EquippedWeapon.Value;
+                var weapon = _game.GetEntityWithUid(weaponInfo.WeaponEntityUid);
+                weapon.IsPerformingAttack = false;
             }
         }
     }

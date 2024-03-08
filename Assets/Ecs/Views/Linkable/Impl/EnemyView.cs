@@ -30,34 +30,8 @@ namespace Ecs.Views.Linkable.Impl
             _enemyEntity.SubscribeDestination(OnDestinationAdded).AddTo(unsubscribe);
             _enemyEntity.SubscribeMoving(_ => { OnMovingStateChanged(true);}).AddTo(unsubscribe);
             _enemyEntity.SubscribeMovingRemoved(_=> {OnMovingStateChanged(false);}).AddTo(unsubscribe);
-            _enemyEntity.SubscribeActiveRemoved(_ =>
-            {
-                // navMeshAgent.isStopped = true;
-                // navMeshAgent.enabled = false;
-                
-            }).AddTo(unsubscribe);
 
-            _enemyEntity.SubscribeHitCounter((_, _) =>
-            {
-                navMeshAgent.isStopped = true;
-                navMeshAgent.enabled = false;
-                Observable.NextFrame().Subscribe(_ =>
-                {
-                    _rb.isKinematic = false;
-                    _rb.AddForce(-transform.forward * 100f, ForceMode.Impulse);
-                }).AddTo(unsubscribe);
-                
-
-                Observable.FromCoroutine(StopForce).Subscribe(_ =>
-                {
-                    _rb.isKinematic = true;
-                    navMeshAgent.isStopped = false;
-                    navMeshAgent.enabled = true;
-                    navMeshAgent.Warp(_rb.transform.position);
-                    _enemyEntity.Position.Value = transform.position;
-                    _enemyEntity.IsActive = true;
-                });
-            }).AddTo(unsubscribe);
+            _enemyEntity.SubscribeHitCounter(OnHit).AddTo(unsubscribe);
             
             // navMeshAgent.updatePosition = false;
             // navMeshAgent.updateRotation = false;
@@ -82,7 +56,29 @@ namespace Ecs.Views.Linkable.Impl
             
             healthBarView.gameObject.SetActive(false);
             navMeshAgent.isStopped = true;
+            navMeshAgent.enabled = false;
             OnDirectionChanged(_, Vector3.zero);
+        }
+
+        private void OnHit(GameEntity e, int _)
+        {
+            navMeshAgent.isStopped = true;
+            navMeshAgent.enabled = false;
+            Observable.NextFrame().Subscribe(_ =>
+            {
+                _rb.isKinematic = false;
+                _rb.AddForce(-transform.forward * 150f, ForceMode.Impulse);
+            });
+                
+            Observable.FromCoroutine(StopForce).Subscribe(_ =>
+            {
+                _rb.isKinematic = true;
+                navMeshAgent.isStopped = false;
+                navMeshAgent.enabled = true;
+                navMeshAgent.Warp(_rb.transform.position);
+                _enemyEntity.Position.Value = transform.position;
+                _enemyEntity.IsActive = true;
+            });
         }
 
         private void OnDestinationAdded(GameEntity _, Vector3 destination)
@@ -96,10 +92,9 @@ namespace Ecs.Views.Linkable.Impl
             //_animator.SetFloat(AnimationKeys.Movement, isMove ? 0.7 : 0, Time.deltaTime);
         }
         
-        
-
         protected override void OnDirectionChanged(GameEntity entity, Vector3 dir)
         {
+            _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
             //base.OnDirectionChanged(entity, dir);
             
             // var horizontalVelocity = new Vector3(dir.x, 0, dir.z);
@@ -113,26 +108,6 @@ namespace Ecs.Views.Linkable.Impl
 
         private void Update()
         {
-            // Debug.Log($"OnDirectionChanged: velocity {_rb.velocity}, navmesh : {navMeshAgent.isStopped}");
-            // if (Input.GetKeyDown(KeyCode.P))
-            // { 
-            //     // navMeshAgent.isStopped = true;
-            //     // navMeshAgent.enabled = false;
-            //     //
-            //     _rb.AddForce(-transform.forward * 5f, ForceMode.Impulse);
-            //     
-            //     
-            //     // navMeshAgent.isStopped = false;
-            //     // navMeshAgent.enabled = true;
-            //     //navMeshAgent.velocity = _rb.velocity;
-            //
-            //
-            //     //navMeshAgent.isStopped = false;
-            //
-            //     // _enemyEntity.MoveDirection.Value = -transform.forward * 40f;
-            //     // _rb.velocity = -transform.forward * 40f;
-            // }
-
             if (_enemyEntity != null)
             {
                 var transform1 = transform;

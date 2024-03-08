@@ -56,10 +56,9 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<CheckAliveEnemiesSystem>(container);	// 0850 Common
 
 			// Common 0900
+			SystemInstallHelper.Install<StageWinSystem>(container);	// 0900 Common
 			SystemInstallHelper.Install<CollectCollectablesByDistanceSystem>(container);	// 0900 Common
 			SystemInstallHelper.Install<TeleportPlayerSystem>(container);	// 0900 Common
-			SystemInstallHelper.Install<EnemyDeathSystem>(container);	// 0900 Combat
-			SystemInstallHelper.Install<StageWinSystem>(container);	// 0900 Common
 
 			// Common 0920
 			SystemInstallHelper.Install<CollectItemSystem>(container);	// 0920 Common
@@ -103,9 +102,6 @@ namespace Ecs.Installers {
 			// Combat 0225
 			SystemInstallHelper.Install<TurnOffAiAtDamageSystem>(container);	// 0225 Combat
 
-			// Combat 0300
-			SystemInstallHelper.Install<CompletePerformingAttackSystem>(container);	// 0300 Combat
-
 			// Combat 0700
 			SystemInstallHelper.Install<ProjectileMovementSystem>(container);	// 0700 Combat
 			SystemInstallHelper.Install<ProjectileDestroyByDistanceSystem>(container);	// 0710 Combat
@@ -123,13 +119,17 @@ namespace Ecs.Installers {
 			// Combat 0900
 			SystemInstallHelper.Install<AttackCooldownSystem>(container);	// 0900 Combat
 
-			// Input 1000
-			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
+			// Combat 1000
 			SystemInstallHelper.Install<DestroyProjectileSystem>(container);	// 1000 Combat
+			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
+			SystemInstallHelper.Install<EnemyDeathSystem>(container);	// 1000 Combat
 			SystemInstallHelper.Install<SetGameStateSystem>(container);	// 1000 Common
 
 			// Combat 1500
 			SystemInstallHelper.Install<PerformAttackCleanupSystem>(container);	// 1500 Combat
+
+			// Combat 2000
+			SystemInstallHelper.Install<CompletePerformingAttackSystem>(container);	// 2000 Combat
 		 }
 
 	}

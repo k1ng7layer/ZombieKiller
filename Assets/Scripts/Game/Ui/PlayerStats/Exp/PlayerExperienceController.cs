@@ -2,7 +2,6 @@
 using Ecs.Utils.Interfaces;
 using Game.Ui.Utils;
 using UniRx;
-using UnityEngine;
 
 namespace Game.Ui.PlayerStats.Exp
 {
@@ -31,7 +30,7 @@ namespace Game.Ui.PlayerStats.Exp
             var level = player.UnitLevel.Value;
             var expGoal = _playerSettings.LevelRequiredExpMultiplier * level * _playerSettings.BaseExperienceRequired;
 
-            Debug.Log($"player exp gained: {exp}, goal: {expGoal}");
+            UnityEngine.Debug.Log($"player exp gained: {exp}, goal: {expGoal}");
             View.Slider.value = exp / expGoal;
         }
 

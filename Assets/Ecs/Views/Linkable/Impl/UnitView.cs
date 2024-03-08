@@ -18,7 +18,7 @@ namespace Ecs.Views.Linkable.Impl
         [SerializeField] protected GameObject weaponRoot;
         [SerializeField] protected Rigidbody _rb;
         [SerializeField] protected Animator _animator;
-        [SerializeField] private Collider _damageTrigger;
+        [SerializeField] protected Collider _damageTrigger;
         [SerializeField] protected Collider _rootCollider;
         
         [Inject] private ICommandBuffer _commandBuffer;
@@ -75,6 +75,9 @@ namespace Ecs.Views.Linkable.Impl
 
         private void OnUnitTriggerEnter(Collider other)
         {
+            if (!_damageTrigger.enabled)
+                return;
+            
             if (LayerMask.GetMask(LayerNames.Weapon) == (LayerMask.GetMask(LayerNames.Weapon) 
                                                | 1 << other.gameObject.layer))
             {
