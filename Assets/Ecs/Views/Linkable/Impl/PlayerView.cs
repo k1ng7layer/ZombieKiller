@@ -7,8 +7,8 @@ namespace Ecs.Views.Linkable.Impl
 {
     public class PlayerView : UnitView
     {
-        [SerializeField] private GameObject weaponRoot;
-
+        [SerializeField] private ParticleSystem[] levelUpVfx;
+        
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
             base.Subscribe(entity, unsubscribe);
@@ -17,8 +17,7 @@ namespace Ecs.Views.Linkable.Impl
             
             playerEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
             playerEntity.SubscribeEquippedWeapon(OnEquippedWeaponChanged).AddTo(unsubscribe);
-            
-            playerEntity.ReplaceWeaponRoot(weaponRoot.transform);
+            playerEntity.SubscribeUnitLevel(OnLevelUp).AddTo(unsubscribe);
         }
         
         private void OnHealthChanged(GameEntity entity, float value)
@@ -29,6 +28,14 @@ namespace Ecs.Views.Linkable.Impl
         private void OnEquippedWeaponChanged(GameEntity entity, EquippedWeaponInfo equippedWeaponInfo)
         {
             //var weaponParams = 
+        }
+
+        private void OnLevelUp(GameEntity _, int level)
+        {
+            foreach (var lParticleSystem in levelUpVfx)
+            {
+                lParticleSystem.Play();
+            }
         }
     }
 }

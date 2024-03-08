@@ -13,14 +13,14 @@ namespace Ecs.Views.Linkable.Impl.Projectiles
     public class ProjectileView : ObjectView
     {
         [SerializeField] private Collider touchTrigger;
-        [SerializeField] private GameObject _fx;
+        [SerializeField] private GameObject mainFx;
 
         [Inject] private ICommandBuffer _commandBuffer;
         [Inject] private ILinkedEntityRepository _linkedEntityRepository;
 
         public void SetState(bool v)
         {
-            _fx.SetActive(v);
+            mainFx.SetActive(v);
         }
         
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
@@ -54,6 +54,8 @@ namespace Ecs.Views.Linkable.Impl.Projectiles
             {
                 _commandBuffer.DestroyProjectile(transform.GetHashCode());
             }
+            
+            //_commandBuffer.DestroyProjectile(transform.GetHashCode());
         }
 
         protected virtual void OnDead(GameEntity _)

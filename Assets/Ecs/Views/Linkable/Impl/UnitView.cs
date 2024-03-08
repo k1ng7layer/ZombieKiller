@@ -1,4 +1,5 @@
 ﻿using AnimationTriggers;
+using Db.Items.Repositories;
 using Ecs.Commands;
 using Ecs.Utils;
 using Game.Utils;
@@ -14,11 +15,14 @@ namespace Ecs.Views.Linkable.Impl
 {
     public class UnitView : ObjectView
     {
-        [SerializeField] private Rigidbody _rb;
+        [SerializeField] protected GameObject weaponRoot;
+        [SerializeField] protected Rigidbody _rb;
         [SerializeField] protected Animator _animator;
-        [SerializeField] private Collider _damageTrigger;
+        [SerializeField] protected Collider _damageTrigger;
+        [SerializeField] protected Collider _rootCollider;
         
         [Inject] private ICommandBuffer _commandBuffer;
+        [Inject] private IWeaponRepository _weaponRepository;
 
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
@@ -29,37 +33,51 @@ namespace Ecs.Views.Linkable.Impl
             unitEntity.SubscribeMoveDirection(OnDirectionChanged).AddTo(unsubscribe);
             unitEntity.SubscribePerformingAttack(OnPerformingAttack).AddTo(unsubscribe);
             unitEntity.SubscribeDead(OnDead).AddTo(unsubscribe);
-
+            unitEntity.ReplaceWeaponRoot(weaponRoot.transform);
+            unitEntity.SubscribeHitCounter(OnHitCounterChanged).AddTo(unsubscribe);
+            
             _damageTrigger.OnTriggerEnterAsObservable().Subscribe(OnUnitTriggerEnter).AddTo(unsubscribe);
             
-            var attackEndTrigger = _animator.GetBehaviour<CompleteAttackTrigger>();
-            
-            attackEndTrigger?.AttackEnd.Subscribe(_ =>
-            {
-                _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
-            }).AddTo(gameObject);
+            var attackEndTriggers = _animator.GetBehaviours<CompleteAttackTrigger>();
 
-            attackEndTrigger?.AttackStart.Subscribe(_ =>
+            foreach (var attackEndTrigger in attackEndTriggers)
             {
-                _commandBuffer.PerformAttack(unitEntity.Uid.Value);
-            });
+                attackEndTrigger?.AttackEnd.Subscribe(_ =>
+                {
+                    _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
+                }).AddTo(gameObject);
+                
+                
+                attackEndTrigger?.AttackStart.Subscribe(_ =>
+                {
+                    _commandBuffer.PerformAttack(unitEntity.Uid.Value);
+                });
+            }
         }
 
-        private void OnDirectionChanged(GameEntity entity, Vector3 dir)
+        protected virtual void OnDirectionChanged(GameEntity entity, Vector3 dir)
         {
             entity.Position.Value = transform.position;
             _rb.velocity = dir;
-            Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}");
+            //Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}, go: {gameObject.name}, velocity {_rb.velocity}");
             _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
         }
 
         private void OnPerformingAttack(GameEntity entity)
         {
-            _animator.SetTrigger(AnimationKeys.Attack);
+            var weaponId = entity.EquippedWeapon.Value.Id;
+            int paramId;
+            
+            paramId = _weaponRepository.GetWeapon(weaponId).WeaponType == EWeaponType.Melee ? AnimationKeys.Attack : AnimationKeys.RangedAttack;
+            
+            _animator.SetTrigger(paramId);
         }
 
         private void OnUnitTriggerEnter(Collider other)
         {
+            if (!_damageTrigger.enabled)
+                return;
+            
             if (LayerMask.GetMask(LayerNames.Weapon) == (LayerMask.GetMask(LayerNames.Weapon) 
                                                | 1 << other.gameObject.layer))
             {
@@ -71,8 +89,14 @@ namespace Ecs.Views.Linkable.Impl
 
         protected virtual void OnDead(GameEntity _)
         {
+            _rootCollider.enabled = false;
             _damageTrigger.enabled = false;
             _animator.SetTrigger(AnimationKeys.Death);
+        }
+
+        private void OnHitCounterChanged(GameEntity entity, int value)
+        {
+            _animator.SetTrigger(AnimationKeys.TakeDamage);
         }
     }
 }

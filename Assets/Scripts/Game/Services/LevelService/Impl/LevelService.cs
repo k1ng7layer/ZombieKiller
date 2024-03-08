@@ -1,30 +1,40 @@
-﻿using Ecs.Core.SceneLoading.SceneLoadingManager;
+﻿using Db.Level;
 using UnityEngine;
 
 namespace Game.Services.LevelService.Impl
 {
     public class LevelService : ILevelService
     {
-        private const string LEVEL_NUMBER_KEY = "LevelNumberKey";
+        private readonly ILevelSettingsBase _levelSettingsBase;
+        private const string CURRENT_LEVEL_KEY = "LevelNumberKey";
 
-        public LevelService()
+        public LevelService(ILevelSettingsBase levelSettingsBase)
         {
-            CurrentLevelIndex = PlayerPrefs.GetInt(LEVEL_NUMBER_KEY, 0);
+            _levelSettingsBase = levelSettingsBase;
+
+            CurrentLevel = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY, 0);
         }
+
+        public int CurrentLevel { get; private set; }
         
-        public int CurrentLevelIndex { get; private set; }
-
-        public void NextLevel()
+        public int GetNextLevel()
         {
-            CurrentLevelIndex++;
-            
-            PlayerPrefs.SetInt(LEVEL_NUMBER_KEY, CurrentLevelIndex);
+            if (_levelSettingsBase.LevelList.Count - 1 == CurrentLevel)
+                return CurrentLevel;
+
+            return CurrentLevel + 1;
         }
 
-        public string GetCurrentLevel()
+        public void SetCurrentLevel(int levelId)
         {
-            //TODO: add list with levels name and check current level name by level index
-            return "LevelScene";
+            CurrentLevel = levelId;
+            PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, levelId);
+            PlayerPrefs.Save();
+        }
+
+        public string GetLevelSceneName(int levelId)
+        {
+            return _levelSettingsBase.LevelList[CurrentLevel].SceneName;
         }
     }
 }

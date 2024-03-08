@@ -1,10 +1,8 @@
-﻿using Ecs.Core.SceneLoading.SceneLoadingManager;
-
-namespace Ecs.Core.SceneLoading.SceneLoading
+﻿namespace Ecs.Core.SceneLoading.SceneLoadingManager
 {
     public interface ISceneLoadingManager
     {
-        void LoadGameLevel(ELevelName levelName);
+        void LoadGameLevel(string levelName);
         void LoadGameFromSplash();
         float GetProgress();
     }

@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e6589720da476459dc6dd71624b071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: 34a7de9c15cee13408e9b0ea8963e487, type: 2}
+  - {fileID: 11400000, guid: ca46fe0a3e56ee644ad592e0894d2f16, type: 2}
   _monoInstallers:
   - {fileID: 1054218853247211670}
   - {fileID: 262225898025152258}
@@ -76,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4309b0e6f774062892b397fd8d74ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelSettingsBase: {fileID: 11400000, guid: b6d061087aa8d8d42a63e4b687cb3fc7, type: 2}
 --- !u!114 &262225898025152258
 MonoBehaviour:
   m_ObjectHideFlags: 0

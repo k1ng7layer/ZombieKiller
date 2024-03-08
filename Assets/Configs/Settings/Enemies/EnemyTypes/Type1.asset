@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Type1
   m_EditorClassIdentifier: 
   EnemyType: 0
-  BaseHealth: 100
+  Weapon: 0HN1NNNNMSF5I
+  LootPreset: {fileID: 11400000, guid: f4ebaf661f1fbe640a4f644965880bde, type: 2}
+  BaseHealth: 300
+  BaseExperience: 30000
+  BaseAttackRange: 1
+  BaseMoveSpeed: 20
+  BaseAttackSpeed: 1

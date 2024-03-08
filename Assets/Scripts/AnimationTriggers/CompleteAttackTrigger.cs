@@ -32,18 +32,22 @@ namespace AnimationTriggers
                 _started = true;
             }
 
-            if (stateInfo.normalizedTime >= _endNormilizedTime && !_completed)
-            {
-                _attackEnd?.Execute();
-                _completed = true;
-            }
+            // if (stateInfo.normalizedTime >= _endNormilizedTime && !_completed )
+            // {
+            //     _attackEnd?.Execute();
+            //     _completed = true;
+            // }
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateExit(animator, stateInfo, layerIndex);
             
+            if (!_completed)
+                _attackEnd?.Execute();
+            
             _started = false;
+            _completed = false;
         }
     }
 }

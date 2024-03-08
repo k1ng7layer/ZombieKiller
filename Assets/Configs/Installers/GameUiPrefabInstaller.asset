@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: GameUiPrefabInstaller
   m_EditorClassIdentifier: 
   canvas: {fileID: 6446658493801087274, guid: efc453e07e4002442a304a671b3cb6b4, type: 3}
-  buildingPanelView: {fileID: 7408985115500914508, guid: 042d038311386bf4da522e7f3f854744, type: 3}
   inputView: {fileID: 4519934396468508028, guid: b03335e0d165a464d8dce3be5f5eb2c7, type: 3}
   coinsView: {fileID: 3813507020369387252, guid: ed89e5d37d68343468684b4da0845f54, type: 3}
-  endLevelView: {fileID: 430780930391346556, guid: aa8d615032e3f4643a96eaab769bcfa8, type: 3}
+  levelUpView: {fileID: 4005823987491952824, guid: c71410ccb63b7424db9df7c77dec9fa5, type: 3}
+  playerExpView: {fileID: 1649603115818013537, guid: 5f08ef1e8d4b7b840a3069d8d799b588, type: 3}
+  playerHealthView: {fileID: 7064121134235247581, guid: e8b64f3b7d1b23c47a6f6052d28292d8, type: 3}
+  currentBuffsView: {fileID: 5289381512880382376, guid: 693cd2a732127a747a17b2b57eb5f64b, type: 3}
+  playerBagInventoryView: {fileID: 697100299058971877, guid: 994288d960c3a7a42b1a059e056ec5c1, type: 3}
+  openBagButtonView: {fileID: 3559062231091897649, guid: 6752adaca59daff43ac87f0b721ee151, type: 3}
+  reloadButtonView: {fileID: 2653637340062225118, guid: 7a67d78adcfcf9d4f80106f69023ef62, type: 3}

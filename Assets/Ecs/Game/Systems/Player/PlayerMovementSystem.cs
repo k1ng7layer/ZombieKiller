@@ -31,7 +31,7 @@ namespace Ecs.Game.Systems.Player
         {
             var player = _game.PlayerEntity;
             
-            if (!player.IsCanMove) return;
+            if (!player.IsCanMove || player.IsDead) return;
 
             var input = _inputService.InputDirection.normalized;
 

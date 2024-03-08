@@ -10,6 +10,6 @@ namespace Ecs.Utils.LinkedEntityRepository
         TItem Get(TKey id);
         bool HasItem(TKey id);
         void Update(TKey id, TItem item);
-        void Delete(TKey id);
+        bool TryDelete(TKey id);
     }
 }

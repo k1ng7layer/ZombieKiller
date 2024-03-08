@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Ecs.Commands.Systems.Combat
 {
-    [Install(ExecutionType.Game, ExecutionPriority.Normal, 300, nameof(EFeatures.Combat))]
+    [Install(ExecutionType.Game, ExecutionPriority.Normal, 2000, nameof(EFeatures.Combat))]
     public class CompletePerformingAttackSystem : ForEachCommandUpdateSystem<CompletePerformingAttackCommand>
     {
         private readonly GameContext _game;
@@ -28,6 +28,7 @@ namespace Ecs.Commands.Systems.Combat
             var weaponEntity = _game.GetEntityWithUid(weaponUid);
             weaponEntity.IsPerformingAttack = false;
             weaponEntity.AttackTargets.Value.Clear();
+            attacker.ReplaceAttackCooldown(1f / attacker.AttackSpeed.Value);
             
             Debug.Log($"CompletePerformingAttackSystem");
         }

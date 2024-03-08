@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1d3c341a7d1c54dd9a25984ee00f4b49
+timeCreated: 1485105135
+licenseType: Store
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ISL_Jupiter
+  fontNames:
+  - ISL_Jupiter
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
