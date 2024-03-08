@@ -83,7 +83,7 @@ namespace Ecs.Game.Systems.Initialize
 
         private void CreateWeapon(string weaponId, Uid playerUid)
         {
-            _commandBuffer.EquipWeapon(weaponId, playerUid);
+            _commandBuffer.EquipWeapon(weaponId, playerUid, true);
         }
         
         private void SetupAttributes(GameEntity player, GameData gameData)

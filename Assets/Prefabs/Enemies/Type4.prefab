@@ -27,7 +27,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.08, z: 0.479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 592004213172069604}
   m_Father: {fileID: 2659766960269875292}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,6 +101,7 @@ MonoBehaviour:
   _animator: {fileID: 5213985507145968957}
   _damageTrigger: {fileID: 7819823662282697561}
   _rootCollider: {fileID: 3310209497402981822}
+  weapon: {fileID: 592004213172069605}
   healthBarView: {fileID: 7204454255995322041}
   navMeshAgent: {fileID: 7341797767785164164}
 --- !u!54 &7819823662282697565
@@ -432,6 +434,79 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 941fab766b354cc298a781a4b599a8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &7901897911206664910
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3761875625155081308}
+    m_Modifications:
+    - target: {fileID: 7322315303918517801, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_Name
+      value: BeetoFangs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.049
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+--- !u!4 &592004213172069604 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7322315303918517802, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+  m_PrefabInstance: {fileID: 7901897911206664910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &592004213172069605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7322315303918517803, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+  m_PrefabInstance: {fileID: 7901897911206664910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ecc888fda94362b8dc844298f63582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8237837225072109841

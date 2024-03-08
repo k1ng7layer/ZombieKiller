@@ -9,6 +9,7 @@ namespace Db.Enemies
     {
         public EEnemyType EnemyType;
         public string Weapon;
+        public bool SpawnWeapon = true;
 
         [Space]
         [Header("Loot")]

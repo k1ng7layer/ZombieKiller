@@ -51,11 +51,12 @@ namespace Ecs.Commands
             command.Info = info;
         }
 
-        public static void EquipWeapon(this ICommandBuffer commandBuffer, String weaponId, Uid owner)
+        public static void EquipWeapon(this ICommandBuffer commandBuffer, String weaponId, Uid owner, Boolean spawn)
         {
             ref var command = ref commandBuffer.Create<EquipWeaponCommand>();
             command.WeaponId = weaponId;
             command.Owner = owner;
+            command.Spawn = spawn;
         }
 
         public static void LevelUp(this ICommandBuffer commandBuffer)

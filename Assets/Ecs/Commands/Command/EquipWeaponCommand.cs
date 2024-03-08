@@ -8,5 +8,6 @@ namespace Ecs.Commands.Command
     {
         public string WeaponId;
         public Uid Owner;
+        public bool Spawn;
     }
 }

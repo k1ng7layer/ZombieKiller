@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Db.Enemies;
 using Ecs.Commands;
+using Ecs.Views.Linkable.Impl;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
@@ -34,8 +36,14 @@ namespace Ecs.Game.Systems.Enemy
         {
             foreach (var entity in entities)
             {
+                var enemyView = (EnemyView)entity.Link.View;
+                
                 var enemyParams = _enemyParamsBase.GetEnemyParams(entity.Enemy.EnemyType);
-               _commandBuffer.EquipWeapon(enemyParams.Weapon, entity.Uid.Value);
+
+                if (enemyParams.Weapon != string.Empty && enemyView.Weapon != null)
+                {
+                    _commandBuffer.EquipWeapon(enemyParams.Weapon, entity.Uid.Value, enemyParams.SpawnWeapon);
+                }
             }
         }
     }

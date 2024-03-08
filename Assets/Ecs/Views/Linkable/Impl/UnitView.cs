@@ -20,9 +20,12 @@ namespace Ecs.Views.Linkable.Impl
         [SerializeField] protected Animator _animator;
         [SerializeField] protected Collider _damageTrigger;
         [SerializeField] protected Collider _rootCollider;
+        [SerializeField] private WeaponView weapon;
         
         [Inject] private ICommandBuffer _commandBuffer;
         [Inject] private IWeaponRepository _weaponRepository;
+        
+        public WeaponView Weapon => weapon;
 
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
