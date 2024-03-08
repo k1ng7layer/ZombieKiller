@@ -28,6 +28,10 @@ MonoBehaviour:
   - name: Type4
     gameObject: {fileID: 7819823662282697564, guid: 2ccf0cb1a7e32f646aeac0b6f85ad232, type: 3}
   - name: BeetoFangs
-    gameObject: {fileID: 4801127462382050865, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
+    gameObject: {fileID: 7322315303918517801, guid: dcbe9dc238a88694086abf63b95d3528, type: 3}
   - name: Small health potion
     gameObject: {fileID: 8713741990418808240, guid: 06767679c192edb46935e9d1622a3147, type: 3}
+  - name: MammolFangs
+    gameObject: {fileID: 6704929558688549239, guid: 84dc323b6f9408040a42cbd494b39355, type: 3}
+  - name: Type5
+    gameObject: {fileID: 4343653198140804350, guid: ae56b9fedb110304980114255024c7e2, type: 3}

@@ -1,4 +1,6 @@
 ﻿using System;
+using Game.Ui.Windows;
+using SimpleUi.Signals;
 using UniRx;
 using Zenject;
 
@@ -15,7 +17,7 @@ namespace Core.LoadingProcessor.Impls
 
         public override void Do(Action complete)
         {
-            //_signalBus.OpenWindow<FirstStartLoadingWindow>(EWindowLayer.Project);
+            _signalBus.OpenWindow<ProjectWindow>(EWindowLayer.Project);
             Observable.NextFrame().Subscribe(_ => complete());
         }
     }

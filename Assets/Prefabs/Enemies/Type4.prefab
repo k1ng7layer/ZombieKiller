@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5794091649770232808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.127, z: 0.238}
+  m_LocalPosition: {x: 0, y: -0.08, z: 0.479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7819823662282697565}
   - component: {fileID: 7819823662282697561}
   - component: {fileID: 7341797767785164164}
+  - component: {fileID: 3310209497402981822}
   m_Layer: 10
   m_Name: Type4
   m_TagString: Untagged
@@ -98,6 +99,7 @@ MonoBehaviour:
   _rb: {fileID: 7819823662282697565}
   _animator: {fileID: 5213985507145968957}
   _damageTrigger: {fileID: 7819823662282697561}
+  _rootCollider: {fileID: 3310209497402981822}
   healthBarView: {fileID: 7204454255995322041}
   navMeshAgent: {fileID: 7341797767785164164}
 --- !u!54 &7819823662282697565
@@ -108,13 +110,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7819823662282697564}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 30
+  m_Drag: 2.5
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &7819823662282697561
 CapsuleCollider:
@@ -139,19 +141,33 @@ NavMeshAgent:
   m_GameObject: {fileID: 7819823662282697564}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 400
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.48
+  m_Height: 0.85
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &3310209497402981822
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819823662282697564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.93
+  m_Height: 0.49
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.84, z: 0}
 --- !u!1 &7819823662718210322
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,6 +50,7 @@ namespace Installers.Game
 			Container.BindInterfacesTo<LookAtTargetActionBuilder>().AsSingle();
             Container.BindInterfacesTo<StopMovementActionBuilder>().AsSingle();
             Container.BindInterfacesTo<IsAttackingConditionBuilder>().AsSingle();
+            Container.BindInterfacesTo<IsActiveConditionBuilder>().AsSingle();
         }
     }
 }

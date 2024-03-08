@@ -6,6 +6,8 @@ namespace Ecs.Views.Linkable.Impl
 {
     public class WeaponView : ObjectView
     {
+        [SerializeField] private Collider attackTrigger;
+        
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
             base.Subscribe(entity, unsubscribe);
@@ -13,6 +15,8 @@ namespace Ecs.Views.Linkable.Impl
             var weaponEntity = (GameEntity)entity;
 
             weaponEntity.SubscribeParentTransform(OnWeaponTransformChanged).AddTo(unsubscribe);
+            weaponEntity.SubscribePerformingAttack(OnWeaponAttackAdded).AddTo(unsubscribe);
+            weaponEntity.SubscribePerformingAttackRemoved(OnWeaponAttackRemoved).AddTo(unsubscribe);
         }
 
         private void OnWeaponTransformChanged(GameEntity _, Transform value)
@@ -22,6 +26,16 @@ namespace Ecs.Views.Linkable.Impl
             selfTransform.SetParent(value);
             selfTransform.localPosition = Vector3.zero;
             selfTransform.localRotation = Quaternion.identity;
+        }
+
+        private void OnWeaponAttackAdded(GameEntity _)
+        {
+            attackTrigger.enabled = true;
+        }
+        
+        private void OnWeaponAttackRemoved(GameEntity _)
+        {
+            attackTrigger.enabled = false;
         }
     }
 }

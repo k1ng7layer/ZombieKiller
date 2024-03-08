@@ -19,7 +19,7 @@ namespace Ecs.Game.Systems.Ai
         
         public void Update()
         {
-            using var aiGroup = _gameGroupUtils.GetAi(out var aiEntities, e => e.HasBehaviourTree && e.HasNavmeshAgent && e.IsMoving && !e.IsDead);
+            using var aiGroup = _gameGroupUtils.GetAi(out var aiEntities, e => e.HasBehaviourTree && e.HasNavmeshAgent && e.IsMoving && e.IsActive && !e.IsDead);
 
             foreach (var entity in aiEntities)
             {
@@ -44,7 +44,7 @@ namespace Ecs.Game.Systems.Ai
                // if (delta.magnitude >= 0.01f)
                //  
                //var targetRot = 
-               entity.ReplaceRotation(tt);
+               //entity.ReplaceRotation(tt);
                entity.ReplaceMoveDirection(delta * entity.MoveSpeed.Value);
                 
             }

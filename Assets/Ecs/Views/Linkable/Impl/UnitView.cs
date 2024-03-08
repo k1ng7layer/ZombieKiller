@@ -16,9 +16,10 @@ namespace Ecs.Views.Linkable.Impl
     public class UnitView : ObjectView
     {
         [SerializeField] protected GameObject weaponRoot;
-        [SerializeField] private Rigidbody _rb;
+        [SerializeField] protected Rigidbody _rb;
         [SerializeField] protected Animator _animator;
-        [SerializeField] private Collider _damageTrigger;
+        [SerializeField] protected Collider _damageTrigger;
+        [SerializeField] protected Collider _rootCollider;
         
         [Inject] private ICommandBuffer _commandBuffer;
         [Inject] private IWeaponRepository _weaponRepository;
@@ -58,7 +59,7 @@ namespace Ecs.Views.Linkable.Impl
         {
             entity.Position.Value = transform.position;
             _rb.velocity = dir;
-            Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}");
+            //Debug.Log($"OnDirectionChanged: AnimationKeys.Movement {dir.magnitude}, go: {gameObject.name}, velocity {_rb.velocity}");
             _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
         }
 
@@ -74,6 +75,9 @@ namespace Ecs.Views.Linkable.Impl
 
         private void OnUnitTriggerEnter(Collider other)
         {
+            if (!_damageTrigger.enabled)
+                return;
+            
             if (LayerMask.GetMask(LayerNames.Weapon) == (LayerMask.GetMask(LayerNames.Weapon) 
                                                | 1 << other.gameObject.layer))
             {
@@ -85,6 +89,7 @@ namespace Ecs.Views.Linkable.Impl
 
         protected virtual void OnDead(GameEntity _)
         {
+            _rootCollider.enabled = false;
             _damageTrigger.enabled = false;
             _animator.SetTrigger(AnimationKeys.Death);
         }

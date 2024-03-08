@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Ecs.Commands.Systems.Combat
 {
-    [Install(ExecutionType.Game, ExecutionPriority.Normal, 300, nameof(EFeatures.Combat))]
+    [Install(ExecutionType.Game, ExecutionPriority.Normal, 2000, nameof(EFeatures.Combat))]
     public class CompletePerformingAttackSystem : ForEachCommandUpdateSystem<CompletePerformingAttackCommand>
     {
         private readonly GameContext _game;

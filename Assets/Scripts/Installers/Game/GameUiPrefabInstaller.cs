@@ -1,5 +1,6 @@
 
 using Game.Ui.Buffs;
+using Game.Ui.Debug;
 using Game.Ui.Income;
 using Game.Ui.Input;
 using Game.Ui.Inventory;
@@ -26,6 +27,7 @@ namespace Installers.Game
         [SerializeField] private CurrentBuffsView currentBuffsView;
         [SerializeField] private PlayerBagInventoryView playerBagInventoryView;
         [SerializeField] private OpenBagButtonView openBagButtonView;
+        [SerializeField] private ReloadButtonView reloadButtonView;
         
         public override void InstallBindings()
         {
@@ -40,6 +42,7 @@ namespace Installers.Game
             Container.BindUiView<CurrentBuffsController, CurrentBuffsView>(currentBuffsView, canvasTransform);
             Container.BindUiView<PlayerBagInventoryController, PlayerBagInventoryView>(playerBagInventoryView, canvasTransform);
             Container.BindUiView<OpenBagButtonController, OpenBagButtonView>(openBagButtonView, canvasTransform);
+            Container.BindUiView<ReloadButtonController, ReloadButtonView>(reloadButtonView, canvasTransform);
         }
     }
 }

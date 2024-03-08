@@ -32,6 +32,7 @@ public sealed class GameEventSystems : Feature
 		Add(new MovingRemovedEventSystem(context)); // priority: 0
 		Add(new ParentTransformEventSystem(context)); // priority: 0
 		Add(new PerformingAttackEventSystem(context)); // priority: 0
+		Add(new PerformingAttackRemovedEventSystem(context)); // priority: 0
 		Add(new PlayerCoinsEventSystem(context)); // priority: 0
 		Add(new PositionEventSystem(context)); // priority: 0
 		Add(new RotationEventSystem(context)); // priority: 0

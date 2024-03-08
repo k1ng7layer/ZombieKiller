@@ -15,7 +15,7 @@ MonoBehaviour:
   EnemyType: 2
   Weapon: 0HN1NNP00D13S
   LootPreset: {fileID: 11400000, guid: f4ebaf661f1fbe640a4f644965880bde, type: 2}
-  BaseHealth: 100
+  BaseHealth: 3000
   BaseExperience: 300
   BaseAttackRange: 10
   BaseMoveSpeed: 20
