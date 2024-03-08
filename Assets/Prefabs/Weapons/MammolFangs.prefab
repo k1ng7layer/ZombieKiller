@@ -72,3 +72,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityLink: {fileID: 4132794945940958006}
+  attackTrigger: {fileID: 3848942024734658862}
