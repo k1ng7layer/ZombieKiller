@@ -14,7 +14,11 @@ namespace Ecs.Game.Systems.Projectile
         private readonly ICommandBuffer _commandBuffer;
         private readonly GameContext _game;
 
-        public ProjectileDestroyByDistanceSystem(IGameGroupUtils gameGroupUtils, ICommandBuffer commandBuffer, GameContext game)
+        public ProjectileDestroyByDistanceSystem(
+            IGameGroupUtils gameGroupUtils, 
+            ICommandBuffer commandBuffer, 
+            GameContext game
+        )
         {
             _gameGroupUtils = gameGroupUtils;
             _commandBuffer = commandBuffer;
@@ -23,20 +27,17 @@ namespace Ecs.Game.Systems.Projectile
         
         public void Update()
         {
-            using var group = _gameGroupUtils.GetProjectiles(out var projectiles);
+            using var group = _gameGroupUtils.GetProjectiles(out var projectiles, 
+                p => !p.HasTrajectory);
 
             foreach (var projectile in projectiles)
             {
-                var ownerUid = projectile.Owner.Value;
-
-                var owner = _game.GetEntityWithUid(ownerUid);
-
-                var ownerPosition = owner.Position.Value;
+                var destination = projectile.Destination.Value;
                 var projectilePos = projectile.Position.Value;
 
-                var dist2 = (projectilePos - ownerPosition).sqrMagnitude;
+                var dist2 = (destination - projectilePos).sqrMagnitude;
 
-                if (dist2 >= 100 * 100)
+                if (dist2 <= 2 * 2)
                 {
                     _commandBuffer.DestroyProjectile(projectile.Transform.Value.GetHashCode());
                 }

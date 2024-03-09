@@ -37,3 +37,5 @@ MonoBehaviour:
     gameObject: {fileID: 4343653198140804350, guid: ae56b9fedb110304980114255024c7e2, type: 3}
   - name: Type6
     gameObject: {fileID: 2251364456943529959, guid: f556f4591f9f83e41b5cdb28ea97901e, type: 3}
+  - name: InteractiveSpot
+    gameObject: {fileID: 1182049550288430116, guid: 37b6ad6c60c615c469e4723b9a03f7c4, type: 3}

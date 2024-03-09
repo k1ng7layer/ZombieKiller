@@ -19,6 +19,7 @@ using Ecs.Commands.Command.Input;
 using Ecs.Commands.Command.Income;
 using Ecs.Commands.Command.Combat;
 using Ecs.Commands.Command.Attributes;
+using Ecs.Commands.Command.Abilities;
 
 namespace Ecs.Commands
 {
@@ -156,6 +157,25 @@ namespace Ecs.Commands
             command.AttackerUid = attackerUid;
         }
 
+        public static void CreateExplosion(this ICommandBuffer commandBuffer, Vector3 origin, EExplosionType explosionType, Uid owner, Single damage)
+        {
+            ref var command = ref commandBuffer.Create<CreateExplosionCommand>();
+            command.Origin = origin;
+            command.ExplosionType = explosionType;
+            command.Owner = owner;
+            command.Damage = damage;
+        }
+
+        public static void CreateProjectileWithTrajectory(this ICommandBuffer commandBuffer, Uid shooter, Vector3 origin, Vector3[] trajectory, EProjectileType projectileType, Single speed)
+        {
+            ref var command = ref commandBuffer.Create<CreateProjectileWithTrajectoryCommand>();
+            command.Shooter = shooter;
+            command.Origin = origin;
+            command.Trajectory = trajectory;
+            command.ProjectileType = projectileType;
+            command.Speed = speed;
+        }
+
         public static void DestroyProjectile(this ICommandBuffer commandBuffer, Int32 projectileHash)
         {
             ref var command = ref commandBuffer.Create<DestroyProjectileCommand>();
@@ -190,6 +210,14 @@ namespace Ecs.Commands
         {
             ref var command = ref commandBuffer.Create<RecalculateUnitAttributesCommand>();
             command.UnitUid = unitUid;
+        }
+
+        public static void CastArtilleryShotAbility(this ICommandBuffer commandBuffer, Uid owner, Vector3 origin, Vector3 target)
+        {
+            ref var command = ref commandBuffer.Create<CastArtilleryShotAbilityCommand>();
+            command.Owner = owner;
+            command.Origin = origin;
+            command.Target = target;
         }
     }
 }

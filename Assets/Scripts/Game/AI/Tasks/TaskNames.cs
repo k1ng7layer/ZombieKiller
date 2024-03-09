@@ -43,5 +43,23 @@ namespace Game.AI.Tasks
 		
 		public const string IS_ACTIVE = "is active";
 		public const string IS_ACTIVE_PATH = "Condition/is active";
+		
+		public const string USE_ABILITY = "use ability";
+		public const string USE_ABILITY_PATH = "Action/use ability";
+		
+		public const string CAN_USE_ABILITY = "can use ability";
+		public const string CAN_USE_ABILITY_PATH = "Condition/can use ability";
+		
+		public const string CHOOSE_ABILITY = "choose ability";
+		public const string CHOOSE_ABILITY_PATH = "Action/choose ability";
+		
+		public const string HAS_WEAPON = "has weapon";
+		public const string HAS_WEAPON_PATH = "Condition/has weapon";
+		
+		public const string HAS_ACTIVE_ABILITY = "has active ability";
+		public const string HAS_ACTIVE_ABILITY_PATH = "Condition/has active ability";
+		
+		public const string SWITCH_TO_AA = "switch to aa";
+		public const string SWITCH_TO_AA_PATH = "Action/switch to aa";
 	}
 }

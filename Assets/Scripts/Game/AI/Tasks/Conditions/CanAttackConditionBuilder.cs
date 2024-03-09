@@ -25,7 +25,8 @@ namespace Game.AI.Tasks.Conditions
             builder.Condition(Name,
                 () =>
                 {
-                    var result = !entity.IsPerformingAttack && entity.HasEquippedWeapon && entity.AttackCooldown.Value <= 0;
+                    // var result = !entity.IsPerformingAttack && entity.HasEquippedWeapon && entity.AttackCooldown.Value <= 0;
+                    var result = entity.AttackCooldown.Value <= 0;
                     Debug.Log($"CanAttackConditionBuilder: {result}");
                     return result;
                 });

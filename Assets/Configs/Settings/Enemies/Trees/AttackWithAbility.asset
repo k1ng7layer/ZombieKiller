@@ -1,0 +1,1212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a764edd049c4786a0981087c39bf11e, type: 3}
+  m_Name: AttackWithAbility
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 8348663790207500288
+  - rid: 2850263110814269442
+  - rid: 2850263110814269444
+  - rid: 2850263110814269446
+  - rid: 2850263110814269447
+  - rid: 2850263110814269448
+  - rid: 2850263110814269450
+  - rid: 2850263110814269451
+  - rid: 2850263110814269452
+  - rid: 2850263110814269453
+  - rid: 2850263110814269454
+  - rid: 2850263110814269458
+  - rid: 2850263110814269467
+  - rid: 2850263110814269468
+  - rid: 2850263110814269469
+  - rid: 2850263110814269470
+  - rid: 2850263110814269471
+  - rid: 2850263110814269472
+  - rid: 2850263110814269473
+  - rid: 2850263110814269474
+  - rid: 2850263110814269475
+  - rid: 2850263110814269476
+  - rid: 2850263110814269477
+  - rid: 2850263110814269478
+  - rid: 2850263110814269479
+  - rid: 2850263110814269480
+  - rid: 2850263110814269481
+  - rid: 2850263110814269482
+  - rid: 2850263110814269483
+  - rid: 2850263110814269485
+  - rid: 2850263110814269486
+  - rid: 2850263110814269487
+  - rid: 2850263110814269491
+  - rid: 2850263110814269493
+  - rid: 2850263110814269494
+  - rid: 2850263110814269496
+  - rid: 2850263110814269497
+  - rid: 2850263110814269498
+  - rid: 2850263110814269499
+  - rid: 2850263110814269500
+  - rid: 2850263110814269501
+  - rid: 2850263110814269502
+  - rid: 2850263110814269503
+  - rid: 2850263110814269513
+  - rid: 2850263110814269515
+  - rid: 2850263110814269516
+  - rid: 2850263110814269517
+  edges:
+  - GUID: 0b8b911f-5e93-407c-b51e-b6649f9755da
+    owner: {fileID: 11400000}
+    inputNodeGUID: d18fbc44-e761-4cef-9225-a913c2a3904c
+    outputNodeGUID: 6ddfa0ec-7bc4-4b80-a4e7-b9dac913251f
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 5f6e321c-e5d8-4b5e-96eb-f3f5ce55d225
+    owner: {fileID: 11400000}
+    inputNodeGUID: 05db3d37-a504-4da3-b67e-827d1ff4f8c6
+    outputNodeGUID: 6ddfa0ec-7bc4-4b80-a4e7-b9dac913251f
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 93961e27-0f19-4cfe-a760-94d4eafcd7a8
+    owner: {fileID: 11400000}
+    inputNodeGUID: 44aa44d7-dca8-4748-93fa-f8ef68a9c403
+    outputNodeGUID: 39526b94-d7e8-4d13-9edb-468bd94468e9
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 13e695ff-6558-469c-a5a2-61a3b39f0b6b
+    owner: {fileID: 11400000}
+    inputNodeGUID: 24343a46-ae2c-4203-93d2-a1b8b776e87a
+    outputNodeGUID: 39526b94-d7e8-4d13-9edb-468bd94468e9
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: ace8db17-adb0-4def-9dd2-e97dacbb7f9a
+    owner: {fileID: 11400000}
+    inputNodeGUID: 26b3c7f3-f921-4f09-a4da-ed81cd17b3c2
+    outputNodeGUID: 823681a2-15ee-4ea0-aecb-b01beed3ffcb
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 2b26f97f-c968-4690-aa1b-344f98c91806
+    owner: {fileID: 11400000}
+    inputNodeGUID: bbd55df2-347c-400f-b95c-fc62df2c5ca4
+    outputNodeGUID: 823681a2-15ee-4ea0-aecb-b01beed3ffcb
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: ba8a22ab-b650-4065-9843-9731ecf2ce58
+    owner: {fileID: 11400000}
+    inputNodeGUID: 823681a2-15ee-4ea0-aecb-b01beed3ffcb
+    outputNodeGUID: 1206eae9-8b2d-4079-8dc1-9bf511601ed1
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: d13f330f-6791-47ea-a12a-ac5c9a24f1ad
+    owner: {fileID: 11400000}
+    inputNodeGUID: 20505b8a-b3ff-4275-9c23-a0422feab474
+    outputNodeGUID: 57c54bf6-650c-426d-b78c-32cb9f000a96
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: a3250950-e5e1-4b0b-9fdc-766e3ffbc661
+    owner: {fileID: 11400000}
+    inputNodeGUID: 57c54bf6-650c-426d-b78c-32cb9f000a96
+    outputNodeGUID: 2a528dce-5575-42f2-807c-effae1e422ee
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 7d36550e-1c4f-460d-ac1c-6faa11eb7776
+    owner: {fileID: 11400000}
+    inputNodeGUID: df63b010-3ede-4236-8583-e29ef1bd92ef
+    outputNodeGUID: ea916a1f-18c7-4523-92af-4b0e92af1bf2
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: e42d1065-247c-4ace-9c11-df77b75f6a36
+    owner: {fileID: 11400000}
+    inputNodeGUID: 3179c423-83a1-404c-a9b4-82828094920f
+    outputNodeGUID: ea916a1f-18c7-4523-92af-4b0e92af1bf2
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 18a91e63-f500-461f-aa54-c1dac15f766c
+    owner: {fileID: 11400000}
+    inputNodeGUID: 767ae1ce-0bc7-4f1c-926d-677a0ca4b84f
+    outputNodeGUID: 57c54bf6-650c-426d-b78c-32cb9f000a96
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 0a539a1e-8513-4489-8022-281895c8b788
+    owner: {fileID: 11400000}
+    inputNodeGUID: 0529358b-8bbf-492d-917b-577c3e75e908
+    outputNodeGUID: 57c54bf6-650c-426d-b78c-32cb9f000a96
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: f279bf1f-35f9-4ab4-8c00-367baf46aca6
+    owner: {fileID: 11400000}
+    inputNodeGUID: 632221b8-e482-4b07-a8df-db0df06982fa
+    outputNodeGUID: fd51d250-554d-48fb-a402-e37c3867ba3e
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 36b77636-4c6b-46b0-ab2f-459319d2409d
+    owner: {fileID: 11400000}
+    inputNodeGUID: 33107399-c9df-4f10-a452-1a127f8632f5
+    outputNodeGUID: fd51d250-554d-48fb-a402-e37c3867ba3e
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 61022d53-7783-4136-81c7-955dd2c5c2d2
+    owner: {fileID: 11400000}
+    inputNodeGUID: 20e5a6a6-beb1-45b8-96d1-62085a44a3f5
+    outputNodeGUID: fd51d250-554d-48fb-a402-e37c3867ba3e
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 50f926c1-864f-4bef-a801-ef0a4a5a5382
+    owner: {fileID: 11400000}
+    inputNodeGUID: 32427530-44a4-47d0-b638-294a24240b6b
+    outputNodeGUID: 20e5a6a6-beb1-45b8-96d1-62085a44a3f5
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 432f06e3-7066-4202-9af9-554ab03a8156
+    owner: {fileID: 11400000}
+    inputNodeGUID: 22639c30-6416-45b2-97bf-ea1de037f229
+    outputNodeGUID: fd51d250-554d-48fb-a402-e37c3867ba3e
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: e54a7221-2bf6-4616-886f-a2fce1de4d82
+    owner: {fileID: 11400000}
+    inputNodeGUID: 107a2b16-e777-4e90-808e-b311aa57abf0
+    outputNodeGUID: 22639c30-6416-45b2-97bf-ea1de037f229
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 111721cd-b985-4888-91b5-52e7ae86eefb
+    owner: {fileID: 11400000}
+    inputNodeGUID: 6ddfa0ec-7bc4-4b80-a4e7-b9dac913251f
+    outputNodeGUID: cb9777ee-ee1e-4b65-9bdd-4662c296ada4
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: b92ca8cf-6989-47bd-a80a-2a224bddaf74
+    owner: {fileID: 11400000}
+    inputNodeGUID: 09cfe5c5-a204-418e-bc54-767a9bc9d2f6
+    outputNodeGUID: 42bfe724-b7dd-4eb1-9271-a3245f8429e2
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: b29b489b-8990-450c-8c4c-ff5408f1a050
+    owner: {fileID: 11400000}
+    inputNodeGUID: cdd7edcf-f8f1-4908-b659-c4af551e963f
+    outputNodeGUID: 42bfe724-b7dd-4eb1-9271-a3245f8429e2
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: e01c472a-aef9-477a-947f-5e4d30db9057
+    owner: {fileID: 11400000}
+    inputNodeGUID: 42bfe724-b7dd-4eb1-9271-a3245f8429e2
+    outputNodeGUID: cb9777ee-ee1e-4b65-9bdd-4662c296ada4
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 62b1cdd1-98aa-4774-9743-8eb9162b3c35
+    owner: {fileID: 11400000}
+    inputNodeGUID: 0cee4cd0-a453-4e3c-bf23-e8e93bf5602a
+    outputNodeGUID: 91bcf468-edd6-451b-97f4-6276d5016e51
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 6cf8b6f0-613a-49b3-825e-7ae6bc945835
+    owner: {fileID: 11400000}
+    inputNodeGUID: 91bcf468-edd6-451b-97f4-6276d5016e51
+    outputNodeGUID: 9115b154-a63f-498f-b48f-0041a7252788
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 872c9eb7-be3b-44ad-8bf7-87b7081ae183
+    owner: {fileID: 11400000}
+    inputNodeGUID: cb9777ee-ee1e-4b65-9bdd-4662c296ada4
+    outputNodeGUID: 9115b154-a63f-498f-b48f-0041a7252788
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 542bc692-7001-446e-b4f0-7dc138319c99
+    owner: {fileID: 11400000}
+    inputNodeGUID: 39526b94-d7e8-4d13-9edb-468bd94468e9
+    outputNodeGUID: a8c9eac1-1a05-454f-9d56-697098213312
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 9c9d1b0a-3d9f-4c65-bf33-bd17545b519d
+    owner: {fileID: 11400000}
+    inputNodeGUID: a8c9eac1-1a05-454f-9d56-697098213312
+    outputNodeGUID: 4749989f-9bf5-4868-9f58-cda17ef07542
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 069bdb99-d507-4d70-bde7-7a56c9934a20
+    owner: {fileID: 11400000}
+    inputNodeGUID: 9115b154-a63f-498f-b48f-0041a7252788
+    outputNodeGUID: 4749989f-9bf5-4868-9f58-cda17ef07542
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 2d7fea73-1408-4d29-8750-f50f00e054b1
+    owner: {fileID: 11400000}
+    inputNodeGUID: 4749989f-9bf5-4868-9f58-cda17ef07542
+    outputNodeGUID: 1206eae9-8b2d-4079-8dc1-9bf511601ed1
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 7831632f-ce06-436c-a53b-d8fcd072da19
+    owner: {fileID: 11400000}
+    inputNodeGUID: 78816dc7-d7cb-4c19-b474-d662807291ed
+    outputNodeGUID: bf1f2bc2-aeb8-4346-a18f-801947fc90be
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: e51783cc-90bc-4d4e-b2ef-725c60e128d3
+    owner: {fileID: 11400000}
+    inputNodeGUID: df1cd41a-b694-4e18-a7ca-0796552ba780
+    outputNodeGUID: bf1f2bc2-aeb8-4346-a18f-801947fc90be
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 2cb828f4-cf66-48de-8a5d-e921d23d5e0e
+    owner: {fileID: 11400000}
+    inputNodeGUID: bf1f2bc2-aeb8-4346-a18f-801947fc90be
+    outputNodeGUID: 2f6fea1b-cd50-4b8a-adfd-c0f3aa60a95b
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 310d9cb9-7107-43e5-9c3e-eca6fe1d9cc2
+    owner: {fileID: 11400000}
+    inputNodeGUID: 2f6fea1b-cd50-4b8a-adfd-c0f3aa60a95b
+    outputNodeGUID: 57c54bf6-650c-426d-b78c-32cb9f000a96
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: d7fe8b47-8bb1-4f67-b4de-b52d46d92b9e
+    owner: {fileID: 11400000}
+    inputNodeGUID: 9fb6aeed-f748-40d7-9855-f9b09353ee94
+    outputNodeGUID: 82bd5c85-7241-427a-9989-7df5c8baec6c
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 13217ef2-c843-4f09-b50a-2d5375123bec
+    owner: {fileID: 11400000}
+    inputNodeGUID: b16052f4-e512-48b7-ab36-b37cd3f3b4d4
+    outputNodeGUID: 82bd5c85-7241-427a-9989-7df5c8baec6c
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 52cff74c-73b9-4f15-9365-b9effb2b2128
+    owner: {fileID: 11400000}
+    inputNodeGUID: 82bd5c85-7241-427a-9989-7df5c8baec6c
+    outputNodeGUID: 2f6fea1b-cd50-4b8a-adfd-c0f3aa60a95b
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 71e7129b-46e4-4a9a-a358-9e1460ba834e
+    owner: {fileID: 11400000}
+    inputNodeGUID: 2a528dce-5575-42f2-807c-effae1e422ee
+    outputNodeGUID: a8c9eac1-1a05-454f-9d56-697098213312
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: e144e6ed-a86b-4bae-95bd-962ead58553b
+    owner: {fileID: 11400000}
+    inputNodeGUID: fd51d250-554d-48fb-a402-e37c3867ba3e
+    outputNodeGUID: 2a528dce-5575-42f2-807c-effae1e422ee
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: de789068-dff0-45b1-95d2-e1bb935127e6
+    owner: {fileID: 11400000}
+    inputNodeGUID: 00b6abf2-7131-4cd1-9e2c-c5f40dae7115
+    outputNodeGUID: e7d8f401-6116-4d4f-844a-95e9495ff32f
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 75b66ae8-9612-472f-ac17-9086333e0e7a
+    owner: {fileID: 11400000}
+    inputNodeGUID: 1206eae9-8b2d-4079-8dc1-9bf511601ed1
+    outputNodeGUID: 00b6abf2-7131-4cd1-9e2c-c5f40dae7115
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: df9fb000-aa8c-4a22-8570-5977ffd2c424
+    owner: {fileID: 11400000}
+    inputNodeGUID: ade66eb7-542c-4a85-b863-e19a2486e03d
+    outputNodeGUID: 00b6abf2-7131-4cd1-9e2c-c5f40dae7115
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: a10850e6-76ff-4cd3-b628-980294dae9e9
+    owner: {fileID: 11400000}
+    inputNodeGUID: 4cc18cd3-9566-4dce-b436-d51ed8adee51
+    outputNodeGUID: ade66eb7-542c-4a85-b863-e19a2486e03d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 6268e0ca-be4b-43c9-ace7-6f85e0527bf6
+    owner: {fileID: 11400000}
+    inputNodeGUID: e2fbc488-eee7-4e92-ba78-1139663b7b82
+    outputNodeGUID: ade66eb7-542c-4a85-b863-e19a2486e03d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups:
+  - title: Choose Comabat action
+    color: {r: 0, g: 0, b: 0, a: 0.3}
+    position:
+      serializedVersion: 2
+      x: 291.68536
+      y: 3525.0002
+      width: 735
+      height: 653
+    size: {x: 400, y: 200}
+    innerNodeGUIDs: []
+  stackNodes: []
+  pinnedElements: []
+  exposedParameters: []
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: 3934, y: -3146, z: 0}
+  scale: {x: 1.520875, y: 1.520875, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2850263110814269442
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 6ddfa0ec-7bc4-4b80-a4e7-b9dac913251f
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 363.68585
+          y: 3858
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269444
+      type: {class: ChooseAbilityActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: d18fbc44-e761-4cef-9225-a913c2a3904c
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 468.6858
+          y: 4105
+          width: 121
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269446
+      type: {class: HasWeaponConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 44aa44d7-dca8-4748-93fa-f8ef68a9c403
+        computeOrder: 10
+        position:
+          serializedVersion: 2
+          x: -2085.001
+          y: 3622
+          width: 111
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269447
+      type: {class: CanUseAbilityConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 05db3d37-a504-4da3-b67e-827d1ff4f8c6
+        computeOrder: 11
+        position:
+          serializedVersion: 2
+          x: 316.68567
+          y: 4105
+          width: 124
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269448
+      type: {class: HasActiveAbilityConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 24343a46-ae2c-4203-93d2-a1b8b776e87a
+        computeOrder: 12
+        position:
+          serializedVersion: 2
+          x: -2356.001
+          y: 3622
+          width: 138
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269450
+      type: {class: SelectorNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 39526b94-d7e8-4d13-9edb-468bd94468e9
+        computeOrder: 9
+        position:
+          serializedVersion: 2
+          x: -2227.001
+          y: 3298
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269451
+      type: {class: IsActiveConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 26b3c7f3-f921-4f09-a4da-ed81cd17b3c2
+        computeOrder: 14
+        position:
+          serializedVersion: 2
+          x: -2722.5774
+          y: 2972.1975
+          width: 89
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269452
+      type: {class: HasTargetConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: bbd55df2-347c-400f-b95c-fc62df2c5ca4
+        computeOrder: 15
+        position:
+          serializedVersion: 2
+          x: -2576.5774
+          y: 2972.1975
+          width: 100
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269453
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 823681a2-15ee-4ea0-aecb-b01beed3ffcb
+        computeOrder: 13
+        position:
+          serializedVersion: 2
+          x: -2678.5774
+          y: 2735.1975
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269454
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 1206eae9-8b2d-4079-8dc1-9bf511601ed1
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: -2324
+          y: 2261.4673
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269458
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: a8c9eac1-1a05-454f-9d56-697098213312
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: -2051.0007
+          y: 3045
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269467
+      type: {class: IsActiveConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 632221b8-e482-4b07-a8df-db0df06982fa
+        computeOrder: 18
+        position:
+          serializedVersion: 2
+          x: -2662
+          y: 4391.5005
+          width: 89
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269468
+      type: {class: AttackTargetActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: b16052f4-e512-48b7-ab36-b37cd3f3b4d4
+        computeOrder: 22
+        position:
+          serializedVersion: 2
+          x: -608.79254
+          y: 4934.3545
+          width: 127
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269469
+      type: {class: CanAttackConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 20505b8a-b3ff-4275-9c23-a0422feab474
+        computeOrder: 23
+        position:
+          serializedVersion: 2
+          x: -1231.0007
+          y: 4264
+          width: 102
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269470
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 57c54bf6-650c-426d-b78c-32cb9f000a96
+        computeOrder: 19
+        position:
+          serializedVersion: 2
+          x: -1153.0007
+          y: 3984
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269471
+      type: {class: SelectorNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 2a528dce-5575-42f2-807c-effae1e422ee
+        computeOrder: 16
+        position:
+          serializedVersion: 2
+          x: -1655.0007
+          y: 3567
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269472
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: ea916a1f-18c7-4523-92af-4b0e92af1bf2
+        computeOrder: 24
+        position:
+          serializedVersion: 2
+          x: -354.00104
+          y: 3948
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269473
+      type: {class: IsTargetInAttackRangeConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: df63b010-3ede-4236-8583-e29ef1bd92ef
+        computeOrder: 25
+        position:
+          serializedVersion: 2
+          x: -482.00058
+          y: 4280
+          width: 177
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269474
+      type: {class: LookAtTargetActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 3179c423-83a1-404c-a9b4-82828094920f
+        computeOrder: 26
+        position:
+          serializedVersion: 2
+          x: -191.00092
+          y: 4287
+          width: 118
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269475
+      type: {class: StopMovementActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 767ae1ce-0bc7-4f1c-926d-677a0ca4b84f
+        computeOrder: 27
+        position:
+          serializedVersion: 2
+          x: -1402.0009
+          y: 4264
+          width: 131
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269476
+      type: {class: IsActiveConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 0529358b-8bbf-492d-917b-577c3e75e908
+        computeOrder: 28
+        position:
+          serializedVersion: 2
+          x: -1539.0009
+          y: 4264
+          width: 89
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269477
+      type: {class: IsTargetInAttackRangeConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 32427530-44a4-47d0-b638-294a24240b6b
+        computeOrder: 30
+        position:
+          serializedVersion: 2
+          x: -2373
+          y: 4584.5005
+          width: 177
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269478
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: fd51d250-554d-48fb-a402-e37c3867ba3e
+        computeOrder: 17
+        position:
+          serializedVersion: 2
+          x: -2155
+          y: 4085.5005
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269479
+      type: {class: MoveToTargetActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 33107399-c9df-4f10-a452-1a127f8632f5
+        computeOrder: 31
+        position:
+          serializedVersion: 2
+          x: -1964
+          y: 4367.5005
+          width: 126
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269480
+      type: {class: InverterNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Decorators, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 20e5a6a6-beb1-45b8-96d1-62085a44a3f5
+        computeOrder: 29
+        position:
+          serializedVersion: 2
+          x: -2351
+          y: 4367.5005
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269481
+      type: {class: IsAttackingConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 107a2b16-e777-4e90-808e-b311aa57abf0
+        computeOrder: 33
+        position:
+          serializedVersion: 2
+          x: -2141
+          y: 4584.5005
+          width: 108
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269482
+      type: {class: InverterNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Decorators, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 22639c30-6416-45b2-97bf-ea1de037f229
+        computeOrder: 32
+        position:
+          serializedVersion: 2
+          x: -2155
+          y: 4356.5005
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269483
+      type: {class: SelectorNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: cb9777ee-ee1e-4b65-9bdd-4662c296ada4
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 569.6855
+          y: 3584
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269485
+      type: {class: SwitchToAutoAttacksActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: cdd7edcf-f8f1-4908-b659-c4af551e963f
+        computeOrder: 35
+        position:
+          serializedVersion: 2
+          x: 890.6855
+          y: 4098
+          width: 111
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269486
+      type: {class: HasWeaponConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 09cfe5c5-a204-418e-bc54-767a9bc9d2f6
+        computeOrder: 36
+        position:
+          serializedVersion: 2
+          x: 716.6855
+          y: 4098
+          width: 111
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269487
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 42bfe724-b7dd-4eb1-9271-a3245f8429e2
+        computeOrder: 34
+        position:
+          serializedVersion: 2
+          x: 780.68536
+          y: 3858
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269491
+      type: {class: HasActiveAbilityConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 0cee4cd0-a453-4e3c-bf23-e8e93bf5602a
+        computeOrder: 38
+        position:
+          serializedVersion: 2
+          x: -57.31427
+          y: 3742.0002
+          width: 138
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269493
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 9115b154-a63f-498f-b48f-0041a7252788
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 155.6857
+          y: 3227
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269494
+      type: {class: InverterNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Decorators, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 91bcf468-edd6-451b-97f4-6276d5016e51
+        computeOrder: 37
+        position:
+          serializedVersion: 2
+          x: 48.685272
+          y: 3469
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269496
+      type: {class: SelectorNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 4749989f-9bf5-4868-9f58-cda17ef07542
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: -2051.265
+          y: 2687.0598
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269497
+      type: {class: HasActiveAbilityConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 78816dc7-d7cb-4c19-b474-d662807291ed
+        computeOrder: 40
+        position:
+          serializedVersion: 2
+          x: -1176.001
+          y: 4797
+          width: 138
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269498
+      type: {class: SelectorNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 2f6fea1b-cd50-4b8a-adfd-c0f3aa60a95b
+        computeOrder: 20
+        position:
+          serializedVersion: 2
+          x: -1017.0009
+          y: 4267
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269499
+      type: {class: UseAbilityActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: df1cd41a-b694-4e18-a7ca-0796552ba780
+        computeOrder: 41
+        position:
+          serializedVersion: 2
+          x: -981.0008
+          y: 4797
+          width: 100
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269500
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: bf1f2bc2-aeb8-4346-a18f-801947fc90be
+        computeOrder: 39
+        position:
+          serializedVersion: 2
+          x: -1096.001
+          y: 4538
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269501
+      type: {class: HasWeaponConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 9fb6aeed-f748-40d7-9855-f9b09353ee94
+        computeOrder: 42
+        position:
+          serializedVersion: 2
+          x: -817.79266
+          y: 4934.3545
+          width: 111
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269502
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 82bd5c85-7241-427a-9989-7df5c8baec6c
+        computeOrder: 21
+        position:
+          serializedVersion: 2
+          x: -744.7926
+          y: 4575.354
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269503
+      type: {class: RepeaterNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 159f81f5-12dd-445e-84d0-3f362be6ebf2
+        computeOrder: 43
+        position:
+          serializedVersion: 2
+          x: -1455.1458
+          y: 1703
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269513
+      type: {class: AsyncParallelNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 00b6abf2-7131-4cd1-9e2c-c5f40dae7115
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: -2305.4895
+          y: 1967.0636
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269515
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: ade66eb7-542c-4a85-b863-e19a2486e03d
+        computeOrder: 44
+        position:
+          serializedVersion: 2
+          x: -1825.4176
+          y: 2201.809
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 2850263110814269516
+      type: {class: IsTargetInAttackRangeConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 4cc18cd3-9566-4dce-b436-d51ed8adee51
+        computeOrder: 45
+        position:
+          serializedVersion: 2
+          x: -1954.0918
+          y: 2489.5188
+          width: 177
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850263110814269517
+      type: {class: StopMovementActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: e2fbc488-eee7-4e92-ba78-1139663b7b82
+        computeOrder: 46
+        position:
+          serializedVersion: 2
+          x: -1644.4481
+          y: 2523.5474
+          width: 100
+          height: 100
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500288
+      type: {class: RootNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: e7d8f401-6116-4d4f-844a-95e9495ff32f
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: -2324
+          y: 1617.7504
+          width: 136
+          height: 176
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0

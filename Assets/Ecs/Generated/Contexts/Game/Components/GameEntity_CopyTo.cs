@@ -122,6 +122,10 @@ public partial class GameEntity
 		{
 			CopyRigidbodyTo(Rigidbody);
 		}
+		else if (component is Ecs.Game.Components.TrajectoryComponent Trajectory)
+		{
+			CopyTrajectoryTo(Trajectory);
+		}
 		else if (component is Ecs.Game.Components.ActiveComponent Active)
 		{
 			IsActive = true;
@@ -150,9 +154,25 @@ public partial class GameEntity
 		{
 			CopyPortalTo(Portal);
 		}
+		else if (component is Ecs.Game.Components.VfxComponent Vfx)
+		{
+			CopyVfxTo(Vfx);
+		}
 		else if (component is Ecs.Game.Components.Collectables.CollectableComponent Collectable)
 		{
 			CopyCollectableTo(Collectable);
+		}
+		else if (component is Ecs.Game.Components.Abilities.ActiveAbility ActiveAbility)
+		{
+			CopyActiveAbilityTo(ActiveAbility);
+		}
+		else if (component is Ecs.Game.Components.Abilities.SpotComponent Spot)
+		{
+			IsSpot = true;
+		}
+		else if (component is Ecs.Game.Components.Abilities.AbilityComponent Ability)
+		{
+			CopyAbilityTo(Ability);
 		}
 		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
 		{

@@ -11,5 +11,6 @@ namespace Ecs.Utils.Groups
         IDisposable GetEnemies(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null);
         IDisposable GetStagePortals(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null);
         IDisposable GetAi(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null);
+        IDisposable GetAbilities(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null);
     }
 }

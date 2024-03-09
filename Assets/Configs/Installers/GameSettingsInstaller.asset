@@ -20,3 +20,4 @@ MonoBehaviour:
   powerUpBase: {fileID: 11400000, guid: 5baaa8d268776ea4caeae69f9ba7f57b, type: 2}
   aiBTreeSettingsBase: {fileID: 11400000, guid: 58129ff6ed872074cbf13c2076c9eb0a, type: 2}
   lootSettings: {fileID: 11400000, guid: b06778631309ac44685e2d33faa5fcaf, type: 2}
+  abilitiesBase: {fileID: 11400000, guid: 45e90d3a4002e1c46ae341865e1fbfa4, type: 2}

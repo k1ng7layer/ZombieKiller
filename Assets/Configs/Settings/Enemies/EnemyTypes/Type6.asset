@@ -21,3 +21,4 @@ MonoBehaviour:
   BaseAttackRange: 15
   BaseMoveSpeed: 20
   BaseAttackSpeed: 1
+  Abilities: 00000000

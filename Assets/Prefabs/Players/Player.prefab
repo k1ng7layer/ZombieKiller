@@ -85,7 +85,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &6832376175296349407
 MonoBehaviour:
@@ -117,6 +117,7 @@ MonoBehaviour:
   _animator: {fileID: 1964098197658792138}
   _damageTrigger: {fileID: 9160984786523217685}
   _rootCollider: {fileID: 0}
+  weapon: {fileID: 0}
   levelUpVfx:
   - {fileID: 2624706032281001129}
   - {fileID: 3975608789588759998}
