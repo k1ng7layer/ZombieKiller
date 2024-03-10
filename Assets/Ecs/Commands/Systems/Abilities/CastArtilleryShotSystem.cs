@@ -48,13 +48,6 @@ namespace Ecs.Commands.Systems.Abilities
             waypoints[0] = startPoint;
             waypoints[1] = command.Target;
             var abilityParams = _abilitiesBase.Get(EAbilityType.ArtilleryShot);
-            
-            _commandBuffer.CreateProjectileWithTrajectory(
-                command.Owner, 
-                command.Origin + new Vector3(0f, 2f, 0f), 
-                waypoints, 
-                EProjectileType.FireBall, 
-                abilityParams.Speed);
 
             var projectile = _projectileProvider.CreateProjectileWithTrajectory(
                 command.Owner,
@@ -62,6 +55,7 @@ namespace Ecs.Commands.Systems.Abilities
                 waypoints, 
                 EProjectileType.FireBall, 
                 abilityParams.Speed);
+            
             
 
             var spot = _game.CreateEntity();

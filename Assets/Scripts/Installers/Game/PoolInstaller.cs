@@ -3,6 +3,11 @@ using Db.Prefabs;
 using Db.ProjectileBase;
 using Ecs.Views.Linkable.Impl;
 using Ecs.Views.Linkable.Impl.Projectiles;
+using Ecs.Views.Linkable.Impl.Spots;
+using Game.Services.ExplosionPoolRepository;
+using Game.Services.ExplosionPoolRepository.Impl;
+using Game.Services.Pools.Explosion;
+using Game.Services.Pools.Explosion.Impl;
 using Game.Services.Pools.Projectile;
 using Game.Services.Pools.Projectile.Impl;
 using Game.Services.Pools.Spot;
@@ -19,6 +24,7 @@ namespace Installers.Game
         public override void InstallBindings()
         {
             Container.Bind<IProjectilePoolRepository>().To<ProjectilePoolRepository>().AsSingle();
+            Container.Bind<IExplosionPoolRepository>().To<ExplosionPoolRepository>().AsSingle();
             
             foreach (var projectileType in (EProjectileType[])Enum.GetValues(typeof(EProjectileType)))
             {
@@ -28,6 +34,11 @@ namespace Installers.Game
                 BindProjectilePool(projectileType);
                 BindSpotPool();
 
+            }
+
+            foreach (var explosionType in (EExplosionType[])Enum.GetValues(typeof(EExplosionType)))
+            {
+                BindExplosionPool(explosionType);
             }
         }
 
@@ -48,6 +59,25 @@ namespace Installers.Game
 
                 return go.GetComponent<ProjectileView>();
             });
+        }
+
+        private void BindExplosionPool(EExplosionType explosionType)
+        {
+            var parent = new GameObject($"[Pool] Explosion type {explosionType}");
+            
+            Container.BindMemoryPoolCustomInterface<ExplosionView, ExplosionPool, IExplosionPool>()
+                .WithInitialSize(1)
+                .WithFactoryArguments(explosionType)
+                .FromMethod(container =>
+                {
+
+                    var projectileBase = container.Resolve<IPrefabsBase>();
+                    var prefab = projectileBase.Get(explosionType.ToString());
+
+                    var go = container.InstantiatePrefab(prefab, parent.transform);
+
+                    return go.GetComponent<ExplosionView>();
+                });
         }
 
         private void BindSpotPool()

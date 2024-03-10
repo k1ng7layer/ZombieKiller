@@ -157,12 +157,13 @@ namespace Ecs.Commands
             command.AttackerUid = attackerUid;
         }
 
-        public static void CreateExplosion(this ICommandBuffer commandBuffer, Vector3 origin, EExplosionType explosionType, Uid owner, Single damage)
+        public static void CreateExplosion(this ICommandBuffer commandBuffer, Vector3 origin, EExplosionType explosionType, Uid owner, Single radius, Single damage)
         {
             ref var command = ref commandBuffer.Create<CreateExplosionCommand>();
             command.Origin = origin;
             command.ExplosionType = explosionType;
             command.Owner = owner;
+            command.Radius = radius;
             command.Damage = damage;
         }
 

@@ -1,4 +1,3 @@
-using Ecs.Commands;
 using Ecs.Utils.Groups;
 using Game.Utils;
 using JCMG.EntitasRedux;
@@ -36,7 +35,7 @@ namespace Ecs.Game.Systems.Combat
                 var pos = projectile.Position.Value;
 
                 //Debug.Log($"ArtilleryShotTrajectorySystem. dist: {(nextPoint - pos).sqrMagnitude}, check: {0.1f * 0.1f} next point: {trajectoryInfo.NextPoint} ");
-                if ((nextPoint - pos).sqrMagnitude <= 0.1f * 0.1f)
+                if ((nextPoint - pos).sqrMagnitude <= 0.3f * 0.3f)
                 {
                     if (trajectoryInfo.NextPoint + 1 < trajectoryInfo.Waypoints.Length)
                     {
@@ -51,7 +50,7 @@ namespace Ecs.Game.Systems.Combat
                     }
                     else
                     {
-                        _commandBuffer.CreateExplosion(nextPoint, EExplosionType.Fire, projectile.Owner.Value, 100f);
+                        //_commandBuffer.CreateExplosion(nextPoint, EExplosionType.FireExplosion, projectile.Owner.Value, 100f);
                     }
                 }
             }

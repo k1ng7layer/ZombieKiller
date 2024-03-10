@@ -11,6 +11,7 @@ namespace Ecs.Commands.Command.Combat
         public Vector3 Origin;
         public EExplosionType ExplosionType;
         public Uid Owner;
+        public float Radius;
         public float Damage;
     }
 }

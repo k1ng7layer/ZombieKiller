@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Ecs.Views.Linkable.Impl;
+using Ecs.Views.Linkable.Impl.Spots;
 using Game.Services.Pools.Spot;
 using JCMG.EntitasRedux;
 using Plugins.Extensions.InstallerGenerator.Attributes;

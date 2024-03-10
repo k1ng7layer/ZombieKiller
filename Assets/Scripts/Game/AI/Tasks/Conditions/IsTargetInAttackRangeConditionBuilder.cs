@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using CleverCrow.Fluid.BTs.Trees;
 using GraphProcessor;
 using Plugins.NgpBehaviourTreeDesigner.Nodes;
-using UnityEngine;
 
 namespace Game.AI.Tasks.Conditions
 {
@@ -33,8 +32,8 @@ namespace Game.AI.Tasks.Conditions
                 var target = _game.GetEntityWithUid(entity.Target.TargetUid);
                 var dist2 = (target.Position.Value - entity.Position.Value).sqrMagnitude;
                 var range =  entity.AttackRange.Value;
-                Debug.Log(
-                    $"IsTargetInAttackRangeConditionBuilder, dist2: {(target.Position.Value - entity.Position.Value).magnitude}, result: {dist2 <= range * range}");
+                // Debug.Log(
+                //     $"IsTargetInAttackRangeConditionBuilder, dist2: {(target.Position.Value - entity.Position.Value).magnitude}, result: {dist2 <= range * range}");
                 return dist2 <= range * range;
                 
             });

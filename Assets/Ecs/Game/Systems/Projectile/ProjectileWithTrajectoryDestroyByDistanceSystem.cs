@@ -8,13 +8,13 @@ using Plugins.Extensions.InstallerGenerator.Enums;
 namespace Ecs.Game.Systems.Projectile
 {
     [Install(ExecutionType.Game, ExecutionPriority.Normal, 710, nameof(EFeatures.Combat))]
-    public class ProjectileDestroyByDistanceSystem : IUpdateSystem
+    public class ProjectileWithTrajectoryDestroyByDistanceSystem : IUpdateSystem
     {
         private readonly IGameGroupUtils _gameGroupUtils;
         private readonly ICommandBuffer _commandBuffer;
         private readonly GameContext _game;
 
-        public ProjectileDestroyByDistanceSystem(
+        public ProjectileWithTrajectoryDestroyByDistanceSystem(
             IGameGroupUtils gameGroupUtils, 
             ICommandBuffer commandBuffer, 
             GameContext game
@@ -27,17 +27,18 @@ namespace Ecs.Game.Systems.Projectile
         
         public void Update()
         {
-            using var group = _gameGroupUtils.GetProjectiles(out var projectiles, 
-                p => !p.HasTrajectory);
+            using var group = _gameGroupUtils.GetProjectiles(out var projectiles, p => p.HasTrajectory);
 
             foreach (var projectile in projectiles)
             {
                 var destination = projectile.Destination.Value;
                 var projectilePos = projectile.Position.Value;
-
+                var trajectory = projectile.Trajectory.Value;
                 var dist2 = (destination - projectilePos).sqrMagnitude;
 
-                if (dist2 <= 2 * 2)
+               // Debug.Log($"trajectory.NextPoint: {trajectory.NextPoint}, trajectory.Waypoints.Length: {trajectory.Waypoints.Length}, dist2: {dist2}");
+                //Debug.Log($"NextPoint: {trajectory.NextPoint}, Waypoints.Length: {trajectory.Waypoints.Length}, dist2: {dist2}, destination: {destination}");
+                if (dist2 <= 0.8f * 0.8f && trajectory.NextPoint == trajectory.Waypoints.Length - 1)
                 {
                     _commandBuffer.DestroyProjectile(projectile.Transform.Value.GetHashCode());
                 }
@@ -46,7 +47,7 @@ namespace Ecs.Game.Systems.Projectile
                 var ownerPos = owner.Position.Value;
                 var distToOwner2 = (ownerPos - projectilePos).sqrMagnitude;
 
-                if (distToOwner2 >= 150 * 150)
+                if (distToOwner2 >= 150 * 150 && trajectory.NextPoint == trajectory.Waypoints.Length)
                 {
                     _commandBuffer.DestroyProjectile(projectile.Transform.Value.GetHashCode());
                 }

@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using Ecs.Commands.Command.Combat;
 using Ecs.Utils.Groups;
+using Game.Services.ExplosionPoolRepository;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UniRx;
 
 namespace Ecs.Commands.Systems.Combat
 {
@@ -12,15 +14,18 @@ namespace Ecs.Commands.Systems.Combat
     public class CreateExplosionSystem : ForEachCommandUpdateSystem<CreateExplosionCommand>
     {
         private readonly IGameGroupUtils _gameGroupUtils;
+        private readonly IExplosionPoolRepository _explosionPoolRepository;
         private readonly GameContext _game;
 
         public CreateExplosionSystem(
             ICommandBuffer commandBuffer, 
             IGameGroupUtils gameGroupUtils,
+            IExplosionPoolRepository explosionPoolRepository,
             GameContext game
         ) : base(commandBuffer)
         {
             _gameGroupUtils = gameGroupUtils;
+            _explosionPoolRepository = explosionPoolRepository;
             _game = game;
         }
 
@@ -36,6 +41,20 @@ namespace Ecs.Commands.Systems.Combat
             
             foreach (var target in targets)
             {
+                var dist2 = (target.Position.Value - command.Origin).sqrMagnitude;
+                
+                var explosionPool = _explosionPoolRepository.Get(command.ExplosionType);
+                var explosionView = explosionPool.Spawn();
+                explosionView.transform.position = command.Origin;
+                
+                Observable.Timer(TimeSpan.FromSeconds(explosionView.LifeTime)).Subscribe(_ =>
+                {
+                    explosionPool.Despawn(explosionView);
+                });
+                
+                if (dist2 > command.Radius * command.Radius)
+                    continue;
+                
                 var damage = command.Damage;
                 var health = target.Health.Value;
                 health -= damage;

@@ -2,7 +2,7 @@ using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Core.Utils;
 using UnityEngine;
 
-namespace Ecs.Views.Linkable.Impl
+namespace Ecs.Views.Linkable.Impl.Spots
 {
     public class SpotView : ObjectView
     {

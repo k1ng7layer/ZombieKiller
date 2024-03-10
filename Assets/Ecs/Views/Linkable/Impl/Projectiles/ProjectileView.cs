@@ -20,7 +20,14 @@ namespace Ecs.Views.Linkable.Impl.Projectiles
 
         public void SetState(bool v)
         {
-            mainFx.SetActive(v);
+            touchTrigger.enabled = v;
+        }
+
+        public void SetVisibility(bool value)
+        {
+            if (value)
+                OnVisibleAdded();
+            else OnVisibleRemoved();
         }
         
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
@@ -32,6 +39,8 @@ namespace Ecs.Views.Linkable.Impl.Projectiles
             projectileEntity.SubscribeDead(OnDead).AddTo(unsubscribe);
             projectileEntity.SubscribeActive(OnActiveAdded).AddTo(unsubscribe);
             projectileEntity.SubscribeActiveRemoved(OnActiveRemoved).AddTo(unsubscribe);
+            projectileEntity.SubscribeVisible(_ => OnVisibleAdded()).AddTo(unsubscribe);
+            projectileEntity.SubscribeVisibleRemoved(_ => OnVisibleRemoved()).AddTo(unsubscribe);
             
             touchTrigger.OnTriggerEnterAsObservable().Subscribe(OnProjectileTouch).AddTo(unsubscribe);
 
@@ -46,6 +55,16 @@ namespace Ecs.Views.Linkable.Impl.Projectiles
         private void OnActiveRemoved(GameEntity _)
         {
             SetState(false);
+        }
+
+        private void OnVisibleAdded()
+        {
+            mainFx.SetActive(true);
+        }
+        
+        private void OnVisibleRemoved()
+        {
+            mainFx.SetActive(false);
         }
 
         private void OnProjectileTouch(Collider other)

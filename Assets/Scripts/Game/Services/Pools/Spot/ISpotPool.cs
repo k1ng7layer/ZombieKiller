@@ -1,5 +1,4 @@
-﻿using Ecs.Views.Linkable.Impl;
-using Ecs.Views.Linkable.Impl.Projectiles;
+﻿using Ecs.Views.Linkable.Impl.Spots;
 using Zenject;
 
 namespace Game.Services.Pools.Spot

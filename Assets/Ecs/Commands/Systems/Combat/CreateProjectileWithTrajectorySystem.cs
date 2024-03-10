@@ -54,7 +54,7 @@ namespace Ecs.Commands.Systems.Combat
             projectileEntity.AddLink(projectileView);
             
             _linkedEntityRepository.Add(projectileView.transform.GetHashCode(), projectileEntity);
-            projectileEntity.IsActive = true;
+            projectileEntity.IsVisible = true;
             
             projectileEntity.AddTrajectory(new TrajectoryInfo(command.Trajectory, 0));
         }
