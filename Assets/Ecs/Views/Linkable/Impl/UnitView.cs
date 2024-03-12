@@ -47,12 +47,14 @@ namespace Ecs.Views.Linkable.Impl
             {
                 attackEndTrigger?.AttackEnd.Subscribe(_ =>
                 {
+                    OnAttackEnd();
                     _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
                 }).AddTo(gameObject);
                 
                 
                 attackEndTrigger?.AttackStart.Subscribe(_ =>
                 {
+                    OnAttackBegin();
                     _commandBuffer.PerformAttack(unitEntity.Uid.Value);
                 });
             }
@@ -101,5 +103,11 @@ namespace Ecs.Views.Linkable.Impl
         {
             _animator.SetTrigger(AnimationKeys.TakeDamage);
         }
+
+        protected virtual void OnAttackBegin()
+        {}
+        
+        protected virtual void OnAttackEnd()
+        {}
     }
 }

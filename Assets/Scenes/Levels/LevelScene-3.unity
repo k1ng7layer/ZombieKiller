@@ -1898,9 +1898,7 @@ MonoBehaviour:
   physicalCameraView: {fileID: 910429883}
   startCameraPosition: {fileID: 2056382328}
   playerView: {fileID: 5277602330854475987}
-  enemySpawnPoints:
-  - SpawnTransform: {fileID: 1697953364}
-    EnemyType: 5
+  enemySpawnPoints: []
   levelPortals:
   - {fileID: 1973904108}
   - {fileID: 1316960874}
@@ -2127,7 +2125,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 0
+  m_UpdateMethod: 1
   m_BlendUpdateMethod: 0
   m_DefaultBlend:
     m_Style: 1
