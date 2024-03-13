@@ -1,13 +1,14 @@
 ﻿using Db.Player;
 using Ecs.Core.Interfaces;
 using Game.Services.InputService;
+using JCMG.EntitasRedux;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
 
 namespace Ecs.Game.Systems.Player
 {
     [Install(ExecutionType.Game, ExecutionPriority.High, 1000, nameof(EFeatures.Input))]
-    public class PlayerMovementSystem : IFixedSystem
+    public class PlayerMovementSystem : IUpdateSystem
     {
         private readonly IInputService _inputService;
         private readonly IPlayerSettings _playerSettings;
@@ -27,15 +28,28 @@ namespace Ecs.Game.Systems.Player
             _timeProvider = timeProvider;
         }
         
-        public void Fixed()
+        // public void Fixed()
+        // {
+        //     var player = _game.PlayerEntity;
+        //     
+        //     if (!player.IsCanMove || player.IsDead && player.IsPerformingAttack) return;
+        //
+        //     var input = _inputService.InputDirection.normalized;
+        //
+        //     var move = input * _playerSettings.BaseMoveSpeed * _timeProvider.FixedDeltaTime;
+        //     
+        //     player.ReplaceMoveDirection(move);
+        // }
+
+        public void Update()
         {
             var player = _game.PlayerEntity;
             
-            if (!player.IsCanMove || player.IsDead) return;
+            if (!player.IsCanMove || player.IsDead && player.IsPerformingAttack) return;
 
             var input = _inputService.InputDirection.normalized;
 
-            var move = input * _playerSettings.BaseMoveSpeed * _timeProvider.FixedDeltaTime;
+            var move = input * _playerSettings.BaseMoveSpeed * _timeProvider.DeltaTime;
             
             player.ReplaceMoveDirection(move);
         }

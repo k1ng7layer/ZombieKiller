@@ -14,6 +14,7 @@ namespace Ecs.Utils.Groups.Impl
         private readonly IGroup<GameEntity> _portalGroup;
         private readonly IGroup<GameEntity> _aiGroup;
         private readonly IGroup<GameEntity> _collectablesGroup;
+        private readonly IGroup<GameEntity> _abilitiesGroup;
 
         public GameGroupUtils(GameContext game, PowerUpContext powerUp)
         {
@@ -23,6 +24,7 @@ namespace Ecs.Utils.Groups.Impl
             _aiGroup = game.GetGroup(GameMatcher.Ai);
             _unitsGroup = game.GetGroup(GameMatcher.Unit);
             _collectablesGroup = game.GetGroup(GameMatcher.Collectable);
+            _abilitiesGroup = game.GetGroup(GameMatcher.Ability);
         }
 
         public IDisposable GetUnits(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null, bool nonDestroyed = true)
@@ -114,6 +116,13 @@ namespace Ecs.Utils.Groups.Impl
             Func<GameEntity, bool> baseFilter = e => e.IsAi && !e.IsDestroyed;
 
             return GetEntities(out buffer, _aiGroup, baseFilter, filter);
+        }
+
+        public IDisposable GetAbilities(out List<GameEntity> buffer, Func<GameEntity, bool> filter = null)
+        {
+            Func<GameEntity, bool> baseFilter = e => e.HasAbility && !e.IsDestroyed;
+
+            return GetEntities(out buffer, _abilitiesGroup, baseFilter, filter);
         }
     }
 }

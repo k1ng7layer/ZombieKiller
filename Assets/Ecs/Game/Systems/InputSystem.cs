@@ -5,6 +5,7 @@ using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Game.Systems
 {
@@ -16,7 +17,11 @@ namespace Ecs.Game.Systems
         private readonly ICommandBuffer _commandBuffer;
         private readonly GameContext _game;
 
-        public InputSystem(IInputService inputService, ICommandBuffer commandBuffer, GameContext game)
+        public InputSystem(
+            IInputService inputService, 
+            ICommandBuffer commandBuffer, 
+            GameContext game
+        )
         {
             _inputService = inputService;
             _commandBuffer = commandBuffer;
@@ -36,6 +41,13 @@ namespace Ecs.Game.Systems
         private void OnBasicAttackPressed()
         {
             var player = _game.PlayerEntity;
+            
+            player.ReplaceMoveDirection(Vector3.zero);
+            player.IsCanMove = false;
+            // Observable.Timer(TimeSpan.FromMilliseconds(80f)).Subscribe(_ =>
+            // {
+            //     _commandBuffer.StartPerformingAttack(player.Uid.Value);
+            // });
             
             _commandBuffer.StartPerformingAttack(player.Uid.Value);
         }

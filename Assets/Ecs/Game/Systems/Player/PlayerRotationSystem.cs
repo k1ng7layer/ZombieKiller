@@ -11,7 +11,7 @@ namespace Ecs.Game.Systems.Player
     {
         private readonly IInputService _inputService;
         private readonly GameContext _game;
-        private const float TurnTime = 0.1f;
+        private const float TurnTime = 0.07f;
         private float _turnVelocity;
 
         public PlayerRotationSystem(IInputService inputService, GameContext game)
@@ -24,7 +24,7 @@ namespace Ecs.Game.Systems.Player
         {
             var player = _game.PlayerEntity;
             
-            if (!player.IsCanMove || player.IsDead)
+            if (!player.IsCanRotate || player.IsDead)
                 return;
 
             var playerRotation = player.Rotation.Value;

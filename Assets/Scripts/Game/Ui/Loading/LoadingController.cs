@@ -33,11 +33,11 @@ namespace Game.Ui.Loading
             {
                 View.LoadingText.text = resultText;
                 
-                yield return new WaitForSeconds(0.07f);
+                yield return new WaitForSeconds(0.3f);
                 
                 resultText += dots;
                 
-                if (i == 2)
+                if (i == 3)
                 {
                     resultText = original;
                     i = 0;

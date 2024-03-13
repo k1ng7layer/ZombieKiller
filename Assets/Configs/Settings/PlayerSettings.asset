@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   _starterWeapon: 0HN1NNNNMSF5I
-  _baseMoveSpeed: 300
+  _baseMoveSpeed: 5
   _levelExpMultiplier: 1
   _levelRequiredMultiplier: 1.3
   _baseExperienceRequired: 100

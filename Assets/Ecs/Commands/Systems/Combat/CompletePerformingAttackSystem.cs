@@ -22,6 +22,7 @@ namespace Ecs.Commands.Systems.Combat
         {
             var attacker = _game.GetEntityWithUid(command.AttackerUid);
 
+            attacker.IsCanRotate = true;
             attacker.IsPerformingAttack = false;
             
             var weaponUid = attacker.EquippedWeapon.Value.WeaponEntityUid;

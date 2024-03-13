@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Db.LootParams;
 using Game.Utils;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Db.Enemies
     {
         public EEnemyType EnemyType;
         public string Weapon;
+        public bool SpawnWeapon = true;
 
         [Space]
         [Header("Loot")]
@@ -21,6 +23,9 @@ namespace Db.Enemies
         public float BaseAttackRange = 3;
         public float BaseMoveSpeed = 3;
         public float BaseAttackSpeed = 1;
-        
+
+        [Space] 
+        [Header("Abilities")] 
+        public List<EAbilityType> Abilities;
     }
 }

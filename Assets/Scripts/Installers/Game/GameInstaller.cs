@@ -1,7 +1,9 @@
 ﻿using Ecs.Utils.LinkedEntityRepository.Impl;
 using Ecs.Utils.SpawnService.Impl;
 using Game.Providers.PowerUpProvider.Impl;
+using Game.Providers.Projectile.Impl;
 using Game.Providers.RandomProvider.Impl;
+using Game.Services.Ai.Abilities.Impl;
 using Game.Services.InputService.Impl;
 using Game.Services.PrefabPoolService.Impl;
 using Game.Services.SaveService.Impl;
@@ -45,6 +47,7 @@ namespace Installers.Game
             Container.BindInterfacesAndSelfTo<SystemRandomProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<RandomPowerUpIdProvider>().AsSingle();
             Container.BindInterfacesAndSelfTo<SaveGameService>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ProjectileProvider>().AsSingle();
         }
     }
 }

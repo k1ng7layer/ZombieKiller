@@ -61,6 +61,7 @@ namespace Ecs.Game.Systems.Initialize
             
             player.IsPlayer = true;
             player.IsCanMove = true;
+            player.IsCanRotate = true;
             player.AddUid(playerUid);
             player.AddRotation(playerView.transform.rotation);
             player.AddPosition(playerView.transform.position);
@@ -83,7 +84,7 @@ namespace Ecs.Game.Systems.Initialize
 
         private void CreateWeapon(string weaponId, Uid playerUid)
         {
-            _commandBuffer.EquipWeapon(weaponId, playerUid);
+            _commandBuffer.EquipWeapon(weaponId, playerUid, true);
         }
         
         private void SetupAttributes(GameEntity player, GameData gameData)

@@ -42,6 +42,9 @@ namespace Ecs.Commands.Systems.Combat
             var weaponUid = attacker.EquippedWeapon.Value.WeaponEntityUid;
             var weaponEntity = _game.GetEntityWithUid(weaponUid);
             weaponEntity.IsPerformingAttack = true;
+
+            if (attacker.IsPlayer)
+                attacker.IsCanRotate = false;
         }
     }
 }

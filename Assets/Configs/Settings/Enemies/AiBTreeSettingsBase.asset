@@ -28,3 +28,6 @@ MonoBehaviour:
   - aiType: 4
     trees:
     - {fileID: 11400000, guid: 4c4d975a7d5a8884387ad3d209f580a9, type: 2}
+  - aiType: 5
+    trees:
+    - {fileID: 11400000, guid: 29a5d8eee6231774eab2aa832aa37541, type: 2}

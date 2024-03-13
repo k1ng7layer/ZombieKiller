@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 7747282746157455210}
   - component: {fileID: 3373638914164909563}
   - component: {fileID: 9160984786523217685}
+  - component: {fileID: 1421014464551244588}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -80,12 +81,12 @@ Rigidbody:
   m_GameObject: {fileID: 5277602331010575663}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0
+  m_Drag: 0.9
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &6832376175296349407
 MonoBehaviour:
@@ -116,10 +117,12 @@ MonoBehaviour:
   _rb: {fileID: 5277602331010575661}
   _animator: {fileID: 1964098197658792138}
   _damageTrigger: {fileID: 9160984786523217685}
-  _rootCollider: {fileID: 0}
+  _rootCollider: {fileID: 9160984786523217685}
+  weapon: {fileID: 0}
   levelUpVfx:
   - {fileID: 2624706032281001129}
   - {fileID: 3975608789588759998}
+  characterController: {fileID: 1421014464551244588}
 --- !u!136 &3373638914164909563
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -143,10 +146,28 @@ CapsuleCollider:
   m_GameObject: {fileID: 5277602331010575663}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.36
   m_Height: 2.13
   m_Direction: 1
+  m_Center: {x: 0, y: 1.04, z: 0}
+--- !u!143 &1421014464551244588
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277602331010575663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.13
+  m_Radius: 0.24
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.04, z: 0}
 --- !u!1 &5277602331729754782
 GameObject:

@@ -1,3 +1,5 @@
+using Db.Abilities;
+using Db.Abilities.Impl;
 using Db.Ai;
 using Db.Ai.Impl;
 using Db.Camera;
@@ -36,6 +38,7 @@ namespace Installers.Game
         [SerializeField] private PowerUpBase powerUpBase;
         [SerializeField] private AiBTreeSettingsBase aiBTreeSettingsBase;
         [SerializeField] private LootSettings lootSettings;
+        [SerializeField] private AbilitiesBase abilitiesBase;
 
        
 
@@ -49,6 +52,7 @@ namespace Installers.Game
             Container.Bind<IPowerUpBase>().FromInstance(powerUpBase);
             Container.Bind<IAiBTreeSettingsBase>().To<AiBTreeSettingsBase>().FromInstance(aiBTreeSettingsBase).AsSingle();
             Container.Bind<ILootSettings>().To<LootSettings>().FromInstance(lootSettings).AsSingle();
+            Container.Bind<IAbilitiesBase>().To<AbilitiesBase>().FromInstance(abilitiesBase).AsSingle();
         }
     }
 }

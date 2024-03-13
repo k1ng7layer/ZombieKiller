@@ -7,7 +7,7 @@ namespace Game.Services.Pools.Projectile.Impl
 {
     public class ProjectilePool : MemoryPool<ProjectileView>, IProjectilePool
     {
-        private static readonly Vector3 DefaultPosition = new Vector3(0, -5000, 0);
+        private static readonly Vector3 DefaultPosition = new(0, -5000, 0);
         
         public ProjectilePool(EProjectileType projectileType)
         {
@@ -21,7 +21,9 @@ namespace Game.Services.Pools.Projectile.Impl
         {
             base.OnCreated(item);
 
-            item.SetState(true);
+            //item.SetState(true);
+            item.SetState(false);
+            item.SetVisibility(false);
 
             item.transform.position = DefaultPosition;
         }
@@ -31,8 +33,16 @@ namespace Game.Services.Pools.Projectile.Impl
             base.OnDespawned(item);
             
             item.SetState(false);
+            item.SetVisibility(false);
             
             item.transform.position = DefaultPosition;
+        }
+
+        protected override void OnSpawned(ProjectileView item)
+        {
+            base.OnSpawned(item);
+            
+            item.SetVisibility(true);
         }
     }
 }

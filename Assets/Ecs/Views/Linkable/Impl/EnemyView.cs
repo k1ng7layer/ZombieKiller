@@ -17,6 +17,7 @@ namespace Ecs.Views.Linkable.Impl
         [SerializeField] private NavMeshAgent navMeshAgent;
         
         [Inject] private IEnemyParamsBase _enemyParamsBase;
+        
         private GameEntity _enemyEntity;
 
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)

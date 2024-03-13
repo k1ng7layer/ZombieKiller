@@ -54,6 +54,7 @@ namespace Ecs.Commands.Systems.Combat
             var ownerForward = weaponOwner.Transform.Value.forward;
             var rotation = Quaternion.LookRotation(ownerForward);
             var weaponRoot = weaponOwner.WeaponRoot.Value;
+            var destination = (rotation * Vector3.forward) * 100f;
             
             var projectileEntity = _game.CreateProjectile(
                 projectileType,
@@ -63,6 +64,8 @@ namespace Ecs.Commands.Systems.Combat
                 rotation, 
                 weaponSettings.PhysicalDamage, 
                 weaponSettings.MagicDamage);
+            
+            projectileEntity.AddDestination(destination);
             
             Debug.Log($"Projectile spawn: {projectileView.transform.GetHashCode()}");
             

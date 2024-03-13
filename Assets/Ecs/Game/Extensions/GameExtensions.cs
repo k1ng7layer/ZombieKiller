@@ -12,7 +12,8 @@ namespace Ecs.Game.Extensions
         public static GameEntity CreateWeapon(this GameContext game, 
             string weaponId, 
             Weapon weapon, 
-            Uid owner
+            Uid owner,
+            bool spawn = true
         )
         {
             var weaponEntity = game.CreateEntity();
@@ -24,7 +25,7 @@ namespace Ecs.Game.Extensions
             weaponEntity.AddAttackTargets(new HashSet<Uid>());
             weaponEntity.AddPhysicalDamage(weapon.PhysicalDamage);
             weaponEntity.AddMagicDamage(weapon.MagicDamage);
-            weaponEntity.IsInstantiate = true;
+            weaponEntity.IsInstantiate = spawn;
 
             return weaponEntity;
         }

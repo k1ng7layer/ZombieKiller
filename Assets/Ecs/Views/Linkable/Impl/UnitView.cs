@@ -20,9 +20,12 @@ namespace Ecs.Views.Linkable.Impl
         [SerializeField] protected Animator _animator;
         [SerializeField] protected Collider _damageTrigger;
         [SerializeField] protected Collider _rootCollider;
+        [SerializeField] private WeaponView weapon;
         
         [Inject] private ICommandBuffer _commandBuffer;
         [Inject] private IWeaponRepository _weaponRepository;
+        
+        public WeaponView Weapon => weapon;
 
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
@@ -44,12 +47,14 @@ namespace Ecs.Views.Linkable.Impl
             {
                 attackEndTrigger?.AttackEnd.Subscribe(_ =>
                 {
+                    OnAttackEnd();
                     _commandBuffer.CompletePerformingAttack(unitEntity.Uid.Value);
                 }).AddTo(gameObject);
                 
                 
                 attackEndTrigger?.AttackStart.Subscribe(_ =>
                 {
+                    OnAttackBegin();
                     _commandBuffer.PerformAttack(unitEntity.Uid.Value);
                 });
             }
@@ -98,5 +103,11 @@ namespace Ecs.Views.Linkable.Impl
         {
             _animator.SetTrigger(AnimationKeys.TakeDamage);
         }
+
+        protected virtual void OnAttackBegin()
+        {}
+        
+        protected virtual void OnAttackEnd()
+        {}
     }
 }

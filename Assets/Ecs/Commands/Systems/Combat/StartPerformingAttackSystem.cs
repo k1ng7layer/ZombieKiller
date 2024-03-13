@@ -11,7 +11,10 @@ namespace Ecs.Commands.Systems.Combat
     {
         private readonly GameContext _game;
 
-        public StartPerformingAttackSystem(ICommandBuffer commandBuffer, GameContext game) : base(commandBuffer)
+        public StartPerformingAttackSystem(
+            ICommandBuffer commandBuffer, 
+            GameContext game
+        ) : base(commandBuffer)
         {
             _game = game;
         }

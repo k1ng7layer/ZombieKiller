@@ -6,6 +6,8 @@ using Game.Models.Ai.Tasks.Default;
 using Game.Models.Ai.Tasks.Default.TaskParents;
 using Game.Models.Ai.Tasks.SelfState;
 using Game.Models.Ai.Tasks.Utils;
+using Game.Services.Ai.Abilities.Impl;
+using Game.Services.Ai.AbilityParams;
 using Zenject;
 
 namespace Installers.Game
@@ -19,6 +21,7 @@ namespace Installers.Game
 
             BindCommonTasks();
             BindTasks();
+            BindAbilities();
         }
         
         private void BindCommonTasks()
@@ -51,6 +54,18 @@ namespace Installers.Game
             Container.BindInterfacesTo<StopMovementActionBuilder>().AsSingle();
             Container.BindInterfacesTo<IsAttackingConditionBuilder>().AsSingle();
             Container.BindInterfacesTo<IsActiveConditionBuilder>().AsSingle();
+            Container.BindInterfacesTo<UseAbilityActionBuilder>().AsSingle();
+            Container.BindInterfacesTo<CanUseAbilityConditionBuilder>().AsSingle();
+            Container.BindInterfacesTo<ChooseAbilityActionBuilder>().AsSingle();
+            Container.BindInterfacesTo<HasWeaponConditionBuilder>().AsSingle();
+            Container.BindInterfacesTo<HasActiveAbilityConditionBuilder>().AsSingle();
+            Container.BindInterfacesTo<SwitchToAutoAttacksActionBuilder>().AsSingle();
+        }
+
+        private void BindAbilities()
+        {
+            Container.BindInterfacesAndSelfTo<AiAbilityService>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ArtilleryShotAbilityParams>().AsSingle();
         }
     }
 }
