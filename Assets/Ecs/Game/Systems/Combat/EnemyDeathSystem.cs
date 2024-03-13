@@ -25,9 +25,15 @@ namespace Ecs.Game.Systems.Combat
             foreach (var entity in entities)
             {
                 entity.IsDead = true;
-                var weaponInfo = entity.EquippedWeapon.Value;
-                var weapon = _game.GetEntityWithUid(weaponInfo.WeaponEntityUid);
-                weapon.IsPerformingAttack = false;
+               
+
+                if (entity.HasWeapon)
+                {
+                    var weaponInfo = entity.EquippedWeapon.Value;
+                    var weapon = _game.GetEntityWithUid(weaponInfo.WeaponEntityUid);
+                    weapon.IsPerformingAttack = false;
+                }
+               
             }
         }
     }

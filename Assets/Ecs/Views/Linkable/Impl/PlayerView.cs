@@ -12,16 +12,18 @@ namespace Ecs.Views.Linkable.Impl
     {
         [SerializeField] private ParticleSystem[] levelUpVfx;
         [SerializeField] private CharacterController characterController;
+
+        private GameEntity _playerEntity;
         
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
             base.Subscribe(entity, unsubscribe);
 
-            var playerEntity = (GameEntity)entity;
+            _playerEntity = (GameEntity)entity;
             
-            playerEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
-            playerEntity.SubscribeEquippedWeapon(OnEquippedWeaponChanged).AddTo(unsubscribe);
-            playerEntity.SubscribeUnitLevel(OnLevelUp).AddTo(unsubscribe);
+            _playerEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
+            _playerEntity.SubscribeEquippedWeapon(OnEquippedWeaponChanged).AddTo(unsubscribe);
+            _playerEntity.SubscribeUnitLevel(OnLevelUp).AddTo(unsubscribe);
         }
         
         private void OnHealthChanged(GameEntity entity, float value)
@@ -73,6 +75,17 @@ namespace Ecs.Views.Linkable.Impl
             _rootCollider.enabled = false;
             characterController.enabled = true;
             _rb.isKinematic = true;
+        }
+
+        private void Update()
+        {
+            if (_playerEntity != null)
+            {
+                var transform1 = transform;
+                _playerEntity.Position.Value = transform1.position;
+                _playerEntity.Rotation.Value = transform1.rotation;
+            }
+                
         }
     }
 }
