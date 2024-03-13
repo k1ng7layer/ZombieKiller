@@ -134,6 +134,10 @@ public partial class GameEntity
 		{
 			CopySpeedTo(Speed);
 		}
+		else if (component is Ecs.Game.Components.VfxComponent Vfx)
+		{
+			CopyVfxTo(Vfx);
+		}
 		else if (component is Ecs.Game.Components.MoveDirectionComponent MoveDirection)
 		{
 			CopyMoveDirectionTo(MoveDirection);
@@ -154,25 +158,13 @@ public partial class GameEntity
 		{
 			CopyPortalTo(Portal);
 		}
-		else if (component is Ecs.Game.Components.VfxComponent Vfx)
+		else if (component is Ecs.Game.Components.CanRotateComponent CanRotate)
 		{
-			CopyVfxTo(Vfx);
+			IsCanRotate = true;
 		}
 		else if (component is Ecs.Game.Components.Collectables.CollectableComponent Collectable)
 		{
 			CopyCollectableTo(Collectable);
-		}
-		else if (component is Ecs.Game.Components.Abilities.ActiveAbility ActiveAbility)
-		{
-			CopyActiveAbilityTo(ActiveAbility);
-		}
-		else if (component is Ecs.Game.Components.Abilities.SpotComponent Spot)
-		{
-			IsSpot = true;
-		}
-		else if (component is Ecs.Game.Components.Abilities.AbilityComponent Ability)
-		{
-			CopyAbilityTo(Ability);
 		}
 		else if (component is Ecs.Game.Components.Camera.CameraModeComponent CameraMode)
 		{
@@ -273,6 +265,18 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.Combat.AttackTargetsComponent AttackTargets)
 		{
 			CopyAttackTargetsTo(AttackTargets);
+		}
+		else if (component is Ecs.Game.Components.Abilities.AbilityComponent Ability)
+		{
+			CopyAbilityTo(Ability);
+		}
+		else if (component is Ecs.Game.Components.Abilities.SpotComponent Spot)
+		{
+			IsSpot = true;
+		}
+		else if (component is Ecs.Game.Components.Abilities.ActiveAbility ActiveAbility)
+		{
+			CopyActiveAbilityTo(ActiveAbility);
 		}
 
 		#endif

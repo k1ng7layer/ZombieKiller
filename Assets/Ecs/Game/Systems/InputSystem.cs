@@ -5,7 +5,6 @@ using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
-using UniRx;
 using UnityEngine;
 
 namespace Ecs.Game.Systems
@@ -45,11 +44,12 @@ namespace Ecs.Game.Systems
             
             player.ReplaceMoveDirection(Vector3.zero);
             player.IsCanMove = false;
-            Observable.Timer(TimeSpan.FromMilliseconds(80f)).Subscribe(_ =>
-            {
-                _commandBuffer.StartPerformingAttack(player.Uid.Value);
-            });
-           
+            // Observable.Timer(TimeSpan.FromMilliseconds(80f)).Subscribe(_ =>
+            // {
+            //     _commandBuffer.StartPerformingAttack(player.Uid.Value);
+            // });
+            
+            _commandBuffer.StartPerformingAttack(player.Uid.Value);
         }
     }
 }

@@ -61,6 +61,7 @@ namespace Ecs.Game.Systems.Initialize
             
             player.IsPlayer = true;
             player.IsCanMove = true;
+            player.IsCanRotate = true;
             player.AddUid(playerUid);
             player.AddRotation(playerView.transform.rotation);
             player.AddPosition(playerView.transform.position);

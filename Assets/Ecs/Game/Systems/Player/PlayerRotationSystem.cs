@@ -24,7 +24,7 @@ namespace Ecs.Game.Systems.Player
         {
             var player = _game.PlayerEntity;
             
-            if (!player.IsCanMove || player.IsDead)
+            if (!player.IsCanRotate || player.IsDead)
                 return;
 
             var playerRotation = player.Rotation.Value;
