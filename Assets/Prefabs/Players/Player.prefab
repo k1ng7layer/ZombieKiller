@@ -116,7 +116,7 @@ MonoBehaviour:
   weaponRoot: {fileID: 6156629584068174267}
   _rb: {fileID: 5277602331010575661}
   _animator: {fileID: 1964098197658792138}
-  _damageTrigger: {fileID: 9160984786523217685}
+  _damageTrigger: {fileID: 3373638914164909563}
   _rootCollider: {fileID: 9160984786523217685}
   weapon: {fileID: 0}
   levelUpVfx:

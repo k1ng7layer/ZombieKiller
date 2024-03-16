@@ -70,6 +70,7 @@ namespace Ecs.Commands.Systems.Combat
             Debug.Log($"Projectile spawn: {projectileView.transform.GetHashCode()}");
             
             projectileEntity.IsPerformingAttack = true;
+            projectileEntity.IsActive = true;
             
             projectileView.Link(projectileEntity);
             projectileEntity.AddLink(projectileView);
