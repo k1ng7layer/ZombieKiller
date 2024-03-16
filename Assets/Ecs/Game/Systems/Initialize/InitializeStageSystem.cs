@@ -31,6 +31,9 @@ namespace Ecs.Game.Systems.Initialize
 
         public void Initialize()
         {
+            if (!_gameFieldProvider.GameField.SpawnEnemies)
+                return;
+            
             foreach (var enemySpawnPoint in _gameFieldProvider.GameField.EnemySpawnPoints)
             {
                 _commandBuffer.SpawnEnemy(

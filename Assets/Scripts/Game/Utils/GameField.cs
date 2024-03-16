@@ -14,6 +14,7 @@ namespace Game.Utils
         [SerializeField] private PlayerView playerView;
         [SerializeField] private EnemySpawnPointSettings[] enemySpawnPoints;
         [SerializeField] private PortalView[] levelPortals;
+        [SerializeField] public bool SpawnEnemies;
         
         public Transform StartCameraPosition => startCameraPosition;
         public VirtualCameraView VirtualCameraView => virtualCameraView;
