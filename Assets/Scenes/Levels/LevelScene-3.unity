@@ -1961,16 +1961,6 @@ MonoBehaviour:
   enemySpawnPoints:
   - SpawnTransform: {fileID: 894061113}
     EnemyType: 3
-  - SpawnTransform: {fileID: 445162486}
-    EnemyType: 3
-  - SpawnTransform: {fileID: 1080192308}
-    EnemyType: 3
-  - SpawnTransform: {fileID: 1697953364}
-    EnemyType: 3
-  - SpawnTransform: {fileID: 540026730}
-    EnemyType: 3
-  - SpawnTransform: {fileID: 1823023333}
-    EnemyType: 3
   levelPortals:
   - {fileID: 1973904108}
   - {fileID: 1316960874}

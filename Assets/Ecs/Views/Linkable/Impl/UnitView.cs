@@ -99,8 +99,9 @@ namespace Ecs.Views.Linkable.Impl
             _animator.SetTrigger(AnimationKeys.Death);
         }
 
-        private void OnHitCounterChanged(GameEntity entity, int value)
+        protected virtual void OnHitCounterChanged(GameEntity entity, int value)
         {
+            //Debug.Log($"OnHitCounterChanged, obj: {gameObject}");
             _animator.SetTrigger(AnimationKeys.TakeDamage);
         }
 

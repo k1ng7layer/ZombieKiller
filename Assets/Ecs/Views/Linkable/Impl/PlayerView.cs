@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
+using Ecs.Core.Interfaces;
 using Ecs.Utils;
 using Game.Utils;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Core.Utils;
 using UniRx;
 using UnityEngine;
+using Zenject;
 
 namespace Ecs.Views.Linkable.Impl
 {
@@ -12,8 +15,18 @@ namespace Ecs.Views.Linkable.Impl
     {
         [SerializeField] private ParticleSystem[] levelUpVfx;
         [SerializeField] private CharacterController characterController;
+        [SerializeField] private Renderer[] _renderers;
 
+        [Inject] private ITimeProvider _timeProvider;
+        
         private GameEntity _playerEntity;
+        private MaterialPropertyBlock _unitMaterialPropertyBlock;
+
+        private bool _fading;
+        private float _flickCooldown;
+        private float _colorLerpTime;
+        private Color _defaultColor;
+        private readonly Dictionary<int, Color> _colors = new();
         
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
@@ -24,6 +37,15 @@ namespace Ecs.Views.Linkable.Impl
             _playerEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
             _playerEntity.SubscribeEquippedWeapon(OnEquippedWeaponChanged).AddTo(unsubscribe);
             _playerEntity.SubscribeUnitLevel(OnLevelUp).AddTo(unsubscribe);
+            
+            _unitMaterialPropertyBlock = new MaterialPropertyBlock();
+
+            _renderers = GetComponentsInChildren<Renderer>();
+
+            foreach (var unitRender in _renderers)
+            {
+                _colors.Add(unitRender.GetHashCode(), unitRender.material.color);
+            }
         }
         
         private void OnHealthChanged(GameEntity entity, float value)
@@ -86,6 +108,24 @@ namespace Ecs.Views.Linkable.Impl
             _rb.isKinematic = true;
         }
 
+        protected override void OnHitCounterChanged(GameEntity entity, int value)
+        {
+            base.OnHitCounterChanged(entity, value);
+            
+            if (_flickCooldown > 0 || _colorLerpTime > 0)
+                return;
+            
+            _flickCooldown = 1f;
+            _fading = true;
+            
+            _unitMaterialPropertyBlock.SetColor("_Color", Color.white);
+            
+            foreach (var renderer in _renderers)
+            {
+                renderer.SetPropertyBlock(_unitMaterialPropertyBlock);
+            }
+        }
+
         private void Update()
         {
             if (_playerEntity != null)
@@ -94,7 +134,31 @@ namespace Ecs.Views.Linkable.Impl
                 _playerEntity.Position.Value = transform1.position;
                 _playerEntity.Rotation.Value = transform1.rotation;
             }
-                
+            
+            if (_flickCooldown > 0)
+            {
+                _flickCooldown -= _timeProvider.DeltaTime;
+            }
+
+            if (_fading)
+            {
+                foreach (var playerRenderer in _renderers)
+                {
+                    var defaultColor = _colors[playerRenderer.GetHashCode()];
+                    var color = Color.Lerp(Color.white, defaultColor, _colorLerpTime);
+                    _unitMaterialPropertyBlock.SetColor("_Color", color);
+                    _colorLerpTime += _timeProvider.DeltaTime * 0.1f;
+                    playerRenderer.SetPropertyBlock(_unitMaterialPropertyBlock);
+                }
+
+                if (_colorLerpTime >= 1)
+                {
+                    _colorLerpTime = 0f;
+                    _fading = false;
+                }
+                   
+            }
         }
+        
     }
 }
