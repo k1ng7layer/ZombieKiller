@@ -13,6 +13,7 @@ namespace Db.Player.Impl
         [SerializeField] private float _baseMaxHealth = 100f;
         [SerializeField] private float _baseAttackSpeed = 1.7f;
         [SerializeField] private float _collectItemsDist = 1f;
+        [SerializeField] private float _rotateDistToEnemy = 4f;
 
         public float BaseMoveSpeed => _baseMoveSpeed;
         public float LevelGainExpMultiplier => _levelExpMultiplier;
@@ -22,5 +23,7 @@ namespace Db.Player.Impl
         public float BaseMaxHealth => _baseMaxHealth;
         public float BaseAttackSpeed => _baseAttackSpeed;
         public float CollectItemsDist => _collectItemsDist = 1f;
+
+        public float RotateDistToEnemy => _rotateDistToEnemy;
     }
 }

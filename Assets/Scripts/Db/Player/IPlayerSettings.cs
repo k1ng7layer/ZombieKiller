@@ -10,5 +10,6 @@
         float BaseMaxHealth { get; }
         float BaseAttackSpeed { get; }
         float CollectItemsDist { get; }
+        float RotateDistToEnemy { get; }
     }
 }

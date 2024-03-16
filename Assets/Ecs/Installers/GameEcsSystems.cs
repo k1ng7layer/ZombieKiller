@@ -102,6 +102,7 @@ namespace Ecs.Installers {
 
 			// Combat 0200
 			SystemInstallHelper.Install<PerformMeleeAttackSystem>(container);	// 0200 Combat
+			SystemInstallHelper.Install<RotatePlayerToEnemyOnAttackSystem>(container);	// 0200 Combat
 			SystemInstallHelper.Install<TakeDamageSystem>(container);	// 0205 Combat
 			SystemInstallHelper.Install<PerformRangedAttackSystem>(container);	// 0210 Combat
 
