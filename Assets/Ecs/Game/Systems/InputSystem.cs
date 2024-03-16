@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Ecs.Game.Systems
 {
-    [Install(ExecutionType.Game, ExecutionPriority.Normal, 20, nameof(EFeatures.Input))]
+    [Install(ExecutionType.Game, ExecutionPriority.High, 20, nameof(EFeatures.Input))]
     public class InputSystem : IInitializeSystem, 
         IDisposable
     {
@@ -42,8 +42,9 @@ namespace Ecs.Game.Systems
         {
             var player = _game.PlayerEntity;
             
-            player.ReplaceMoveDirection(Vector3.zero);
             player.IsCanMove = false;
+            player.ReplaceMoveDirection(Vector3.zero);
+            
             // Observable.Timer(TimeSpan.FromMilliseconds(80f)).Subscribe(_ =>
             // {
             //     _commandBuffer.StartPerformingAttack(player.Uid.Value);

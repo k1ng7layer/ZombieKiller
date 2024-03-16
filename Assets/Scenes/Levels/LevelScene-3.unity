@@ -1903,6 +1903,7 @@ MonoBehaviour:
   levelPortals:
   - {fileID: 1973904108}
   - {fileID: 1316960874}
+  SpawnEnemies: 1
 --- !u!4 &865660130
 Transform:
   m_ObjectHideFlags: 0

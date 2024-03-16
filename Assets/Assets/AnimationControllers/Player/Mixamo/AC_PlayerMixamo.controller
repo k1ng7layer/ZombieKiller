@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5b459293654308ad19fe3bc0ed959d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _endNormilizedTime: 0.9
-  _startNormilizedTime: 0.4
+  _endNormilizedTime: 0.5
+  _startNormilizedTime: 0.35
 --- !u!1107 &-6336441064702596926
 AnimatorStateMachine:
   serializedVersion: 6
@@ -376,7 +376,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Attack
     m_StateMachine: {fileID: -6336441064702596926}
-    m_Mask: {fileID: 31900000, guid: 6858d79ce3991a541ba9130a3e2d22e9, type: 2}
+    m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -393,7 +393,7 @@ AnimatorController:
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0.92
+    m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -435,8 +435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5b459293654308ad19fe3bc0ed959d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _endNormilizedTime: 0.9
-  _startNormilizedTime: 0.4
+  _endNormilizedTime: 0.5
+  _startNormilizedTime: 0.35
 --- !u!1101 &1439159367509674034
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

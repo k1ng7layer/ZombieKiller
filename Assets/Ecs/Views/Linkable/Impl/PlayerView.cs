@@ -46,8 +46,17 @@ namespace Ecs.Views.Linkable.Impl
 
         protected override void OnDirectionChanged(GameEntity entity, Vector3 dir)
         {
+            //Debug.Log($"OnDirectionChanged: {dir}");
             characterController.Move(dir);
-            _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
+
+            if (dir == Vector3.zero)
+            {
+                _animator.SetFloat(AnimationKeys.Movement, 0f);
+            }
+            else
+            {
+                _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
+            }
         }
 
         protected override void OnAttackBegin()
