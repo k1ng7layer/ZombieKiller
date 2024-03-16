@@ -33,6 +33,14 @@ namespace Ecs.Commands
             command.Rotation = rotation;
         }
 
+        public static void AddPush(this ICommandBuffer commandBuffer, Uid unit, Vector3 direction, Single force)
+        {
+            ref var command = ref commandBuffer.Create<AddPushCommand>();
+            command.Unit = unit;
+            command.Direction = direction;
+            command.Force = force;
+        }
+
         public static void AttachWeapon(this ICommandBuffer commandBuffer, Uid weapon, Transform transform)
         {
             ref var command = ref commandBuffer.Create<AttachWeaponCommand>();

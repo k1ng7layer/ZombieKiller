@@ -26,6 +26,14 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Game.Components.PushForceComponent PushForce)
+		{
+			CopyPushForceTo(PushForce);
+		}
+		else if (component is Ecs.Game.Components.PushDirectionComponent PushDirection)
+		{
+			CopyPushDirectionTo(PushDirection);
+		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
@@ -150,6 +158,10 @@ public partial class GameEntity
 		{
 			IsVisible = true;
 		}
+		else if (component is Ecs.Game.Components.CanRotateComponent CanRotate)
+		{
+			IsCanRotate = true;
+		}
 		else if (component is Ecs.Game.Components.IncomeComponent Income)
 		{
 			CopyIncomeTo(Income);
@@ -157,10 +169,6 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.PortalComponent Portal)
 		{
 			CopyPortalTo(Portal);
-		}
-		else if (component is Ecs.Game.Components.CanRotateComponent CanRotate)
-		{
-			IsCanRotate = true;
 		}
 		else if (component is Ecs.Game.Components.Collectables.CollectableComponent Collectable)
 		{
