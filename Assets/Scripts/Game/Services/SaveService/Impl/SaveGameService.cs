@@ -60,7 +60,8 @@ namespace Game.Services.SaveService.Impl
             CurrentGameData.Player.Attributes.Add(new AttributeDto
             {
                 Attribute = 0,
-                Value = player.MaxHealth.Value
+                MaxValue = player.MaxHealth.Value,
+                Value = player.Health.Value
             });
             
             CurrentGameData.Player.Attributes.Add(new AttributeDto

@@ -89,28 +89,25 @@ namespace Ecs.Game.Systems.Initialize
         
         private void SetupAttributes(GameEntity player, GameData gameData)
         {
-            var hasHealth = TryLoadAttribute(EUnitStat.HEALTH, gameData, out var maxHealth);
-            player.AddHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
-            player.AddMaxHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
-            player.AddBaseMaxHealth(hasHealth ? maxHealth : _playerSettings.BaseMaxHealth);
+            var health = LoadAttribute(EUnitStat.HEALTH, gameData);
+            player.AddHealth(health?.Value ?? _playerSettings.BaseMaxHealth);
+            player.AddMaxHealth(health?.MaxValue ?? _playerSettings.BaseMaxHealth);
+            player.AddBaseMaxHealth(health?.MaxValue ?? _playerSettings.BaseMaxHealth);
             
-            var hasMagicDmg = TryLoadAttribute(EUnitStat.ABILITY_POWER, gameData, out var abPower);
-            player.AddMagicDamage(hasMagicDmg ? 0 : abPower);
+            var magicDamage = LoadAttribute(EUnitStat.ABILITY_POWER, gameData);
+            player.AddMagicDamage(magicDamage?.Value ?? 0);
             player.AddAttackCooldown(0);
             player.AddAttackSpeed(_playerSettings.BaseAttackSpeed);
             player.IsUnit = true;
         }
         
-        private bool TryLoadAttribute(
+        private AttributeDto LoadAttribute(
             EUnitStat unitStat, 
-            GameData gameData, 
-            out float value
+            GameData gameData
         )
         {
-            value = 0;
-            
             if (gameData == null)
-                return false;
+                return null;
             
             foreach (var attributeDto in gameData.Player.Attributes)
             { 
@@ -119,12 +116,10 @@ namespace Ecs.Game.Systems.Initialize
                 if (unitStat != attrType)
                     continue;
 
-                value = attributeDto.Value;
-
-                return true;
+                return attributeDto;
             }
             
-            return false;
+            return null;
         }
     }
 }
