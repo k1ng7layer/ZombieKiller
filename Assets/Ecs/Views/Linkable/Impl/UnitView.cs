@@ -71,12 +71,20 @@ namespace Ecs.Views.Linkable.Impl
 
         private void OnPerformingAttack(GameEntity entity)
         {
-            var weaponId = entity.EquippedWeapon.Value.Id;
-            int paramId;
+            if (entity.HasEquippedWeapon)
+            {
+                var weaponId = entity.EquippedWeapon.Value.Id;
+                int paramId;
             
-            paramId = _weaponRepository.GetWeapon(weaponId).WeaponType == EWeaponType.Melee ? AnimationKeys.Attack : AnimationKeys.RangedAttack;
+                paramId = _weaponRepository.GetWeapon(weaponId).WeaponType == EWeaponType.Melee ? 
+                    AnimationKeys.Attack : AnimationKeys.RangedAttack;
             
-            _animator.SetTrigger(paramId);
+                _animator.SetTrigger(paramId);
+            }
+            else
+            {
+                _animator.SetTrigger(AnimationKeys.RangedAttack);
+            }
         }
 
         private void OnUnitTriggerEnter(Collider other)

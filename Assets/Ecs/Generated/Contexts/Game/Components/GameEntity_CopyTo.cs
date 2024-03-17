@@ -26,18 +26,6 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
-		else if (component is Ecs.Game.Components.CharacterControllerComponent CharacterController)
-		{
-			CopyCharacterControllerTo(CharacterController);
-		}
-		else if (component is Ecs.Game.Components.PushForceComponent PushForce)
-		{
-			CopyPushForceTo(PushForce);
-		}
-		else if (component is Ecs.Game.Components.PushDirectionComponent PushDirection)
-		{
-			CopyPushDirectionTo(PushDirection);
-		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
@@ -134,6 +122,10 @@ public partial class GameEntity
 		{
 			CopyRigidbodyTo(Rigidbody);
 		}
+		else if (component is Ecs.Game.Components.PushDirectionComponent PushDirection)
+		{
+			CopyPushDirectionTo(PushDirection);
+		}
 		else if (component is Ecs.Game.Components.TrajectoryComponent Trajectory)
 		{
 			CopyTrajectoryTo(Trajectory);
@@ -149,6 +141,14 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.VfxComponent Vfx)
 		{
 			CopyVfxTo(Vfx);
+		}
+		else if (component is Ecs.Game.Components.PushForceComponent PushForce)
+		{
+			CopyPushForceTo(PushForce);
+		}
+		else if (component is Ecs.Game.Components.CharacterControllerComponent CharacterController)
+		{
+			CopyCharacterControllerTo(CharacterController);
 		}
 		else if (component is Ecs.Game.Components.MoveDirectionComponent MoveDirection)
 		{

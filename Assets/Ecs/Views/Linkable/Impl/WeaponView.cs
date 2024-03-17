@@ -28,12 +28,12 @@ namespace Ecs.Views.Linkable.Impl
             selfTransform.localRotation = Quaternion.identity;
         }
 
-        private void OnWeaponAttackAdded(GameEntity _)
+        protected virtual void OnWeaponAttackAdded(GameEntity _)
         {
             attackTrigger.enabled = true;
         }
         
-        private void OnWeaponAttackRemoved(GameEntity _)
+        protected virtual void OnWeaponAttackRemoved(GameEntity _)
         {
             attackTrigger.enabled = false;
         }

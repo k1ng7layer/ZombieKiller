@@ -42,6 +42,7 @@ namespace Ecs.Views.Linkable.Impl
             _playerEntity.SubscribeEquippedWeapon(OnEquippedWeaponChanged).AddTo(unsubscribe);
             _playerEntity.SubscribeUnitLevel(OnLevelUp).AddTo(unsubscribe);
             _playerEntity.SubscribePushDirection(OnPush).AddTo(unsubscribe);
+            _playerEntity.SubscribeAttackSpeed(OnAttackSpeedChanged).AddTo(unsubscribe);
             
             _unitMaterialPropertyBlock = new MaterialPropertyBlock();
 
@@ -53,6 +54,11 @@ namespace Ecs.Views.Linkable.Impl
             }
             
             _playerEntity.AddCharacterController(characterController);
+        }
+
+        private void OnAttackSpeedChanged(GameEntity game, float value)
+        {
+            _animator.SetFloat(AnimationKeys.AttackSpeedMultiplier, value);
         }
         
         private void OnHealthChanged(GameEntity entity, float value)

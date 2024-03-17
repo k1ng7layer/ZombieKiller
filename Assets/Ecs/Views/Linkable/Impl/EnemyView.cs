@@ -65,9 +65,9 @@ namespace Ecs.Views.Linkable.Impl
         {
             navMeshAgent.isStopped = true;
             navMeshAgent.enabled = false;
+            _rb.isKinematic = false;
             Observable.NextFrame().Subscribe(_ =>
             {
-                _rb.isKinematic = false;
                 _rb.AddForce(-transform.forward * 150f, ForceMode.Impulse);
             });
                 
