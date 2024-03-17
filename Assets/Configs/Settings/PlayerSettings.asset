@@ -18,6 +18,6 @@ MonoBehaviour:
   _levelRequiredMultiplier: 1.3
   _baseExperienceRequired: 100
   _baseMaxHealth: 2000
-  _baseAttackSpeed: 2
+  _baseAttackSpeed: 3
   _collectItemsDist: 1
   _rotateDistToEnemy: 4

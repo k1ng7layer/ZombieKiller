@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Db.Inventory;
 using Game.Data;
 using Game.Services.Dao;
-using IInitializable = Zenject.IInitializable;
+using Zenject;
 
 namespace Game.Services.Inventory.Impl
 {
@@ -22,7 +22,8 @@ namespace Game.Services.Inventory.Impl
             _gameData = gameData;
             _playerInventorySettings = playerInventorySettings;
         }
-        
+
+        public event Action<string> ItemRemoved;
         public int Capacity { get; private set; }
         public bool IsFull => _items.Count == Capacity;
 
@@ -63,6 +64,19 @@ namespace Game.Services.Inventory.Impl
             ItemAdded?.Invoke(itemId);
 
             return true;
+        }
+
+        public bool TryRemove(string itemId)
+        {
+            if (!_items.Contains(itemId))
+                return false;
+
+            var result = _items.Remove(itemId);
+            
+            if (result)
+                ItemRemoved?.Invoke(itemId);
+
+            return result;
         }
 
         public void ChangeCapacity(int capacity)

@@ -6,6 +6,6 @@ namespace Game.Utils
         Weapon,
         Cloth,
         Potion,
-        Special
+        Special,
     }
 }

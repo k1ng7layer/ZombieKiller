@@ -73,6 +73,19 @@ namespace Db.Items.Impl
                 EItemType.Special => default,
             };
         }
+
+        public EItemType GetItemType(string id)
+        {
+            //TODO: refactor this
+            
+            if (_potionRepo.Contains(id))
+                return EItemType.Potion;
+
+            if (_weaponRepo.Contains(id))
+                return EItemType.Weapon;
+
+            return EItemType.Any;
+        }
     }
     
 }

@@ -126,6 +126,18 @@ namespace Ecs.Commands
             command.PortalHash = portalHash;
         }
 
+        public static void UseItem(this ICommandBuffer commandBuffer, String itemId)
+        {
+            ref var command = ref commandBuffer.Create<UseItemCommand>();
+            command.ItemId = itemId;
+        }
+
+        public static void UsePotion(this ICommandBuffer commandBuffer, String id)
+        {
+            ref var command = ref commandBuffer.Create<UsePotionCommand>();
+            command.Id = id;
+        }
+
         public static void CreatePowerUp(this ICommandBuffer commandBuffer, Uid owner, Int32 id)
         {
             ref var command = ref commandBuffer.Create<CreatePowerUpCommand>();

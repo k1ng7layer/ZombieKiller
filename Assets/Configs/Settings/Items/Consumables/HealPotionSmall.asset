@@ -16,6 +16,7 @@ MonoBehaviour:
   Name: Small health potion
   Description: Add 10 health
   Icon: {fileID: 21300000, guid: 9e4fbebb6cde952428e19243aeb3289f, type: 3}
+  Usable: 1
   PotionType: 0
   Effects:
   - StatType: 0

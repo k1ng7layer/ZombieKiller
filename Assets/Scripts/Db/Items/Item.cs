@@ -9,6 +9,7 @@ namespace Db.Items
         public string Name;
         public string Description;
         public Sprite Icon;
+        public bool Usable;
         
         public abstract object[] GetDescriptionArgs();
     }

@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Db.Items.Impl;
+using Db.Items.Repositories.Impl;
 using Game.Utils;
 
 namespace Db.Items
@@ -8,5 +10,7 @@ namespace Db.Items
         IReadOnlyList<Item> Items { get; }
         Item GetItem(string id);
         IReadOnlyList<Item> GetItemsByType(EItemType itemType);
+        EItemType GetItemType(string id);
+        ItemRepository<Potion> PotionRepository { get; }
     }
 }

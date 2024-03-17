@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityLink: {fileID: 1783832097075026747}
+  _onHitFx: {fileID: 0}
   weaponRoot: {fileID: 966317512796178213}
   _rb: {fileID: 1093749510067319497}
   _animator: {fileID: 966317511142367506}
@@ -228,7 +229,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2.13
   m_Radius: 0.24
-  m_SlopeLimit: 0
+  m_SlopeLimit: 40
   m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001

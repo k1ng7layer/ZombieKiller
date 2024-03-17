@@ -122,14 +122,18 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<ArtilleryShotTrajectorySystem>(container);	// 0240 Combat
 			SystemInstallHelper.Install<CreateExplosionSystem>(container);	// 0250 Combat
 
+			// Common 0500
+			SystemInstallHelper.Install<UseItemSystem>(container);	// 0500 Common
+
 			// Combat 0600
 			SystemInstallHelper.Install<ProjectileSpotExplosionSystem>(container);	// 0600 Combat
+			SystemInstallHelper.Install<UsePotionSystem>(container);	// 0600 Common
 
 			// Combat 0700
 			SystemInstallHelper.Install<AbilitiesCooldownSystem>(container);	// 0700 Combat
 			SystemInstallHelper.Install<ProjectileMovementSystem>(container);	// 0700 Combat
-			SystemInstallHelper.Install<ProjectileDestroyByDistanceSystem>(container);	// 0710 Combat
 			SystemInstallHelper.Install<ProjectileWithTrajectoryDestroyByDistanceSystem>(container);	// 0710 Combat
+			SystemInstallHelper.Install<ProjectileDestroyByDistanceSystem>(container);	// 0710 Combat
 			SystemInstallHelper.Install<PlayerLevelByExperienceUpSystem>(container);	// 0720 Combat
 
 			// Combat 0750
@@ -145,9 +149,9 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<AttackCooldownSystem>(container);	// 0900 Combat
 
 			// Combat 1000
-			SystemInstallHelper.Install<EnemyDeathSystem>(container);	// 1000 Combat
 			SystemInstallHelper.Install<DestroyProjectileSystem>(container);	// 1000 Combat
 			SystemInstallHelper.Install<SetGameStateSystem>(container);	// 1000 Common
+			SystemInstallHelper.Install<EnemyDeathSystem>(container);	// 1000 Combat
 			SystemInstallHelper.Install<MouseDownCleanupSystem>(container);	// 1000 Input
 
 			// Combat 1020

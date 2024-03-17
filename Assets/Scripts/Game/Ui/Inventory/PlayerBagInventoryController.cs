@@ -1,3 +1,4 @@
+using System;
 using Db.Inventory;
 using Db.Items;
 using Ecs.Commands;
@@ -13,7 +14,8 @@ using Zenject;
 namespace Game.Ui.Inventory
 {
     public class PlayerBagInventoryController : UiController<PlayerBagInventoryView>, 
-        IInitializable
+        IInitializable,
+        IDisposable
     {
         private readonly IPlayerInventoryService _inventoryService;
         private readonly IItemsBase _itemsBase;
@@ -50,7 +52,34 @@ namespace Game.Ui.Inventory
             {
                 var itemView = View.ItemListCollection.Create();
                 itemView.Icon.gameObject.SetActive(false);
+                
+                itemView.Btn.OnClickAsObservable()
+                    .Subscribe(_ => OnItemClick(itemView.ItemId))
+                    .AddTo(itemView.gameObject);
+
+                itemView.OnPointerEnterAsObservable()
+                    .Subscribe(_ => ToggleItemHighlight(itemView, true))
+                    .AddTo(itemView.gameObject);
+                
+                itemView.OnPointerExitAsObservable()
+                    .Subscribe(_ => ToggleItemHighlight(itemView, false))
+                    .AddTo(itemView.gameObject);
             }
+
+            View.InfoPopupView.UseButton.OnClickAsObservable()
+                .Subscribe(_ => UseItem())
+                .AddTo(View.gameObject);
+            
+            View.InfoPopupView.DropButton.OnClickAsObservable()
+                .Subscribe(_ => DropItem())
+                .AddTo(View.gameObject);
+
+            _inventoryService.ItemRemoved += OnItemRemoved;
+        }
+        
+        public void Dispose()
+        {
+            _inventoryService.ItemRemoved -= OnItemRemoved;
         }
         
         public override void OnShow()
@@ -66,17 +95,17 @@ namespace Game.Ui.Inventory
                 itemView.Icon.gameObject.SetActive(true);
                 itemView.ItemId = itemId;
                 
-                itemView.Btn.OnClickAsObservable()
-                    .Subscribe(_ => OnItemClick(itemId))
-                    .AddTo(itemView.gameObject);
-
-                itemView.OnPointerEnterAsObservable()
-                    .Subscribe(_ => ToggleItemHighlight(itemView, true))
-                    .AddTo(itemView.gameObject);
-                
-                itemView.OnPointerExitAsObservable()
-                    .Subscribe(_ => ToggleItemHighlight(itemView, false))
-                    .AddTo(itemView.gameObject);
+                // itemView.Btn.OnClickAsObservable()
+                //     .Subscribe(_ => OnItemClick(itemId))
+                //     .AddTo(itemView.gameObject);
+                //
+                // itemView.OnPointerEnterAsObservable()
+                //     .Subscribe(_ => ToggleItemHighlight(itemView, true))
+                //     .AddTo(itemView.gameObject);
+                //
+                // itemView.OnPointerExitAsObservable()
+                //     .Subscribe(_ => ToggleItemHighlight(itemView, false))
+                //     .AddTo(itemView.gameObject);
             }
         }
 
@@ -90,13 +119,34 @@ namespace Game.Ui.Inventory
             }
         }
 
+        private void UseItem()
+        {
+            _commandBuffer.UseItem(View.InfoPopupView.ItemId);
+            ClosePopup();
+        }
+        
+        private void DropItem()
+        {
+            _inventoryService.TryRemove(View.InfoPopupView.ItemId);
+            ClosePopup();
+        }
+
+        private void RefreshInventory()
+        {
+            OnHide();
+            OnShow();
+        }
+
         private void OnItemClick(string itemId)
         {
             var item = _itemsBase.GetItem(itemId);
-            
+
+            View.InfoPopupView.ItemId = itemId;
             View.InfoPopupView.gameObject.SetActive(true);
             View.InfoPopupView.Icon.sprite = item.Icon;
             View.InfoPopupView.Description.text = item.Description;
+            View.InfoPopupView.UseButton.gameObject.SetActive(item.Usable);
+            View.InfoPopupView.DropButton.gameObject.SetActive(true);
             
             //TODO:
             //var descriptionArgs = item.GetDescriptionArgs();
@@ -119,6 +169,11 @@ namespace Game.Ui.Inventory
             // color.a = v ? 1f : 0;
             //itemView.Selected.color = color;
             itemView.Selected.gameObject.SetActive(v);
+        }
+
+        private void OnItemRemoved(string id)
+        {
+            RefreshInventory();
         }
     }
 }

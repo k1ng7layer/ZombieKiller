@@ -12,7 +12,9 @@ namespace Game.Ui.Inventory
 
         public void ResetView()
         {
+            ItemId = string.Empty;
             Icon.sprite = null;
+            Icon.gameObject.SetActive(false);
         }
     }
 }
