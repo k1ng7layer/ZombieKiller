@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Ecs.Game.Systems.Movement
 {
-    [Install(ExecutionType.Game, ExecutionPriority.High, 550, nameof(EFeatures.Input))]
+    [Install(ExecutionType.Game, ExecutionPriority.High, 1100, nameof(EFeatures.Input))]
     public class PushUnitSystem : IUpdateSystem
     {
         private readonly ITimeProvider _timeProvider;
@@ -31,17 +31,29 @@ namespace Ecs.Game.Systems.Movement
             {
                 var force = unit.PushForce.Value;
                 
-                if (force <= 0)
+                if (force <= 0.01f)
                     continue;
                 
                 var direction = unit.MoveDirection.Value;
                 var pushDir = unit.PushDirection.Value;
 
-                force -= _timeProvider.DeltaTime;
+                force -= _timeProvider.DeltaTime * 3f;
                 force = Mathf.Clamp(force, 0f, 3f);
                 
-                direction += pushDir * force;
-                unit.ReplaceMoveDirection(direction);
+                //direction += pushDir;
+                
+                Debug.Log($"PushUnitSystem, direction: {direction}, pushDir: {pushDir}, force: {force}");
+                var dir = unit.Transform.Value.TransformDirection(pushDir.normalized * force);
+                //unit.ReplaceMoveDirection(pushDir.normalized * force * _timeProvider.DeltaTime);
+                unit.ReplacePushForce(force);
+                unit.ReplacePushDirection((pushDir.normalized) * force * _timeProvider.DeltaTime);
+               // unit.CharacterController.Value.Move(pushDir.normalized * force * _timeProvider.DeltaTime);
+
+                if (force == 0)
+                {
+                   // unit.ReplacePushDirection(Vector3.zero);
+                    //unit.IsCanMove = true;
+                }
             }
         }
     }

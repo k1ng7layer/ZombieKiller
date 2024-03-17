@@ -37,6 +37,7 @@ public sealed class GameEventSystems : Feature
 		Add(new PerformingAttackRemovedEventSystem(context)); // priority: 0
 		Add(new PlayerCoinsEventSystem(context)); // priority: 0
 		Add(new PositionEventSystem(context)); // priority: 0
+		Add(new PushDirectionEventSystem(context)); // priority: 0
 		Add(new RotationEventSystem(context)); // priority: 0
 		Add(new GameTimerEventSystem(context)); // priority: 0
 		Add(new UnitLevelEventSystem(context)); // priority: 0

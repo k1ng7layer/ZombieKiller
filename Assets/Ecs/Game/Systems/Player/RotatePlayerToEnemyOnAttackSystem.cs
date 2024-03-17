@@ -70,7 +70,7 @@ namespace Ecs.Game.Systems.Player
 
             closest = nearest;
             
-            return true;
+            return nearest != null;
         }
     }
 }

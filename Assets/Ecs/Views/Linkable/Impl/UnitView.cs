@@ -15,6 +15,7 @@ namespace Ecs.Views.Linkable.Impl
 {
     public class UnitView : ObjectView
     {
+        [SerializeField] private ParticleSystem _onHitFx;
         [SerializeField] protected GameObject weaponRoot;
         [SerializeField] protected Rigidbody _rb;
         [SerializeField] protected Animator _animator;
@@ -103,6 +104,9 @@ namespace Ecs.Views.Linkable.Impl
         {
             //Debug.Log($"OnHitCounterChanged, obj: {gameObject}");
             _animator.SetTrigger(AnimationKeys.TakeDamage);
+          
+            if (_onHitFx != null)
+                _onHitFx.Play();
         }
 
         protected virtual void OnAttackBegin()

@@ -26,6 +26,10 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Game.Components.CharacterControllerComponent CharacterController)
+		{
+			CopyCharacterControllerTo(CharacterController);
+		}
 		else if (component is Ecs.Game.Components.PushForceComponent PushForce)
 		{
 			CopyPushForceTo(PushForce);

@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using Ecs.Commands;
 using Ecs.Core.Interfaces;
 using Ecs.Utils;
+using Game.Extensions;
 using Game.Utils;
 using JCMG.EntitasRedux;
+using JCMG.EntitasRedux.Commands;
 using JCMG.EntitasRedux.Core.Utils;
 using UniRx;
 using UnityEngine;
@@ -18,6 +21,7 @@ namespace Ecs.Views.Linkable.Impl
         [SerializeField] private Renderer[] _renderers;
 
         [Inject] private ITimeProvider _timeProvider;
+        [Inject] private ICommandBuffer _commandBuffer;
         
         private GameEntity _playerEntity;
         private MaterialPropertyBlock _unitMaterialPropertyBlock;
@@ -37,6 +41,7 @@ namespace Ecs.Views.Linkable.Impl
             _playerEntity.SubscribeHealth(OnHealthChanged).AddTo(unsubscribe);
             _playerEntity.SubscribeEquippedWeapon(OnEquippedWeaponChanged).AddTo(unsubscribe);
             _playerEntity.SubscribeUnitLevel(OnLevelUp).AddTo(unsubscribe);
+            _playerEntity.SubscribePushDirection(OnPush).AddTo(unsubscribe);
             
             _unitMaterialPropertyBlock = new MaterialPropertyBlock();
 
@@ -46,6 +51,8 @@ namespace Ecs.Views.Linkable.Impl
             {
                 _colors.Add(unitRender.GetHashCode(), unitRender.material.color);
             }
+            
+            _playerEntity.AddCharacterController(characterController);
         }
         
         private void OnHealthChanged(GameEntity entity, float value)
@@ -58,6 +65,11 @@ namespace Ecs.Views.Linkable.Impl
             //var weaponParams = 
         }
 
+        private void OnPush(GameEntity player, Vector3 push)
+        {
+            characterController.Move(push);
+        }
+
         private void OnLevelUp(GameEntity _, int level)
         {
             foreach (var lParticleSystem in levelUpVfx)
@@ -68,16 +80,18 @@ namespace Ecs.Views.Linkable.Impl
 
         protected override void OnDirectionChanged(GameEntity entity, Vector3 dir)
         {
-            //Debug.Log($"OnDirectionChanged: {dir}");
+            //Physics.SyncTransforms();
+            Debug.Log($"OnDirectionChanged: {dir}");
             characterController.Move(dir);
 
             if (dir == Vector3.zero)
             {
-                _animator.SetFloat(AnimationKeys.Movement, 0f);
+                _animator.SetFloat(AnimationKeys.Movement, 0f, 0.02f, Time.deltaTime);
             }
             else
             {
-                _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
+                var dirNoy = dir.NoY();
+                _animator.SetFloat(AnimationKeys.Movement, dirNoy.normalized.magnitude, 0.02f, Time.deltaTime);
             }
         }
 
@@ -86,10 +100,11 @@ namespace Ecs.Views.Linkable.Impl
             
             Observable.Timer(TimeSpan.FromMilliseconds(30)).Subscribe(_ =>
             {
-                characterController.enabled = false;
+                //characterController.enabled = false;
                 _rootCollider.enabled = true;
-                _rb.isKinematic = false;
-                _rb.AddForce(transform.forward * 24f, ForceMode.Impulse);
+                //_rb.isKinematic = false;
+                _commandBuffer.AddPush(_playerEntity.Uid.Value, transform.forward, 3f);
+                //_rb.AddForce(transform.forward * 24f, ForceMode.Impulse);
             });
             
             Observable.Timer(TimeSpan.FromMilliseconds(650)).Subscribe(_ =>
@@ -104,8 +119,9 @@ namespace Ecs.Views.Linkable.Impl
         protected override void OnAttackEnd()
         {
             _rootCollider.enabled = false;
-            characterController.enabled = true;
-            _rb.isKinematic = true;
+            _commandBuffer.RemovePush(_playerEntity.Uid.Value);
+            //characterController.enabled = true;
+           // _rb.isKinematic = true;
         }
 
         protected override void OnHitCounterChanged(GameEntity entity, int value)
@@ -120,9 +136,9 @@ namespace Ecs.Views.Linkable.Impl
             
             _unitMaterialPropertyBlock.SetColor("_Color", Color.white);
             
-            foreach (var renderer in _renderers)
+            foreach (var unitRenderer in _renderers)
             {
-                renderer.SetPropertyBlock(_unitMaterialPropertyBlock);
+                unitRenderer.SetPropertyBlock(_unitMaterialPropertyBlock);
             }
         }
 
@@ -156,7 +172,6 @@ namespace Ecs.Views.Linkable.Impl
                     _colorLerpTime = 0f;
                     _fading = false;
                 }
-                   
             }
         }
         

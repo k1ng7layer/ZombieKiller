@@ -89,6 +89,12 @@ namespace Ecs.Commands
             command.Button = button;
         }
 
+        public static void RemovePush(this ICommandBuffer commandBuffer, Uid unit)
+        {
+            ref var command = ref commandBuffer.Create<RemovePushCommand>();
+            command.Unit = unit;
+        }
+
         public static void SaveGame(this ICommandBuffer commandBuffer)
         {
             ref var command = ref commandBuffer.Create<SaveGameCommand>();

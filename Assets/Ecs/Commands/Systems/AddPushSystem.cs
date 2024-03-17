@@ -2,6 +2,7 @@ using Ecs.Commands.Command;
 using JCMG.EntitasRedux.Commands;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Commands.Systems
 {
@@ -20,9 +21,11 @@ namespace Ecs.Commands.Systems
 
         protected override void Execute(ref AddPushCommand command)
         {
+            Debug.Log($"AddPushSystem");
             var unit = _game.GetEntityWithUid(command.Unit);
-            
-            unit.ReplacePushDirection(command.Direction);
+            //unit.IsCanMove = false;
+            var moveDir = unit.MoveDirection.Value;
+            unit.ReplacePushDirection(command.Direction.normalized);
             unit.ReplacePushForce(command.Force);
         }
     }
