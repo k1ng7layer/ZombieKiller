@@ -1,0 +1,580 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a764edd049c4786a0981087c39bf11e, type: 3}
+  m_Name: BeetoTree
+  m_EditorClassIdentifier: 
+  serializedNodes: []
+  nodes:
+  - rid: 8348663790207500288
+  - rid: 8348663790207500289
+  - rid: 8348663790207500290
+  - rid: 8348663790207500291
+  - rid: 8348663790207500292
+  - rid: 8348663790207500293
+  - rid: 8348663790207500294
+  - rid: 8348663790207500295
+  - rid: 8348663790207500296
+  - rid: 8348663790207500297
+  - rid: 8348663790207500298
+  - rid: 8348663790207500299
+  - rid: 8348663790207500304
+  - rid: 8348663790207500305
+  - rid: 8348663790207500306
+  - rid: 8348663790207500311
+  - rid: 8348663790207500312
+  - rid: 8348663790207500313
+  - rid: 8348663790207500314
+  - rid: 2850262971790131200
+  - rid: 2850262971790131201
+  - rid: 2850262971790131202
+  edges:
+  - GUID: a93cebcd-e15e-40e9-8c57-963ccbd6c9c0
+    owner: {fileID: 11400000}
+    inputNodeGUID: 3c2e4f3d-6fdc-4c39-8d4b-7397fea79630
+    outputNodeGUID: e7d8f401-6116-4d4f-844a-95e9495ff32f
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: af5d398b-07a2-4108-9656-0470cff2a224
+    owner: {fileID: 11400000}
+    inputNodeGUID: 251a1005-a701-4b9b-a0dc-430f065fd0f0
+    outputNodeGUID: fc0f54b4-44a0-4740-bc9e-f0634412147d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: bbfb399a-2866-4031-9260-71468d231f4d
+    owner: {fileID: 11400000}
+    inputNodeGUID: 056f05ed-08a3-4915-adad-ba0e3be60941
+    outputNodeGUID: fc0f54b4-44a0-4740-bc9e-f0634412147d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: a6b4e0b3-9213-44e0-98d8-c9d528dfa92a
+    owner: {fileID: 11400000}
+    inputNodeGUID: c1f302b0-b685-450e-bfa2-a25b97f3b294
+    outputNodeGUID: 0a89ae6c-53bb-4fd0-9adb-7aad6b9b78b8
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 16d50c9c-d548-4cf6-907e-0bd298b98724
+    owner: {fileID: 11400000}
+    inputNodeGUID: 0a89ae6c-53bb-4fd0-9adb-7aad6b9b78b8
+    outputNodeGUID: 2de356d5-f469-477f-bbee-35bf3def73cc
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 95658c62-97e7-443a-91c8-c642784f065f
+    owner: {fileID: 11400000}
+    inputNodeGUID: ca72f897-1883-41d3-aeaa-6cb79f2541f4
+    outputNodeGUID: 2de356d5-f469-477f-bbee-35bf3def73cc
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 8218bd64-e1ec-4081-b241-54c9458d3b9e
+    owner: {fileID: 11400000}
+    inputNodeGUID: 3110d485-7fbb-45f4-a1f2-83c281cf4611
+    outputNodeGUID: 7a7761c1-7cb2-4025-a9a2-7660eab9b83d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 87f02ea4-5b86-4e17-b563-6b3421f0c626
+    owner: {fileID: 11400000}
+    inputNodeGUID: 7a7761c1-7cb2-4025-a9a2-7660eab9b83d
+    outputNodeGUID: 3c2e4f3d-6fdc-4c39-8d4b-7397fea79630
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 5ddc8c8d-31d4-4252-bcde-d4182967121c
+    owner: {fileID: 11400000}
+    inputNodeGUID: 2de356d5-f469-477f-bbee-35bf3def73cc
+    outputNodeGUID: d2937561-cdd6-4b34-b051-4eee2fee1c48
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 3403a0f8-d711-4531-a827-b977c73f8123
+    owner: {fileID: 11400000}
+    inputNodeGUID: af7f0820-e04b-4e13-9c79-e580ae4d6335
+    outputNodeGUID: 2539be5b-9961-4b2b-a72c-15700c276b7e
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: d903fd43-c0cc-4f6e-8c43-c12d386d1044
+    owner: {fileID: 11400000}
+    inputNodeGUID: 8cf394bb-bd18-466a-8adc-3800a37c6baa
+    outputNodeGUID: 2539be5b-9961-4b2b-a72c-15700c276b7e
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 447443ac-acb4-426a-b782-7507df01c5c5
+    owner: {fileID: 11400000}
+    inputNodeGUID: fc0f54b4-44a0-4740-bc9e-f0634412147d
+    outputNodeGUID: d2937561-cdd6-4b34-b051-4eee2fee1c48
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 8c34a1fc-5c62-4304-a721-d6c4b36f5336
+    owner: {fileID: 11400000}
+    inputNodeGUID: 27d6ba9e-75a9-40f6-a179-d0ae3e089a0c
+    outputNodeGUID: 7a7761c1-7cb2-4025-a9a2-7660eab9b83d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 8a929ac0-b1e8-4a75-9fb3-26a2dff4b651
+    owner: {fileID: 11400000}
+    inputNodeGUID: d2937561-cdd6-4b34-b051-4eee2fee1c48
+    outputNodeGUID: 27d6ba9e-75a9-40f6-a179-d0ae3e089a0c
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 368cdf0e-99f1-469d-bfca-43cac6a1c2f7
+    owner: {fileID: 11400000}
+    inputNodeGUID: 2895bdaa-9042-451e-8276-65d74aeb4f77
+    outputNodeGUID: fc0f54b4-44a0-4740-bc9e-f0634412147d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 6761c94a-2127-4b07-b2b4-41dc4f7c0427
+    owner: {fileID: 11400000}
+    inputNodeGUID: 2defe8af-5ef4-462a-be98-29e7ef90219c
+    outputNodeGUID: 2de356d5-f469-477f-bbee-35bf3def73cc
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 382bfabc-348b-487e-b75e-77208e3d5873
+    owner: {fileID: 11400000}
+    inputNodeGUID: f9a97997-1efc-4499-bdb3-867c3abf9d2a
+    outputNodeGUID: 2defe8af-5ef4-462a-be98-29e7ef90219c
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: c5a159b0-96cd-42aa-b06f-39277ecf1f0d
+    owner: {fileID: 11400000}
+    inputNodeGUID: 85f31a2d-6491-4a18-992e-b5c2839e0d9e
+    outputNodeGUID: 7a7761c1-7cb2-4025-a9a2-7660eab9b83d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 3a353add-62fb-44a4-9745-86168c559304
+    owner: {fileID: 11400000}
+    inputNodeGUID: 619343d0-a18b-4d7e-8ccf-7b994f19d81c
+    outputNodeGUID: 2de356d5-f469-477f-bbee-35bf3def73cc
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: a317ee70-4659-4980-8218-f8b6277c8077
+    owner: {fileID: 11400000}
+    inputNodeGUID: ab16d71e-039a-453f-9651-0dfa269f28c9
+    outputNodeGUID: fc0f54b4-44a0-4740-bc9e-f0634412147d
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: b286f00c-1f4c-40b4-ace8-69dc17de7744
+    owner: {fileID: 11400000}
+    inputNodeGUID: 2539be5b-9961-4b2b-a72c-15700c276b7e
+    outputNodeGUID: d2937561-cdd6-4b34-b051-4eee2fee1c48
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements: []
+  exposedParameters: []
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: 759, y: -416, z: 0}
+  scale: {x: 0.43232757, y: 0.43232757, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2850262971790131200
+      type: {class: IsActiveConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 85f31a2d-6491-4a18-992e-b5c2839e0d9e
+        computeOrder: 19
+        position:
+          serializedVersion: 2
+          x: -300
+          y: 1226
+          width: 89
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850262971790131201
+      type: {class: IsActiveConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 619343d0-a18b-4d7e-8ccf-7b994f19d81c
+        computeOrder: 20
+        position:
+          serializedVersion: 2
+          x: -255.5001
+          y: 2043
+          width: 89
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 2850262971790131202
+      type: {class: IsActiveConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: ab16d71e-039a-453f-9651-0dfa269f28c9
+        computeOrder: 21
+        position:
+          serializedVersion: 2
+          x: 663.74744
+          y: 2153
+          width: 89
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500288
+      type: {class: RootNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: e7d8f401-6116-4d4f-844a-95e9495ff32f
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 117.00006
+          y: 327.61432
+          width: 136
+          height: 176
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        output: 0
+    - rid: 8348663790207500289
+      type: {class: RepeaterNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 3c2e4f3d-6fdc-4c39-8d4b-7397fea79630
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 117.00006
+          y: 558.6143
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 8348663790207500290
+      type: {class: HasTargetConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 3110d485-7fbb-45f4-a1f2-83c281cf4611
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: -83.99988
+          y: 1225.6143
+          width: 100
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500291
+      type: {class: IsTargetInAttackRangeConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: c1f302b0-b685-450e-bfa2-a25b97f3b294
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 33.99994
+          y: 2211.4998
+          width: 177
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500292
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 2de356d5-f469-477f-bbee-35bf3def73cc
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 251
+          y: 1712.4999
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 8348663790207500293
+      type: {class: AttackTargetActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 056f05ed-08a3-4915-adad-ba0e3be60941
+        computeOrder: 10
+        position:
+          serializedVersion: 2
+          x: 1206.666
+          y: 2117.7236
+          width: 127
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500294
+      type: {class: CanAttackConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 251a1005-a701-4b9b-a0dc-430f065fd0f0
+        computeOrder: 11
+        position:
+          serializedVersion: 2
+          x: 1029.051
+          y: 2118
+          width: 102
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500295
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: fc0f54b4-44a0-4740-bc9e-f0634412147d
+        computeOrder: 9
+        position:
+          serializedVersion: 2
+          x: 1106.666
+          y: 1837.7236
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 8348663790207500296
+      type: {class: MoveToTargetActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: ca72f897-1883-41d3-aeaa-6cb79f2541f4
+        computeOrder: 12
+        position:
+          serializedVersion: 2
+          x: 441.99997
+          y: 1994.5
+          width: 126
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500297
+      type: {class: InverterNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Decorators, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 0a89ae6c-53bb-4fd0-9adb-7aad6b9b78b8
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 54.999985
+          y: 1994.5
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 8348663790207500298
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 7a7761c1-7cb2-4025-a9a2-7660eab9b83d
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 115.00012
+          y: 864.6143
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 8348663790207500299
+      type: {class: SelectorNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: d2937561-cdd6-4b34-b051-4eee2fee1c48
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 604.58044
+          y: 1420.9996
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 8348663790207500304
+      type: {class: SequenceNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 2539be5b-9961-4b2b-a72c-15700c276b7e
+        computeOrder: 13
+        position:
+          serializedVersion: 2
+          x: 1993.4529
+          y: 1970.9996
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 8348663790207500305
+      type: {class: IsTargetInAttackRangeConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: af7f0820-e04b-4e13-9c79-e580ae4d6335
+        computeOrder: 14
+        position:
+          serializedVersion: 2
+          x: 1865.4526
+          y: 2302.9995
+          width: 177
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500306
+      type: {class: LookAtTargetActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 8cf394bb-bd18-466a-8adc-3800a37c6baa
+        computeOrder: 15
+        position:
+          serializedVersion: 2
+          x: 2156.453
+          y: 2310
+          width: 118
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500311
+      type: {class: AsyncParallelNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Composites, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 27d6ba9e-75a9-40f6-a179-d0ae3e089a0c
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 604.99994
+          y: 1182.9999
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
+    - rid: 8348663790207500312
+      type: {class: StopMovementActionNode, ns: Game.AI.Tasks.Actions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 2895bdaa-9042-451e-8276-65d74aeb4f77
+        computeOrder: 16
+        position:
+          serializedVersion: 2
+          x: 796.8529
+          y: 2129
+          width: 131
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500313
+      type: {class: IsAttackingConditionNode, ns: Game.AI.Tasks.Conditions, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: f9a97997-1efc-4499-bdb3-867c3abf9d2a
+        computeOrder: 18
+        position:
+          serializedVersion: 2
+          x: 265.1
+          y: 2212
+          width: 108
+          height: 48
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+    - rid: 8348663790207500314
+      type: {class: InverterNode, ns: Plugins.NgpBehaviourTreeDesigner.Nodes.Decorators, asm: Assembly-CSharp-firstpass}
+      data:
+        nodeCustomName: 
+        GUID: 2defe8af-5ef4-462a-be98-29e7ef90219c
+        computeOrder: 17
+        position:
+          serializedVersion: 2
+          x: 251
+          y: 1984.0002
+          width: 136
+          height: 182
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        input: 0
+        output: 0
