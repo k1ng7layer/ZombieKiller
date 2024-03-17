@@ -52,5 +52,10 @@ namespace Ecs.Game.Systems
             
             _commandBuffer.StartPerformingAttack(player.Uid.Value);
         }
+
+        private void OnUse()
+        {
+            
+        }
     }
 }

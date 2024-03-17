@@ -18,6 +18,8 @@ public sealed class GameEventSystems : Feature
 		Add(new ActiveAbilityEventSystem(context)); // priority: 0
 		Add(new ActiveAbilityRemovedEventSystem(context)); // priority: 0
 		Add(new AttackSpeedEventSystem(context)); // priority: 0
+		Add(new AutoMovementEventSystem(context)); // priority: 0
+		Add(new AutoMovementRemovedEventSystem(context)); // priority: 0
 		Add(new BehaviourTreeEventSystem(context)); // priority: 0
 		Add(new CameraModeEventSystem(context)); // priority: 0
 		Add(new DeadEventSystem(context)); // priority: 0
@@ -40,6 +42,8 @@ public sealed class GameEventSystems : Feature
 		Add(new PositionEventSystem(context)); // priority: 0
 		Add(new PushDirectionEventSystem(context)); // priority: 0
 		Add(new RotationEventSystem(context)); // priority: 0
+		Add(new SittingEventSystem(context)); // priority: 0
+		Add(new SittingRemovedEventSystem(context)); // priority: 0
 		Add(new GameTimerEventSystem(context)); // priority: 0
 		Add(new UnitLevelEventSystem(context)); // priority: 0
 		Add(new VisibleEventSystem(context)); // priority: 0

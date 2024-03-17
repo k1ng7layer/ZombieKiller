@@ -60,6 +60,11 @@ namespace Ecs.Commands
             command.Info = info;
         }
 
+        public static void DropItemFromInventory(this ICommandBuffer commandBuffer)
+        {
+            ref var command = ref commandBuffer.Create<DropItemFromInventoryCommand>();
+        }
+
         public static void EquipWeapon(this ICommandBuffer commandBuffer, String weaponId, Uid owner, Boolean spawn)
         {
             ref var command = ref commandBuffer.Create<EquipWeaponCommand>();
@@ -104,6 +109,12 @@ namespace Ecs.Commands
         {
             ref var command = ref commandBuffer.Create<SetGameStateCommand>();
             command.GameState = gameState;
+        }
+
+        public static void SitDownOnBench(this ICommandBuffer commandBuffer, Uid benchUid)
+        {
+            ref var command = ref commandBuffer.Create<SitDownOnBenchCommand>();
+            command.BenchUid = benchUid;
         }
 
         public static void SpawnUnit(this ICommandBuffer commandBuffer, Vector3 position, Quaternion rotation, EUnitType unitType, Boolean isPlayerUnit)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Db.Enemies;
+using Game.Extensions;
 using Game.Utils;
 using Game.Views;
 using JCMG.EntitasRedux;
@@ -63,6 +64,7 @@ namespace Ecs.Views.Linkable.Impl
 
         private void OnHit(GameEntity e, int _)
         {
+            e.IsActive = false;
             navMeshAgent.isStopped = true;
             navMeshAgent.enabled = false;
             _rb.isKinematic = false;
@@ -84,7 +86,7 @@ namespace Ecs.Views.Linkable.Impl
 
         private void OnDestinationAdded(GameEntity _, Vector3 destination)
         {
-            navMeshAgent.SetDestination(destination);
+            navMeshAgent.SetDestination(destination.NoY());
         }
 
         private void OnMovingStateChanged(bool isMove)
@@ -115,6 +117,8 @@ namespace Ecs.Views.Linkable.Impl
                 _enemyEntity.Position.Value = transform1.position;
                 _enemyEntity.Rotation.Value = transform1.rotation;
             }
+            
+            Debug.Log($"Navmesh status: {navMeshAgent.isStopped}");
         }
 
         private IEnumerator StopForce()

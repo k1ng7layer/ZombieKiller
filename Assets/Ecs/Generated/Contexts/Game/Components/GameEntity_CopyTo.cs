@@ -26,6 +26,18 @@ public partial class GameEntity
 		{
 			IsDestroyed = true;
 		}
+		else if (component is Ecs.Game.Components.AutoMovementComponent AutoMovement)
+		{
+			CopyAutoMovementTo(AutoMovement);
+		}
+		else if (component is Ecs.Game.Components.BenchComponent Bench)
+		{
+			IsBench = true;
+		}
+		else if (component is Ecs.Game.Components.SittingComponent Sitting)
+		{
+			IsSitting = true;
+		}
 		else if (component is Ecs.Game.Components.InstantiateComponent Instantiate)
 		{
 			IsInstantiate = true;
@@ -173,6 +185,10 @@ public partial class GameEntity
 		else if (component is Ecs.Game.Components.PortalComponent Portal)
 		{
 			CopyPortalTo(Portal);
+		}
+		else if (component is Ecs.Game.Components.CanAttackComponent CanAttack)
+		{
+			IsCanAttack = true;
 		}
 		else if (component is Ecs.Game.Components.Collectables.CollectableComponent Collectable)
 		{

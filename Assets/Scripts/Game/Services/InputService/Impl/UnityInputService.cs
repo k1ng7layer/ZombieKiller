@@ -11,6 +11,7 @@ namespace Game.Services.InputService.Impl
         public event Action BasicAttackPressed;
 
         public Vector3 MousePosition => Input.mousePosition;
+        public event Action UseButtonPressed;
 
         public void Tick()
         {
@@ -28,6 +29,9 @@ namespace Game.Services.InputService.Impl
             InputDirection = new Vector3(x, 0, z);
             
             Debug.Log($"Swipe: {Input.touches.Length}");
+            
+            if (Input.GetKeyDown(KeyCode.E))
+                UseButtonPressed?.Invoke();
         }
     }
 }

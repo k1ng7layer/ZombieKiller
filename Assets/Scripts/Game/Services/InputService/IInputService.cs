@@ -8,5 +8,6 @@ namespace Game.Services.InputService
         Vector3 InputDirection { get; }
         event Action BasicAttackPressed;
         Vector3 MousePosition { get; }
+        event Action UseButtonPressed;
     }
 }

@@ -28,7 +28,7 @@ namespace Ecs.Commands.Systems
 
             var portal = _linkedEntityRepository.Get(portalHash);
 
-            if (portal.Portal.PortalDestination == EPortalDestination.NextLevel && portal.IsActive)
+            if (portal.Portal.PortalDestination == EPortalDestination.NextLevel)
             {
                 portal.IsActive = false;
                 _commandBuffer.LoadNextStage();

@@ -23,7 +23,7 @@ namespace Ecs.Commands.Systems.Combat
         {
             var attacker = _game.GetEntityWithUid(command.Attacker);
             
-            if (attacker.IsPerformingAttack)
+            if (attacker.IsPerformingAttack || !attacker.IsCanAttack)
                 return;
             
             Debug.Log($"StartPerformingAttackSystem");

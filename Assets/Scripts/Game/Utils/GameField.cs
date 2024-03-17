@@ -1,4 +1,5 @@
 ﻿
+using Ecs.Views;
 using Ecs.Views.Linkable.Impl;
 using Ecs.Views.Linkable.Impl.Camera;
 using Ecs.Views.Linkable.Impl.Portals;
@@ -15,6 +16,7 @@ namespace Game.Utils
         [SerializeField] private EnemySpawnPointSettings[] enemySpawnPoints;
         [SerializeField] private PortalView[] levelPortals;
         [SerializeField] public bool SpawnEnemies;
+        [SerializeField] private BenchView _benchView;
         
         public Transform StartCameraPosition => startCameraPosition;
         public VirtualCameraView VirtualCameraView => virtualCameraView;
@@ -22,5 +24,6 @@ namespace Game.Utils
         public PlayerView PlayerView => playerView;
         public EnemySpawnPointSettings[] EnemySpawnPoints => enemySpawnPoints;
         public PortalView[] LevelPortals => levelPortals;
+        public BenchView BenchView => _benchView;
     }
 }

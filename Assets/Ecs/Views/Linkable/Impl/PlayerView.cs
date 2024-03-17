@@ -43,6 +43,11 @@ namespace Ecs.Views.Linkable.Impl
             _playerEntity.SubscribeUnitLevel(OnLevelUp).AddTo(unsubscribe);
             _playerEntity.SubscribePushDirection(OnPush).AddTo(unsubscribe);
             _playerEntity.SubscribeAttackSpeed(OnAttackSpeedChanged).AddTo(unsubscribe);
+            _playerEntity.SubscribeSitting(OnSitDown).AddTo(unsubscribe);
+            _playerEntity.SubscribeActiveRemoved(OnActiveRemoved).AddTo(unsubscribe);
+            _playerEntity.SubscribeActive(OnActiveAdded).AddTo(unsubscribe);
+            _playerEntity.SubscribeAutoMovement(OnAutoMovement).AddTo(unsubscribe);
+            _playerEntity.SubscribeAutoMovementRemoved(OnAutoMovementRemoved).AddTo(unsubscribe);
             
             _unitMaterialPropertyBlock = new MaterialPropertyBlock();
 
@@ -59,6 +64,33 @@ namespace Ecs.Views.Linkable.Impl
         private void OnAttackSpeedChanged(GameEntity game, float value)
         {
             _animator.SetFloat(AnimationKeys.AttackSpeedMultiplier, value);
+        }
+
+        private void OnAutoMovement(GameEntity player, float value)
+        {
+            _animator.SetBool(AnimationKeys.AutoMove, true);
+            _animator.SetFloat(AnimationKeys.AutoMovement, value);
+        }
+        
+        private void OnAutoMovementRemoved(GameEntity player)
+        {
+            _animator.SetFloat(AnimationKeys.AutoMovement, 0f, 0.02f, Time.deltaTime);
+            _animator.SetBool(AnimationKeys.AutoMove, false);
+        }
+
+        private void OnActiveRemoved(GameEntity player)
+        {
+            characterController.enabled = false;
+        }
+        
+        private void OnActiveAdded(GameEntity player)
+        {
+            characterController.enabled = true;
+        }
+
+        private void OnSitDown(GameEntity player)
+        {
+            _animator.SetTrigger(AnimationKeys.SitDown);
         }
         
         private void OnHealthChanged(GameEntity entity, float value)

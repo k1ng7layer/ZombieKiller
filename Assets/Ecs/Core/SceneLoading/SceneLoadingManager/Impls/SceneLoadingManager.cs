@@ -53,15 +53,15 @@ namespace Ecs.Core.SceneLoading.SceneLoadingManager.Impls
 
         public void LoadGameFromSplash()
         {
-            var currentLevelId = _levelService.CurrentLevel;
-            var currentLevelName = _levelService.GetLevelSceneName(currentLevelId);
-            _lastScene = currentLevelName;
+            // var currentLevelId = _levelService.CurrentLevel;
+            // var currentLevelName = _levelService.GetLevelSceneName(currentLevelId);
+            _lastScene = ELevelName.SHELTER.ToString();
             _processor = new LoadingProcessor.Impls.LoadingProcessor();
             _processor
                 .AddProcess(new OpenLoadingWindowProcess(_signalBus))
                 .AddProcess(new LoadingProcess(ELevelName.GAME, LoadSceneMode.Additive))
-                .AddProcess(new LoadingProcess(currentLevelName, LoadSceneMode.Additive))
-                .AddProcess(new SetActiveSceneProcess(currentLevelName))
+                .AddProcess(new LoadingProcess(ELevelName.SHELTER.ToString(), LoadSceneMode.Additive))
+                .AddProcess(new SetActiveSceneProcess(ELevelName.SHELTER.ToString()))
                 .AddProcess(new UnloadProcess(ELevelName.SPLASH))
                 .AddProcess(new RunContextProcess("GameContext"))
                 .AddProcess(new WaitUpdateProcess(4))

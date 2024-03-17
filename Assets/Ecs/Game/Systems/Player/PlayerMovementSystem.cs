@@ -4,6 +4,7 @@ using Game.Services.InputService;
 using JCMG.EntitasRedux;
 using Plugins.Extensions.InstallerGenerator.Attributes;
 using Plugins.Extensions.InstallerGenerator.Enums;
+using UnityEngine;
 
 namespace Ecs.Game.Systems.Player
 {
@@ -52,6 +53,8 @@ namespace Ecs.Game.Systems.Player
             var move = input * _playerSettings.BaseMoveSpeed * _timeProvider.DeltaTime;
             
             player.ReplaceMoveDirection(move);
+            
+            Debug.Log($"PlayerMovementSystem: {move}");
         }
     }
 }

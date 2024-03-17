@@ -123,6 +123,7 @@ namespace Ecs.Installers {
 			SystemInstallHelper.Install<CreateExplosionSystem>(container);	// 0250 Combat
 
 			// Common 0500
+			SystemInstallHelper.Install<SitDownOnBenchSystem>(container);	// 0500 Common
 			SystemInstallHelper.Install<UseItemSystem>(container);	// 0500 Common
 
 			// Combat 0600

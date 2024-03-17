@@ -45,6 +45,7 @@ namespace Ecs.Commands.Systems
             enemyEntity.IsUnit = true;
             enemyEntity.IsAi = true;
             enemyEntity.IsActive = true;
+            enemyEntity.IsCanAttack = true;
         }
     }
 }

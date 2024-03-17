@@ -139,6 +139,9 @@ namespace Game.Ui.Inventory
 
         private void OnItemClick(string itemId)
         {
+            if (itemId == string.Empty)
+                return;
+            
             var item = _itemsBase.GetItem(itemId);
 
             View.InfoPopupView.ItemId = itemId;

@@ -1,4 +1,5 @@
 ﻿using Ecs.Commands;
+using Ecs.Extensions.UidGenerator;
 using Ecs.Utils.LinkedEntityRepository;
 using Game.Providers.GameFieldProvider;
 using JCMG.EntitasRedux;
@@ -31,6 +32,13 @@ namespace Ecs.Game.Systems.Initialize
 
         public void Initialize()
         {
+            InitEnemies();
+            InitPortals();
+            InitBench();
+        }
+
+        private void InitEnemies()
+        {
             if (!_gameFieldProvider.GameField.SpawnEnemies)
                 return;
             
@@ -41,8 +49,6 @@ namespace Ecs.Game.Systems.Initialize
                     enemySpawnPoint.SpawnTransform.position, 
                     enemySpawnPoint.SpawnTransform.rotation);
             }
-
-            InitPortals();
         }
 
         private void InitPortals()
@@ -58,6 +64,24 @@ namespace Ecs.Game.Systems.Initialize
                 
                 _linkedEntityRepository.Add(portalView.transform.GetHashCode(), portalEntity);
             }
+        }
+
+        private void InitBench()
+        {
+            var benchView = _gameFieldProvider.GameField.BenchView;
+            
+            if (benchView == null)
+                return;
+            
+            var bench = _game.CreateEntity();
+            benchView.Link(bench);
+            bench.AddLink(benchView);
+            
+            bench.IsBench = true;
+            bench.AddUid(UidGenerator.Next());
+            bench.AddPosition(benchView.transform.position);
+            bench.AddRotation(benchView.transform.rotation);
+            bench.IsActive = true;
         }
     }
 }
