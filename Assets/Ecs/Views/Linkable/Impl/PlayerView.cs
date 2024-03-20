@@ -31,6 +31,8 @@ namespace Ecs.Views.Linkable.Impl
         private float _colorLerpTime;
         private Color _defaultColor;
         private readonly Dictionary<int, Color> _colors = new();
+        private bool _attacking;
+        private int _attackType;
         
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
@@ -48,6 +50,7 @@ namespace Ecs.Views.Linkable.Impl
             _playerEntity.SubscribeActive(OnActiveAdded).AddTo(unsubscribe);
             _playerEntity.SubscribeAutoMovement(OnAutoMovement).AddTo(unsubscribe);
             _playerEntity.SubscribeAutoMovementRemoved(OnAutoMovementRemoved).AddTo(unsubscribe);
+            _playerEntity.SubscribePerformingAttackRemoved(OnPerformingAttackRemoved).AddTo(unsubscribe);
             
             _unitMaterialPropertyBlock = new MaterialPropertyBlock();
 
@@ -59,6 +62,22 @@ namespace Ecs.Views.Linkable.Impl
             }
             
             _playerEntity.AddCharacterController(characterController);
+
+            var attackStream = Observable.EveryUpdate().Where(_ => _attacking);
+            
+            attackStream.Buffer(attackStream.Throttle(TimeSpan.FromMilliseconds(500f)))
+                .Where(s => s.Count >= 2)
+                .Subscribe(_ =>
+                {
+                    _attackType = 1;
+                });
+            
+            attackStream.Buffer(attackStream.Throttle(TimeSpan.FromMilliseconds(1000f)))
+                .Where(s => s.Count == 1)
+                .Subscribe(_ =>
+                {
+                    _attackType = 0;
+                });
         }
 
         private void OnAttackSpeedChanged(GameEntity game, float value)
@@ -212,6 +231,18 @@ namespace Ecs.Views.Linkable.Impl
                 }
             }
         }
+
+        protected override void OnPerformingAttack(GameEntity entity)
+        {
+            _attacking = true;
+            
+            _animator.SetInteger(AnimationKeys.AttackType, _attackType);
+            _animator.SetTrigger(AnimationKeys.Attack);
+        }
         
+        private void OnPerformingAttackRemoved(GameEntity entity)
+        {
+            _attacking = false;
+        }
     }
 }

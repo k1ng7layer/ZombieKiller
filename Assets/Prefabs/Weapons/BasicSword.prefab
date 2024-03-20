@@ -106,7 +106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityLink: {fileID: 5737562238685456533}
   attackTrigger: {fileID: 3909738970972526437}
-  _weaponFx: {fileID: 0}
+  _fxRotation: {x: 0, y: 0, z: 0}
+  _fxPosition: {x: 0, y: 0, z: 0}
+  _weaponFx: {fileID: 198917133503265624, guid: 25f0520c9ecef6641af6ea648e95a88d, type: 3}
 --- !u!1 &5737562238700399126
 GameObject:
   m_ObjectHideFlags: 0

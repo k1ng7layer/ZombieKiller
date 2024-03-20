@@ -69,7 +69,7 @@ namespace Ecs.Views.Linkable.Impl
             _animator.SetFloat(AnimationKeys.Movement, dir.normalized.magnitude, 0.02f, Time.deltaTime);
         }
 
-        private void OnPerformingAttack(GameEntity entity)
+        protected virtual void OnPerformingAttack(GameEntity entity)
         {
             if (entity.HasEquippedWeapon)
             {

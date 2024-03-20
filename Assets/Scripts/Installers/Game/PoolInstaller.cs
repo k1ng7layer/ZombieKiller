@@ -11,6 +11,8 @@ using Game.Services.Pools.Explosion.Impl;
 using Game.Services.Pools.Projectile;
 using Game.Services.Pools.Projectile.Impl;
 using Game.Services.Pools.Spot;
+using Game.Services.Pools.SwordSlash;
+using Game.Services.Pools.SwordSlash.Impl;
 using Game.Services.ProjectilePoolRepository;
 using Game.Services.ProjectilePoolRepository.Impl;
 using Game.Utils;
@@ -33,6 +35,7 @@ namespace Installers.Game
                 
                 BindProjectilePool(projectileType);
                 BindSpotPool();
+                BindSwordSlashPool();
 
             }
 
@@ -95,6 +98,24 @@ namespace Installers.Game
                     var go = container.InstantiatePrefab(prefab, parent.transform);
 
                     return go.GetComponent<SpotView>();
+                });
+        }
+
+        private void BindSwordSlashPool()
+        {
+            var parent = new GameObject($"[Pool] Sword slash");
+
+            Container.BindMemoryPoolCustomInterface<ParticleSystem, SwordSlashPool, ISwordSlashPool>()
+                .WithInitialSize(6)
+                .FromMethod(container =>
+                {
+                    var prefabBase = container.Resolve<IPrefabsBase>();
+                    
+                    var prefab = prefabBase.Get("SwordSlashWhite");
+
+                    var go = container.InstantiatePrefab(prefab, parent.transform);
+
+                    return go.GetComponent<ParticleSystem>();
                 });
         }
     }

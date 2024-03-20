@@ -14,5 +14,6 @@ namespace Game.Utils
         public static readonly int AttackSpeedMultiplier = Animator.StringToHash("AttackSpeedMultiplier");
         public static readonly int SitDown = Animator.StringToHash("SitDown");
         public static readonly int AutoMove = Animator.StringToHash("AutoMove");
+        public static readonly int AttackType = Animator.StringToHash("AttackType");
     }
 }
