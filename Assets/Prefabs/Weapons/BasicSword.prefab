@@ -108,7 +108,7 @@ MonoBehaviour:
   attackTrigger: {fileID: 3909738970972526437}
   _fxRotation: {x: 0, y: 0, z: 0}
   _fxPosition: {x: 0, y: 0, z: 0}
-  _weaponFx: {fileID: 198917133503265624, guid: 25f0520c9ecef6641af6ea648e95a88d, type: 3}
+  _weaponFx: {fileID: 198110730807727184, guid: 2b567eadfb3fbcd40b2937e0cac6e890, type: 3}
 --- !u!1 &5737562238700399126
 GameObject:
   m_ObjectHideFlags: 0

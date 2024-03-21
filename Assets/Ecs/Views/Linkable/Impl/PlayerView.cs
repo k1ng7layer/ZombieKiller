@@ -4,6 +4,7 @@ using Ecs.Commands;
 using Ecs.Core.Interfaces;
 using Ecs.Utils;
 using Game.Extensions;
+using Game.Providers.RandomProvider;
 using Game.Utils;
 using JCMG.EntitasRedux;
 using JCMG.EntitasRedux.Commands;
@@ -22,6 +23,7 @@ namespace Ecs.Views.Linkable.Impl
 
         [Inject] private ITimeProvider _timeProvider;
         [Inject] private ICommandBuffer _commandBuffer;
+        [Inject] private IRandomProvider _randomProvider;
         
         private GameEntity _playerEntity;
         private MaterialPropertyBlock _unitMaterialPropertyBlock;
@@ -33,6 +35,7 @@ namespace Ecs.Views.Linkable.Impl
         private readonly Dictionary<int, Color> _colors = new();
         private bool _attacking;
         private int _attackType;
+        private DateTime _lastAttackTime;
         
         protected override void Subscribe(IEntity entity, IUnsubscribeEvent unsubscribe)
         {
@@ -65,19 +68,19 @@ namespace Ecs.Views.Linkable.Impl
 
             var attackStream = Observable.EveryUpdate().Where(_ => _attacking);
             
-            attackStream.Buffer(attackStream.Throttle(TimeSpan.FromMilliseconds(500f)))
-                .Where(s => s.Count >= 2)
-                .Subscribe(_ =>
-                {
-                    _attackType = 1;
-                });
-            
-            attackStream.Buffer(attackStream.Throttle(TimeSpan.FromMilliseconds(1000f)))
-                .Where(s => s.Count == 1)
-                .Subscribe(_ =>
-                {
-                    _attackType = 0;
-                });
+            // attackStream.Buffer(attackStream.Throttle(TimeSpan.FromMilliseconds(500f)))
+            //     .Where(s => s.Count >= 2)
+            //     .Subscribe(_ =>
+            //     {
+            //         _attackType = 1;
+            //     });
+            //
+            // attackStream.Buffer(attackStream.Throttle(TimeSpan.FromMilliseconds(1000f)))
+            //     .Where(s => s.Count == 1)
+            //     .Subscribe(_ =>
+            //     {
+            //         _attackType = 0;
+            //     });
         }
 
         private void OnAttackSpeedChanged(GameEntity game, float value)
@@ -234,10 +237,13 @@ namespace Ecs.Views.Linkable.Impl
 
         protected override void OnPerformingAttack(GameEntity entity)
         {
-            _attacking = true;
-            
+            // var diff = DateTime.Now - _lastAttackTime;
+            // Debug.Log($"OnPerformingAttack: {diff.Milliseconds}, _attackType: {_attackType}");
+            _attackType = _randomProvider.Range(0, 2);
             _animator.SetInteger(AnimationKeys.AttackType, _attackType);
             _animator.SetTrigger(AnimationKeys.Attack);
+
+            _lastAttackTime = DateTime.Now;
         }
         
         private void OnPerformingAttackRemoved(GameEntity entity)
